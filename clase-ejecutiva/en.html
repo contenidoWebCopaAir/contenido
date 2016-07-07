@@ -1,0 +1,32 @@
+<div ng-controller="CarouselDemoCtrl">
+  <div style="height: 396px">
+    <carousel interval="myInterval" no-wrap="noWrapSlides">
+      <slide active="slide.active" ng-repeat="slide in slides">
+        <img alt="{{slide.text}}" ng-="" src="{{slide.image}}" style="margin:auto;" title="{{slide.text}}" />
+      </slide>
+    </carousel>
+  </div>
+</div>
+
+
+<script>
+  angular.module('copa').controller('CarouselDemoCtrl', ["$scope", function ($scope) {
+    $scope.myInterval = 5000;
+    $scope.noWrapSlides = false;
+    var slides = $scope.slides = [
+      {
+        image: '/documents/20182/1354545/embraer190AR_1440.jpg',
+        text: 'Embraer 190AR'
+      },
+      {
+        image: '/documents/20182/1354545/ejecutiva_1440.jpg',
+        text: 'Boeing 737-800A'
+      },
+      {
+        image: '/documents/20182/1354545/boeing-737-800B_1440.jpg',
+        text: 'Boeing 737-800B'
+      }
+    ];
+  }]);
+</script>
+

@@ -1,0 +1,4 @@
+@media (min-width: 1200px)
+.aui .container, .aui .navbar-static-top .container, .aui .navbar-fixed-top .container, .aui .navbar-fixed-bottom .container {
+    width: 1170px;
+}

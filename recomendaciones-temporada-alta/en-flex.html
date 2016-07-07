@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	body { width: 80%; margin:0 auto; }
+
+	.__row {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex; 
+		display: flex; 
+		margin-bottom: 2em;
+		-webkit-flex-wrap: wrap;
+		-moz-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;  
+	}
+	.__column {
+		-webkit-flex-basis: 400px;
+		-moz-flex-basis: 400px;
+		-ms-flex-basis: 400px;
+		flex-basis: 400px;
+		-webkit-flex:1;
+		-moz-flex:1;
+		-ms-flex:1;
+		flex:1; 
+	}
+
+	.__Media { 
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex; 
+		display: flex; 
+		padding: 15px; 
+	}
+	.__Media_figure { margin-right: 1em; }
+	.aui img {max-width: none;}
+	.__Media_body p:first-child { margin-top: 0; }
+
+	@media only screen and(max-width: 362px){
+		.__Media_figure img { width: 50px }
+	}
+
+	</style>
+</head>
+<body>
+	<h2>High-Season recommendations</h2>
+<div class="__grid">
+
+	<div class="__row">
+		<div class="__column">
+			<div class="__Media">
+				<div class="__Media_figure">
+					<img 
+						alt="notifications" 
+						title="notifications"
+						src="/documents/20182/1084829/notificacion.png" 
+					/>
+				</div>
+				<div class="__Media_body">
+					<p>Remember to provide your email address when making a reservation to receive notifications related to changes in your itinerary such as delays, cancellations, and gate changes.</p>
+				</div>
+			</div>
+		</div>
+		
+
+		<div class="__column">
+			<div class="__Media">
+				<div class="__Media_figure">
+					<img 
+						alt="immigration requirements" 
+						title="immigration requirements" 
+						src="/documents/20182/1084829/requisitos-migratorios.png" 
+					/>
+				</div>
+				<div class="__Media_body">
+					<p>Find out about the necessary documentation for your trip in our Immigration <a href="/immigration-requirements" id="immigrationRequirements2">requirements section</a>.</p>
+				</div>
+			</div>
+			
+		</div>
+			
+		
+	</div>
+
+	<div class="__row">
+		<div class="__column">
+			
+		</div>
+	</div>
+	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+.__row { 
+	display: flex; 
+	margin-bottom: 2em;
+	flex-wrap: wrap;  
+}
+.__column { flex-basis: 400px; }
+.__Media { 
+	display: flex; 
+	padding: 15px; 
+}
+.__Media_figure { margin-right: 1em; }
+.__Media_body p:first-child { margin-top: 0; }
+
