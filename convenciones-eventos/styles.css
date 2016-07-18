@@ -1,0 +1,55 @@
+	.container { max-width: 1024px; }
+	.row { margin-left:0 !important; }
+	.aui select { max-width: 99% !important; }
+
+	/** Email **/
+	ul > li > address > p > a { font-size: 1em !important; }
+
+	@media screen (min-width: 1025px){
+		.offices-responsive .ul-table.ul-head {
+		    display: block;
+		    background: #a9aaaa;
+		    font-size: 20px;
+		    font-weight: bold;
+		    color: #fff;
+		    padding: 4px 0;
+		    margin: 0;
+		}
+
+
+	}
+	/*** DESKTOP ***/
+	@media(min-width: 1025px){
+		/* Fecha */
+		.offices-responsive .ul-table li { width: 10% !important;}
+
+		/* Título */
+		.offices-responsive .ul-table li + li { width: 35% !important;}
+
+		/* Lugar */
+		.offices-responsive .ul-table li + li + li { width: 15% !important;}
+
+		/* Contacto */
+		.offices-responsive .ul-table li + li + li + li { width: 25% !important;}
+
+		/* Código Promocional */
+		.offices-responsive .ul-table li + li + li + li + li { width: 15% !important;}
+		
+	}
+
+	/*** TABLET ***/
+	@media(min-width: 821px){
+
+
+		.offices-responsive .ul-table li + li + li + li + li > span { padding-left:20px; }
+	}
+
+
+
+	.offices-responsive .ul-table.ul-body {
+	    border-bottom: 1px dotted #888;
+	    padding: 16px 0;
+	    margin: 0;
+	}
+
+	.offices-responsive .ul-table > li {list-style:none;}
