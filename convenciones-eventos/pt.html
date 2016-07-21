@@ -1,81 +1,56 @@
 <div class="container">
-	
-	<div class="row">
-		<div class="span12">
-			<h2>Eventos e conferências em destaque</h2>
+<div class="row">
+<div class="span12">
+<h2>Eventos e conferências em destaque</h2>
 
-			<p><img alt="Copa convenciones" src="/documents/20182/177476/copa-convenciones-eventos" title="Copa convenciones" /></p>
+<p><img alt="Copa convenciones" src="/documents/20182/177476/copa-convenciones-eventos" title="Copa convenciones" /></p>
 
-			<h3>Eventos em julho</h3>
-		</div>
-	</div>
+<h3>Eventos em julho</h3>
+</div>
+</div>
 
-	<div class="offices-responsive content_centered">
-		<div class="row">
+<div class="offices-responsive content_centered">
+<div class="row">
+<div class="span12" ng-controller="EventsCtrl">
+<form class="form-inline"><input name="query" ng-model="query" placeholder="olhar para um evento..." type="text" />&nbsp;</form>
 
-            <div class="span12" ng-controller="EventsCtrl">  
-            	<form class="form-inline">
-            		<input 
-            			type="text" 
-            			name="query"
-            			placeholder="Buscar evento"
-            			ng-model="query"
-            		>
-            	</form>  
-                <ul class="ul-head ul-table">
-                    <li>Data</li>
-                    <li>Título</li>                    
-                    <li>Lugar</li>
-                    <li>Contato</li>
-                    <li>Código Promocional</li>
-                </ul>
-                
-                <ul 
-                    class="ul-body ul-table"
-                    ng-repeat="e in events | filter: e.startDate | filter: query" 
-                >   
-                    <li>
-                    	<h4>{{e.startDate}} al {{e.endDate}}</h4>
-                    </li>
-                  	<li>
-                  		<h4>{{e.title}}</h4>
-                  	</li>
-                  	<li>
-                  		<h4>{{e.country}}, {{e.city}}</h4>
-                  	</li>
-                  	<li>
-                  		<address>
-							<p>
-								<b ng-if="e.contactName">{{e.contactName}}</b>
-								<br ng-if="e.contactName"/>
+<ul class="ul-head ul-table">
+	<li>Data</li>
+	<li>Título</li>
+	<li>Lugar</li>
+	<li>Contato</li>
+	<li>Código Promocional</li>
+</ul>
 
-									<a ng-if="e.email" href="mailto:{{e.email}}">
-										{{e.email | lowercase}}
-									</a><br ng-if="e.email"/>
+<ul class="ul-body ul-table" ng-repeat="e in events | filter: e.startDate | filter: query">
+	<li>
+	<h4>{{e.startDate}} al {{e.endDate}}</h4>
+	</li>
+	<li>
+	<h4>{{e.title}}</h4>
+	</li>
+	<li>
+	<h4>{{e.country}}, {{e.city}}</h4>
+	</li>
+	<li>
+	<address>
+	<p><b ng-if="e.contactName">{{e.contactName}}</b><br ng-if="e.contactName" />
+	<a href="mailto:{{e.email}}" ng-if="e.email">{{e.email | lowercase}} </a><br ng-if="e.email" />
+	<a href="{{e.url}}" ng-if="e.url" target="_blank">Web</a></p>
+	</address>
+	</li>
+	<li ng-if="e.promoCode">
+	<p class="visible-phone visible-tablet">Código promocional {{e.promoCode}}</p>
 
-								<a ng-if="e.url" href="{{e.url}}" target="_blank">Web</a>
-								<br ng-if="e.url"/>
-								
-							</p>
-						</address>
-                  	</li>
-                  	<li ng-if="e.promoCode">
-                  		
-                  			<p class="visible-phone visible-tablet">Código promocional {{e.promoCode}}</p>
-                  			<p class="visible-desktop">{{e.promoCode}}</p>
-                  		
-                  	</li>
-                 
-                </ul>
-              
-            </div><!--span12-->
-        </div><!--row-->
-	</div><!--offices-responsive content_centered-->		
-</div><!--container-->
-
-
-<script>
-	angular.module('copa').controller('EventsCtrl', ["$scope", 
+	<p class="visible-desktop">{{e.promoCode}}</p>
+	</li>
+</ul>
+</div>
+<!--span12--></div>
+<!--row--></div>
+<!--offices-responsive content_centered--></div>
+<!--container--><script>
+	angular.module('copa').controller('EventsCtrl', ["$scope",
 		function ($scope) {
 
 			$scope.query = '';
