@@ -1,45 +1,54 @@
-<div class="container" ng-controller="OfficesCtrl">
-    <div class="row main-filter">
-        <div class="span4">
-            <p><b>Show sales offices</b></p>
-        </div>
-        <div class="span8"><input class="form-control" ng-model="query" placeholder="Enter the country, city, address or schedule" type="text" /></div>
-    </div>
+<div class="container">
+<div class="offices-responsive content_centered" ng-controller="OfficesCtrl">
+<div class="row main-filter">
+<div class="span4">
+<p><b>Show sales offices</b></p>
+</div>
 
+<div class="span8 form-horizontal">
+<div class="control-group">
+    <label class="control-label">Search by Country</label>
 
-    <div class="row">
-        <div class="span12">
-            <div class="table-scroll">
-                <table class="table">
-                	<thead>
-                		<tr>
-                			<th>Country</th>
-                			<th>City</th>
-                			<th>Address</th>
-                			<th>Schedules</th>
-                		</tr>
-                	</thead>
-                	<tbody>
-                		<tr ng-repeat="office in offices | filter:query">
-                			<td><b ng-bind-html="office.country"></b></td>
-                			<td ng-bind-html="office.city"></td>
-                			<td ng-bind-html="office.address"></td>
-                			<td ng-bind-html="office.schedules"></td>
-                		</tr>
-                	</tbody>
-                </table>
-            </div>
-        </div>
+    <div class="controls">
+        <select id="selectedCountry" ng-model="selectedCountry" style="width: 100%">
+            <option ng-repeat="country in countries" value="{{country}}">{{country}}</option>
+        </select>
     </div>
 </div>
-<script>
 
+<div class="control-group">
+    <label class="control-label">Search by city, address or schedule</label>
+    <div class="controls"><input id="query" ng-model="query" style="width: 96%" type="text" /></div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="span12">
+<ul class="ul-head ul-table">
+    <li>Country</li>
+    <li>City</li>
+    <li>Address</li>
+    <li>Schedules</li>
+</ul>
+
+<ul class="ul-body ul-table" ng-repeat="office in offices | filter:query | filter:selectedCountry">
+    <li><b ng-bind-html="office.country"></b></li>
+    <li ng-bind-html="office.city">&nbsp;</li>
+    <li ng-bind-html="office.address">&nbsp;</li>
+    <li ng-bind-html="office.schedules">&nbsp;</li>
+</ul>
+</div>
+</div>
+</div>
+<!--offices-responsive--></div>
+<script>
 angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
 
-	var reservaciones = 'For assistance before your trip, please contact our <a href="http://www.copaair.com/sites/cc/en/acerca-de-copa-airlines/pages/centros-reservaciones.aspx" target="_blank">Reservation Center</a>';
+	var reservaciones = 'For assistance before your trip, please contact our <a href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/reservation-center" target="_blank">Reservation Center</a>';
 
 	$scope.query = '';
-
+    $scope.selectedCountry = "";
     $scope.offices = [
         {
             country: "Antillas Holandesas",
@@ -295,55 +304,55 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
         	schedules: 'Mon - Fri 8:00am-6:00pm<br>Sat 8:00am-12:00pm '
         },
         {
-        	country: 'Estados Unidos',
+        	country: 'United States',
         	city: 'Chicago',
         	address: 'Chicago Ohare International Airport Terminal 5 Chicago Berssie Coleman Drive 10000 Chicago IL 60666. Para consultas sobre ventas, escriba a: <a href="mailto:chicagosales@copaair.com">chicagosales@copaair.com</a>',
         	schedules: 'Mon - Dom 4:30am-12:30pm'
         },
         {
-        	country: 'Estados Unidos',
+        	country: 'United States',
         	city: 'Fort Lauderdale',
         	address: 'International Airport Fort Lauderdale – Hollywood',
         	schedules: reservaciones
         },
         {
-        	country: 'Estados Unidos',
+        	country: 'United States',
         	city: 'Las Vegas',
         	address: 'International Airport McCarran, Terminal 3, 5757 Wayne Newton Blvd , Las Vegas ,NV 89119',
         	schedules: 'Mon - Sun &amp; Holidays<br>12:00pm-4:00pm y 7:00pm-12:00am'
         },
         {
-        	country: 'Estados Unidos',
+        	country: 'United States',
         	city: 'Los Angeles',
         	address: 'International Airport de Los Angeles Terminal 6, 600 World Way , Los Angeles, CA 90045',
         	schedules: 'Mon - Sun &amp; Holidays<br>7:30am-9:30am y 6:00pm-9:30pm'
         },
         {
-        	country: 'Estados Unidos',
+        	country: 'United States',
         	city: 'Miami',
         	address: 'Waterford Center , 6205 Blue Lagoon Drive Suite 200 Miami Fl 33126',
         	schedules: 'Mon - Fri 9:00am-6:00pm'
         },
         {
-        	country: 'Estados Unidos',
+        	country: 'United States',
         	city: 'New York',
         	address: 'New York International Airport , Terminal 4 Councourse A',
         	schedules: 'Mon - Sun &amp; Holidays 8:45am-9:20am 1:30pm-2:30pm'
         },
         {
-        	country: 'Estados Unidos',
+        	country: 'United States',
         	city: 'Orlando',
         	address: 'International Airport de Orlando , Terminal A 9303 Jeff Fuqua Blvd Orlando FL 32827',
         	schedules: 'Mon - Fri 9:00am-3:00pm '
         },
         {
-        	country: 'Estados Unidos',
+        	country: 'United States',
         	city: 'Tampa',
         	address: 'Waterford Center , 6205 Blue Lagoon Drive Suite 200 Miami Fl 33126',
         	schedules: reservaciones
         },
         {
-        	country: 'Estados Unidos',
+        	country: 'United States',
         	city: 'Washington, D.C',
         	address: 'International Airport Washington-Dulles, 1 Saarinen Circle Dulles Va , Terminal principal Puerta N° 2 salida de vuelos terminal A puerta 19',
         	schedules: 'Mon - Dom<br>6:00am - 9:00am y 12:00pm - 2:30pm'
@@ -559,7 +568,18 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
             schedules: 'Mon - Sat 12:00pm-7:00pm'
         },
     ];
+
+    $scope.countries = [];
+    for( var i in $scope.offices){
+
+        if( $scope.countries.indexOf( $scope.offices[i].country ) == -1 ){
+            $scope.countries.push( $scope.offices[i].country );
+        }
+
+    }
 }]);
+
+
 
 	
 </script>
