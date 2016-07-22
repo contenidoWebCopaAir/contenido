@@ -8,7 +8,7 @@
 <div class="span8 form-horizontal">
 <div class="control-group"><label class="control-label">Busque por País</label>
 
-<div class="controls"><select class="form-control" ng-model="selectedCountry" style="width:100%"><option ng-repeat="country in countries" value="{{country}}">{{country}}</option> </select></div>
+<div class="controls"><select class="form-control" ng-model="selectedCountry" style="width:100%"><option ng-repeat="country in countries" value="{{country}}" ng-cloack>{{country}}</option> </select></div>
 </div>
 
 <div class="control-group"><label class="control-label">Busque por ciudad, dirección u horario</label>
@@ -592,7 +592,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
         },
          {
             country: 'Venezuela',
-            city: 'Maracaibo',
+            city: 'Valencia',
             address: 'Centro Comercial Via Veneto, Nivel Florencia Local F 34 Mañongo, Municipio Naguanagua - Carabobo',
             schedules: 'Lunes - Sábado<br> 12:00pm-7:00pm'
         }

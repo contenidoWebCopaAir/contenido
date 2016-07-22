@@ -13,7 +13,7 @@
                         <select
                             ng-model="selectedCountry"
                             style="width:100%">
-                            <option ng-repeat="country in countries" value="{{country}}">{{country}}</option>        
+                            <option ng-repeat="country in countries" value="{{country}}" ng-cloack>{{country}}</option>        
                         </select>             
                         
                     </div>
@@ -627,7 +627,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
         },
          {
             country: 'Venezuela',
-            city: 'Maracaibo',
+            city: 'Valencia',
             address: 'Mall Via Veneto, nível Florencia Local F 34 Mañongo, Municipio Naguanagua - Carabobo',
             schedules: 'Segunda - Sábado<br> 12:00pm-7:00pm'
         }
