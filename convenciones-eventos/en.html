@@ -1,60 +1,72 @@
 <div class="container">
-<div class="row">
-<div class="span12">
-<h2>Featured events and conferences</h2>
+	<div class="row">
+		<div class="span12">
+			<h2>Featured events and conferences</h2>
 
-<p><img alt="Copa Events" src="/documents/20182/177476/copa-convenciones-eventos" title="Copa Events" /></p>
+			<p><img alt="Copa Events" src="/documents/20182/177476/copa-convenciones-eventos" title="Copa Events" /></p>
+			<img src="/documents/20182/148499/logo-cumbre-iberoamericana" alt="Cumbre iberoamericana" style="margin-bottom:20px">
 
-<h3>Events July</h3>
+		</div>
+	</div>
+
+	<div class="offices-responsive content_centered" ng-controller="EventsCtrl">
+		<div class="row">
+			<div class="span12" >
+				<h3>Events August</h3>
+				<form class="form-inline">
+					<div class="form-group">
+						<label>Search event</label>
+						<input class="form-control" name="query" ng-model="query" placeholder="by name, city or country" type="text" />
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<ul class="ul-head ul-table">
+					<li>Date</li>
+					<li>Title</li>
+					<li>Place</li>
+					<li>Contact</li>
+					<li>Promo Code</li>
+				</ul>
+
+				<ul 
+					class="ul-body ul-table" 
+					ng-repeat="e in events | orderBy:e.startDate:true | filter: query"
+				>
+					<li>
+					<h4 ngCloak>{{e.startDate}} - {{e.endDate}}</h4>
+					</li>
+					<li>
+					<h4 ngCloak>{{e.title}}</h4>
+					</li>
+					<li>
+					<h4 ngCloak>{{e.country}}, {{e.city}}</h4>
+					</li>
+					<li>
+					<address>
+					<p><b ng-if="e.contactName" ngCloak>{{e.contactName}}</b><br ng-if="e.contactName" />
+					<a href="mailto:{{e.email}}" ng-if="e.email" ngCloak>{{e.email | lowercase}} </a><br ng-if="e.email" />
+					<a href="{{e.url}}" ng-if="e.url" target="_blank">Web</a></p>
+					</address>
+					</li>
+					<li ng-if="e.promoCode">
+					<p class="visible-phone visible-tablet" ngCloak>Promotional Code {{e.promoCode}}</p>
+
+					<p class="visible-desktop" ngCloak>{{e.promoCode}}</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
-</div>
 
-<div class="offices-responsive content_centered">
-<div class="row">
-<div class="span12" ng-controller="EventsCtrl">
-<form class="form-inline"><input name="query" ng-model="query" placeholder="search event..." type="text" />&nbsp;</form>
-
-<ul class="ul-head ul-table">
-	<li>Date</li>
-	<li>Title</li>
-	<li>Place</li>
-	<li>Contact</li>
-	<li>Promo Code</li>
-</ul>
-
-<ul class="ul-body ul-table" ng-repeat="e in events | filter: e.startDate | filter: query">
-	<li>
-	<h4>{{e.startDate}} al {{e.endDate}}</h4>
-	</li>
-	<li>
-	<h4>{{e.title}}</h4>
-	</li>
-	<li>
-	<h4>{{e.country}}, {{e.city}}</h4>
-	</li>
-	<li>
-	<address>
-	<p><b ng-if="e.contactName">{{e.contactName}}</b><br ng-if="e.contactName" />
-	<a href="mailto:{{e.email}}" ng-if="e.email">{{e.email | lowercase}} </a><br ng-if="e.email" />
-	<a href="{{e.url}}" ng-if="e.url" target="_blank">Web</a></p>
-	</address>
-	</li>
-	<li ng-if="e.promoCode">
-	<p class="visible-phone visible-tablet">Promotional Code {{e.promoCode}}</p>
-
-	<p class="visible-desktop">{{e.promoCode}}</p>
-	</li>
-</ul>
-</div>
-<!--span12--></div>
-<!--row--></div>
-<!--offices-responsive content_centered--></div>
 <!--container--><script>
 	angular.module('copa').controller('EventsCtrl', ["$scope",
 		function ($scope) {
 
 			$scope.query = '';
-
 			$scope.events = [
 				{
 					startDate: new Date("2016/7/1").getDate(),
@@ -63,7 +75,6 @@
 					city: 'Habana',
 					country: 'Cuba',
 					contactName: 'Diego Tomatis',
-					
 					email: 'estetica2016@infomed.sld.cu',
 					url: null,
 					promoCode: 'C6729'
@@ -328,8 +339,51 @@
 					url: 'http://america-cantat-8.org/',
 					promoCode: 'C6890'
 				},
-
-			]
+				{
+					startDate: new Date("2016/8/24").getDate(),
+					endDate: new Date("2016/8/27").getDate(),
+					title: 'XIII CONGRESO DE NEONATOLOGIA (SIBEN))',
+					city: 'Asunción',
+					country: 'Paraguay',
+					contactName: 'Lizeth Hernandez',
+					email: 'lizath.hernandez@especon.com',
+					url: 'http://www.siben.net/XIIINS/signup/index-step1.php',
+					promoCode: 'B7035'
+				},
+				{
+					startDate: new Date("2016/8/24").getDate(),
+					endDate: new Date("2016/8/26").getDate(),
+					title: 'XXXVI CONVENCION Y EXPOSICION ACCCSA 2016',
+					city: 'Guadalajara',
+					country: 'Mexico',
+					contactName: 'Adriana Bermúdez',
+					email: 'adriana.bermudez@acccsa.org',
+					url: null,
+					promoCode: 'C6909'
+				},
+				{
+					startDate: new Date("2016/8/25").getDate(),
+					endDate: new Date("2016/8/31").getDate(),
+					title: 'Maratón de Ciudad de México 2016',
+					city: 'Mexico D.F',
+					country: 'Mexico',
+					contactName: 'Marcela Chavez',
+					email: 'fmchaves@copaair.com',
+					url: null,
+					promoCode: 'C6616'
+				},
+				{
+					startDate: new Date("2016/8/27").getDate(),
+					endDate: new Date("2016/8/28").getDate(),
+					title: 'WEBCON PANAMÁ',
+					city: 'Panamá',
+					country: 'Panamá',
+					contactName: 'Lilia Navarro',
+					email: 'webconpanama@gmail.com',
+					url: 'www.webconpanama.com',
+					promoCode: 'D6931'
+				},
+			];
 
 		}
 	]);
