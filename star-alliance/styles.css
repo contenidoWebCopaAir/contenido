@@ -1,34 +1,62 @@
 .container { max-width: 1024px; }
 .row { margin-left:0 !important; }
-.aui select { max-width: 99% !important; }
+.aui .common-styles ul {
+    margin: 0 0 10px 0 !important;
+}
 
-@media screen (min-width: 1025px){
-	.offices-responsive .ul-table.ul-head {
-	    display: block;
-	    background: #a9aaaa;
-	    font-size: 20px;
-	    font-weight: bold;
-	    color: #fff;
-	    padding: 4px 0;
-	    margin: 0;
+ul.items > li > img { width:300px; }
+ul > li { list-style: none !important; margin:0 !important; }
+
+
+
+ul.items {
+	margin:0;
+	display:-webkit-flex;
+	display:-ms-flex;
+	display:-moz-flex;
+	display:flex;
+	flex-wrap: wrap;
+}
+
+ul.items > li{
+	margin-bottom:20px;
+	list-style: none;
+	justify-content: space-around;
+	-webkit-flex: 1; 
+    -ms-flex: 1; 
+    flex: 1;
+    flex-basis:300px;
+	text-align: center;
+	padding:15px;
+}
+
+ ul.star-alliance-members { 
+ 	display:-webkit-flex;
+	display:-ms-flex;
+	display:-moz-flex;
+	display:flex;
+ 	justify-content: center; 
+ }
+
+ ul.star-alliance-members > li { margin-right: 10px }
+
+@media (orientation: portrait){
+	
+	ul.items > li { 
+		margin-bottom: 25px; 
+		text-align:center;
 	}
 
+	ul.items > li > h2 { padding:0; }
+	ul.items > li > img {
+		width:80%;
+	}
+
+	ul.items { 
+		-webkit-flex-direction:column;
+		-moz-flex-direction:column;
+		-ms-flex-direction:column;
+		flex-direction:column; 
+	}
+	
 }
-
-.offices-responsive .ul-table li { width: 25% !important; }
-.offices-responsive .ul-table li + li { width: 25% !important; }
-.offices-responsive .ul-table li + li + li { width: 25% !important; }
-.offices-responsive .ul-table li + li + li + li { width: 25% !important; }
-
-.offices-responsive .ul-table .members li { width: 33%; }
-.offices-responsive .ul-table .members li + li { width: 33%; }
-.offices-responsive .ul-table .members li + li + li { width: 33%; }
-
-
-.offices-responsive .ul-table.ul-body {
-    border-bottom: 1px dotted #888;
-    padding: 16px 0;
-    margin: 0;
-}
-
-.offices-responsive .ul-table > li {list-style:none;}

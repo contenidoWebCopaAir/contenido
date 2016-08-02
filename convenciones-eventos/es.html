@@ -1,238 +1,270 @@
 <div class="container">
-<div class="row">
-<div class="span12">
-<h2>Eventos destacados y congresos</h2>
+	<div class="row">
+		<div class="span12">
+			<h2>Eventos destacados y congresos</h2>
 
-<p><img alt="Copa convenciones" src="/documents/20182/177476/copa-convenciones-eventos" title="Copa convenciones" /></p>
+			<p><img alt="Copa Events" src="/documents/20182/177476/copa-convenciones-eventos" title="Copa Events" /></p>
 
-<h3>Eventos Julio</h3>
+		</div>
+	</div>
+
+	<div class="offices-responsive content_centered" ng-controller="EventsCtrl">
+		<div class="row">
+			<div class="span4">
+				<h4>Evento destacado</h4>
+			</div>
+			<div class="span4">
+				<img src="/documents/20182/148499/logo-cumbre-iberoamericana" alt="Cumbre iberoamericana">
+			</div>
+			<div class="span4">
+				<address>
+					<p><b>Cartagena, Colombia</b><br>
+					Maria Crostina Pimiento Barrera<br>
+					<a href="mailto:Maria.Pimiento@cancilleria.gov.co">Maria.Pimiento@cancilleria.gov.co</a><br>
+					<b>Código promocional: </b> D7040</p>
+				</address>
+			</div>
+		</div>
+		<dov class="row">
+			<div class="span12">
+				<h3>Eventos Agosto</h3>
+				<form class="form-inline">
+					<div class="form-group">
+						<label>Buscar eventos</label>
+						<input class="form-control" name="query" ng-model="query" placeholder="por nombre, ciudad o país" type="text" />
+					</div>
+				</form>
+			</div>
+		</dov>
+		<div class="row">
+			<div class="span12">
+				<ul class="ul-head ul-table">
+					<li>Fecha</li>
+					<li>Título</li>
+					<li>Lugar</li>
+					<li>Contacto</li>
+					<li>Código Promocional</li>
+				</ul>
+
+				<ul 
+					class="ul-body ul-table" 
+					ng-repeat="e in events | orderBy: 'startDate' | filter: query"
+				>
+					<li>
+						<h4 ngCloak>{{e.startDate}} - {{e.endDate}}</h4>
+					</li>
+					<li>
+						<h4 ngCloak>{{e.title}}</h4>
+					</li>
+					<li>
+						<h4 ngCloak ng-if="e.country && e.city">{{e.country}}, {{e.city}}</h4>
+					</li>
+					<li>
+					<address>
+					<p><b ng-if="e.contactName" ngCloak>{{e.contactName}}</b><br ng-if="e.contactName" />
+					<a href="mailto:{{e.email}}" ng-if="e.email" ngCloak>{{e.email | lowercase}} </a><br ng-if="e.email" />
+					<a href="{{e.url}}" ng-if="e.url" target="_blank">Web</a></p>
+					</address>
+					</li>
+					<li ng-if="e.promoCode">
+					<p class="visible-phone visible-tablet" ngCloak>Código promocional {{e.promoCode}}</p>
+
+					<p class="visible-desktop" ngCloak>{{e.promoCode}}</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
-</div>
 
-<div class="offices-responsive content_centered">
-<div class="row">
-<div class="span12" ng-controller="EventsCtrl">
-<form class="form-inline"><input name="query" ng-model="query" placeholder="Buscar evento" type="text" />&nbsp;</form>
-
-<ul class="ul-head ul-table">
-	<li>Fecha</li>
-	<li>Título</li>
-	<li>Lugar</li>
-	<li>Contacto</li>
-	<li>Código Promocional</li>
-</ul>
-
-<ul class="ul-body ul-table" ng-repeat="e in events | filter: e.startDate | filter: query">
-	<li>
-	<h4>{{e.startDate}} al {{e.endDate}}</h4>
-	</li>
-	<li>
-	<h4>{{e.title}}</h4>
-	</li>
-	<li>
-	<h4>{{e.country}}, {{e.city}}</h4>
-	</li>
-	<li>
-	<address>
-	<p><b ng-if="e.contactName">{{e.contactName}}</b><br ng-if="e.contactName" />
-	<a href="mailto:{{e.email}}" ng-if="e.email">{{e.email | lowercase}} </a><br ng-if="e.email" />
-	<a href="{{e.url}}" ng-if="e.url" target="_blank">Web</a></p>
-	</address>
-	</li>
-	<li ng-if="e.promoCode">
-	<p class="visible-phone visible-tablet">Código promocional {{e.promoCode}}</p>
-
-	<p class="visible-desktop">{{e.promoCode}}</p>
-	</li>
-</ul>
-</div>
-<!--span12--></div>
-<!--row--></div>
-<!--offices-responsive content_centered--></div>
-<!--container--><script>
+<script>
 	angular.module('copa').controller('EventsCtrl', ["$scope",
 		function ($scope) {
 
 			$scope.query = '';
-
 			$scope.events = [
+			
 				{
-					startDate: new Date("2016/7/1").getDate(),
-					endDate: new Date("2016/7/4").getDate(),
-					title: 'Congreso de Estética, Cosmetología y Medicina Estética, Cuba 2016',
-					city: 'Habana',
-					country: 'Cuba',
-					contactName: 'Diego Tomatis',
-					phone: null,
-					email: 'estetica2016@infomed.sld.cu',
-					url: null,
-					promoCode: 'C6729'
+					startDate: new Date("2016/8/1").getDate(),
+					endDate: new Date("2016/8/7").getDate(),
+					title: 'August Meeting',
+					city: 'Mexico DF',
+					country: 'Mexico',
+					contactName: 'Antonio Vega',
+					email: 'antoniovegamat@gmail.com',
+					url: 'http://www.ifmsa.org',
+					promoCode: 'D6898'
 				},
 				{
-					startDate: new Date("2016/7/6").getDate(),
-					endDate: new Date("2016/7/8").getDate(),
-					title: '(INTER-LUMI) International Ilumine',
+					startDate: new Date("2016/8/3").getDate(),
+					endDate: new Date("2016/8/5").getDate(),
+					title: 'Conferencia de Microfinanzas',
+					city: null,
+					country: null,
+					contactName: 'Clarisa Baltonado',
+					
+					email: 'administracion@asomif.org',
+					url: null,
+					promoCode: 'D6813'
+				},
+				{
+					startDate: new Date("2016/8/4").getDate(),
+					endDate: new Date("2016/8/6").getDate(),
+					title: '31 CONVENCION INTERNACIONAL DE ZAMORANOS',
+					city: 'Santa Cruz',
+					country: 'Bolivia',
+					contactName: 'Gonzalo Coimbra',
+					
+					email: 'gcoimbra@cotas.com.bo',
+					url: '//www.convencionzamoranos.com',
+					promoCode: 'C6508'
+				},
+				{
+					startDate: new Date("2016/8/8").getDate(),
+					endDate: new Date("2016/8/19").getDate(),
+					title: '1er Congreso Latinoamericano Multidisciplinario “Preparación, Rehabilitación y Tratamiento de la Lesión del Deportista',
 					city: 'Panamá',
-					alias: 'Panama',
 					country: 'Panamá',
-					contactName: 'Lisa Gongo',
-					phone: '62710885',
-					email: 'lisa@inter-ilumi.com',
+					contactName: 'Adriana Giraldo Mejía',
+					
+					email: 'adriana.giraldo@contacticacounicaciones.com',
 					url: null,
-					promoCode: 'C6359'
+					promoCode: 'D6775'
 				},
 				{
-					startDate: new Date("2016/7/6").getDate(),
-					endDate: new Date("2016/7/8").getDate(),
-					title: 'Foro Internacional y Expo 2016 Ciudades Sostenibles',
+					startDate: new Date("2016/8/9").getDate(),
+					endDate: new Date("2016/8/10").getDate(),
+					title: '18ª Reunión Latinoamericana de Logística',
 					city: 'Panamá',
-					alias: 'Panama',
 					country: 'Panamá',
-					contactName: 'Patricia Moens',
-					phone: '3011509/06',
-					email: 'pmoens@panamagbc.org',
-					url: 'http://www.panamagbc.org',
-					promoCode: 'C6884'
+					contactName: 'Cecilia Barbetti',
+					
+					email: 'cbarbetti@apla.com.ar',
+					url: '//www.apla.com.ar',
+					promoCode: 'C6910'
 				},
 				{
-					startDate: new Date("2016/7/11").getDate(),
-					endDate: new Date("2016/7/11").getDate(),
-					title: 'POST TOUR SITE GLOBAL CONFERENCE',
-					city: 'Cartagena',
-					country: 'Colombia',
-					contactName: 'Marc Glatigny',
-					phone: '+57 3043527750',
-					email: 'marc@colombiaencolores.com',
-					url: 'www.colombiaencolores.com',
-					promoCode: 'B6690'
+					startDate: new Date("2016/8/10").getDate(),
+					endDate: new Date("2016/8/20").getDate(),
+					title: 'II CONGRESO INTERNACIONAL DE MINERIA',
+					city: 'Managua',
+					country: 'Nicaragua',
+					contactName: 'Maria Jose Villavicencio',
+					email: 'mariajose.villavicencio@caminic.com',
+					url: '//www.congresointernacionaldemineria.com.ni/en/home/',
+					promoCode: 'C6695'
 				},
 				{
-					startDate: new Date("2016/7/10").getDate(),
-					endDate: new Date("2016/7/16").getDate(),
-					title: 'Congreso Internacional de Hoteleria y Turismo UIP (CIHTUIPTY)',
-					city: 'David',
-					country: 'Panamá',
-					alias: 'Panama',
-					contactName: 'Genesis Albendras',
-					phone: '61576890',
-					email: 'CIHTUIPTY@gmail.com',
-					url: null,
-					promoCode: 'B6896'
-				},
-				{
-					startDate: new Date("2016/7/12").getDate(),
-					endDate: new Date("2016/7/14").getDate(),
-					title: 'Latin American & Caribbean Tyre Expo',
-					city: 'Panamá',
-					alias: 'Panama',
-					country: 'Panamá',
-					contactName: 'Yamila Ansourian',
-					phone: '786-293-5186',
-					email: 'yamila@latinexpogroup.com',
-					url: null,
-					promoCode: null
-				},
-				{
-					startDate: new Date("2016/7/13").getDate(),
-					endDate: new Date("2016/7/16").getDate(),
-					title: 'CONVENCION INTERNACIONAL CLUB ACTIVO 20-30',
-					city: 'Guadalajara',
-					country: 'México',
-					alias: 'Mexico',
-					contactName: 'Didimo Castillo',
-					phone: '6675-1212',
-					email: 'genetic@geneticpanama.com',
-					url: 'http://www.activo20-30.org/',
-					promoCode: 'D6586'
-				},
-				{
-					startDate: new Date("2016/7/15").getDate(),
-					endDate: new Date("2016/7/17").getDate(),
-					title: '9th NACAC U23 Championships',
-					city: 'Salvador',
-					country: 'San Salvador',
-					contactName: 'Victor Lopez',
-					phone: '787-367-1421',
-					email: 'victorlopezpgp@gmail.com',
-					url: null,
-					promoCode: 'D6897'
-				},
-				{
-					startDate: new Date("2016/7/18").getDate(),
-					endDate: new Date("2016/7/22").getDate(),
-					title: 'Enfermedades y Rehabilitación de Profesiones del Arte.',
-					city: 'Habana',
-					country: 'Cuba',
-					contactName: null,
-					phone: '+53 72086176',
-					email: 'mireya@palco.cu',
-					url: 'http://www.saludartehabana.com',
-					promoCode: 'C6731'
-				},
-				{
-					startDate: new Date("2016/7/18").getDate(),
-					endDate: new Date("2016/7/23").getDate(),
-					title: 'II Torneo ITF Seniors Ciudad de Guayaquil Copa American Express Banco de Guayaquil.',
+					startDate: new Date("2016/8/12").getDate(),
+					endDate: new Date("2016/8/14").getDate(),
+					title: 'Convencion Regional Ecuador de Narcoticos Anonimos.',
 					city: 'Guayaquil',
 					country: 'Ecuador',
-					contactName: 'Gonzalo Zurita',
-					phone: '990062424',
-					email: 'argelia@ama.cu',
+					contactName: 'Fabrizio Cobos',
+					email: 'delegadoregional@naecuador.org',
 					url: null,
-					promoCode: 'D6876'
+					promoCode: 'C6941'
 				},
 				{
-					startDate: new Date("2016/7/19").getDate(),
-					endDate: new Date("2016/7/22").getDate(),
-					title: 'Science of the Soul Discourse',
+					startDate: new Date("2016/8/14").getDate(),
+					endDate: new Date("2016/8/16").getDate(),
+					title: 'Body Sculpting Panama (Liposucción)',
 					city: 'Panamá',
-					alias: 'Panama',
 					country: 'Panamá',
-					contactName: 'Arinda Bartley',
-					phone: '387-4000 ext 4043',
-					email: 'arinda.bartley@sisa.com ',
+					contactName: 'Patricia Petterson',
+					email: 'patricia.petterson@patriciapetterson.com',
+					url: '//www.whatclinic.com/cosmetic-plastic-surgery/us/florida/panama-city/instant-body-sculpting-panama',
+					promoCode: 'C6735'
+				},
+				{
+					startDate: new Date("2016/8/21").getDate(),
+					endDate: new Date("2016/8/31").getDate(),
+					title: 'America Cantat 8',
+					city: 'Nassau',
+					country: 'Bahamas',
+					contactName: 'Eden Badgett',
+					email: 'badgett@acda.org',
+					url: 'http://america-cantat-8.org/',
+					promoCode: 'C6890'
+				},
+				{
+					startDate: new Date("2016/8/24").getDate(),
+					endDate: new Date("2016/8/27").getDate(),
+					title: 'XIII CONGRESO DE NEONATOLOGIA (SIBEN))',
+					city: 'Asunción',
+					country: 'Paraguay',
+					contactName: 'Lizeth Hernandez',
+					email: 'lizath.hernandez@especon.com',
+					url: 'http://www.siben.net/XIIINS/signup/index-step1.php',
+					promoCode: 'B7035'
+				},
+				{
+					startDate: new Date("2016/8/24").getDate(),
+					endDate: new Date("2016/8/26").getDate(),
+					title: 'XXXVI CONVENCION Y EXPOSICION ACCCSA 2016',
+					city: 'Guadalajara',
+					country: 'Mexico',
+					contactName: 'Adriana Bermúdez',
+					email: 'adriana.bermudez@acccsa.org',
 					url: null,
-					promoCode: 'B6881'
+					promoCode: 'C6909'
 				},
 				{
-					startDate: new Date("2016/7/24").getDate(),
-					endDate: new Date("2016/7/26").getDate(),
-					title: 'Home Run Summer Season 2016',
-					city: 'Punta Cana',
-					country: 'República Dominicana',
-					contactName: 'Robinson Paredes',
-					phone: null,
-					email: 'info@puntacanabl.com',
-					url: 'http://www.puntacanabl.com',
-					promoCode: 'D6673'
-				},
-				{
-					startDate: new Date("2016/7/27").getDate(),
-					endDate: new Date("2016/7/29").getDate(),
-					title: '10a Conferencia Anual Latinoamericana ALD y Delitos Financieros de ACAMS 2016',
-					city: 'Cancún',
-					country: 'México',
-					alias: 'Mexico',
-					contactName: 'Iliana Colon',
-					phone: '786-503-8051',
-					email: 'icolon@acams.org',
+					startDate: new Date("2016/8/25").getDate(),
+					endDate: new Date("2016/8/31").getDate(),
+					title: 'Maratón de Ciudad de México 2016',
+					city: 'Mexico D.F',
+					country: 'Mexico',
+					contactName: 'Marcela Chavez',
+					email: 'fmchaves@copaair.com',
 					url: null,
-					promoCode: 'D6798'
+					promoCode: 'C6616'
 				},
 				{
-					startDate: new Date("2016/7/28").getDate(),
+					startDate: new Date("2016/8/27").getDate(),
+					endDate: new Date("2016/8/28").getDate(),
+					title: 'WEBCON PANAMÁ',
+					city: 'Panamá',
+					country: 'Panamá',
+					contactName: 'Lilia Navarro',
+					email: 'webconpanama@gmail.com',
+					url: 'www.webconpanama.com',
+					promoCode: 'D6931'
+				},
+				{
+					startDate: new Date("2016/8/1").getDate(),
 					endDate: new Date("2016/8/3").getDate(),
-					title: 'Media maratón de Bogotá 2016',
-					city: 'Bogotá',
-					alias: 'Bogota',
-					country: 'Colombia',
-					contactName: 'Marcela Chaves',
-					phone: '6383327',
-					email: 'pmchaves@copaair.com',
+					title: 'Congreso Americano (FIA AMERICAS)',
+					city: 'Asunción',
+					country: 'Paraguay',
+					contactName: 'Dante Pescetto',
+					email: 'asaipanama@hotmail.com',
 					url: null,
-					promoCode: 'C6621'
-				}
-			]
+					promoCode: 'C6964'
+				},
+				{
+					startDate: new Date("2016/8/16").getDate(),
+					endDate: new Date("2016/8/19").getDate(),
+					title: 'Congreso AMLAR 2016',
+					city: null,
+					country: null,
+					contactName: 'Sandra Corletto',
+					email: 'scorletto@gmail.com',
+					url: 'http://www.amlar2016.com',
+					promoCode: 'D6907'
+				},
+				{
+					startDate: new Date("2016/8/10").getDate(),
+					endDate: new Date("2016/8/14").getDate(),
+					title: 'XX Encuentro Folklorico Panameño en USA "Remembranzas de Mi Patria',
+					city: null,
+					country: null,
+					contactName: 'Ossyris Paez Bury',
+					email: 'ossyta21@gmail.com',
+					url: 'http://www.facebook.com/airespana',
+					promoCode: null
+				},
+			];
 
 		}
 	]);
