@@ -9,7 +9,15 @@
 	/** Email **/
 	ul > li > address > p > a { font-size: 1em !important; }
 
-	@media(min-width: 1025px) and (max-width: 2000px){
+	.offices-responsive .ul-table.ul-body {
+	    border-bottom: 1px dotted #888;
+	    padding: 16px 0;
+	    margin: 0;
+	}
+
+	.offices-responsive .ul-table > li {list-style:none;}
+
+	@media(min-width: 1030px) and (max-width: 2000px){
 		/* Fecha */
 		.offices-responsive .ul-table li { width: 10% !important;}
 
@@ -26,7 +34,7 @@
 		.offices-responsive .ul-table li + li + li + li + li { width: 16% !important;}
 	}
 
-	@media(min-width: 1025px){
+	@media(min-width: 1030px){
 
 		.offices-responsive .ul-table.ul-head {
 		    display: block;
@@ -43,14 +51,16 @@
 		.offices-responsive .ul-table li + li + li + li + li > span { padding-left:20px; }
 	}
 
-	.offices-responsive .ul-table.ul-body {
-	    border-bottom: 1px dotted #888;
-	    padding: 16px 0;
-	    margin: 0;
-	}
-
-	.offices-responsive .ul-table > li {list-style:none;}
-
-	[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
+
+/* ORIENTACION PORTRAIT para mobile
+*
+* 1. La imagen principal debería ocupar todo el ancho de la pantalla  y podria ser un poco mas ancha
+* 2. El logo de cumbre iberoamericana no tiene margen izquierda y deberia ser un poco mas pequeño de la imagen principal
+*
+* ORIENTACION LANDSCACPE PARA TABLET
+*
+* 1. Sobra demaciado espacio a la derecha. Deberia conservar el diseño de tabla para resoluciones inferiores a 1030px
+***/
