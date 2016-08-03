@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>News - Copa Airlines</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+	<script src="js/newsApp.js"></script>
+</head>
+<body ng-app="newsApp">
+	<h2>News</h2>
+
+		<div class="contenedor" ng-controller="newsController">
+			<div class="noticia" ng-repeat="new in news">
+				<h3>{{ new.title }}</h3>
+
+				<hr>
+				<p class="date">{{ new.date }}</p>
+				<p>{{ new.description }}</p>
+
+				<a ng-href="{{new.url}}">VER MÁS</a>
+
+				<img ng-src="{{ new.img }}">
+			</div>
+		</div>
+	
+	
+</body>
+</html>
