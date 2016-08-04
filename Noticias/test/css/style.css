@@ -5,6 +5,14 @@ body { width:1024px; margin:0 auto;  }
 	flex-wrap: wrap;
 }
 
-.noticia {flex:1;}
+.noticia {
+	flex:1;
+	padding:20px; 
+}
+
+.light { background-color: #efefef; }
+.darken { background-color: #dcdbd9; }
+
+div.contenedor > div.noticia > img { margin-top:20px; }
 
 .noticia img{ width:300px; margin:0 auto; }

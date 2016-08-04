@@ -9,18 +9,22 @@
 	<h2>News</h2>
 
 		<div class="contenedor" ng-controller="newsController">
-			<div class="noticia" ng-repeat="new in news">
+			<div 
+				ng-class="{'noticia':true, 'light': $odd, 'darken': $even}" 
+				ng-repeat="new in news | orderBy: 'date'"
+			>
 				<h3>{{ new.title }}</h3>
 
 				<hr>
-				<p class="date">{{ new.date }}</p>
+				<p class="date">{{ new.dateEvent | date: 'MMM d, y' }}</p>
 				<p>{{ new.description }}</p>
 
 				<a ng-href="{{new.url}}">VER MÁS</a>
 				<img ng-src="{{ new.img }}">
 			</div>
 		</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-locale-es-co.min.js"></script>
 	<script src="js/newsApp.js"></script>
 	
 </body>
