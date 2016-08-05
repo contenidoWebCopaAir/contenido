@@ -1,0 +1,10 @@
+body { width:1024px; margin:0 auto;  }
+
+.contenedor {
+	display:flex;
+	flex-wrap: wrap;
+}
+
+.noticia {flex:1;}
+
+.noticia img{ width:300px; margin:0 auto; }
