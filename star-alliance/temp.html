@@ -1,40 +1,5 @@
-<div class="container">
-
-	<div class="content_centered">
-		<div class="row">
-			<div class="span12">
-				<h2>Star Alliance</h2>
-				<p>Star Alliance é a rede global de companhias aéreas mais importante em termos de voos diários, destinos e países e número de companhias aéreas membros da aliança. Foi fundada em 1997 como a primeira aliança verdadeiramente global de companhias aéreas que oferece a seus clientes do mundo todo muitos destinos e uma excelente experiencia de viagem.
-
-				Se você é membro de um dos programas de passageiro frequente de qualquer companhia membro da Star Alliance, poderá acumular e resgatar milhas em todas as companhias aéreas membro da rede, e as milhas acumuladas servirão para conseguir status e desfrutar de todos os benefícios adicionais em qualquer parte do mundo onde exista uma companhia pertencente à aliança.
-
-				Para mais informação sobre benefícios e serviços disponíveis al viajar agora com Copa Airlines e qualquer companhia aérea membro da Star Alliance, visite:
-				</p>
-
-				<p><br></p>
-			</div>
-		</div>
-		
-		<div class="row" ng-controller="starAllianceController">
-			<div class="journal-content-article" ng-repeat="item in items">
-				<div ng-class="{'row-fluid': true, 'type_banner2': $odd, 'type_banner3': $even, 'banner_template': true, 'back-gray': true}"> 
-					<div class="content_wrap">
-						<div class="side1">
-							<img alt="{{ item.alt }}" title="{{ item.alt }}" ng-src="{{ item.imgSrc }}">
-						</div>
-						<div class="side2">
-							<h2>{{ item.title }}</h2>
-							<p>{{ item.description }}</p>
-							<p></p> 
-							<a ng-href="{{ item.url }}" class="link_more">VER MAIS</a> 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<h2>Membros Star Alliance</h2>
-
+	<!-- 	<h2>Star Alliance members</h2>
+	<div class="row">
 		<ul class="star-alliance-members">
 			<li>
 				<a href="http://www.adria.si/" id="external" rel="nofollow">
@@ -52,9 +17,6 @@
 				</a>
 			</li>
 		</ul>
-
-
-
 		<ul class="star-alliance-members">
 			<li>
 				<a href="http://www.airindia.com/" id="external2" rel="nofollow">
@@ -72,10 +34,6 @@
 				</a>
 			</li>
 		</ul>
-		
-	
-
-
 		<ul class="star-alliance-members">
 			<li>
 				<a href="http://www.austrian.com/" id="external5" rel="nofollow">
@@ -93,9 +51,6 @@
 				</a>
 			</li>
 		</ul>
-				
-	
-
 		<ul class="star-alliance-members">
 			<li>
 				<a href="http://www.croatiaairlines.com/" id="external8" rel="nofollow">
@@ -113,9 +68,6 @@
 				</a>
 			</li>
 		</ul>
-		
-
-
 		<ul class="star-alliance-members">
 			<li>
 				<a href="http://www.lot.com/" id="external11" rel="nofollow">
@@ -133,9 +85,6 @@
 				</a>
 			</li>
 		</ul>
-				
-	
-
 		<ul class="star-alliance-members">
 			<li>
 				<a href="http://www.singaporeair.com/" id="external14" rel="nofollow">
@@ -153,9 +102,6 @@
 				</a>
 			</li>
 		</ul>
-				
-	
-
 		<ul class="star-alliance-members">
 			<li>
 				<a href="http://www.thaiairways.com/" id="external17" rel="nofollow">
@@ -173,8 +119,6 @@
 				</a>
 			</li>
 		</ul>
-				
-	
 		<ul class="star-alliance-members">
 			<li>
 				<a href="http://es.aegeanair.com/" id="external20" rel="nofollow">
@@ -191,10 +135,7 @@
 					<img alt="" src="/documents/20182/166632/star-alliance-shenzhen.png" />
 				</a>
 			</li>
-		</ul>
-				
-		
-				
+		</ul>	
 		<ul class="star-alliance-members">
 			<li>
 				<a href="http://www.airnewzealand.com/" id="external23" rel="nofollow">
@@ -212,47 +153,4 @@
 				</a>
 			</li>
 		</ul>
-	</div>
-</div>
-
-<script>
-	angular.module('copa').controller('starAllianceController', ['$scope', function($scope){
-		$scope.items = [
-			{
-				imgSrc: '/documents/20182/157353/mostrador_450.jpg',
-				alt: 'Kiosks',
-				url: 'http://www.staralliance.com/pt/earn-and-redeem',
-				title: 'Mais e mais milhas',
-				description: 'Ganhe e resgate milhas com qualquer companhia aérea que seja membro da rede Star Alliance.'
-			},
-			{
-				imgSrc: '/documents/20182/157353/img-checkin-web-450.jpg',
-				alt: 'Web Check-in',
-				url: 'http://www.staralliance.com/pt/lounges',
-				title: 'Salones VIP',
-				description: 'Relaxe e trabalhe em um ambiente de sala de estar de classe mundial antes, entre ou após seus voos.'
-			},
-			{
-				imgSrc: '/documents/20182/157353/img-star-alliance-gold.jpg',
-				alt: 'Star Alliance Gold',
-				url: 'http://www.staralliance.com/pt/gold-status',
-				title: 'Star Alliance Gold',
-				description: 'Na obtenção deste status, você recebe um reconhecimento exclusivo e todos os benefícios em sua viagem.'
-			}, 
-			{
-				imgSrc: '/documents/20182/157353/gold-track.jpg',
-				alt: 'Gold Trak',
-				url: 'http://www.staralliance.com/pt/gold-track',
-				title: 'Gold Track',
-				description: 'Aceleramos sua passagem pelos controles de segurança do aeroporto em pontos onde visualizar o logo Gold Track.'
-			},
-			{
-				imgSrc: '/documents/20182/157353/hubs-hero',
-				alt: 'Book and Fly',
-				url: 'https://bookandfly.staralliance.com/',
-				title: 'Book and Fly',
-				description: 'Explore o mundo com a Copa Airlines e as companhias aéreas da Star Alliance. Reserve o seu itinerário com a ferramenta Star Alliance Book e Fly (disponível apenas em Inglês).'
-			}
-		];
-	}]);
-</script>
+	</div> -->

@@ -13,67 +13,28 @@
 				<p><br></p>
 			</div>
 		</div>
-		<div class="row">
-			<ul class="items">
-				<li>
-					<img alt="Kioskos" title="Kioskos" src="/documents/20182/157353/mostrador_450.jpg" />
-					<h2>
-						<a 
-							href="http://www.staralliance.com/es/earn-and-redeem" 
-							rel="nofollow" 
-							target="_blanck"
-						>
-							Más y más millas
-						</a>
-					</h2>
-					<p>Acumule y canjee millas aéreas con cualquier aerolínea miembro de la red Star Alliance.</p>
-				</li>
-				<li>
-					<img alt="web Checkin" title="web Checkin" src="/documents/20182/157353/img-checkin-web-450.jpg" />
-					<h2>
-						<a 
-							href="http://www.staralliance.com/es/lounges/" 
-							rel="nofollow" 
-							target="_blanck"
-						>
-							Salones VIP
-						</a>
-					</h2>
-					<p>Relájese y trabaje en un ambiente de salón de primera clase antes, entre o después de sus vuelos.</p>
-				</li>
-				<li>
-					<img alt="star alliance gold" title="star alliance gold" src="/documents/20182/157353/img-star-alliance-gold.jpg" />
-					<h2>
-						<a 
-							href="http://www.staralliance.com/es/gold-status" 
-							rel="nofollow" 
-							target="_blanck"
-						>
-							Star Alliance Gold
-						</a>
-					</h2>
-					<p>Al obtener este status, reciba un reconocimiento único y todos los beneficios cuando viaja.</p>
-				</li>
-				<li>
-					<img alt="Gold track" title="Gold track" src="/documents/20182/157353/gold-track.jpg" />
-					<h2>
-						<a 
-							href="http://www.staralliance.com/es/gold-track" 
-							rel="nofollow" 
-							target="_blanck"
-						>
-							Gold Track
-						</a>
-					</h2>
-					<p>Aceleramos su paso por la seguridad del aeropuerto en los puntos donde vea nuestro logo de 
-					<a href="http://www.staralliance.com/es/gold-track" rel="nofollow" target="_blanck">Gold Track</a>.</p>
-				</li>
 		
-			</ul>
+		<div class="row" ng-controller="starAllianceController">
+			<div class="journal-content-article" ng-repeat="item in items">
+				<div ng-class="{'row-fluid': true, 'type_banner2': $odd, 'type_banner3': $even, 'banner_template': true, 'back-gray': true}"> 
+					<div class="content_wrap">
+						<div class="side1">
+							<img alt="{{ item.alt }}" title="{{ item.alt }}" ng-src="{{ item.imgSrc }}">
+						</div>
+						<div class="side2">
+							<h2>{{ item.title }}</h2>
+							<p>{{ item.description }}</p>
+							<p></p> 
+							<a ng-href="{{ item.url }}" class="link_more">VER MÁS</a> 
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+	
 
-		<h2 style="text-align:center">Miembros Star Alliance</h2>
-
+		<h2>Miembros Star Alliance</h2>
+		<div class="row">
 		<ul class="star-alliance-members">
 			<li>
 				<a href="http://www.adria.si/" id="external" rel="nofollow">
@@ -93,7 +54,7 @@
 		</ul>
 
 
-
+		
 		<ul class="star-alliance-members">
 			<li>
 				<a href="http://www.airindia.com/" id="external2" rel="nofollow">
@@ -251,5 +212,50 @@
 				</a>
 			</li>
 		</ul>
+		
+			
+		</div>
 	</div>
 </div>
+
+<script>
+	angular.module('copa').controller('starAllianceController', ['$scope', function($scope){
+		$scope.items = [
+			{
+				imgSrc: '/documents/20182/157353/mostrador_450.jpg',
+				alt: 'Kiosks',
+				url: 'http://www.staralliance.com/es/earn-and-redeem',
+				title: 'Más y más millas',
+				description: 'Acumule y canjee millas aéreas con cualquier aerolínea miembro de la red Star Alliance.'
+			},
+			{
+				imgSrc: '/documents/20182/157353/img-checkin-web-450.jpg',
+				alt: 'Web Check-in',
+				url: 'http://www.staralliance.com/es/lounges',
+				title: 'Salones VIP',
+				description: 'Relájese y trabaje en un ambiente de salón de primera clase antes, entre o después de sus vuelos.'
+			},
+			{
+				imgSrc: '/documents/20182/157353/img-star-alliance-gold.jpg',
+				alt: 'Star Alliance Gold',
+				url: 'http://www.staralliance.com/es/gold-status',
+				title: 'Star Alliance Gold',
+				description: 'Al obtener este status, reciba un reconocimiento único y todos los beneficios cuando viaja.'
+			}, 
+			{
+				imgSrc: '/documents/20182/157353/gold-track.jpg',
+				alt: 'Gold Trak',
+				url: 'http://www.staralliance.com/es/gold-track',
+				title: 'Gold Track',
+				description: 'Aceleramos su paso por la seguridad del aeropuerto en los puntos donde vea nuestro logo de Gold Track.'
+			},
+			{
+				imgSrc: '/documents/20182/157353/hubs-hero',
+				alt: 'Book and Fly',
+				url: 'https://bookandfly.staralliance.com/',
+				title: 'Book and Fly',
+				description: 'Explore el mundo con Copa Airlines y las aerolineas de Star Alliance. Reserve su itinerario con la herramienta Book and Fly de Star Alliance (disponible en Inglés unicamente).'
+			}
+		];
+	}]);
+</script>
