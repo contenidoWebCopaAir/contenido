@@ -10,7 +10,7 @@
 
 	<div class="offices-responsive content_centered" ng-controller="EventsCtrl">
 		<div class="row">
-			<div class="span4">
+			<div class="span2">
 				<h4>Evento destacado</h4>
 			</div>
 			<div class="span4">
@@ -18,11 +18,11 @@
 					<img src="/documents/20182/148499/logo-cumbre-iberoamericana" alt="Cumbre iberoamericana">
 				</p>
 			</div>
-			<div class="span4">
+			<div class="span6">
 				<address>
 					<p><b>Cartagena, Colombia</b><br>
-					Maria Crostina Pimiento Barrera<br>
-					<a href="mailto:Maria.Pimiento@cancilleria.gov.co">Maria.Pimiento@cancilleria.gov.co</a><br>
+					Maria Cristina Pimiento Barrera<br>
+					<a href="mailto:coordinacionlogistica@cumbreiberoamericana2016.gov.co">coordinacionlogistica@cumbreiberoamericana2016.gov.co</a><br>
 					<b>Código promocional: </b> D7040</p>
 				</address>
 			</div>
@@ -59,25 +59,25 @@
 					ng-repeat="e in events | orderBy: 'startDate' | filter: query"
 				>
 					<li>
-						<h4 ngCloak>{{e.startDate}} - {{e.endDate}}</h4>
+						<h4 ng-cloak>{{e.startDate}} - {{e.endDate}}</h4>
 					</li>
 					<li>
-						<h4 ngCloak>{{e.title}}</h4>
+						<h4 ng-cloak>{{e.title}}</h4>
 					</li>
 					<li>
-						<h4 ngCloak ng-if="e.country && e.city">{{e.country}}, {{e.city}}</h4>
+						<h4 ng-cloak ng-if="e.country && e.city">{{e.country}}, {{e.city}}</h4>
 					</li>
 					<li>
 					<address>
-					<p><b ng-if="e.contactName" ngCloak>{{e.contactName}}</b><br ng-if="e.contactName" />
-					<a href="mailto:{{e.email}}" ng-if="e.email" ngCloak>{{e.email | lowercase}} </a><br ng-if="e.email" />
+					<p><b ng-if="e.contactName" ng-cloak>{{e.contactName}}</b><br ng-if="e.contactName" />
+					<a href="mailto:{{e.email}}" ng-if="e.email" ng-cloak>{{e.email | lowercase}} </a><br ng-if="e.email" />
 					<a href="{{e.url}}" ng-if="e.url" target="_blank">Web</a></p>
 					</address>
 					</li>
 					<li ng-if="e.promoCode">
-					<p class="visible-phone visible-tablet" ngCloak>Código promocional {{e.promoCode}}</p>
+					<p class="visible-phone visible-tablet" ng-cloak>Código promocional {{e.promoCode}}</p>
 
-					<p class="visible-desktop" ngCloak>{{e.promoCode}}</p>
+					<p class="visible-desktop" ng-cloak>{{e.promoCode}}</p>
 					</li>
 				</ul>
 			</div>
@@ -107,8 +107,8 @@
 					startDate: new Date("2016/8/3").getDate(),
 					endDate: new Date("2016/8/5").getDate(),
 					title: 'Conferencia de Microfinanzas',
-					city: null,
-					country: null,
+					city: 'Manangua',
+					country: 'Nicaragua',
 					contactName: 'Clarisa Baltonado',
 					
 					email: 'administracion@asomif.org',
@@ -254,8 +254,8 @@
 					startDate: new Date("2016/8/16").getDate(),
 					endDate: new Date("2016/8/19").getDate(),
 					title: 'Congreso AMLAR 2016',
-					city: null,
-					country: null,
+					city: 'San Pedro de Sula',
+					country: 'Honduras',
 					contactName: 'Sandra Corletto',
 					email: 'scorletto@gmail.com',
 					url: 'http://www.amlar2016.com',
@@ -265,12 +265,12 @@
 					startDate: new Date("2016/8/10").getDate(),
 					endDate: new Date("2016/8/14").getDate(),
 					title: 'XX Encuentro Folklorico Panameño en USA "Remembranzas de Mi Patria',
-					city: null,
-					country: null,
+					city: 'Miami',
+					country: 'USA',
 					contactName: 'Ossyris Paez Bury',
 					email: 'ossyta21@gmail.com',
 					url: 'http://www.facebook.com/airespana',
-					promoCode: null
+					promoCode: 'B6887'
 				},
 			];
 

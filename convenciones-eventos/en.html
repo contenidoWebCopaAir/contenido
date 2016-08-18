@@ -10,7 +10,7 @@
 
 	<div class="offices-responsive content_centered" ng-controller="EventsCtrl">
 		<div class="row">
-			<div class="span4">
+			<div class="span2">
 				<h4>Event outstanding</h4>
 			</div>
 			<div class="span4">
@@ -18,11 +18,11 @@
 					<img src="/documents/20182/148499/logo-cumbre-iberoamericana" alt="Cumbre iberoamericana">
 				</p>
 			</div>
-			<div class="span4">
+			<div class="span6">
 				<address>
 					<p><b>Cartagena, Colombia</b><br>
-					Maria Crostina Pimiento Barrera<br>
-					<a href="mailto:Maria.Pimiento@cancilleria.gov.co">Maria.Pimiento@cancilleria.gov.co</a><br>
+				Maria Cristina Pimiento Barrera<br>
+					<a href="mailto:coordinacionlogistica@cumbreiberoamericana2016.gov.co">coordinacionlogistica@cumbreiberoamericana2016.gov.co</a><br>
 					<b>Promo Code: </b> D7040</p>
 				</address>
 			</div>
@@ -90,7 +90,7 @@
 		function ($scope) {
 
 			$scope.query = '';
-			$scope.events = [
+				$scope.events = [
 			
 				{
 					startDate: new Date("2016/8/1").getDate(),
@@ -107,8 +107,8 @@
 					startDate: new Date("2016/8/3").getDate(),
 					endDate: new Date("2016/8/5").getDate(),
 					title: 'Conferencia de Microfinanzas',
-					city: null,
-					country: null,
+					city: 'Managua',
+					country: 'Nicaragua',
 					contactName: 'Clarisa Baltonado',
 					
 					email: 'administracion@asomif.org',
@@ -254,8 +254,8 @@
 					startDate: new Date("2016/8/16").getDate(),
 					endDate: new Date("2016/8/19").getDate(),
 					title: 'Congreso AMLAR 2016',
-					city: null,
-					country: null,
+					city: 'San Pedro de Sula',
+					country: 'Honduras',
 					contactName: 'Sandra Corletto',
 					email: 'scorletto@gmail.com',
 					url: 'http://www.amlar2016.com',
@@ -265,12 +265,12 @@
 					startDate: new Date("2016/8/10").getDate(),
 					endDate: new Date("2016/8/14").getDate(),
 					title: 'XX Encuentro Folklorico Panameño en USA "Remembranzas de Mi Patria',
-					city: null,
-					country: null,
+					city: 'Miami',
+					country: 'USA',
 					contactName: 'Ossyris Paez Bury',
 					email: 'ossyta21@gmail.com',
 					url: 'http://www.facebook.com/airespana',
-					promoCode: null
+					promoCode: 'B6887'
 				},
 			];
 
