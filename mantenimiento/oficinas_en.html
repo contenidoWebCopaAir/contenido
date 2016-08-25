@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="aui ltr yui3-js-enabled webkit ltr js chrome chrome48 chrome48-0 win" dir="ltr" lang="en" ng-app="Offices">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style type="text/css">
+  @charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}
+  </style>
+  <title>Thank you for visiting copa.com</title>
+  <meta content="initial-scale=1.0, width=device-width" name="viewport">
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  <link rel="stylesheet" href="files/copa.css">
+  <link rel="stylesheet" type="text/css" href="css/officesStyle.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link href="files/main.css" rel="stylesheet" type="text/css">
+  <link href="files/custom.css" rel="stylesheet" type="text/css">
+  <style> #content { margin: 10px 0 25px; } </style>
+  <link href="files/template.css" rel="stylesheet">
+  <link href="files/front-styles.css" rel="stylesheet">
+  <style>
+    @media screen and (min-width: 1050px) {
+        #content {
+            margin-top: 82px;
+        }
+        .div-footer {
+             height: auto; 
+        }
+        .aui body {
+            margin-bottom: 62px;
+        }
+    }
+  </style>
+    
+</head>
+<body class="yui3-skin-sam controls-hidden guest-site signed-in public-page site dockbar-split copa ng-scope dockbar-ready has-alerts" id="6">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N9SD88"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N9SD88');</script>
+<!-- End Google Tag Manager -->
+<div id="wrap">
+    <div class="foo" id="content">
+      <div id="5" class="yui3-dd-proxy" style="position: absolute; display: none; z-index: 999; top: -999px; left: -999px;"></div>
+          <div id="5" class="yui3-dd-shim" style="top: 0px; left: 0px; position: absolute; z-index: 99999; overflow: hidden; display: none; height: 5px; width: 5px; background-color: red;">
+              <div id="column-1_shim" style="height: 1814px; width: 1024px; opacity: 0.5; z-index: 1; overflow: hidden; top: -900px; left: -900px; position: absolute; background-color: yellow;"></div>
+              <div id="9_shim" style="height: 63px; width: 505px; opacity: 0.5; z-index: 1; overflow: hidden; top: -900px; left: -900px; position: absolute; background-color: yellow;"></div>
+          </div>
+          <div class="html-template" id="layoutPrototypeTemplate">
+              <ul class="unstyled">
+                  <li> <a href="javascript:;"> <label> <input name="template" type="radio" value="20316"> Blog </label> </a> </li>
+                  <li> <a href="javascript:;"> <label> <input name="template" type="radio" value="20328"> Content Display Page </label> </a> </li>
+                  <li> <a href="javascript:;"> <label> <input name="template" type="radio" value="20338"> Wiki </label> </a> </li>
+              </ul>
+          </div>
+          </div>
+          <div class="top row-fluid">
+          <div class="span5"><a href="./msg_mantenimiento_en.html"><img alt="Logo Copa Airlines" class="lg" height="65" src="./files/layout_set_logo.png" width="330"></a></div>
+        </div>
+    </div>
+        
+        <div class="container" ng-controller="officesCtrl">
+            <div class="offices-responsive content_centered">
+
+                <div class="row">
+                    <div class="span12 title_legal common-styles type_title1">
+                        <h2>Reservation Center</h2>
+                        <p>An administrative fee may apply if you purchase from our Reservation Centers.</p>
+                    </div>
+                </div>
+
+                <div class="row main-filter">
+                    
+                    <div class="form-inline">
+                        <p class="span3"><b>Show Sales Offices: </b></p>
+                        <select class="span8" name="selectedCountry" id="selectedCountry" ng-model="selectedCountry" ng-cloak>
+                            <option value="">All Countries</option>
+                            <option ng-repeat="country in countriesNameEn" value="{{country}}" ng-cloak>{{country}}</option>
+                        </select>
+                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="span12">
+                        <ul class="ul-head ul-table">
+                            <li>Country</li>
+                            <li>City</li>
+                            <li>Phone</li>
+                        </ul>
+                        
+                        <div 
+                            class="countries" 
+                            ng-repeat="country in countriesEn | filter: selectedCountry | orderBy: country.countryName"
+                        >
+                            <div ng-repeat="city in country.cities">
+                                <ul class="ul-body ul-table" ng-if="$index === 0"> 
+                                    <li><b ng-cloak>{{country.countryName}}</b></li>
+                                    <li ng-cloak>{{city.name}}</li>
+                                    <li ng-cloak>{{city.phone}}</li>
+                                </ul>
+                                <ul class="ul-body ul-table" ng-if="$index > 0">
+                                    <li>&nbsp;</li>
+                                    <li ng-cloak>{{city.name}}</li>
+                                    <li ng-cloak>{{city.phone}}</li>
+                                </ul>
+                            </div> 
+                        </div>
+                        
+                    </div>
+                </div>         
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="div-footer" id="footer">
+        <footer role="container">
+      <div class="row-fluid">
+         <div class="span12">
+            <div class="row-fluid">
+               <div class="span8">
+                  <div class="span12">
+                     <p>Copyright © 2016 Copa Airlines, Incorporated. All rights reserved.</p>
+                     <br>
+                  </div>
+               </div>
+               <div>
+                <a class="logo-salliance right" href="http://www.staralliance.com/es/" id="footer_id_logo_salliance" target="_blank"> <span class="offscreen" aria-hidden="true">Un miembro de Star Alliance</span> <img src="./files/logo-star-alliance.png" alt="Un miembro de Star Alliance"> </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+    <script src="js/controllers/officesCtrl.js"></script>
+</body>
+</html>
