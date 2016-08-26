@@ -12,9 +12,7 @@
   <link rel="stylesheet" href="files/copa.css">
   <link class="lfr-css-file" href="files/aui.css" rel="stylesheet" type="text/css">
   <link href="files/main.css" rel="stylesheet" type="text/css">
-  <link href="files/custom.css" rel="stylesheet" type="text/css">
-  <link class="lfr-css-file" href="files/main(4).css" rel="stylesheet" type="text/css">
-  <link class="lfr-css-file" href="_CopaAirlines.css" rel="stylesheet" type="text/css">
+  <link href="files/custom.css" rel="stylesheet" type="text/css">  
   <style> #content { margin: 10px 0 25px; } </style>
   <link href="files/template.css" rel="stylesheet">
   <link href="files/front-styles.css" rel="stylesheet">
@@ -31,6 +29,11 @@
         }
     }
   </style>
+  <script>
+    // Picture element HTML5 shiv
+    document.createElement( "picture" );
+  </script>
+  <script src="js/picturefill.min.js"></script>
 </head>
 <body class="yui3-skin-sam controls-hidden guest-site signed-in public-page site dockbar-split copa ng-scope dockbar-ready has-alerts" id="6">
 <!-- Google Tag Manager -->
@@ -65,8 +68,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <!--START PORTLET 779B-->
 
     <div class="banner_contactenos back-gray">
-        <img alt="image" src="img_mantenimiento.jpg">
-        <div class="content_area" style="background-color: #414141">
+    
+            <img src="img/img_mantenimiento_original.jpg" alt="Maintenance">
+            
+            <div class="content_area" style="background-color: #414141">
               <div class="select_language">
                 <a href="msj_mantenimiento_es.html">Español</a> | 
                 <a href="msj_mantenimiento_pt.html">Português</a>
