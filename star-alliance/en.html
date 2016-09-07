@@ -30,7 +30,7 @@
 						<h2 ng-cloak>{{ item.title }}</h2>
 						<p ng-cloak>{{ item.description }}</p>
 						<p></p> 
-						<a ng-href="{{ item.url }}" class="link_more">SEE MORE</a> 
+						<a ng-href="{{ item.url }}" class="link_more" target="_blank" rel="nofollow">SEE MORE</a> 
 					</div>
 				</div>
 			</div>
@@ -202,8 +202,8 @@
 	angular.module('copa').controller('starAllianceController', ['$scope', function($scope){
 		$scope.items = [
 			{
-				imgSrc: '/documents/20182/157353/mostrador_450.jpg',
-				alt: 'Kiosks',
+				imgSrc: '/documents/20182/157353/mas-y-mas-millas.jpg',
+				alt: 'Empennages with Copa Airlines and Star Alliance logo',
 				url: 'http://www.staralliance.com/en/earn-and-redeem',
 				title: 'More and more miles',
 				description: 'Earn and redeem air miles with any member airlines within the Star Alliance network.'
@@ -217,14 +217,14 @@
 			},
 			{
 				imgSrc: '/documents/20182/157353/img-star-alliance-gold.jpg',
-				alt: 'Star Alliance Gold',
+				alt: 'Star Alliance Gold logo',
 				url: 'http://www.staralliance.com/en/gold-status',
 				title: 'Star Alliance Gold',
 				description: 'Upon achieving this status, you receive unique recognition and full benefits when traveling.'
 			}, 
 			{
 				imgSrc: '/documents/20182/157353/gold-track.jpg',
-				alt: 'Gold Trak',
+				alt: 'Speed through security',
 				url: 'http://www.staralliance.com/en/gold-track',
 				title: 'Gold Track',
 				description: 'Wherever you see our Gold Track logo, we’ll speed you through the airport security.'

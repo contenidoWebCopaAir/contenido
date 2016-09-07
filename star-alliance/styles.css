@@ -40,6 +40,10 @@ ul.items > li{
 
  ul.star-alliance-members > li { margin-right: 10px }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 @media (orientation: portrait){
 	
 	ul.items > li { 

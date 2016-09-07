@@ -23,10 +23,10 @@
 							<img alt="{{ item.alt }}" title="{{ item.alt }}" ng-src="{{ item.imgSrc }}">
 						</div>
 						<div class="side2">
-							<h2>{{ item.title }}</h2>
-							<p>{{ item.description }}</p>
+							<h2 ng-cloak>{{ item.title }}</h2>
+							<p ng-cloak>{{ item.description }}</p>
 							<p></p> 
-							<a ng-href="{{ item.url }}" class="link_more">VER MAIS</a> 
+							<a ng-href="{{ item.url }}" class="link_more" target="_blank" rel="nofollow">VER MAIS</a> 
 						</div>
 					</div>
 				</div>
@@ -217,8 +217,8 @@
 	angular.module('copa').controller('starAllianceController', ['$scope', function($scope){
 		$scope.items = [
 			{
-				imgSrc: '/documents/20182/157353/mostrador_450.jpg',
-				alt: 'Kiosks',
+				imgSrc: '/documents/20182/157353/mas-y-mas-millas.jpg',
+				alt: 'Empenagems com o logotipo da Copa Airlines e da Star Alliance',
 				url: 'http://www.staralliance.com/pt/earn-and-redeem',
 				title: 'Mais e mais milhas',
 				description: 'Ganhe e resgate milhas com qualquer companhia aérea que seja membro da rede Star Alliance.'
@@ -232,14 +232,14 @@
 			},
 			{
 				imgSrc: '/documents/20182/157353/img-star-alliance-gold.jpg',
-				alt: 'Star Alliance Gold',
+				alt: 'Logotipo Star Alliance Gold',
 				url: 'http://www.staralliance.com/pt/gold-status',
 				title: 'Star Alliance Gold',
 				description: 'Na obtenção deste status, você recebe um reconhecimento exclusivo e todos os benefícios em sua viagem.'
 			}, 
 			{
 				imgSrc: '/documents/20182/157353/gold-track.jpg',
-				alt: 'Gold Trak',
+				alt: 'Passe mais depressa pelo controlo de segurança',
 				url: 'http://www.staralliance.com/pt/gold-track',
 				title: 'Gold Track',
 				description: 'Aceleramos sua passagem pelos controles de segurança do aeroporto em pontos onde visualizar o logo Gold Track.'
