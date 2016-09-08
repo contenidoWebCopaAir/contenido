@@ -231,7 +231,9 @@
   box-sizing: border-box; }
 
 .main-filter select {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  width:60%; 
+}
 
 .web-content-copa ul li,
 .web-content-copa ol li {

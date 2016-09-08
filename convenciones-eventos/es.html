@@ -65,7 +65,7 @@
 						<h4 ng-cloak>{{e.title}}</h4>
 					</li>
 					<li>
-						<h4 ng-cloak ng-if="e.country && e.city">{{e.country}}, {{e.city}}</h4>
+						<h4 ng-cloak ng-if="e.country && e.city">{{e.country}},<br> {{e.city}}</h4>
 					</li>
 					<li>
 					<address>
@@ -93,184 +93,191 @@
 			$scope.events = [
 			
 				{
-					startDate: new Date("2016/8/1").getDate(),
-					endDate: new Date("2016/8/7").getDate(),
-					title: 'August Meeting',
-					city: 'Mexico DF',
-					country: 'Mexico',
-					contactName: 'Antonio Vega',
-					email: 'antoniovegamat@gmail.com',
-					url: 'http://www.ifmsa.org',
-					promoCode: 'D6898'
-				},
-				{
-					startDate: new Date("2016/8/3").getDate(),
-					endDate: new Date("2016/8/5").getDate(),
-					title: 'Conferencia de Microfinanzas',
-					city: 'Manangua',
-					country: 'Nicaragua',
-					contactName: 'Clarisa Baltonado',
-					
-					email: 'administracion@asomif.org',
+					startDate: new Date("2016/9/3").getDate(),
+					endDate: new Date("2016/9/4").getDate(),
+					title: 'Coffee Fest Panamá 2016',
+					city: 'Panamá',
+					country: 'Panamá',
+					contactName: 'Eliana Dorta',
+					email: 'coffeefestpty@gmail.com',
 					url: null,
-					promoCode: 'D6813'
+					promoCode: 'C7015'
 				},
 				{
-					startDate: new Date("2016/8/4").getDate(),
-					endDate: new Date("2016/8/6").getDate(),
-					title: '31 CONVENCION INTERNACIONAL DE ZAMORANOS',
-					city: 'Santa Cruz',
-					country: 'Bolivia',
-					contactName: 'Gonzalo Coimbra',
-					
-					email: 'gcoimbra@cotas.com.bo',
-					url: '//www.convencionzamoranos.com',
-					promoCode: 'C6508'
+					startDate: new Date("2016/9/5").getDate(),
+					endDate: new Date("2016/9/7").getDate(),
+					title: 'Asamblea General de la Federación Iberoamericana de Bolsas (FIAB)',
+					city: 'San Jose',
+					country: 'Costa Rica',
+					contactName: 'Ileana Rodríguez',
+					email: 'irodriguez@bolsacr.com',
+					url: null,
+					promoCode: 'B6846'
 				},
 				{
-					startDate: new Date("2016/8/8").getDate(),
-					endDate: new Date("2016/8/19").getDate(),
+					startDate: new Date("2016/9/6").getDate(),
+					endDate: new Date("2016/9/7").getDate(),
+					title: 'Semana de Colombia en México',
+					city: 'México DF',
+					country: 'México',
+					contactName: 'Marcela Uribe Arango',
+					email: 'muribe@procolombia.co',
+					url: null,
+					promoCode: 'C7093'
+				},
+				{
+					startDate: new Date("2016/9/6").getDate(),
+					endDate: new Date("2016/9/9").getDate(),
+					title: 'CILAC 2016 | Foro Abierto de Ciencias de América Latina y el Caribe',
+					city: 'Montevideo',
+					country: 'Uruguay',
+					contactName: 'Luis Carrizo',
+					email: 'l.carrizo@unesco.org',
+					url: 'www.forocilac.org',
+					promoCode: 'D7068'
+				},
+				{
+					startDate: new Date("2016/9/8").getDate(),
+					endDate: new Date("2016/9/10").getDate(),
+					title: '28 Expo Ferretera',
+					city: 'Guadalajara',
+					country: 'México',
+					contactName: 'Luz Soriano',
+					email: 'lsoriano@reedexpo.com',
+					url: 'www.reedexpo.com',
+					promoCode: 'C7072'
+				},
+				{
+					startDate: new Date("2016/9/7").getDate(),
+					endDate: new Date("2016/9/13").getDate(),
+					title: 'International Peace maratón and half Washington 2016',
+					city: 'Washington',
+					country: 'USA',
+					contactName: 'Marcela Chavez',
+					email: 'mchavez@copaair.com',
+					url: null,
+					promoCode: 'C6614'
+				},
+				{
+					startDate: new Date("2016/9/8").getDate(),
+					endDate: new Date("2016/9/11").getDate(),
+					title: 'Academia de Liderazgo Zrii',
+					city: 'Nassau',
+					country: 'Bahamas',
+					contactName: 'Carmelo Ochoa',
+					email: 'carmelo8a@hotmail.com',
+					url: 'www.myzriipro.com',
+					promoCode: 'D7034'
+				},
+				{
+					startDate: new Date("2016/9/11").getDate(),
+					endDate: new Date("2016/9/13").getDate(),
+					title: 'SPORT & FASHION SHOW OF THE AMERICA',
+					city: 'Panamá',
+					country: 'Panamá',
+					contactName: 'Arinda Bartley',
+					email: 'mariela.sonhouse@sisa.com',
+					url: null,
+					promoCode: 'C7058'
+				},
+				{
+					startDate: new Date("2016/9/12").getDate(),
+					endDate: new Date("2016/9/17").getDate(),
+					title: '31 Congreso Latinoamericano de Psicoanálisis 2016',
+					city: 'Cartagena',
+					country: 'Colombia',
+					contactName: 'Margarita Sierra',
+					email: 'msierra@swissandina.com.co',
+					url: null,
+					promoCode: 'D6506'
+				},
+				{
+					startDate: new Date("2016/9/18").getDate(),
+					endDate: new Date("2016/9/27").getDate(),
+					title: 'XVIII Congreso Internacional de Odontopediatria de Centroamerica y Panamá',
+					city: 'Tegucigalpa / San Pedro de Sula',
+					country: 'Honduras',
+					contactName: 'Claudia Boquin',
+					email: 'claudiaboquin@hotmail.com',
+					url: null,
+					promoCode: 'B6906'
+				},
+				{
+					startDate: new Date("2016/9/21").getDate(),
+					endDate: new Date("2016/9/27").getDate(),
 					title: '1er Congreso Latinoamericano Multidisciplinario “Preparación, Rehabilitación y Tratamiento de la Lesión del Deportista',
 					city: 'Panamá',
 					country: 'Panamá',
-					contactName: 'Adriana Giraldo Mejía',
-					
-					email: 'adriana.giraldo@contacticacounicaciones.com',
+					contactName: 'Ana Isabel Zapata Arroyave',
+					email: 'ana.zapata@contacticacomunicaciones.com',
 					url: null,
-					promoCode: 'D6775'
+					promoCode: 'D6828'
 				},
 				{
-					startDate: new Date("2016/8/9").getDate(),
-					endDate: new Date("2016/8/10").getDate(),
-					title: '18ª Reunión Latinoamericana de Logística',
+					startDate: new Date("2016/9/22").getDate(),
+					endDate: new Date("2016/9/24").getDate(),
+					title: 'VII Encuentro de Egresados del CATIE e IICA',
+					city: 'San Jose',
+					country: 'Costa Rica',
+					contactName: 'Solhanlle Bonilla Duarte',
+					email: 'sbonilla@catie.ac.cr',
+					url: 'http://www.catie.ac.cr',
+					promoCode: 'C7073'
+				},
+				{
+					startDate: new Date("2016/9/22").getDate(),
+					endDate: new Date("2016/9/23").getDate(),
+					title: 'Congreso Latinoamericano INMA 2016',
 					city: 'Panamá',
 					country: 'Panamá',
-					contactName: 'Cecilia Barbetti',
-					
-					email: 'cbarbetti@apla.com.ar',
-					url: '//www.apla.com.ar',
-					promoCode: 'C6910'
+					contactName: 'Ana Gutierrez',
+					email: 'ana.gutierrez@inma.org',
+					url: 'http://www.inma.org/Panamá',
+					promoCode: 'B7088'
 				},
 				{
-					startDate: new Date("2016/8/10").getDate(),
-					endDate: new Date("2016/8/20").getDate(),
-					title: 'II CONGRESO INTERNACIONAL DE MINERIA',
-					city: 'Managua',
-					country: 'Nicaragua',
-					contactName: 'Maria Jose Villavicencio',
-					email: 'mariajose.villavicencio@caminic.com',
-					url: '//www.congresointernacionaldemineria.com.ni/en/home/',
-					promoCode: 'C6695'
+					startDate: new Date("2016/9/23").getDate(),
+					endDate: new Date("2016/9/26").getDate(),
+					title: 'CONGRESO DE LA FEDERACION IBEROAMERICAAN DE ASOCIACIONES DE PSICOLOGIA',
+					city: 'Guatemala',
+					country: 'Guatemala',
+					contactName: 'Leslie Bonsiechel',
+					email: 'infor@congresofiapguatemala2016.org.gt',
+					url: 'http://www.CONGRESOFIAPGUATEMALA2016.ORG.GT',
+					promoCode: 'D7017'
 				},
 				{
-					startDate: new Date("2016/8/12").getDate(),
-					endDate: new Date("2016/8/14").getDate(),
-					title: 'Convencion Regional Ecuador de Narcoticos Anonimos.',
-					city: 'Guayaquil',
-					country: 'Ecuador',
-					contactName: 'Fabrizio Cobos',
-					email: 'delegadoregional@naecuador.org',
+					startDate: new Date("2016/9/23").getDate(),
+					endDate: new Date("2016/9/24").getDate(),
+					title: 'Congreso Centroamericano de Síndrome de Down 2016',
+					city: 'San Jose',
+					country: 'Costa Rica',
+					contactName: 'Monica Lorena Osma',
+					email: 'monica@latincorpevents.com',
+					url: 'http://www.congresosindromedown.org',
+					promoCode: 'C6805'
+				},
+				{
+					startDate: new Date("2016/9/26").getDate(),
+					endDate: new Date("2016/9/30").getDate(),
+					title: 'BTM Costa Rica 2016',
+					city: 'San Jose',
+					country: 'Costa Rica',
+					contactName: 'Javier Castillo',
+					email: 'jcastillo@procomer.com',
 					url: null,
-					promoCode: 'C6941'
+					promoCode: 'C7069'
 				},
 				{
-					startDate: new Date("2016/8/14").getDate(),
-					endDate: new Date("2016/8/16").getDate(),
-					title: 'Body Sculpting Panama (Liposucción)',
-					city: 'Panamá',
-					country: 'Panamá',
-					contactName: 'Patricia Petterson',
-					email: 'patricia.petterson@patriciapetterson.com',
-					url: '//www.whatclinic.com/cosmetic-plastic-surgery/us/florida/panama-city/instant-body-sculpting-panama',
-					promoCode: 'C6735'
-				},
-				{
-					startDate: new Date("2016/8/21").getDate(),
-					endDate: new Date("2016/8/31").getDate(),
-					title: 'America Cantat 8',
-					city: 'Nassau',
-					country: 'Bahamas',
-					contactName: 'Eden Badgett',
-					email: 'badgett@acda.org',
-					url: 'http://america-cantat-8.org/',
-					promoCode: 'C6890'
-				},
-				{
-					startDate: new Date("2016/8/24").getDate(),
-					endDate: new Date("2016/8/27").getDate(),
-					title: 'XIII CONGRESO DE NEONATOLOGIA (SIBEN))',
-					city: 'Asunción',
-					country: 'Paraguay',
-					contactName: 'Lizeth Hernandez',
-					email: 'lizath.hernandez@especon.com',
-					url: 'http://www.siben.net/XIIINS/signup/index-step1.php',
-					promoCode: 'B7035'
-				},
-				{
-					startDate: new Date("2016/8/24").getDate(),
-					endDate: new Date("2016/8/26").getDate(),
-					title: 'XXXVI CONVENCION Y EXPOSICION ACCCSA 2016',
-					city: 'Guadalajara',
-					country: 'Mexico',
-					contactName: 'Adriana Bermúdez',
-					email: 'adriana.bermudez@acccsa.org',
-					url: null,
-					promoCode: 'C6909'
-				},
-				{
-					startDate: new Date("2016/8/25").getDate(),
-					endDate: new Date("2016/8/31").getDate(),
-					title: 'Maratón de Ciudad de México 2016',
-					city: 'Mexico D.F',
-					country: 'Mexico',
-					contactName: 'Marcela Chavez',
-					email: 'fmchaves@copaair.com',
-					url: null,
-					promoCode: 'C6616'
-				},
-				{
-					startDate: new Date("2016/8/27").getDate(),
-					endDate: new Date("2016/8/28").getDate(),
-					title: 'WEBCON PANAMÁ',
-					city: 'Panamá',
-					country: 'Panamá',
-					contactName: 'Lilia Navarro',
-					email: 'webconpanama@gmail.com',
-					url: 'www.webconpanama.com',
-					promoCode: 'D6931'
-				},
-				{
-					startDate: new Date("2016/8/1").getDate(),
-					endDate: new Date("2016/8/3").getDate(),
-					title: 'Congreso Americano (FIA AMERICAS)',
-					city: 'Asunción',
-					country: 'Paraguay',
-					contactName: 'Dante Pescetto',
-					email: 'asaipanama@hotmail.com',
-					url: null,
-					promoCode: 'C6964'
-				},
-				{
-					startDate: new Date("2016/8/16").getDate(),
-					endDate: new Date("2016/8/19").getDate(),
-					title: 'Congreso AMLAR 2016',
-					city: 'San Pedro de Sula',
-					country: 'Honduras',
-					contactName: 'Sandra Corletto',
-					email: 'scorletto@gmail.com',
-					url: 'http://www.amlar2016.com',
-					promoCode: 'D6907'
-				},
-				{
-					startDate: new Date("2016/8/10").getDate(),
-					endDate: new Date("2016/8/14").getDate(),
-					title: 'XX Encuentro Folklorico Panameño en USA "Remembranzas de Mi Patria',
-					city: 'Miami',
-					country: 'USA',
-					contactName: 'Ossyris Paez Bury',
-					email: 'ossyta21@gmail.com',
-					url: 'http://www.facebook.com/airespana',
-					promoCode: 'B6887'
+					startDate: new Date("2016/9/29").getDate(),
+					endDate: new Date("2016/10/1").getDate(),
+					title: 'Conferencia Iberoamericana de Continuidad del Negocio DRJ en Español (Conferencia DRJ en Español Lima 2016)',
+					city: 'Lima',
+					country: 'Peru',
+					contactName: 'Ruth Rocha',
+					email: 'ruth.rocha@drjrnrspanol.com',
+					url: 'http://www.drjenespanol.com',
+					promoCode: 'B6866'
 				},
 			];
 
