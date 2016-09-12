@@ -59,25 +59,25 @@
 					ng-repeat="e in events | orderBy: 'startDate' | filter: query"
 				>
 					<li>
-						<h4 ngCloak>{{e.startDate}} - {{e.endDate}}</h4>
+						<h4 ng-cloak>{{e.startDate}} - {{e.endDate}}</h4>
 					</li>
 					<li>
-						<h4 ngCloak>{{e.title}}</h4>
+						<h4 ng-cloak>{{e.title}}</h4>
 					</li>
 					<li>
-						<h4 ngCloak ng-if="e.country && e.city">{{e.country}},<br>{{e.city}}</h4>
+						<h4 ng-cloak ng-if="e.country && e.city">{{e.country}},<br>{{e.city}}</h4>
 					</li>
 					<li>
 					<address>
-					<p><b ng-if="e.contactName" ngCloak>{{e.contactName}}</b><br ng-if="e.contactName" />
-					<a href="mailto:{{e.email}}" ng-if="e.email" ngCloak>{{e.email | lowercase}} </a><br ng-if="e.email" />
+					<p><b ng-if="e.contactName" ng-cloak>{{e.contactName}}</b><br ng-if="e.contactName" />
+					<a href="mailto:{{e.email}}" ng-if="e.email" ng-cloak>{{e.email | lowercase}} </a><br ng-if="e.email" />
 					<a href="{{e.url}}" ng-if="e.url" target="_blank">Web</a></p>
 					</address>
 					</li>
 					<li ng-if="e.promoCode">
-					<p class="visible-phone visible-tablet" ngCloak>Código promocional {{e.promoCode}}</p>
+					<p class="visible-phone visible-tablet" ng-cloak>Código promocional {{e.promoCode}}</p>
 
-					<p class="visible-desktop" ngCloak>{{e.promoCode}}</p>
+					<p class="visible-desktop" ng-cloak>{{e.promoCode}}</p>
 					</li>
 				</ul>
 			</div>
