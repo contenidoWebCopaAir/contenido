@@ -88,281 +88,273 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
     $scope.selectedCountry = "";
     $scope.offices = [
         {
-            america: true,
-            country: "Antillas Holandesas",
-            city: "St Marteen",
-            address: "International Airport <br>Office Princess Juliana  # 1030",
-            schedules: reservaciones
+            countryName: "Antillas Holandesas",
+            cities: [
+                {
+                    name: "St Marteen",
+                    address: "International Airport <br>Office Princess Juliana  # 1030",
+                    schedules: reservaciones
+                }
+            ]
+            
         },
         {
-            america: true,
-            country: "Argentina",
-            city: "Buenos Aires",
-            address: "Emma de la Barra 353, 7th floor, East Puerto Madero",
-            schedules: 'Monday - Friday 9:00am-5:00pm'
+            countryName: "Argentina",
+            cities: [
+                {
+                    name: "Buenos Aires",
+                    address: "Emma de la Barra 353, 7th floor, East Puerto Madero",
+                    schedules: 'Monday - Friday 9:00am-5:00pm'
+                }
+            ]
         },
         {
-            america: true,
-            country: "Aruba",
-            city: "Oranjestad",
-            address: "Queen Beatrix Airport<br>(International flights section)",
-            schedules: reservaciones
+            
+            countryName: "Aruba",
+            cities: [
+                {
+                    name: "Oranjestad",
+                    address: "Queen Beatrix Airport<br>(International flights section)",
+                    schedules: reservaciones
+                    
+                }
+            ]
         },
         {
-            america: true,
-            country: "Bahamas",
-            city: "Nassau",
-            address: "International Airport Lynden Pindling Terminal A",
-            schedules: reservaciones
+            
+            countryName: "Bahamas",
+            cities: [
+                {
+                    name: "Nassau",
+                    address: "International Airport Lynden Pindling Terminal A",
+                    schedules: reservaciones
+                    
+                }
+            ]
         },
         {
-        	america: true,
-            country: 'Bolivia',
-        	city: 'Santa Cruz de la Sierra',
-        	address: 'La Pascana Building Office #3, 24 de septiembre St., Centro Histórico Zone',
-        	schedules: 'Monday - Friday 8:30am-12:30pm<br>2:30pm -6:30pm<br>Saturday 9:00am-12:30pm'
+        	
+            countryName: 'Bolivia',
+            cities: [
+                {
+                	name: 'Santa Cruz de la Sierra',
+                	address: 'La Pascana Building Office #3, 24 de septiembre St., Centro Histórico Zone',
+                	schedules: 'Monday - Friday 8:30am-12:30pm<br>2:30pm -6:30pm<br>Saturday 9:00am-12:30pm'
+                }
+            ]
         },
         {
-        	america: true,
-            country: 'Brazil',
-        	city: 'Belo Horizonte',
-        	address: 'Av. Bias Fortes, 472 Lourdes A/B CEP : 30170-01',
-        	schedules: 'Monday - Friday 9:00am - 6:00pm'
-        },
-        {
-        	america: true,
-            country:'Brazil',
-        	city:'Brazilia',
-        	address: 'Brasilia Airport S/N aeroporto lago sul Brazilia -DF 71.608-900',
-        	schedules: 'Monday - Friday 9:00am - 6:00pm'
-        },
-        {
-        	america: true,
-            country: 'Brazil',
-        	city: 'Campinas',
-        	address: 'Rod Santos Dumont km 66 Term 1 Level 1 Viracopos Airport',
-        	schedules: 'Monday - Friday 9:00am - 6:00pm'
-        },
-        {
-        	america: true,
-            country: 'Brazil',
-        	city: 'Manaos',
-        	address: 'Av. Santos Dumont, 1350 Bairro Taruma - Terreo <br>International Airport Eduardo Gomes CEP 69.041-000',
-        	schedules: 'Monday - Friday 9:00am - 6:00pm'
-        },
-        {
-        	america: true,
-            country: 'Brazil',
-        	city: 'Porto Alegre',
-        	address: 'Av. Severo Dulius, 90010 Sao João',
-        	schedules: 'Monday - Friday 9:00am - 6:00pm'
+        	
+            countryName: 'Brazil',
+            cities: [
+                {
+                	name: 'Belo Horizonte',
+                	address: 'Av. Bias Fortes, 472 Lourdes A/B CEP : 30170-01',
+                	schedules: 'Monday - Friday 9:00am - 6:00pm'  
+                },
+                {
+                	name:'Brazilia',
+                	address: 'Brasilia Airport S/N aeroporto lago sul Brazilia -DF 71.608-900',
+                	schedules: 'Monday - Friday 9:00am - 6:00pm'
+                },
+                {
+                	name: 'Campinas',
+                	address: 'Rod Santos Dumont km 66 Term 1 Level 1 Viracopos Airport',
+                	schedules: 'Monday - Friday 9:00am - 6:00pm'
+                },
+                {
+                	name: 'Manaos',
+                	address: 'Av. Santos Dumont, 1350 Bairro Taruma - Terreo <br>International Airport Eduardo Gomes CEP 69.041-000',
+                	schedules: 'Monday - Friday 9:00am - 6:00pm'
+                },
+                {
+                    name: 'Porto Alegre',
+                    address: 'Av. Severo Dulius, 90010 Sao João',
+                    schedules: 'Monday - Friday 9:00am - 6:00pm'
+                },
+                {
+                    name: 'Recife',
+                    address: 'Praça Ministro Salgado Filho s / n – Imbiribeira International Airport Gilberto Freyre',
+                    schedules: 'Monday - Friday 9:00am - 6:00pm'
+                },
+                {
+                	name: 'Rio de Janeiro',
+                	address: 'Atlantic Avenue, 1130 - 15 andar Copacabana',
+                	schedules: 'Monday - Friday 9:00am - 6:00pm'
+                },
+                {
+                	name: 'Sao Paulo',
+                	address: 'Paulista Avenue 1337 – 4º floor ZIP 01311-200',
+                	schedules: 'Monday - Friday 9:00am - 6:00pm'
+                }
 
+            ]
+        },
+       
+        {
+            countryName: 'Canada',
+            cities: [
+                {
+                	name: 'Montreal',
+                	address: 'International Airport de montreal pierre elliott trudeau 975 boul. Romeo vachon nord Suite 429',
+                	schedules: reservaciones
+                },
+                {
+                	name: 'Toronto',
+                	address: 'International Airport Pearson Terminal 1 . Oficina GA 2202<br>**Only Canadian dollars and Visa cards are accepted, MasterCard.',
+                	schedules: 'Monday - Friday 9:00am-12:00pm'
+                }
+                
+            ]
         },
         {
-        	america: true,
-            country:'Brazil',
-        	city: 'Recife',
-        	address: 'Praça Ministro Salgado Filho s / n – Imbiribeira International Airport Gilberto Freyre',
-        	schedules: 'Monday - Friday 9:00am - 6:00pm'
+            countryName: 'Chile',
+            cities: [
+                {
+                	name: 'Santiago de Chile',
+                	address: 'Av. El Golf 99 office 101ª Las Condes',
+                	schedules: 'Monday - Friday 9:00am-5:00pm'
+                }
+            ]
         },
         {
-        	america: true,
-            country:'Brazil',
-        	city: 'Rio de Janeiro',
-        	address: 'Atlantic Avenue, 1130 - 15 andar Copacabana',
-        	schedules: 'Monday - Friday 9:00am - 6:00pm'
+            countryName: 'Colombia',
+            cities: [
+                {
+                	name: 'Barranquilla',
+                	address: 'street 72 N. 54 - 49 office 1 y 2',
+                	schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 9:00am-1:00pm'
+                },
+                {
+                    name: 'Bogota',
+                    address: 'street 100 #. 7 A - 81 office 3 building Universa',
+                    schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 9:00am-12:00pm'
+                },
+                {
+                    name: 'Bogota',
+                    address: 'street 76 Cra 11 No. 76-57 office 01',
+                    schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 9:00am-12:00pm'
+                },
+                {
+                    name: 'Bogota',
+                    address: 'Gran Estacion Mall, Costado sphere, first floor, Entry 1',
+                    schedules: 'Monday - Saturday 10:00am-8:30pm<br> Sun &amp; Holidays 11:00am-7:00pm'
+                },
+                {
+                    name: 'Bogota',
+                    address: 'El Dorado Airport, Entrance 8 Front office 13 y 16, second floor',
+                    schedules: 'Monday - Saturday 5:00am-9:00pm<br> Sun &amp; Holidays 5:00am-1:00pm'
+                },
+                {
+                    name: 'Bogota',
+                    address: 'Unicentro commercial center<br>Avenue 15th # 124 - 30 floor 1<br> office 1-101 Entrance 8',
+                    schedules: 'Monday - Friday 9:00am-8:00pm<br>Saturday 10:00am-7:00pm<br>Sun &amp; Holidays 10:00am-4:00pm'
+                },
+                {
+                    name: 'Bucaramanga',
+                    address: 'Carrera 35 No.54-114',
+                    schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 9:00am-12:00pm'
+                },
+                {
+                    name: 'Cali',
+                    address: 'Norte AV 6ta BIS NO. 30 N- 25',
+                    schedules: 'Monday - Friday 8:00am-7:00pm<br>Saturday 9:00am-6:00pm<br>Sun &amp; Holidays 9:00am-1:00pm'
+                },
+                {
+                    name: 'Cali',
+                    address: '14 Paso Ancho commercial center<br>13th street # 80 - 60',
+                    schedules: 'Monday - Friday 10:00am-7:00pm<br>Saturday 9:00am-6:00pm<br>Sun &amp; Holidays 11:00am-4:00pm'
+                },
+                {
+                    name: 'Cartagena',
+                    address: 'International Airport Rafael Nuñez<br>Crespo – Cartagena first floor',
+                    schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday, Sun &amp; Holidays 8:00am-5:00pm'
+                },
+                {
+                    name: 'Cúcuta',
+                    address: '15th street N0. 0 E - 18 Los Caobos',
+                    schedules: 'Monday - Friday 8 :00am – 6:00pm<br>Saturday 9:00am – 1pm'
+                },
+                {
+                    name: 'Medellin',
+                    address: 'Almacentro commercial center<br>Cra 43 A # 34 – 95 office 099',
+                    schedules: 'Monday - Friday 8 :00am – 6:00pm<br>Saturday 9:00am – 12:00pm'
+                },
+                {
+                    name: 'Pereira',
+                    address: 'AV circunvalar # 8b-51 building Bancafe office 103',
+                    schedules: 'Monday - Friday 8 :00am – 6:00pm<br>Saturday 9:00am – 12:00pm'
+                },
+                {
+                    name: 'San Andres',
+                    address: 'Ave. Newball Torre Sunrise Beach No. 4- 141 office 125-b6',
+                    schedules: 'Monday - Friday<br>8:00am-12:00m<br>2:00pm-6:00pm<br>Saturday 9:00am-1:00pm'
+                }
+            ]
         },
         {
-        	america: true,
-            country: 'Brazil',
-        	city: 'Sao Paulo',
-        	address: 'Paulista Avenue 1337 – 4º floor ZIP 01311-200',
-        	schedules: 'Monday - Friday 9:00am - 6:00pm'
-        },
-        {
-        	america: true,
-            country: 'Canada',
-        	city: 'Montreal',
-        	address: 'International Airport de montreal pierre elliott trudeau 975 boul. Romeo vachon nord Suite 429',
-        	schedules: reservaciones
-        },
-        {
-        	america: true,
-            country:'Canada',
-        	city: 'Toronto',
-        	address: 'International Airport Pearson Terminal 1 . Oficina GA 2202<br>**Only Canadian dollars and Visa cards are accepted, MasterCard.',
-        	schedules: 'Monday - Friday 9:00am-12:00pm'
-        },
-        {
-        	america: true,
-            country: 'Chile',
-        	city: 'Santiago de Chile',
-        	address: 'Av. El Golf 99 office 101ª Las Condes',
-        	schedules: 'Monday - Friday 9:00am-5:00pm'
-        },
-        {
-        	america: true,
-            country: 'Colombia',
-        	city: 'Barranquilla',
-        	address: 'street 72 N. 54 - 49 office 1 y 2',
-        	schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 9:00am-1:00pm'
-        },
-        {
-        	america: true,
-            country: 'Colombia',
-        	city: 'Bogota',
-        	address: 'street 100 #. 7 A - 81 office 3 building Universa',
-        	schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 9:00am-12:00pm'
-        },
-        {
-        	america: true,
-            country: 'Colombia',
-        	city: 'Bogota',
-        	address: 'street 76 Cra 11 No. 76-57 office 01',
-        	schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 9:00am-12:00pm'
-        },
-        {
-        	america: true,
-            country: 'Colombia',
-        	city: 'Bogota',
-        	address: 'Gran Estacion Mall, Costado sphere, first floor, Entry 1',
-        	schedules: 'Monday - Saturday 10:00am-8:30pm<br> Sun &amp; Holidays 11:00am-7:00pm'
-        },
-        {
-        	america: true,
-            country: 'Colombia',
-        	city: 'Bogota',
-        	address: 'El Dorado Airport, Entrance 8 Front office 13 y 16, second floor',
-        	schedules: 'Monday - Saturday 5:00am-9:00pm<br> Sun &amp; Holidays 5:00am-1:00pm'
-        },
-        {
-        	america: true,
-            country: 'Colombia',
-        	city: 'Bogota',
-        	address: 'Unicentro commercial center<br>Avenue 15th # 124 - 30 floor 1<br> office 1-101 Entrance 8',
-        	schedules: 'Monday - Friday 9:00am-8:00pm<br>Saturday 10:00am-7:00pm<br>Sun &amp; Holidays 10:00am-4:00pm'
-        },
-        {
-        	america: true,
-            country: 'Colombia',
-        	city: 'Bucaramanga',
-        	address: 'Carrera 35 No.54-114',
-        	schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 9:00am-12:00pm'
-        },
-        {
-        	america: true,
-            country: 'Colombia',
-        	city: 'Cali',
-        	address: 'Norte AV 6ta BIS NO. 30 N- 25',
-        	schedules: 'Monday - Friday 8:00am-7:00pm<br>Saturday 9:00am-6:00pm<br>Sun &amp; Holidays 9:00am-1:00pm'
-        },
-        {
-        	america: true,
-            country: 'Colombia',
-        	city: 'Cali',
-        	address: '14 Paso Ancho commercial center<br>13th street # 80 - 60',
-        	schedules: 'Monday - Friday 10:00am-7:00pm<br>Saturday 9:00am-6:00pm<br>Sun &amp; Holidays 11:00am-4:00pm'
-        },
-        {
-        	america: true,
-            country: 'Colombia',
-        	city: 'Cartagena',
-        	address: 'International Airport Rafael Nuñez<br>Crespo – Cartagena first floor',
-        	schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday, Sun &amp; Holidays 8:00am-5:00pm'
-        },
-        {
-        	america: true,
-            country: 'Colombia',
-        	city: 'Cúcuta',
-        	address: '15th street N0. 0 E - 18 Los Caobos',
-        	schedules: 'Monday - Friday 8 :00am – 6:00pm<br>Saturday 9:00am – 1pm'
-        },
-        {
-        	america: true,
-            country: 'Colombia',
-        	city: 'Medellin',
-        	address: 'Almacentro commercial center<br>Cra 43 A # 34 – 95 office 099',
-        	schedules: 'Monday - Friday 8 :00am – 6:00pm<br>Saturday 9:00am – 12:00pm'
-        },
-        {
-        	america: true,
-            country: 'Colombia',
-        	city: 'Pereira',
-        	address: 'AV circunvalar # 8b-51 building Bancafe office 103',
-        	schedules: 'Monday - Friday 8 :00am – 6:00pm<br>Saturday 9:00am – 12:00pm'
-        },
-        {
-        	america: true,
-            country: 'Colombia',
-        	city: 'San Andres',
-        	address: 'Ave. Newball Torre Sunrise Beach No. 4- 141 office 125-b6',
-        	schedules: 'Monday - Friday<br>8:00am-12:00m<br>2:00pm-6:00pm<br>Saturday 9:00am-1:00pm'
-        },
-        {
-        	america: true,
-            country: 'Costa Rica',
+            countryName: 'Costa Rica',
         	city: 'Liberia',
         	address: 'Aeropuerto Daniel Oduber',
         	schedules: 'Thursday &amp; Sunday 7:00am-2:00pm'
         },
         {
-        	america: true,
             country: 'Costa Rica',
         	city: 'San José',
         	address: 'Edif. Torres Mercedes, 1er floor, Paseo Colón San José',
         	schedules: 'Monday - Friday 8:00am-5:00pm<br>Saturday 8:00am-12:00pm'
         },
         {
-        	america: true,
+        	
             country: 'Costa Rica',
         	city: 'San José',
         	address: 'Plaza Antares, Rotonda de la Bandera, Primer Level',
         	schedules: 'Monday - Friday 9:00am-7:00pm<br>Saturday 12:00pm-7:00pm<br>Sunday 10:00am-5:00pm'
         },
         {
-        	america: true,
-            country: 'Cuba',
+        	
+            countryName: 'Cuba',
         	city: 'La Habana',
         	address: 'Centro de Negocios Miramar, Planta baja Edif. Barcelona 5ta Avenida entre 76 y 78, Playa.',
         	schedules: 'Monday - Friday 8:30am-5:00pm<br>Saturday 9:00am-1:00pm '
         },
         {
-        	america: true,
-            country: 'Curazao',
+        	
+            countryName: 'Curazao',
         	city: 'Willemstand',
         	address: 'Zuikertuin Mall Tower Unit 1B y 1C Willemstad, Curazao',
         	schedules: 'Monday - Friday 8:00am-5:00pm'
         },
         {
-        	america: true,
+        	
             country: 'Curazao',
         	city: 'Willemstand',
         	address: 'Curaçao International Airport',
         	schedules: 'Tuesday, Thursday, Friday y Sunday 8:00am-4:00pm'
         },
         {
-        	america: true,
+        	
             country: 'Ecuador',
         	city: 'Cuenca',
         	address: 'Miguel Cordero y Av Paucarbamba Edif Work Center Planta baja Ofic N 09',
         	schedules: 'Monday - Friday 9:00am-1:00pm y 2:00pm-5:45pm<br>Saturday 9:00am-1:00pm'
         },
         {
-        	america: true,
+        	
             country: 'Ecuador',
         	city: 'Guayaquil',
         	address: 'Nueve de Octubre 100 y Malecón Simón Bolívar, floor 25',
         	schedules: 'Monday - Friday 8:00am-5:45pm<br>Saturday 8:00am-1:45pm'
         },
         {
-        	america: true,
+        	
             country: 'Ecuador',
         	city: 'Guayaquil',
         	address: 'Village Plaza Commercial center, Km 1.5 Vía Samborondón Planta baja',
         	schedules: 'Monday - Saturday 10:00am-9:00pm<br>Sun &amp; Holidays 10:00am-8:00pm'
         },
         {
-        	america: true,
+        	
             country: 'Ecuador',
         	city: 'Quito',
         	address: 'Av. República de El Salvador 361 e Moscú, building Aseguradora del Sur, Planta Baja.',
@@ -375,56 +367,56 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
         	schedules: 'Monday - Saturday 10:00am-8:30pm<br>Sun &amp; Holidays 10:00am-7:30pm '
         },
         {
-        	america: true,
+        	
             country: 'El Salvador',
         	city: 'San Salvador',
         	address: 'building World Trade Center, 1er. Level, office 107, Colonia Escalon entre street El Mirador y 89 Av. Norte',
         	schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 8:00am-12:00pm '
         },
         {
-        	america: true,
+        	
             country: 'United States',
         	city: 'Chicago',
         	address: 'Chicago Ohare International Airport Terminal 5 Chicago Berssie Coleman Drive 10000 Chicago IL 60666. Para consultas sobre ventas, escriba a: <a href="mailto:chicagosales@copaair.com">chicagosales@copaair.com</a>',
         	schedules: 'Monday - Sunday 4:30am-12:30pm'
         },
         {
-        	america: true,
+        	
             country: 'United States',
         	city: 'Fort Lauderdale',
         	address: 'International Airport Fort Lauderdale – Hollywood',
         	schedules: reservaciones
         },
         {
-        	america: true,
+        	
             country: 'United States',
         	city: 'Las Vegas',
         	address: 'International Airport McCarran, Terminal 3, 5757 Wayne Newton Blvd , Las Vegas ,NV 89119',
         	schedules: 'Mon - Sun &amp; Holidays<br>12:00pm-4:00pm y 7:00pm-12:00am'
         },
         {
-        	america: true,
+        	
             country: 'United States',
         	city: 'Los Angeles',
         	address: 'International Airport de Los Angeles Terminal 6, 600 World Way , Los Angeles, CA 90045',
         	schedules: 'Mon - Sun &amp; Holidays<br>7:30am-9:30am y 6:00pm-9:30pm'
         },
         {
-        	america: true,
+        	
             country: 'United States',
         	city: 'Miami',
         	address: 'Waterford Center , 6205 Blue Lagoon Drive Suite 200 Miami Fl 33126',
         	schedules: 'Monday - Friday 9:00am-6:00pm'
         },
         {
-        	america: true,
+        	
             country: 'United States',
         	city: 'New York',
         	address: 'New York International Airport , Terminal 4 Councourse A',
         	schedules: 'Mon - Sun &amp; Holidays 8:45am-9:20am 1:30pm-2:30pm'
         },
         {
-        	america: true,
+        	
             country: 'United States',
         	city: 'Orlando',
         	address: 'International Airport de Orlando , Terminal A 9303 Jeff Fuqua Blvd Orlando FL 32827',
@@ -437,252 +429,252 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
         	schedules: reservaciones
         },
         {
-        	america: true,
+        	
             country: 'United States',
         	city: 'Washington, D.C',
         	address: 'International Airport Washington-Dulles, 1 Saarinen Circle Dulles Va , Terminal principal Puerta N° 2 salida de vuelos terminal A puerta 19',
         	schedules: 'Monday - Sunday<br>6:00am - 9:00am y 12:00pm - 2:30pm'
         },
         {
-        	america: true,
+        	
             country: 'Guatemala',
         	city: 'Ciudad de Guatemala',
         	address: '5 avenida 5-55 zona 14 building Euro Plaza Torre 3 Planta Baja, Oficina 102',
         	schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 8:00am-12:00pm'
         },
         {
-        	america: true,
+        	
             country: 'Guyana',
         	city: 'Georgetown',
         	address: '#212 Camp Street, North Cummingsburg, Georgetown, Guyana',
         	schedules: 'Monday - Friday 8:30am-5:00pm<br>Saturday 9:00am-12:00pm'
         },
          {
-        	america: true,
+        	
             country: 'Haití',
         	city: 'Puerto Principe',
         	address: 'Av. 30 , Marie Jeanne',
         	schedules: 'Monday - Friday 8:30am-3:30pm'
         },
         {
-        	america: true,
+        	
             country: 'Honduras',
         	city: 'San Pedro Sula',
         	address: 'Avenida Circunvalacion Barrio Paz Barahona, 13 street esquina opuesta a sears, Plaza Geosur, office 1',
         	schedules: 'Monday - Friday 8:00am-5:00pm<br>Saturday 8:00am-12:00m '
         },
         {
-        	america: true,
+        	
             country: 'Honduras',
         	city: 'Tegucigalpa',
         	address: 'building Corporativo Contiguo al Hotel Clarion 1era Planta, Col. Alameda  Avenida Juan Manuel Galvez',
         	schedules: 'Monday - Friday 8:00am-5:00pm<br>Saturday 8:00am-12:00m'
         },
         {
-        	america: true,
+        	
             country: 'Jamaica',
         	city: 'Kingston',
         	address: 'Courtleigh Corporate Center, 8 St. Lucia Avenue, Kingston 5, Jamaica',
         	schedules: 'Monday - Friday 8:30am-5:00pm '
         },
         {
-        	america: true,
+        	
             country: 'Jamaica',
         	city: 'Montego Bay',
         	address: 'International Airport Sangster Montego Bay, Jamaica W.I.',
         	schedules: reservaciones
         },
         {
-        	america: true,
+        	
             country: 'México',
         	city: 'Cancún',
         	address: 'International Airport de Cancún Terminal 2 , detrás de mostradores 83 y 84 Oficina N. 43',
         	schedules: 'Monday - Saturday 9:00am-4:00pm<br>Sun &amp; Holidays 10:00am-4:00pm'
         },
         {
-        	america: true,
+        	
             country: 'México',
         	city: 'Guadalajara',
         	address: 'AV Moctezuma N. 3515 officees 8 e 9, Hotel Presidente Intercontinental Colonia Ciudad del Sol , Zapopan Jalisco México',
         	schedules: 'Monday - Friday 9:00am-6:00pm<br>Saturday 9:00am-1:00pm '
         },
         {
-        	america: true,
+        	
             country: 'México',
         	city: 'Monterrey',
         	address: 'Av. Lázaro Cárdenas #2225, Torre Latitud, office 2 Planta Baja, Colonia Valle Oriente, San Pedro Garza Garcia, Nuevo León, México.',
         	schedules: 'Monday - Friday 9:00am-6:00pm<br>Saturday 9:00am-1:00pm '
         },
         {
-        	america: true,
+        	
             country: 'México',
         	city: 'México D.F',
         	address: 'Berna Numero 06 Planta Baja, Colonia Juarez México Delegacion Cuauhtemoc CP 06600 DF',
         	schedules: 'Monday - Friday 9:00am-6:00pm<br>Saturday 10:00am-2:00pm '
         },
         {
-        	america: true,
+        	
             country: 'Nicaragua',
         	city: 'Managua',
         	address: 'Commercial center Galerías Santo Domingo, km. 7 carretera a Masaya',
         	schedules: 'Monday - Saturday 10:00am - 8:00pm<br>Sunday 11:00am - 8:00pm'
         },
         {
-            america: true,
+            
             country: 'Nicaragua',
             city: 'Managua',
             address: 'Km. 4.5 carretera Masaya, building CAR No. 6 Planes de Altamira',
             schedules: 'Monday - Friday 8:00am - 5:30pm<br>Saturday 8:00am - 12:00pm'
         },
         {
-            america: true,
+            
             country: 'Panamá',
             city: 'Panamá',
             address: 'Galerías Hotel Riande Continental, Vía España.',
             schedules: 'Monday - Friday 8:00am-5:00pm<br>Saturday 9:00am-1:00pm '
         },
         {
-            america: true,
+            
             country: 'Panamá',
             city: 'Panamá',
             address: 'Casco Antiguo – officees comerciales del Hotel American Trade, street José de Obaldía, Avenida Central entre street 9na y 10am',
             schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 9:00am-1:00pm'
         },
         {
-            america: true,
+            
             country: 'Panamá',
             city: 'Panamá',
             address: 'Complejo Business Park, Torre Norte, Planta Baja; Costa del Este',
             schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 8:00am-12:00pm'
         },
         {
-            america: true,
+            
             country: 'Panamá',
             city: 'Panamá',
             address: 'Commercial center Altaplaza Mall, Level 2 - área de cines',
             schedules: 'Monday - Saturday 10:00am-8:00pm<br>Sunday 11:00am-7:00pm'
         },
         {
-            america: true,
+            
             country: 'Panamá',
             city: 'Panamá',
             address: 'Commercial center Multiplaza, Plaza del Mar, Primer Level',
             schedules: 'Monday - Saturday 10:00am-8:00pm<br>Sunday 11:00am-7:00pm'
         }, 
         {
-            america: true,
+            
             country: 'Panamá',
             city: 'Panamá',
             address: 'Commercial center Albrook Mall, Pasillo del Koala',
             schedules: 'Monday - Saturday 10:00am-8:00pm<br>Sunday 11:00am-7:00pm'
         },
         {
-            america: true,
+            
             country: 'Panamá',
             city: 'Panamá',
             address: 'Commercial center Metromall, Primer Level, stand K1-17 frente a Dunkin Donnuts ',
             schedules: 'Monday - Saturday 10:00am-8:00pm<br>Sunday 11:00am-7:00pm'
         }, 
         {
-            america: true,
+            
             country: 'Panamá',
             city: 'Panamá',
             address: 'Hotel Sheraton, Planta Baja',
             schedules: 'Monday - Friday <br>8:00am-12:00pm y 1:00pm-5:00pm<br>Saturday 8:00am-12:00pm'
         },
          {
-            america: true,
+            
             country: 'Panamá',
             city: 'Zona Libre Colón',
             address: 'street 14 Av Rusbell y Santa Isabel ',
             schedules: 'Monday - Friday 8:00am-5:00pm'
         },
         {
-            america: true,
+            
             country: 'Panamá',
             city: 'David, Chiriquí',
             address: 'Ave. Domingo Díaz building Garrido, planta baja, office #1 David, Provincia de Chiriquí',
             schedules: 'Monday - Friday 8:00am-5:00pm<br>Saturday 8:00am-12:00pm '
         },
         {
-            america: true,
+            
             country: 'Paraguay',
             city: 'Asunción',
             address: 'Ave. Boggiani Esq. Cap. Nudelman building Boggiani, Planta Baja',
             schedules: 'Monday - Friday 8:30am-5:30pm<br>Saturday 8:30am-12:30pm'
         },
         {
-            america: true,
+            
             country: 'Perú',
             city: 'Lima',
             address: 'street Los Halcones 105 San Isidro, Cruce de Canaval y Moreyra con República de Panamá ',
             schedules: 'Monday - Friday 9:00am-6:00pm<br>Saturday 9:00am-1:00pm '
         },
         {
-            america: true,
+            
             country: 'Perú',
             city: 'Iquitos',
             address: 'street Sargento Lores 379',
             schedules: 'Monday - Friday 9:00am- 7:00pm<br>Saturday 9:00am- 1:00pm'
         },
          {
-            america: true,
+            
             country: 'Puerto Rico',
             city: 'San Juan',
             address: '#15 street 2 Millenium Park Plaza, Suite 102, Metro Office Park Guaynabo P.R. 00968',
             schedules: 'Monday - Friday 8:30am-5:00pm<br>Saturday 9:00am-1:00pm '
         },
         {
-            america: true,
+            
             country: 'Republica Dominicana',
             city: 'Punta Cana',
             address: 'International Airport Punta Cana ',
             schedules: reservaciones
         },
          {
-            america: true,
+            
             country: 'Republica Dominicana',
             city: 'Santiago de los Caballeros',
             address: 'Carretera Luperón kilometro 1, Plaza Galerías Luperón, office 1- Planta Baja',
             schedules: 'Monday - Friday<br>9:00am-1:00pm y 2:00pm-6:00pm<br>Saturday 9:00am-1:00pm'
         },
         {
-            america: true,
+            
             country: 'Republica Dominicana',
             city: 'Santo Domingo',
             address: 'Ave. Abraham Lincoln esq. Jacinto Mañon Torre Ejecutiva Sonora, Suite 101-A, 1er Level ',
             schedules: 'Monday - Friday<br>8:00am-1:00pm y 2:00pm-6:00pm<br>Saturday 9:00am-1:00pm'
         },
         {
-            america: true,
+            
             country: 'Trinidad y Tobago',
             city: 'Puerto España',
             address: 'International Airport Piarco floor uno, Terminal Principal Atrium ',
             schedules: 'Monday - Friday 9:00am-5:00pm'
         },
         {
-            america: true,
+            
             country: 'Uruguay',
             city: 'Montevideo',
             address: 'Luis Alberto de Herrera 1248 office 43 Torre 3 (Entrance por 26 de Marzo) World Trade Center',
             schedules: 'Monday - Friday 9:00am-5:30pm'
         },
         {
-            america: true,
+            
             country: 'Venezuela',
             city: 'Caracas',
             address: 'Ave. Francisco Miranda, Centro Lido, Level Miranda, office 22 - Urb. El Rosal.',
             schedules: 'Monday - Friday 8:00am-5:00pm'
         },
         {
-            america: true,
+            
             country: 'Venezuela',
             city: 'Maracaibo',
             address: 'street 78 con Av 3E, Commercial center Kalakawa office 08',
             schedules: 'Monday - Friday 8:00am-5:00pm'
         },
          {
-            america: true,
+            
             country: 'Venezuela',
             city: 'Valencia',
             address: 'Commercial center Via Veneto, Level Florencia office F 34 Mañongo, Town Naguanagua - Carabobo',
