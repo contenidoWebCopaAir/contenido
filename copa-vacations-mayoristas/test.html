@@ -1,4 +1,12 @@
-<div class="container">
+<!DOCTYPE html>
+<html ng-app="copa">
+<head>
+	<title>Mayoristas</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body>
+
+	<div class="container">
 	
 	<div class="offices-responsive content_centered" ng-controller="wholeSalersCtrl">
 		<div class="row main-filter">
@@ -6,7 +14,12 @@
 	            <div class="control-group"><label class="control-label">Busque por País</label>
 	                <div class="controls">
 	                    <select class="form-control" ng-model="selectedCountry" style="width:100%" ng-cloak>
-	                        <option ng-repeat="country in wholesalers" value="{{country}}" ng-cloak>{{country}}</option>
+	                    	<option value="">Todos los países</option>
+	                        <option 
+	                        	ng-repeat="country in wholesalers" 
+	                        	value="{{country.country}}" ng-cloak>
+	                        	{{country.country}}
+	                        </option>
 	                    </select>
 	                </div>
 	            </div>
@@ -18,13 +31,46 @@
 	            </div>
         	</div>
 		</div>
-	</div>
+		  	<div class="row">
+	            <div class="span12">
+	            	<table class="table table-striped">
+	            		
+	            		<thead>
+	            			<tr>
+	            				<th>País / Ciudad</th>
+			                    <th>Mayorista</th>
+			                    <th>Correo electrónico</th>
+			                    <th>Teléfono</th>
+	            			</tr>
+	            		</thead>
+
+	            		<tbody>
+	            			<table class="table" ng-repeat="wholesaler in wholesalers">
+	            				<tr style="background:red">
+									<td colspan="4">
+	            						{{wholesaler.country}}
+									</td>		
+		            			</tr>	
+		            			<tr ng-repeat="city in wholesaler.cities">
+			            			<td colspan="4" style="font-size:12px">			
+			            				&nbsp;&nbsp;&nbsp;&nbsp;{{city.city}}
+			            			</td>				
+		            			</tr>
+	            			</table>
+	            		</tbody>
+	            	</table>
+	               
+	               
+	            </div>
+	        </div> 
+		</div>
 
 </div>
 
 <script>
-angular.module('copa').controller('wholeSalersCtrl', ["$scope", function($scope){
-
+var copa = angular.module('copa', []);
+copa.controller('wholeSalersCtrl', function($scope){
+	$scope.selectedCountry = '';
 	$scope.wholesalers = [
 		{
 			country: 'Argentina',
@@ -706,6 +752,10 @@ angular.module('copa').controller('wholeSalersCtrl', ["$scope", function($scope)
 		
 	];
 
-}]);
+});
 	
 </script>
+
+
+</body>
+</html>
