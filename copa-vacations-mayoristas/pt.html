@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html ng-app="copa">
-<head>
-	<title>Mayoristas</title>
-	<script type="text/javascript" src="angular.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
-</head>
-<body>
-
-	<div class="container">
+<div class="container">
 	
 	<div class="offices-responsive content_centered" ng-controller="wholeSalersCtrl">
+		<div class="title_legal  common-styles type_title1">
+			<h2>Lista de agências de viagem</h2>
+		</div>
 		<div class="row main-filter">
 			<div class="span8 form-horizontal">
-	            <div class="control-group"><label class="control-label">Busque por País</label>
+	            <div class="control-group"><label class="control-label">Mostrar agências de viagem em:</label>
 	                <div class="controls">
 	                    <select class="form-control" ng-model="selectedCountry" style="width:100%" ng-cloak>
-	                    	<option value="">Todos los países</option>
+	                    	<option value="">Todos os países</option>
 	                        <option 
 	                        	ng-repeat="country in wholesalers" 
 	                        	value="{{country.country}}" ng-cloak>
@@ -27,15 +21,15 @@
         	</div>
 		</div>
 		  	<div class="row">
-	            <div class="span12">
+	            <div class="span12 table-scroll">
 	            	<table class="table">
 	            		
 	            		<thead>
 	            			<tr>
-	            				<th style="width:18%">País / Ciudad</th>
-			                    <th style="width:26%">Mayorista</th>
-			                    <th style="width:26%">Correo electrónico</th>
-			                    <th style="width:26%">Teléfono</th>
+	            				<th style="width:18%">País / Cidade</th>
+			                    <th style="width:26%">Revendedor</th>
+			                    <th style="width:30%">E-mail</th>
+			                    <th style="width:26%">Telefone</th>
 	            			</tr>
 	            		</thead>
 
@@ -45,21 +39,45 @@
 	            				ng-repeat="wholesaler in wholesalers | filter: selectedCountry | orderBy: wholesaler.country"
 	            			>
 	            				<tr>
-									<td colspan="4">
+									<td colspan="4" ng-cloak>
 	            						{{wholesaler.country}}
 									</td>		
 		            			</tr>	
 		            			<tr ng-repeat="city in wholesaler.cities">
-			            			<td colspan="2" style="font-size:12px; width:18%; border:none;">			
+			            			<td colspan="2" style="font-size:12px; width:18%; border:none;" ng-cloak>			
 			            				&nbsp;&nbsp;&nbsp;&nbsp;{{city.city}}
 			            			</td>
 			            			<td colspan="2" style="width:82%; border:none">
 			            				<table class="table">
 			            					<tr ng-repeat="contact in city.contacts">
-			            						<td style="width:33%" 
-			            							ng-bind-html=" deliberatelyTrustDangerousSnippet(contact.name) "></td>
-			            						<td style="width:33%">{{ contact.email }}</td>
-			            						<td style="width:33%">{{ contact.phone ? contact.phone : '&nbsp;' }}</td>
+			            						<td 
+			            							style="width:33%" 
+			            							ng-if="contact.name == 'Copa Vacations'"
+			            							ng-cloak
+			            						>
+		            								<a href="http://www.copavacations.com.co/" target="_blank">
+		            									Copa Vacations
+		            								</a>
+			            						</td>
+			            						<td 
+			            							style="width:33%" 
+			            							ng-if="contact.name == 'JET Tours'"
+			            							ng-cloak
+			            						>
+		            								<a href="http://www.copavacations.com.co/" target="_blank">
+		            									Jet Tours
+		            								</a>
+			            						</td>
+
+			            						<td 
+			            							style="width:33%" 
+			            							ng-if="contact.name != 'Copa Vacations' && contact.name != 'JET Tours'"
+			            							ng-cloak 
+			            						>
+			            							{{ contact.name }}
+			            						</td>
+			            						<td style="width:33%" ng-cloak>{{ contact.email }}</td>
+			            						<td style="width:33%" ng-cloak>{{ contact.phone ? contact.phone : '&nbsp;' }}</td>
 			            					</tr>
 			            				</table>
 			            			</td>				
@@ -74,15 +92,9 @@
 		</div>
 
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.4.9/angular-sanitize.min.js"></script>
 <script>
-	var copa = angular.module('copa', ['ngSanitize']);
-	copa.controller('wholeSalersCtrl', [ '$scope', '$sce', function($scope, $sce){
+	angular.module('copa').controller('wholeSalersCtrl', [ '$scope', function($scope){
 		$scope.selectedCountry = '';
-		$scope.query = '';
-		$scope.deliberatelyTrustDangerousSnippet = function(snippet) {
-	               return $sce.trustAsHtml(snippet);
-	             };
 		$scope.wholesalers = [
 			{
 				country: 'Argentina',
@@ -254,7 +266,7 @@
 					]
 				},
 				{
-					country: 'Colombia',
+					country: 'Colômbia',
 					cities: [
 						{
 							city: 'Barranquilla',
@@ -265,7 +277,7 @@
 									phone: '571 6368601'
 								},
 								{
-									name: '<a href="http://www.copavacations.com.co/" target="_blank">Copa Vacations</a>',
+									name: 'Copa Vacations',
 									email: 'copavacations.co@copaair.com',
 									phone: '01 800 952 0663'
 								}
@@ -275,7 +287,7 @@
 							city: 'Bogotá',
 							contacts: [
 								{
-									name: '<a href="http://www.copavacations.com.co/" target="_blank">Copa Vacations</a>',
+									name: 'Copa Vacations',
 									email: 'copavacations.co@copaair.com',
 									phone: '01 800 952 0663'
 								},
@@ -335,7 +347,7 @@
 									phone: '6473535'
 								}, 
 								{
-									name: '<a href="http://www.copavacations.com.co/" target="_blank">Copa Vacations</a>',
+									name: 'Copa Vacations',
 									email: 'copavacations.co@copaair.com',
 									phone: '01 800 952 0663'
 								}
@@ -350,12 +362,12 @@
 									phone: '572 6674797'
 								},
 								{
-									name: '<a href="http://www.copavacations.com.co/" target="_blank">Copa Vacations</a>',
+									name: 'Copa Vacations',
 									email: 'gerencia.lrinco@jetours.com.co',
 									phone: '572 6680221'
 								},
 								{
-									name: '<a href="http://www.copavacations.com.co/" target="_blank">JE Tours</a>',
+									name: 'JET Tours',
 									email: 'comercial.xbernal@jetours.com.co',
 									phone: '572 6680221'
 								},
@@ -365,7 +377,7 @@
 									phone: '571 6368601'
 								},
 								{
-									name: '<a href="http://www.copavacations.com.co/" target="_blank">Copa Vacations</a>',
+									name: 'Copa Vacations',
 									email: 'copavacations.co@copaair.com',
 									phone: '01 800 952 0663'
 								},
@@ -385,7 +397,7 @@
 									phone: '571 6368601'
 								},
 								{
-									name: '<a href="http://www.copavacations.com.co/" target="_blank">Copa Vacations</a>',
+									name: 'Copa Vacations',
 									email: 'copavacations.co@copaair.com',
 									phone: '01 800 952 0663'
 								},
@@ -420,7 +432,7 @@
 									phone: '574 4444476'
 								},
 								{
-									name: '<a href="http://www.copavacations.com.co/" target="_blank">Copa Vacations</a>',
+									name: 'Copa Vacations',
 									email: 'copavacations.co@copaair.com',
 									phone: '01 800 952 0663'
 								}
@@ -644,7 +656,7 @@
 					]
 				},
 				{
-					country: 'Paraguay',
+					country: 'Paraguai',
 					cities: [
 						{
 							city: 'Asunción',
@@ -726,7 +738,7 @@
 					]
 				},
 				{
-					country: 'Uruguay',
+					country: 'Uruguai',
 					cities: [
 						{
 							city: 'Montevideo',
@@ -772,7 +784,3 @@
 	}]);
 	
 </script>
-
-
-</body>
-</html>

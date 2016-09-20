@@ -10,12 +10,15 @@
 	<div class="container">
 	
 	<div class="offices-responsive content_centered" ng-controller="wholeSalersCtrl">
+		<div class="title_legal  common-styles type_title1">
+			<h2>Lista de agências de viagem</h2>
+		</div>
 		<div class="row main-filter">
 			<div class="span8 form-horizontal">
-	            <div class="control-group"><label class="control-label">Busque por País</label>
+	            <div class="control-group"><label class="control-label">Mostrar agências de viagem em:</label>
 	                <div class="controls">
 	                    <select class="form-control" ng-model="selectedCountry" style="width:100%" ng-cloak>
-	                    	<option value="">Todos los países</option>
+	                    	<option value="">Todos os países</option>
 	                        <option 
 	                        	ng-repeat="country in wholesalers" 
 	                        	value="{{country.country}}" ng-cloak>
@@ -32,10 +35,10 @@
 	            		
 	            		<thead>
 	            			<tr>
-	            				<th style="width:18%">País / Ciudad</th>
-			                    <th style="width:26%">Mayorista</th>
-			                    <th style="width:26%">Correo electrónico</th>
-			                    <th style="width:26%">Teléfono</th>
+	            				<th style="width:18%">País / Cidade</th>
+			                    <th style="width:26%">Revendedor</th>
+			                    <th style="width:26%">E-mail</th>
+			                    <th style="width:26%">Telefone</th>
 	            			</tr>
 	            		</thead>
 
@@ -254,7 +257,7 @@
 					]
 				},
 				{
-					country: 'Colombia',
+					country: 'Colômbia',
 					cities: [
 						{
 							city: 'Barranquilla',
@@ -644,7 +647,7 @@
 					]
 				},
 				{
-					country: 'Paraguay',
+					country: 'Paraguai',
 					cities: [
 						{
 							city: 'Asunción',
@@ -726,7 +729,7 @@
 					]
 				},
 				{
-					country: 'Uruguay',
+					country: 'Uruguai',
 					cities: [
 						{
 							city: 'Montevideo',
