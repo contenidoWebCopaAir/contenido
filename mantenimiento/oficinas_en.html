@@ -75,8 +75,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="row main-filter">
                     
                     <div class="form-inline">
-                        <label><b>Show Sales Offices: </b></label>
-                        <select  name="selectedCountry" id="selectedCountry" ng-model="selectedCountry" ng-cloak>
+                        <p class="span3"><b>Show Sales Offices: </b></p>
+                        <select class="span8" name="selectedCountry" id="selectedCountry" ng-model="selectedCountry" ng-cloak>
                             <option value="">All Countries</option>
                             <option ng-repeat="country in countriesNameEn" value="{{country}}" ng-cloak>{{country}}</option>
                         </select>
