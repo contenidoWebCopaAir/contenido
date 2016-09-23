@@ -1,0 +1,1998 @@
+{
+	"countries": [
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "0810 810 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Emma de la Barra 353, 7th floor, East Puerto Madero",
+							"openingTimes": "Mon - Fri 9:00am-5:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Buenos Aires"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "0810 810 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Av. Dr. Velez Sarsfield 478 - B° Nueva Córdoba",
+							"openingTimes": "Mon - Fri  9:00am-5:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Cordoba"
+				}
+			],
+			"countryName": "Argentina"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(297) 585 COPA(2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Queen Beatrix Airport (International flights section)",
+							"openingTimes": "For assistance before your trip, please contact ourReservations Center",
+							"email": null
+						}
+					],
+					"cityName": "Oranjestad"
+				}
+			],
+			"countryName": "Aruba"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 359 COPA (2672)",
+							"email": "https://www.copaair.com/comments-and-complaints"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Lynden Pindling International Airport, Terminal A",
+							"openingTimes": "For assistance before your trip, please contact our Reservations Center",
+							"email": null
+						}
+					],
+					"cityName": "Nassau"
+				}
+			],
+			"countryName": "Bahamas"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "800 10 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "La Pascana Building Office #3, 24 de septiembre St., Centro Histórico Zone",
+							"openingTimes": "Mon - Fri 8:30am-12:30pm 2:30pm -6:30pm Sat 9:00am-12:30pm",
+							"email": null
+						}
+					],
+					"cityName": "Santa Cruz De La Sierra"
+				}
+			],
+			"countryName": "Bolivia"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "0800 886 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Av. Bias Fortes, 472 - Lourdes Cep: 30170-010",
+							"openingTimes": "Mon - Fri 9:00am - 6:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Belo Horizonte"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "0800 886 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Aeropuerto de Brasilia S/N aeroporto lago sul Brasilia -DF 71.608-900",
+							"openingTimes": "Mon - Fri 9:00am-6:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Brasilia"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "0800 886 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Rod Santos Dumont km 66 Term 1 Nivel 1 Aeroporto de Viracopos",
+							"openingTimes": "Mon - Fri 9:00am-6:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Campinas"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "0800 886 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Av. Santos Dumont, 1350 Bairro Taruma - Terreo International Airport Eduardo Gomes CEP – 69.041-000",
+							"openingTimes": "Mon - Fri  9:00am-6:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Manaos"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "0800 886 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Av. Severo Dulius, 90010 Sao João",
+							"openingTimes": "Mon - Fri 9:00am-6:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Porto Alegre"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "0800 886 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Praça Ministro Salgado Filho s / n – Imbiribeira Gilberto Freyre International Aiport",
+							"openingTimes": "Mon - Fri 9:00am-6:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Recife"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "0800 886 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Atlantica Av, 1130 - 15 andar Copacabana",
+							"openingTimes": "Mon - Fri 9:00am-6:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Rio De Janeiro"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(55) 11 4933 2399",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Avenida Paulista 1337 – 4th floor ZIP 01311-200",
+							"openingTimes": "Mon - Fri  9:00am-6:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Sao Paulo"
+				}
+			],
+			"countryName": "Brasil"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 FLY COPA (359 2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Montreal Pierre Elliott Trudeau International Airport 975 Boul. Roméo Vachon Nord Suite 429",
+							"openingTimes": "For assistance before your trip, please contact our Reservations Center",
+							"email": null
+						}
+					],
+					"cityName": "Montreal"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 FLY COPA (359 2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Pearson Int Airport Terminal 1. Office GA 2202   ** Only Canadian dollars and Visa, MasterCard cards are accepted.",
+							"openingTimes": "Mon - Fri 9:00am-12:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Toronto"
+				}
+			],
+			"countryName": "Canada"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(56) 2 2835 8200",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Av. El Golf 99 local 101ª Las Condes",
+							"openingTimes": "Mon - Fri 9:00am-5:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Santiago de Chile"
+				}
+			],
+			"countryName": "Chile"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "01 8000 112600",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "PRINCIPAL 72nd Street Nro 54 – 49. Offices 1 and 2",
+							"openingTimes": "Mon - Fri 8:00am-6:00pm Sat 9:00am-1:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Barranquilla"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(57) 1 320 9090",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Calle 100 Nro. 7 A - 81 Universa Building Office 3",
+							"openingTimes": "Mon - Fri 8:00am-6:00pm Sat 9:00am-12:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Centro Internacional  Cra 10 No. 27-51 Office 165",
+							"openingTimes": "Mon - Fri 8:00am-6:00pm Sat 9:00am-12:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "76th Street Cra 11 Nro 76",
+							"openingTimes": "Mon - Fri 8:00am-6:00pm Sat 9:00am-12:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Santa Barbara Commercial Center  114th Street Nro 6 – 92 Interior D 321",
+							"openingTimes": "Mon - Fri 8:30am-6:30pm Sat 10 :00am-1:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Gran Estacion Commercial Center  26th Street Nro 62 - 49 Entrance 3 1st floor",
+							"openingTimes": "Mon - Sat 10:00am-8:30pm Sun & Holidays 11:00am-7:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "El Dorado Airport International Terminal Entrance #8 Front Office 13 and 16 2nd floor",
+							"openingTimes": "Mon - Sat 5:00am-9:00pm Sun & Holidays 5:00am- 1:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Unicentro Commercial Center  15th Avenue Nro 124 - 30 1st floor, Office 1-101 Entrance #8",
+							"openingTimes": "Mon - Fri 9:00am-8:00pm Sat 10:00am-7:00pm Sun 10:00am-4:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Bogota"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "01 8000 112600",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "PRINCIPAL  Cra 35 Nro 54 - 114",
+							"openingTimes": "Mon - Fri 8:00am-6:00pm  Sat  9:00am-12:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Bucaramanga"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "01 8000 112600",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "SUR  Carrera 44 Nro 8 A - 03 Office 8 Plaza 9/44",
+							"openingTimes": "Mon - Fri 8:00am-6:00pm Sat  9:00am-12:00pm Sun & Holidays Closed",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "14 Paso Ancho Commercial Center  13th Street Nro 80 - 60",
+							"openingTimes": "Mon - Fri 10:00am - 7:00pm Sat 9:00am-6:00pm  Sun & Holidays 11:00am-4:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Cali"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "01 8000 112600",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Rafael Nunez International Airport Crespo - Cartagena First floor",
+							"openingTimes": "Mon - Fri  8:00am-6:00pm  Sat, Sun & Holidays  8:00am - 5:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Cartagena"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "01 8000 112600",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "PRINCIPAL  15th Street Nro 0 E - 18 Caobos",
+							"openingTimes": "Mon - Fri 8:00am-6:00pm  Sat  9:00am-1:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Cucuta"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "01 8000 112600",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Cra 43 A Nro 34 – 95 Office 099 Almacentro Commercial Center",
+							"openingTimes": "Mon - Fri  8:00am-6:00pm Sat 9:00am-12:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Los Molinos Commercial Center  30th Street A Nro 82 a 26 Local 2329",
+							"openingTimes": "Mon - Sat 10:00am - 9:00pm Sun & Holidays 12:00pm - 7:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Medellin"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "01 8000 112600",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Av Circunvalar # 8b-51 edificio Bancafe local 103",
+							"openingTimes": "Mon - Fri 8:00am-6:00pm  Sat  9:00am-12:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Pereira"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "01 8000 112600",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Ave. Newball Torre Sunrise Beach No. 4- 141 Local 125-b6",
+							"openingTimes": "Mon - Fri 8:00am- 12:00pm  2:00pm – 6:00pm Sat 9:00am-1:00pm",
+							"email": null
+						}
+					],
+					"cityName": "San Andres"
+				}
+			],
+			"countryName": "Colombia"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(506) 2223 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Daniel Oduber Airport",
+							"openingTimes": "Thu & Sun  7:00am-2:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Liberia"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(506) 2223 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Edif. Torres Mercedes, 1er Piso, Paseo Colon",
+							"openingTimes": "Mon - Fri 8:00am-5:00pm Sat 8:00am-12:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Plaza Antares, 1er piso,Rotonda de la Bandera, San Pedro",
+							"openingTimes": "Mon - Fri 9:00am-7:00pm Sat 12:00pm-7:00pm Sun 10:00am - 5:00pm",
+							"email": null
+						}
+					],
+					"cityName": "San Jose"
+				}
+			],
+			"countryName": "Costa Rica"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(53) 7 204 1111",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Miramar Business Center, Main level Barcelona Building, 5th Avenue between 76 and 78 Playa",
+							"openingTimes": "Mon - Fri  8:30am-5:00pm Sat 9:00am-1:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Havana"
+				}
+			],
+			"countryName": "Cuba"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "001 877 389 3606",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Zuikertuin Mall Tower Unit 1B y 1C Willemstad, Curacao",
+							"openingTimes": "Mon - Fri 8:00am-5:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Curaçao International Airport",
+							"openingTimes": "Tue, Thu, Fri, Sun 8:00am-4:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Willemstad"
+				}
+			],
+			"countryName": "Curacao"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(809) 200 2772",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Punta Cana International Airport Carretera de Punta Cana",
+							"openingTimes": "For assistance before your trip, please contact our Reservations Center",
+							"email": null
+						}
+					],
+					"cityName": "Punta Cana"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(809) 200 2772",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Carretera Luperón kilometro 1, Plaza Galerias Luperón, Office 1- Main level",
+							"openingTimes": "Mon - Fri 9:00am-1:00pm 2:00pm-6:00pm Sat 9:00am-1:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Santiago de los Caballeros"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(809) 472 COPA (2672) | Toll Free (Provincias) 809 200 2772",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Ave. Abraham Lincoln esq. Jacinto Mañón Ejecutiva Sonora Tower, Suite 101-A, 1st floor",
+							"openingTimes": "Mon - Fri  8:00am-6:00pm Sat 9:00am-1:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Av. San Vicente de Paúl, Esq. Carretera Mella, Plaza Comercial Megacentro, 1st floor",
+							"openingTimes": "Mon - Sat 9:00am-8:00pm Sun 10:00am-6:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Santo Domingo"
+				}
+			],
+			"countryName": "Dominican Republic"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(593) 4230 3211",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Miguel Cordero and Av Paucarbamba Work Center Building Main level Office #9",
+							"openingTimes": "Mon - Fri  9:00am-1:00pm 2:00pm-5:45pm Sat 9:00am-1:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Cuenca"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(593) 4230 3211",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Nueve de Octubre 100 and Malecón Simón Bolívar, 25th floor",
+							"openingTimes": "Mon - Fri  8:00am-5:45pm Sat 8:00am-1:45pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Village Square Shopping Center, Km 1.5 Via Samborondón Ground Floor",
+							"openingTimes": "Mon - Sat 10:00am-9:00pm Sun & Holidays 10:00am-8:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Guayaquil"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(593) 2 4013000",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Av. República del Salvador 361 & Moscú Aseguradora del Sur Building Main level Mall El Jardín Av. República 6-114 and Amazonas",
+							"openingTimes": "Mon - Fri  8:00am-6:00pm Sat 9:00am-2:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Mall El Jardín Av. República 6-114 and Amazonas",
+							"openingTimes": "Mon - Sat 10:00am-8:30pm Sun & Holidays 10:00am-7:30pm",
+							"email": null
+						}
+					],
+					"cityName": "Quito"
+				}
+			],
+			"countryName": "Ecuador"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(503) 2209 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "World Trade Center Building, Tower 1, 1st floor # 107  Colonia Escalon between El Mirador Street and 89 Av. Norte",
+							"openingTimes": "Mon - Fri  8:00am-6:00pm Sat 8:00am-12:00pm",
+							"email": null
+						}
+					],
+					"cityName": "San Salvador"
+				}
+			],
+			"countryName": "El Salvador"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(502) 22307-6400",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "5th Avenue 5 - 55 zona 14 Euro Plaza Building Tower 3 Office 102, Main level",
+							"openingTimes": "Mon - Fri  8:00am-6:00pm Sat 8:00am-12:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Guatemala City"
+				}
+			],
+			"countryName": "Guatemala"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(855) 654 0566",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "#212 Camp Street, North Cummingsburg, Georgetown, Guyana",
+							"openingTimes": "Mon - Fri  8:30am-5:00pm Sat 9:00am-12:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Georgetown"
+				}
+			],
+			"countryName": "Guyana"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 271 COPA (2672) | (868) 669 5189",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "30th Avenue Marie Jeanne P.O . B.O.X 1334",
+							"openingTimes": "Mon - Fri 8:30am-3:30pm",
+							"email": null
+						}
+					],
+					"cityName": "Port au Prince"
+				}
+			],
+			"countryName": "Haiti"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(504) 2516 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Avenue Circunvalacion Barrio Paz Barahona, 13 Street esquina opuesta a sears, Plaza Geosur, local 1",
+							"openingTimes": "Mon - Fri 8:00am-5:00pm Sat 8:00am-12:00m",
+							"email": null
+						}
+					],
+					"cityName": "San Pedro Sula"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(504) 233 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Corporativo Building next to Hotel Clarion 1era Planta, Col. Alameda Avenida Juan Manuel Galvez",
+							"openingTimes": "Mon - Fri  8:00am-5:00pm Sat 8:00am-12:00m",
+							"email": null
+						}
+					],
+					"cityName": "Tegucigalpa"
+				}
+			],
+			"countryName": "Honduras"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 234 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Courtleigh Corporate Center Unit 18 8 St. Lucia Avenue Kingston 5 Jamaica W.I",
+							"openingTimes": "Mon - Fri  8:30am-5:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Kingston"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 234 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Sangster International Airport, Montego Bay, Jamaica, West Indies (The counter is located in the departure terminal)",
+							"openingTimes": "For assistance before your trip, please contact our Reservations Center",
+							"email": null
+						}
+					],
+					"cityName": "Montego Bay"
+				}
+			],
+			"countryName": "Jamaica"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "01 800 265 COPA (2672)",
+							"email": "https://www.copaair.com/comments-and-complaints"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Cancun International Airport Terminal 2, behind counters 83 and 84 Office #43",
+							"openingTimes": "Mon - Sat 9:00am-4:00pm  Sun & Holidays  10:00am-4:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Cancun"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "01 800 265 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "AV Moctezuma N. 3515 offices 8 and 9, Presidente Intercontinental Hotel Colonia Ciudad del Sol, Zapopan Jalisco Mexico",
+							"openingTimes": "Mon - Fri  9:00am-6:00pm Sat 9:00am-1:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Guadalajara"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "01 800 265 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Av. Lázaro Cárdenas #2225, Torre Latitud, Office #2 Main level, Colonia Valle Oriente, San Pedro Garza Garcia, Nuevo León, México.",
+							"openingTimes": "Mon - Fri  9:00am-6:00pm Sat 9:00am-1:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Monterrey"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "01 800 265 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Berna Numero 06 Main level, Colonia Juarez Mexico  Delegacion Cuauhtemoc CP 06600 DF",
+							"openingTimes": "Mon - Fri  9:00am-6:00pm Sat 10:00am-2:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Mexico DF"
+				}
+			],
+			"countryName": "Mexico"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "001 877 389 3606",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Princess Juliana International Airport, Office # 1030",
+							"openingTimes": "For assistance before your trip, please contact our Reservations Center",
+							"email": null
+						}
+					],
+					"cityName": "St Maarten"
+				}
+			],
+			"countryName": "Netherlands Antilles"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(505) 2267 0045",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Km. 4.5 carretera Masaya, CAR Building No. 6 Planes de Altamira",
+							"openingTimes": "Mon - Fri  8:00am-5:30pm Sat 8:00am-12:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Managua"
+				}
+			],
+			"countryName": "Nicaragua"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(507) 217 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Galerias, Riande Continental Hotel, Via España",
+							"openingTimes": "Mon - Fri  8:00am-5:00pm Sat 9:00am-1:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Casco Antiguo – Locales comerciales del Hotel American Trade, Calle José de Obaldía, Avenida Central entre Calle 9na y 10ma",
+							"openingTimes": "Mon - Fri  8:00am-5:00pm Sat 9:00am-1:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Costa del Este Business Park Complex, North Tower, Main level",
+							"openingTimes": "Mon - Fri  8:00am-5:00pm Sat 8:00am-12:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Multimax Commercial Center, Av. Ricardo J. Alfaro",
+							"openingTimes": "Mon - Sat 10:00am-7:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Multiplaza Shopping Center, Plaza del Mar, 1st floor",
+							"openingTimes": "Mon - Sat 10:00am-8:00pm Sun 11:00am-7:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Albrook Mall, Pasillo del Koala",
+							"openingTimes": "Mon-Sat 10:00am-8:00pm Sun 11:00 am-7:00 pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Metromall Shopping Center, 1st floor Stand K1 – 17, in front of Dunkin Donuts",
+							"openingTimes": "Mon-Sat  10:00am-8:00pm Sun 11:00am-7:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Sheraton Hotel Main level",
+							"openingTimes": "Mon - Fri 8:00am-12:00pm 1:00pm-5:00pm Sat 8:00am-12:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Panama"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(507) 217 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Av. Domingo Díaz Garrido Building, Main level, office #1 David, Chiriqui",
+							"openingTimes": "Mon - Sat  8:00am-5:00pm Sat 8:00am-12:00pm",
+							"email": null
+						}
+					],
+					"cityName": "David, Chiriqui"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(507) 217 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "14th Street Av Rusbell and Santa Isabel",
+							"openingTimes": "Mon - Fri  8:00am-5:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Zona Libre Colon"
+				}
+			],
+			"countryName": "Panama"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(595) 2161 4300 Not available from cellular",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Av. Bogginani esq. Cap. Nudelmann Boggiani Building, Main level",
+							"openingTimes": "Mon - Fri  8:30am-5:30pm Sat 8:30am-12:30pm",
+							"email": null
+						}
+					],
+					"cityName": "Asuncion"
+				}
+			],
+			"countryName": "Paraguay"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(51) 1 7092600",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Los Halcones Street 105 San Isidro, Cruce de Canaval and Moreyra with República de Panamá",
+							"openingTimes": "Mon - Fri  9:00am-6:00pm Sat 9:00am-1:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Lima"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Sargento Lores Street 379",
+							"openingTimes": "Mon - Fri  9:00am-7:00pm Sat 9:00am-1:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Iquitos"
+				}
+			],
+			"countryName": "Peru"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 FLY COPA (359 2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "#15 2nd Street Suite 102 Millennium Park Plaza Metro Office Park Guaynabo, PR 00968",
+							"openingTimes": "Mon - Fri  8:30am-5:00pm Sat 9:00am-1:00pm",
+							"email": null
+						}
+					],
+					"cityName": "San Juan"
+				}
+			],
+			"countryName": "Puerto Rico"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 271 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Piarco International Airport 1st Floor The Atrium Main Terminal",
+							"openingTimes": "Mon - Fri 9:00am-5:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Port of Spain"
+				}
+			],
+			"countryName": "Trinidad and Tobago"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "(598) 2626 1000",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Luis Alberto de Herrera 1248 local 43, (entering by 26 de marzo Street) 3rd Tower World Trade Center",
+							"openingTimes": "Mon - Fri  9:00am-5:30pm",
+							"email": null
+						}
+					],
+					"cityName": "Montevideo"
+				}
+			],
+			"countryName": "Uruguay"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 FLY COPA (359 2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Chicago Ohare International Airport Terminal 5 Chicago Berssie Coleman Drive 10000 Chicago IL 60666  For inquires on sales, write to:chicagosales@copaair.com",
+							"openingTimes": "Mon - Sun  4:30am-12:30pm",
+							"email": null
+						}
+					],
+					"cityName": "Chicago"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 FLY COPA (359 2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Fort Lauderdale – Hollywood International Airport",
+							"openingTimes": "For assistance before your trip, please contact our Reservations Center",
+							"email": null
+						}
+					],
+					"cityName": "Fort Lauderdale"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 FLY COPA (359 2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "International Airport McCarran, Terminal 3, 5757 Wayne Newton Blvd , Las Vegas ,NV 89119 For inquires on sales, write to:westcoastsales@copaair.com Los Angeles, CA 90045",
+							"openingTimes": "Mon - Sun  3:00am-11:00am",
+							"email": null
+						}
+					],
+					"cityName": "Las Vegas"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 FLY COPA (359 2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "International Airport Los Angeles, T-6, 600 World Way For inquires on sales, write to:westcoastsales@copaair.com",
+							"openingTimes": "Mon - Sun & Holidays  4:00am-6:00am 8:30am-11:30am 8:00pm-11:30pm",
+							"email": null
+						}
+					],
+					"cityName": "Los Angeles"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 FLY COPA (359 2672) | 1 305 371 COPA (2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Waterford Center, 6205 Blue Lagoon Drive Suite 200, Miami Fl 33126",
+							"openingTimes": "Mon - Fri  9:00am-6:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Miami"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 FLY COPA (359 2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "International Airport JFK Terminal 4 Councourse A",
+							"openingTimes": "Mon - Sun & Holidays  8:45am-9:20am 1:30pm-2:30pm",
+							"email": null
+						}
+					],
+					"cityName": "New York"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 FLY COPA (359 2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Orlando International Airport 9259 Terminal A, Airport Boulevard",
+							"openingTimes": "Mon - Sun 9:00am-3:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Orlando"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 FLY COPA (359 2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Waterford Center, 6205 Blue Lagoon Drive Suite 200, Miami Fl 33126",
+							"openingTimes": "For assistance before your trip, please contact our Reservations Center",
+							"email": null
+						}
+					],
+					"cityName": "Tampa"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "1 800 FLY COPA (359 2672)",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "International Airport Washington  1 Saarinen Circle Dulles Va Main Terminal door #2  departure flights Terminal A, gate 19",
+							"openingTimes": "Mon - Sun 6:00am - 9:00am 12:00pm - 2:30pm",
+							"email": null
+						}
+					],
+					"cityName": "Washington, DC"
+				}
+			],
+			"countryName": "USA"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "0 800 826 7200",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Francisco de Miranda Avenue, Centro Lido, Miranda level Office 22, Urb. El Rosal.",
+							"openingTimes": "Mon - Fri 8:00am - 5:00pm",
+							"email": null
+						},
+						{
+							"phone": null,
+							"address": "Av. Raúl Leoní Plaza de las Americas Commercial Center Segunda etapa PB2",
+							"openingTimes": "Mon - Sat 10:00am-6:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Caracas"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "0 800 826 7200",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Calle 78 con Av 3E, Kalakawa Commercial Center Office 09",
+							"openingTimes": "Mon - Fri  8:00am-5:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Maracaibo"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [
+						{
+							"phone": "0 800 826 7200",
+							"email": "-"
+						}
+					],
+					"sales": [
+						{
+							"phone": null,
+							"address": "Via Veneto Commercial Center, Florencia level Office F 34 Mañongo, Municipio Naguanagua - Carabobo",
+							"openingTimes": "Mon - Sat 10:00am-6:00pm",
+							"email": null
+						}
+					],
+					"cityName": "Valencia"
+				}
+			],
+			"countryName": "Venezuela"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +612 9959 3696 Fax: +612 9929 8438",
+							"address": "Discover the World Marketing. Level 7 78 York Street, Sydney NSW 2000, Australia.",
+							"openingTimes": null,
+							"email": null
+						}
+					],
+					"cityName": "Sydney"
+				}
+			],
+			"countryName": "Australia"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +43 1 512 86 86 Fax: +43 1 512 8686 60",
+							"address": "Discover the World Marketing. Vorgartenstrasse 132/1/131, A- 1020 . Vienna, Austria.",
+							"openingTimes": null,
+							"email": "office@discovertheworld.at"
+						}
+					],
+					"cityName": "Vienna"
+				}
+			],
+			"countryName": "Austria"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +32 (0) 25881979",
+							"address": "Discover the World Marketing. Stationsplein 3 (2nd floor), 1211 EX Hilversum, The Netherlands",
+							"openingTimes": null,
+							"email": null
+						}
+					],
+					"cityName": "Hilversum, The Netherlands"
+				}
+			],
+			"countryName": "Belgium"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +45 3325 2566",
+							"address": "Discover the World Trommesalen 5, 5th Floor DK-1614 Copenhaven V",
+							"openingTimes": null,
+							"email": " info@discoverthworld.dk"
+						}
+					],
+					"cityName": "Copenhaven"
+				}
+			],
+			"countryName": "Denmark"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Sales: +44 203 598 8036",
+							"address": "Discover the World, First Floor 82-84, Clerkenwell Road, London EC1M 5RF",
+							"openingTimes": null,
+							"email": " support@copaair.eu"
+						}
+					],
+					"cityName": "London"
+				}
+			],
+			"countryName": "England"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +33 (0)1 5822 2004 Fax: +33 (0)1 5822 2010",
+							"address": "Discover the World Marketing. 82, Rue Taitbout 75009 Paris, France.",
+							"openingTimes": null,
+							"email": null
+						}
+					],
+					"cityName": "Paris"
+				}
+			],
+			"countryName": "France"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +49 611 267 6770 Fax: +49 611 267 6760",
+							"address": "Discover the World Marketing. Schenkendorfstr. 1 65187 Wiesbaden. Germany",
+							"openingTimes": null,
+							"email": " discover@discover-fra.com"
+						}
+					],
+					"cityName": "Wiesbaden"
+				}
+			],
+			"countryName": "Germany"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: 0030 210 371 6370",
+							"address": "Intermodal. 25, Filellinon Street.105.57 Athens, Greece.",
+							"openingTimes": null,
+							"email": null
+						}
+					],
+					"cityName": "Athens"
+				}
+			],
+			"countryName": "Greece"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +45 3325 2566",
+							"address": "Discover the World Trommesalen 5, 5th Floor DK-1614 Copenhaven V",
+							"openingTimes": null,
+							"email": " info@discoverthworld.dk"
+						}
+					],
+					"cityName": "Copenhaven, Denmark"
+				}
+			],
+			"countryName": "Norway"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +31 (0)20 2410168",
+							"address": "Discover the World Marketing. Stationsplein 3 (2nd floor), 1211 EX Hilversum, The Netherlands",
+							"openingTimes": null,
+							"email": null
+						}
+					],
+					"cityName": "Hilversum, The Netherlands"
+				}
+			],
+			"countryName": "Netherlands"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +31 (0)20 2410168",
+							"address": "Discover the World Marketing. Stationsplein 3 (2nd floor), 1211 EX Hilversum, The Netherlands",
+							"openingTimes": null,
+							"email": "info@discoverthworld.dk"
+						}
+					],
+					"cityName": "Hilversum, The Netherlands"
+				}
+			],
+			"countryName": "Luxembourg"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +91 22 2921 0300",
+							"address": "Discover the World Marketing. 209, The Avenue, International Airport Road, Opp. The Leela – Marol Naka, Mumbai – 400 069. India.",
+							"openingTimes": null,
+							"email": "info@discovertheworld.co.in"
+						}
+					],
+					"cityName": "Mumbai"
+				}
+			],
+			"countryName": "India"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: 037951333",
+							"address": "2nd floor, Migdalot Building, 25 Ben Yehuda St. Tel Aviv 6380602",
+							"openingTimes": null,
+							"email": null
+						}
+					],
+					"cityName": "Tel Aviv"
+				}
+			],
+			"countryName": "Israel"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +39 02 67077382 Fax: +39 02 39304137 ",
+							"address": "Discover the World Marketing. Via Teglio, 9 – 20158 Milan. Italy.",
+							"openingTimes": null,
+							"email": " info@discovertheworld-mil.com"
+						}
+					],
+					"cityName": "Milan"
+				}
+			],
+			"countryName": "Italy"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +81 3 3597 9480",
+							"address": "Discover the World Marketing. Hibiya Kokusai Bldg. 2-3, Uchisaiwaicho 2-chome, Chiyoda-ku. Tokyo 100-0011 Japan",
+							"openingTimes": null,
+							"email": " dscvrtyo@cc.mbn.or.jp"
+						}
+					],
+					"cityName": "Tokyo"
+				}
+			],
+			"countryName": "Japan"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +82 2 771 5622 Fax: +82 2 771 1157",
+							"address": "Discover the World Marketing. 1002, Seoul Center Bldg. 91-1, Sogong-dong, Jung-gu. Seoul, 100-070, Korea",
+							"openingTimes": null,
+							"email": null
+						}
+					],
+					"cityName": "Seoul"
+				}
+			],
+			"countryName": "Korea"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +649 280 3133 Tel: 0800 623 4293",
+							"address": "Discover the World, Central Business Park, Building 5, Level 3, 666 Great South Road, Auckland 1051.",
+							"openingTimes": null,
+							"email": null
+						}
+					],
+					"cityName": "Auckland "
+				}
+			],
+			"countryName": "New Zealand"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: (+351) 21 358 44 56",
+							"address": "Lisboa Av. Defensores de Chaves, 15-3ºE 1000-109 Lisboa",
+							"openingTimes": null,
+							"email": " copaairlines@selectaviation.pt"
+						}
+					],
+					"cityName": "Lisboa"
+				},
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: (+351) 21 358 44 56",
+							"address": "Porto CE Capitólio Loja 44. Av. França, 256 4050-276 Porto",
+							"openingTimes": null,
+							"email": " copaairlines@selectaviation.pt"
+						}
+					],
+					"cityName": "Port"
+				}
+			],
+			"countryName": "Portugal"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +7  (495) 744 0490 Fax: +7 (495) 425 1800",
+							"address": "Discover the World Marketing. 40/2 build. 1, str. Prechistenka. Moscow, 119034. Russian Federation.",
+							"openingTimes": null,
+							"email": "info@discovertheworld.ru"
+						}
+					],
+					"cityName": "Moscow"
+				}
+			],
+			"countryName": "Russia"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +45 3325 2566 Fax: +45 3325 2586",
+							"address": "Discover the World Marketing. Trommesalen 5, 5tv. DK-1614 Copenhagen V.",
+							"openingTimes": null,
+							"email": "info@discoverthworld.dk"
+						}
+					],
+					"cityName": "Copenhaven, Denmark"
+				}
+			],
+			"countryName": "Scandinavia"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +65 6884-9119 Fax: +65 6884-9919",
+							"address": "Discover the World 180B Bencoolen Street #05-01 The Bencoolen Office Tower, Singapore 189648",
+							"openingTimes": null,
+							"email": "dtwmsin@discovertheworld.com.sg"
+						}
+					],
+					"cityName": "Singapore"
+				}
+			],
+			"countryName": "Singapore"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: (34) 91 547 8588",
+							"address": "Select Aviation. C/Princesa #2, Planta 2, Oficina 1 28008 Madrid, Spain.",
+							"openingTimes": null,
+							"email": null
+						}
+					],
+					"cityName": "Madrid"
+				}
+			],
+			"countryName": "Spain"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +45 3325 2566",
+							"address": "Discover the World Trommesalen 5, 5th Floor DK-1614 Copenhaven V",
+							"openingTimes": null,
+							"email": "info@discoverthworld.dk"
+						}
+					],
+					"cityName": "Copenhaven, Denmark"
+				}
+			],
+			"countryName": "Sweden"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +41 58 201 32 01 Fax: +41 58 201 32 11",
+							"address": "Bremgartenstrasse 11, 5634 Merenschwand (Switzerland)",
+							"openingTimes": null,
+							"email": "info@discoverzrh.ch"
+						}
+					],
+					"cityName": "Merenschwand"
+				}
+			],
+			"countryName": "Switzerland"
+		},
+		{
+			"cities": [
+				{
+					"suggestionsEmail": "https://www.copaair.com/comments-and-complaints",
+					"reservation": [],
+					"sales": [
+						{
+							"phone": "Tel: +886 2 25413366",
+							"address": "Elite Holiday Travel Service. 5F-1, No. 62. Sec 2, Nan king E. Rd Taipei, Taiwan.",
+							"openingTimes": null,
+							"email": null
+						}
+					],
+					"cityName": "Taipei"
+				}
+			],
+			"countryName": "Taiwan"
+		}
+	]
+}
