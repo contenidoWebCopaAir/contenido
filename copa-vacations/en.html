@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Copa Vacations Test</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+</head>
+<body ng-app="copa">
+	<div class="container" ng-controller="copaVacationsCtrl">
+		<div class="row">
+			<div class="span4">
+				<div class="promo-banner" style="background-color: #114B80">
+					<div class="promo-destination"> 
+						<span class="city">CANCÚN</span>
+						<span class="country">México</span>
+					</div>
+					<div class="promo-details">
+						<span class="promo">DESDE</span>
+						<span class="sign">$</span>
+						<span class="value">619</span>
+						<span class="stay">
+							<span class="days"><img src="img/mini-sun.png"> 4</span>
+							<span class="nights"><img src="img/mini-moon.png"> 3</span>
+						</span> 
+					</div> 
+					<div class="promo-image" style="color: #114B80">
+						<img alt="" src="">
+					</div> 
+					<div class="promo-info">
+						<span class="includes">INCLUYE</span> 
+						<span class="picture flight"><img src="img/sw-flight.png" align="top"></span> 
+						<span class="picture hotel"><img src="img/sw-hotel.png" align="top"></span> 
+						<span class="picture transport"><img src="img/sw-transport.png" align="top"></span> 
+						<span class="picture service"><img src="img/sw-service.png" align="top"></span> 
+						<span class="go"> <a href="/colombia-cancun">Ver Más</a></span> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+	var copa = angular.module("copa", []); 
+		copa.controller('copaVacationsCtrl', [ "$scope", function($scope){
+			$scope.world = [
+				{
+					origin: 'Peru',
+					packages: [
+						{
+							destination: {
+								city: 'Montego Bay',
+								country: 'Jamaica'
+							}, 
+							price: 1235,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 4,
+							nights: 3,
+							url: '#',
+							img: {
+								src: 'img/',
+								alt: ''
+							}
+						},
+						{
+							destination: {
+								city: 'Panama',
+								country: 'Panama'
+							},
+							price: 1735,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: null,
+							days: 8,
+							nights: 7,
+							url: '/panama-cordoba',
+							img: {
+								src: '',
+								alt: ''
+							}
+						},
+
+					]
+				},
+				{
+					country: 'Argentina',
+					packages: [
+						{
+							city: 'Cordoba',
+							price: 1735,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: null,
+							days: 8,
+							nights: 7,
+							url: '/panama-cordoba',
+							img: {
+								src: '',
+								alt: ''
+							}
+						}
+					]
+				},
+			];
+		}]);
+	</script>
+</body>
+</html>
+
