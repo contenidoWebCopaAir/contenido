@@ -1,92 +1,103 @@
-<div ng-controller="copaVacationsCtrl">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Copa Vacations Test</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+	<style type="text/css">
+		.grey {background-color: #666666 !important;}
+		.lightBlue {background-color: #026DB3 !important;}
+		.promo-banner {background-color: #114B80;}
+		.country-title {
+			padding: 20px; 
+		}
+		.country_links {margin-left:20px;}
 
-		<div class="content_centered">
-			<div class="row">
-				<div class="country_links">
-					<p class="note">Departures from:</p>
-					<ul>
-						<li ng-repeat="country in countries | orderBy: country">
-							<a href="/copa-vacations-{{country | lowercase}}">{{country}}</a>
-						</li>
-					</ul>
-				</div>
+		.promo-banner { margin-bottom:20px !important; }
+
+		@media (min-width: 1200px){
+			.aui .row-fluid .span4{
+				width: 30.62393% !important;
+			}
+		}
+	</style>
+</head>
+<body ng-app="copa">
+	<div class="container" ng-controller="copaVacationsCtrl">
+		<div class="row">
+			<div class="country_links">
+				<p class="note">Salidas desde:</p>
+				<ul>
+					<li ng-repeat="country in countries | orderBy: country">
+						<a href="/copa-vacations-{{country | lowercase}}">{{country}}</a>
+					</li>
+				</ul>
 			</div>
 		</div>
-		<div class="columns-1 gray_background">
-			<div class="content_centered">
-				<div class="row">
-					<div class="filter_vacations list-style">
-						<ul>
-							<li>
-								<img src="/documents/1851355/1855229/conv_aereos.png"> 
-								<div>Flights</div> 
-							</li> 
-							<li>
-								<img src="/documents/1851355/1855229/conv_hotel.png">
-								<div>Hotel</div> 
-							</li> 
-							<li>
-								<img src="/documents/1851355/1855229/conv_transalados.png"> 
-								<div>Moving</div> 
-							</li> 
-							<li>
-								<img src="/documents/1851355/1855229/conv_inclusive.png"> 
-								<div>All inclusive</div> 
-							</li> 
-						</ul> 
+		<div class="row">
+			<div class="filter_vacations list-style">
+				<ul>
+					<li>
+						<img src="/documents/1851355/1855229/conv_aereos.png"> 
+						<div>Aéreos</div> 
+					</li> 
+					<li>
+						<img src="/documents/1851355/1855229/conv_hotel.png">
+						<div>Hotel</div> 
+					</li> 
+					<li>
+						<img src="/documents/1851355/1855229/conv_transalados.png"> 
+						<div>Traslados</div> 
+					</li> 
+					<li>
+						<img src="/documents/1851355/1855229/conv_inclusive.png"> 
+						<div>Todo incluido</div> 
+					</li> 
+				</ul> 
+			</div>
+		</div>
+		<div class="row" ng-repeat="countrie in world">
+			<div class="web-content-copa common-styles">
+				DESDE <strong ng-cloak>{{countrie.origin | uppercase}}</strong>
+			</div>
+			<div class="span4" ng-repeat="package in countrie.packages">
+				<div 
+					class="promo-banner" 
+					ng-class-odd="lightBlue"
+					ng-class-even="grey"
+				>
+					<div class="promo-destination"> 
+						<span class="city" ng-cloak>{{package.destination.city}}</span>
+						<span class="country" ng-cloak>{{package.destination.country}}</span>
 					</div>
-				</div>
-				<div class="row" ng-repeat="countrie in world">
-					<div class="web-content-copa common-styles country-title">
-						FROM <strong ng-cloak>{{countrie.origin | uppercase}}</strong>
-					</div>
-					<div class="span4" ng-repeat="package in countrie.packages">
-						<div 
-							class="promo-banner" 
-							ng-class="[{col1: $index % 1 == 0, col2: $index % 2 == 0, col3: $index % 3 == 0} ]"
-						>
-							<div class="promo-destination"> 
-								<span class="city" ng-cloak>{{package.destination.city}}</span>
-								<span class="country" ng-cloak>{{package.destination.country}}</span>
-							</div>
-							<div class="promo-details">
-								<span class="promo">FROM</span>
-								<span class="sign">$</span>
-								<span class="value" ng-cloak>{{package.price}}</span>
-								<span class="stay">
-									<span class="days" ng-cloak>
-										<img src="/documents/20182/174915/mini-sun.png">
-										{{package.days}}
-									</span>
-									<span class="nights" ng-cloak>
-										<img src="/documents/20182/174915/mini-moon.png">
-										{{package.nights}}
-									</span>
-								</span> 
-							</div> 
-							<div class="promo-image">
-								<img ng-alt="{{package.img.alt}}" ng-src="{{package.img.src}}">
-							</div> 
-							<div class="promo-info">
-								<span class="includes">INCLUDE</span> 
-								<span class="picture flight" ng-if="package.tickets">
-									<img src="/documents/20182/174915/sw-flight.png" align="top">
-								</span> 
-								<span class="picture hotel" ng-if="package.hotel">
-									<img src="/documents/20182/174915/sw-hotel.png" align="top">
-								</span> 
-								<span class="picture transport" ng-if="package.transport">
-									<img src="/documents/20182/174915/sw-transport.png" align="top">
-								</span> 
-								<span class="picture service" ng-if="package.allInclusive">
-									<img src="/documents/20182/174915/sw-service.png" align="top">
-								</span> 
-								<span class="go">
-									<a href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/{{package.url}}" ng-cloak>	SEE MORE
-									</a>
-								</span> 
-							</div>
-						</div>
+					<div class="promo-details">
+						<span class="promo">DESDE</span>
+						
+						<span class="value" ng-cloak>{{package.price | currency: "USD$": 0}}</span>
+						<span class="stay">
+							<span class="days"><img src="img/mini-sun.png" ng-cloak>{{package.days}}</span>
+							<span class="nights"><img src="img/mini-moon.png" ng-cloak>{{package.nights}}</span>
+						</span> 
+					</div> 
+					<div class="promo-image">
+						<img ng-alt="{{package.img.alt}}" ng-src="{{package.img.src}}">
+					</div> 
+					<div class="promo-info">
+						<span class="includes">INCLUYE</span> 
+						<span class="picture flight" ng-if="package.tickets">
+							<img src="img/sw-flight.png" align="top">
+						</span> 
+						<span class="picture hotel" ng-if="package.hotel">
+							<img src="img/sw-hotel.png" align="top">
+						</span> 
+						<span class="picture transport" ng-if="package.transport">
+							<img src="img/sw-transport.png" align="top">
+						</span> 
+						<span class="picture service" ng-if="package.allInclusive">
+							<img src="img/sw-service.png" align="top">
+						</span> 
+						<span class="go">
+							<a href="/{{package.url}}" ng-cloak>Ver Más</a></span> 
 					</div>
 				</div>
 			</div>
@@ -94,8 +105,8 @@
 	</div>
 
 	<script>
-	 
-		angular.module("copa").controller('copaVacationsCtrl', [ "$scope", function($scope){
+	var copa = angular.module("copa", []); 
+		copa.controller('copaVacationsCtrl', [ "$scope", function($scope){
 			$scope.countries = [];
 			$scope.world = [
 				{
@@ -115,7 +126,7 @@
 							nights: 3,
 							url: '/peru-jamaica',
 							img: {
-								src: '/documents/20182/174915/montegoBaySmall.png',
+								src: 'img/montegoBaySmall.png',
 								alt: 'Montegobay beach'
 							}
 						},
@@ -133,7 +144,7 @@
 							nights: 3,
 							url: '/peru-panama',
 							img: {
-								src: '/documents/20182/174915/Panama-Canal400.jpg',
+								src: 'img/Panama-Canal400.jpg',
 								alt: 'Panama Canal'
 							}
 						},
@@ -151,7 +162,7 @@
 							nights: 3,
 							url: '/peru-nassau',
 							img: {
-								src: '/documents/20182/174915/nassau400.jpg',
+								src: 'img/nassau400.jpg',
 								alt: 'Happy couple in Nassau beach'
 							}
 						},
@@ -169,7 +180,7 @@
 							nights: 4,
 							url: '/peru-holguin',
 							img: {
-								src: '/documents/20182/174915/holguin400.jpg',
+								src: 'img/holguin400.jpg',
 								alt: 'Holguin view from the sky'
 							}
 						},
@@ -193,7 +204,7 @@
 							nights: 7,
 							url: '/chile-holguin',
 							img: {
-								src: '/documents/20182/174915/holguin400_2.jpg',
+								src: 'img/holguin400_2.jpg',
 								alt: 'Holguin view from the sky'
 							}
 						},
@@ -211,7 +222,7 @@
 							nights: 7,
 							url: '/chile-cancun',
 							img: {
-								src: '/documents/20182/174915/cancun400.jpg',
+								src: 'img/cancun400.jpg',
 								alt: 'Cancun beach'
 							}
 						},
@@ -229,7 +240,7 @@
 							nights: 7,
 							url: '/chile-nassau',
 							img: {
-								src: '/documents/20182/174915/nassau400_2.jpg',
+								src: 'img/nassau400_2.jpg',
 								alt: 'Nassau view from the sky'
 							}
 						},
@@ -247,7 +258,7 @@
 							nights: 4,
 							url: '/chile-panama',
 							img: {
-								src: '/documents/20182/174915/panama-city400.jpg',
+								src: 'img/panama-city400.jpg',
 								alt: 'Sunset in Panama'
 							}
 						},
@@ -270,7 +281,7 @@
 							nights: 3,
 							url: '/ecuador-nassau',
 							img: {
-								src: '/documents/20182/174915/nassau400.jpg',
+								src: 'img/nassau400.jpg',
 								alt: 'Nassau beach'
 							}
 						},
@@ -288,7 +299,7 @@
 							nights: 3,
 							url: '/ecuador-santiago-de-los-caballeros',
 							img: {
-								src: '/documents/20182/174915/santiago-de-los-caballeros400.jpg',
+								src: 'img/santiago-de-los-caballeros400.jpg',
 								alt: 'Santiago de los Caballeros beach'
 							}
 						},
@@ -306,7 +317,7 @@
 							nights: 4,
 							url: '/ecuador-belize',
 							img: {
-								src: '/documents/20182/174915/belize400.jpg',
+								src: 'img/belize400.jpg',
 								alt: 'Indian monument in the jungle'
 							}
 						}
@@ -329,7 +340,7 @@
 							nights: 3,
 							url: '/colombia-panama',
 							img: {
-								src: '/documents/20182/174915/panama-ruinas400.jpg',
+								src: 'img/panama-ruinas400.jpg',
 								alt: 'Old castle'
 							}
 						},
@@ -347,7 +358,7 @@
 							nights: 3,
 							url: '/colombia-cancun',
 							img: {
-								src: '/documents/20182/174915/cancun400.jpg',
+								src: 'img/cancun400.jpg',
 								alt: 'Cancun Beach'
 							}
 						},
@@ -365,7 +376,7 @@
 							nights: 3,
 							url: '/colombia-punta-cana',
 							img: {
-								src: '/documents/20182/174915/PUNTA-CANA400.jpg',
+								src: 'img/PUNTA-CANA400.jpg',
 								alt: 'Punta Cana Beach'
 							}
 						},
@@ -380,3 +391,6 @@
     		}
 		}]);
 	</script>
+</body>
+</html>
+
