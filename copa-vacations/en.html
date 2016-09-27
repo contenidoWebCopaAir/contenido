@@ -5,9 +5,9 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
 	<style type="text/css">
-		.col1 {background-color: #114B80;}
+		.col1 {background-color: #666666;}
 		.col2 {background-color: #026DB3;}
-		.col3 {background-color: #666666;}
+		.col3 {background-color: #114B80;}
 	</style>
 </head>
 <body ng-app="copa">
@@ -26,7 +26,7 @@
 					<div class="promo-details">
 						<span class="promo">DESDE</span>
 						
-						<span class="value" ng-cloak>{{package.price | currency}}</span>
+						<span class="value" ng-cloak>{{package.price | currency: "USD$": 0}}</span>
 						<span class="stay">
 							<span class="days"><img src="img/mini-sun.png" ng-cloak>{{package.days}}</span>
 							<span class="nights"><img src="img/mini-moon.png" ng-cloak>{{package.nights}}</span>
@@ -79,7 +79,7 @@
 							url: '/peru-jamaica',
 							img: {
 								src: 'img/montegoBaySmall.png',
-								alt: 'Montegobay'
+								alt: 'Montegobay beach'
 							}
 						},
 						{
@@ -87,17 +87,17 @@
 								city: 'Panama',
 								country: 'Panama'
 							},
-							price: 1735,
+							price: 799,
 							tickets: 1,
 							hotel: 1,
 							transport: 1,
 							allInclusive: 1,
-							days: 8,
-							nights: 7,
+							days: 4,
+							nights: 3,
 							url: '/peru-panama',
 							img: {
-								src: 'img/montegoBaySmall.png',
-								alt: 'panama-cordoba'
+								src: 'img/Panama-Canal400.jpg',
+								alt: 'Panama Canal'
 							}
 						},
 						{
@@ -105,7 +105,7 @@
 								city: 'Nassau',
 								country: 'Bahamas'
 							},
-							price: 1457,
+							price: 1459,
 							tickets: 1,
 							hotel: 1,
 							transport: 1,
@@ -114,8 +114,8 @@
 							nights: 3,
 							url: '/peru-nassau',
 							img: {
-								src: 'img/montegoBaySmall.png',
-								alt: 'panama-cordoba'
+								src: 'img/nassau400.jpg',
+								alt: 'Happy couple in Nassau beach'
 							}
 						},
 						{
@@ -132,34 +132,206 @@
 							nights: 4,
 							url: '/peru-holguin',
 							img: {
-								src: 'img/montegoBaySmall.png',
-								alt: 'panama-cordoba'
+								src: 'img/holguin400.jpg',
+								alt: 'Holguin view from the sky'
 							}
 						},
 
 					]
 				},
 				{
-					origin: 'Argentina',
+					origin: 'Chile',
+					packages: [
+						{
+							destination: {
+								city: 'Holguin',
+								country: 'Cuba'
+							},
+							price: 1354,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 8,
+							nights: 7,
+							url: '/chile-holguin',
+							img: {
+								src: 'img/holguin400_2.jpg',
+								alt: 'Holguin view from the sky'
+							}
+						},
+						{
+							destination: {
+								city: 'Cancun',
+								country: 'Mexico'
+							},
+							price: 1176,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 8,
+							nights: 7,
+							url: '/chile-cancun',
+							img: {
+								src: 'img/cancun400.jpg',
+								alt: 'Cancun beach'
+							}
+						},
+						{
+							destination: {
+								city: 'Nassau',
+								country: 'Bahamas'
+							},
+							price: 1589,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 8,
+							nights: 7,
+							url: '/chile-nassau',
+							img: {
+								src: 'img/nassau400_2.jpg',
+								alt: 'Nassau view from the sky'
+							}
+						},
+						{
+							destination: {
+								city: 'Panama',
+								country: 'Panama'
+							},
+							price: 1530,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 0,
+							days: 5,
+							nights: 4,
+							url: '/chile-panama',
+							img: {
+								src: 'img/panama-city400.jpg',
+								alt: 'Sunset in Panama'
+							}
+						},
+					]
+				},
+				{
+					origin: 'Ecuador',
+					packages: [
+						{
+							destination: {
+								city: 'Nassau',
+								country: 'Bahamas'
+							},
+							price: 1459,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 4,
+							nights: 3,
+							url: '/ecuador-nassau',
+							img: {
+								src: 'img/nassau400.jpg',
+								alt: 'Nassau beach'
+							}
+						},
+						{
+							destination: {
+								city: 'Santiago de los Caballeros',
+								country: 'Dominican Republic'
+							},
+							price: 972,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 4,
+							nights: 3,
+							url: '/ecuador-santiago-de-los-caballeros',
+							img: {
+								src: 'img/santiago-de-los-caballeros400.jpg',
+								alt: 'Santiago de los Caballeros beach'
+							}
+						},
+						{
+							destination: {
+								city: 'Belize',
+								country: 'Belize'
+							},
+							price: 1579,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 0,
+							days: 5,
+							nights: 4,
+							url: '/ecuador-belize',
+							img: {
+								src: 'img/belize400.jpg',
+								alt: 'Indian monument in the jungle'
+							}
+						}
+					]
+				},
+				{
+					origin: 'Colombia',
 					packages: [
 						{
 							destination: {
 								city: 'Panama',
 								country: 'Panama'
 							},
-							price: 1735,
+							price: 459,
 							tickets: 1,
 							hotel: 1,
 							transport: 1,
-							allInclusive: null,
-							days: 8,
-							nights: 7,
-							url: '/panama-cordoba',
+							allInclusive: 1,
+							days: 4,
+							nights: 3,
+							url: '/colombia-panama',
 							img: {
-								src: 'img/montegoBaySmall.png',
-								alt: 'panama-cordoba'
+								src: 'img/panama-ruinas400.jpg',
+								alt: 'Old castle'
 							}
-						}
+						},
+						{
+							destination: {
+								city: 'Cancun',
+								country: 'Mexico'
+							},
+							price: 479,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 4,
+							nights: 3,
+							url: '/colombia-cancun',
+							img: {
+								src: 'img/cancun400.jpg',
+								alt: 'Cancun Beach'
+							}
+						},
+						{
+							destination: {
+								city: 'Punta Cana',
+								country: 'Dominican Republic'
+							},
+							price: 829,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 4,
+							nights: 3,
+							url: '/colombia-punta-cana',
+							img: {
+								src: 'img/PUNTA-CANA400.jpg',
+								alt: 'Punta Cana Beach'
+							}
+						},
 					]
 				}
 			];
