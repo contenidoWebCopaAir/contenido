@@ -5,9 +5,9 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
 	<style type="text/css">
-		.grey {background-color: #666666 !important;}
-		.lightBlue {background-color: #026DB3 !important;}
-		.promo-banner {background-color: #114B80;}
+		.col1 {background-color: #666666 !important;}
+		.col2 {background-color: #026DB3 !important;}
+		.col3 {background-color: #114B80 !important;}
 		.country-title {
 			padding: 20px; 
 		}
@@ -15,11 +15,17 @@
 
 		.promo-banner { margin-bottom:20px !important; }
 
+		.promo-banner .col1 .promo-image { color: #666666 !important; } 
+		.promo-banner .col2 .promo-image { color: #026DB3 !important; } 
+		.promo-banner .col3 .promo-image { color: #114B80 !important; } 
+
 		@media (min-width: 1200px){
 			.aui .row-fluid .span4{
 				width: 30.62393% !important;
 			}
 		}
+
+		
 	</style>
 </head>
 <body ng-app="copa">
@@ -63,8 +69,8 @@
 			<div class="span4" ng-repeat="package in countrie.packages">
 				<div 
 					class="promo-banner" 
-					ng-class-odd="lightBlue"
-					ng-class-even="grey"
+					ng-class-odd="'lightBlue'"
+					ng-class-even="'grey'"
 				>
 					<div class="promo-destination"> 
 						<span class="city" ng-cloak>{{package.destination.city}}</span>
