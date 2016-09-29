@@ -6,7 +6,7 @@
 					<p class="note">Departures from:</p>
 					<ul>
 						<li ng-repeat="country in countries | orderBy: country">
-							<a href="/copa-vacations-{{country | lowercase}}">{{country}}</a>
+							<a ng-click="countryFilter(country)">{{country}}</a>
 						</li>
 					</ul>
 				</div>
@@ -36,14 +36,18 @@
 						</ul> 
 					</div>
 				</div>
-				<div class="row" ng-repeat="countrie in world | orderBy: origin">
+
+				<div class="row" ng-repeat="countrie in world | orderBy: 'origin' | filter: selectedCountry">
+
 					<div class="web-content-copa common-styles country-title">
 						FROM <strong ng-cloak>{{countrie.origin | uppercase}}</strong>
 					</div>
-					<div class="span4" ng-repeat="package in countrie.packages">
+					<div class="span4" ng-repeat="package in countrie.packages | orderBy: 'destination.city'">
 						<div 
 							class="promo-banner" 
-							ng-class="[{col1: $index % 1 == 0, col2: $index % 2 == 0, col3: $index % 3 == 0} ]"
+							ng-class="[{col1: $index == 0 || $index == 3, 
+										col2: $index == 1 || $index == 4, 
+										col3: $index == 2 || $index == 5} ]"
 						>
 							<div class="promo-destination"> 
 								<span class="city" ng-cloak>{{package.destination.city}}</span>
@@ -101,7 +105,8 @@
 	<script>
 	 
 		angular.module("copa").controller('copaVacationsCtrl', [ "$scope", function($scope){
-			$scope.countries = [];
+			$scope.countries = ['All countries'];
+			$scope.selectedCountry = '';
 			$scope.world = [
 				{
 					origin: 'Peru',
@@ -383,5 +388,13 @@
 		            $scope.countries.push( $scope.world[i].origin );
 		        }
     		}
+
+    		$scope.countryFilter = function(country){
+    			if( country == 'All countries' ){
+    				$scope.selectedCountry = false;
+    			}	
+    			$scope.selectedCountry = country;
+    		};
+
 		}]);
 	</script>
