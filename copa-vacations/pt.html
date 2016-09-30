@@ -3,9 +3,9 @@
 		<div class="content_centered">
 			<div class="row">
 				<div class="country_links">
-					<p class="note">Departures from:</p>
+					<p class="note">Saídas de:</p>
 					<select ng-model="selectedCountry">
-						<option selected value="">All countries</option>
+						<option selected value="">Todos os paises</option>
 						<option ng-repeat="country in countries | orderBy: country">{{country}}</option>
 					</select>
 				</div>
@@ -18,7 +18,7 @@
 						<ul>
 							<li>
 								<img src="/documents/1851355/1855229/conv_aereos.png"> 
-								<div>Flights</div> 
+								<div>Aérea</div> 
 							</li> 
 							<li>
 								<img src="/documents/1851355/1855229/conv_hotel.png">
@@ -26,7 +26,7 @@
 							</li> 
 							<li>
 								<img src="/documents/1851355/1855229/conv_transalados.png"> 
-								<div>Moving</div> 
+								<div>Mudança</div> 
 							</li> 
 							<li>
 								<img src="/documents/1851355/1855229/conv_inclusive.png"> 
@@ -39,7 +39,7 @@
 				<div class="row" ng-repeat="countrie in world | orderBy: 'origin' | filter: selectedCountry">
 
 					<div class="web-content-copa common-styles country-title">
-						FROM <strong ng-cloak>{{countrie.origin | uppercase}}</strong>
+						DE <strong ng-cloak>{{countrie.origin | uppercase}}</strong>
 					</div>
 					<div class="span4" ng-repeat="package in countrie.packages | orderBy: 'destination.city'">
 						<div 
@@ -53,7 +53,7 @@
 								<span class="country" ng-cloak>{{package.destination.country}}</span>
 							</div>
 							<div class="promo-details">
-								<span class="promo">FROM</span>
+								<span class="promo">DE</span>
 								<span class="sign">$</span>
 								<span class="value" ng-cloak>{{package.price}}</span>
 								<span class="stay">
@@ -78,7 +78,7 @@
 								>
 							</div> 
 							<div class="promo-info">
-								<span class="includes">INCLUDE</span> 
+								<span class="includes">INCLUÍDO</span> 
 								<span class="picture flight" ng-if="package.tickets">
 									<img src="/documents/20182/174915/sw-flight.png" align="top">
 								</span> 
@@ -92,7 +92,7 @@
 									<img src="/documents/20182/174915/sw-service.png" align="top">
 								</span> 
 								<span class="go">
-									<a href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/{{package.url}}" ng-cloak>	SEE MORE
+									<a href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/{{package.url}}" ng-cloak>	VER MAIS
 									</a>
 								</span> 
 							</div>
@@ -110,7 +110,7 @@
 			$scope.selectedCountry = '';
 			$scope.world = [
 				{
-					origin: 'Peru',
+					origin: 'Perú',
 					packages: [
 						{
 							destination: {
@@ -127,13 +127,13 @@
 							url: '/peru-montego-bay',
 							img: {
 								src: '/documents/20182/174915/montegoBaySmall.png',
-								alt: 'Montegobay beach'
+								alt: 'Praia de Montego bay'
 							}
 						},
 						{
 							destination: {
-								city: 'Panama',
-								country: 'Panama'
+								city: 'Panamá',
+								country: 'Panamá'
 							},
 							price: 799,
 							tickets: 1,
@@ -145,7 +145,7 @@
 							url: '/peru-panama',
 							img: {
 								src: '/documents/20182/174915/Panama-Canal400.jpg',
-								alt: 'Panama Canal'
+								alt: 'Canal do Panamá'
 							}
 						},
 						{
@@ -163,7 +163,7 @@
 							url: '/peru-nassau',
 							img: {
 								src: '/documents/20182/174915/nassau400.jpg',
-								alt: 'Happy couple in Nassau beach'
+								alt: 'Pares felizes na praia em Nassau'
 							}
 						},
 						{
@@ -181,7 +181,7 @@
 							url: '/peru-holguin',
 							img: {
 								src: '/documents/20182/174915/holguin400.jpg',
-								alt: 'Holguin view from the sky'
+								alt: 'Vista Holguin do céu'
 							}
 						},
 
@@ -205,13 +205,13 @@
 							url: '/chile-holguin',
 							img: {
 								src: '/documents/20182/174915/holguin400_2.jpg',
-								alt: 'Holguin view from the sky'
+								alt: 'Vista Holguin do céu'
 							}
 						},
 						{
 							destination: {
 								city: 'Cancun',
-								country: 'Mexico'
+								country: 'México'
 							},
 							price: 1176,
 							tickets: 1,
@@ -223,7 +223,7 @@
 							url: '/chile-cancun',
 							img: {
 								src: '/documents/20182/174915/cancun400.jpg',
-								alt: 'Cancun beach'
+								alt: 'Praia de Cancun'
 							}
 						},
 						{
@@ -241,13 +241,13 @@
 							url: '/chile-nassau',
 							img: {
 								src: '/documents/20182/174915/nassau400_2.jpg',
-								alt: 'Nassau view from the sky'
+								alt: 'Vista Nassau do céu'
 							}
 						},
 						{
 							destination: {
-								city: 'Panama',
-								country: 'Panama'
+								city: 'Panamá',
+								country: 'Panamá'
 							},
 							price: 1530,
 							tickets: 1,
@@ -258,8 +258,8 @@
 							nights: 4,
 							url: '/chile-panama',
 							img: {
-								src: '/documents/20182/174915/panama-city400.jpg',
-								alt: 'Sunset in Panama'
+								src: '/documents/20182/174915/Panamá-city400.jpg',
+								alt: 'Pôr do sol no Panamá'
 							}
 						},
 					]
@@ -282,13 +282,13 @@
 							url: '/ecuador-nassau',
 							img: {
 								src: '/documents/20182/174915/nassau400.jpg',
-								alt: 'Nassau beach'
+								alt: 'Praia de Nassau'
 							}
 						},
 						{
 							destination: {
 								city: 'Santiago de los Caballeros',
-								country: 'Dominican Rep.'
+								country: 'Rep. Dominicana'
 							},
 							price: 972,
 							tickets: 1,
@@ -300,7 +300,7 @@
 							url: '/ecuador-santiago-de-los-caballeros',
 							img: {
 								src: '/documents/20182/174915/santiago-de-los-caballeros400.jpg',
-								alt: 'Santiago de los Caballeros beach'
+								alt: 'Praia de Santiago de los Caballeros'
 							}
 						},
 						{
@@ -318,7 +318,7 @@
 							url: '/ecuador-belize',
 							img: {
 								src: '/documents/20182/174915/belize400.jpg',
-								alt: 'Indian monument in the jungle'
+								alt: 'Monumento indiano na selva'
 							}
 						}
 					]
@@ -328,8 +328,8 @@
 					packages: [
 						{
 							destination: {
-								city: 'Panama',
-								country: 'Panama'
+								city: 'Panamá',
+								country: 'Panamá'
 							},
 							price: 459,
 							tickets: 1,
@@ -340,8 +340,8 @@
 							nights: 3,
 							url: '/colombia-panama',
 							img: {
-								src: '/documents/20182/174915/panama-ruinas400.jpg',
-								alt: 'Old castle'
+								src: '/documents/20182/174915/Panamá-ruinas400.jpg',
+								alt: 'Castelo velho'
 							}
 						},
 						{
@@ -359,13 +359,13 @@
 							url: '/colombia-cancun',
 							img: {
 								src: '/documents/20182/174915/cancun400.jpg',
-								alt: 'Cancun Beach'
+								alt: 'Praia de Cancun'
 							}
 						},
 						{
 							destination: {
 								city: 'Punta Cana',
-								country: 'Dominican Republic'
+								country: 'República Dominicana'
 							},
 							price: 829,
 							tickets: 1,
@@ -377,7 +377,7 @@
 							url: '/colombia-punta-cana',
 							img: {
 								src: '/documents/20182/174915/PUNTA-CANA400.jpg',
-								alt: 'Punta Cana Beach'
+								alt: 'Praia de Punta Cana'
 							}
 						},
 					]
