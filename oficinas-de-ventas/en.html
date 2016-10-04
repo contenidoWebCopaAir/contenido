@@ -32,19 +32,37 @@
                     <li>Schedules</li>
                 </ul>
 
-                <ul 
-                    class="ul-body ul-table" 
-                    ng-repeat="office in offices | filter:query | filter:selectedCountry | orderBy: 'country'"
+                <div 
+                    class="countries" 
+                    ng-repeat="country in countriesEn | filter: selectedCountry | orderBy: country.countryName"
                 >
-                    <li><b ng-bind-html="office.country" ng-cloak></b></li>
-                    <li ng-bind-html="office.city" ng-cloak>&nbsp;</li>
-                    <li ng-bind-html="office.address" ng-cloak>&nbsp;</li>
-                    <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak>&nbsp;</li>
-                    <li ng-if="office.phone || office.email">
-                        <p ng-bind-html="office.phone" ng-cloak>{{ office.phone }}</p>
-                        <a ng-if="office.email" ng-href="mailto:{{ office.email }}" ng-cloak>{{ office.email }}</a>
-                    </li>
-                </ul>
+                    <div
+                         ng-repeat="city in country.cities"
+                    >
+                        <ul class="ul-body ul-table" ng-if="$index === 0"> 
+                            <li><b ng-cloak>{{country.countryName}}</b></li>
+                            <li ng-cloak>{{city.name}}</li>
+                            <li ng-cloak>{{city.phone}}</li>
+                        </ul>
+                        <ul class="ul-body ul-table" ng-if="$index > 0">
+                            <li>&nbsp;</li>
+                            <li ng-cloak>{{city.name}}</li>
+                            <li ng-cloak>{{city.phone}}</li>
+                        </ul>
+                        <ul 
+                            class="ul-body ul-table"
+                        >
+                            <li><b ng-bind-html="office.country" ng-cloak></b></li>
+                            <li ng-bind-html="office.city" ng-cloak>&nbsp;</li>
+                            <li ng-bind-html="office.address" ng-cloak>&nbsp;</li>
+                            <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak>&nbsp;</li>
+                            <li ng-if="office.phone || office.email">
+                                <p ng-bind-html="office.phone" ng-cloak>{{ office.phone }}</p>
+                                <a ng-if="office.email" ng-href="mailto:{{ office.email }}" ng-cloak>{{ office.email }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
