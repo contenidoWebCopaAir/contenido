@@ -30,3 +30,8 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
+
+@media screen (min-width: 1051px)
+.portlet-asset-publisher .asset-content br {
+    display: inherit !important; 
+}

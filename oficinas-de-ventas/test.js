@@ -1,101 +1,9 @@
-<div class="container">
-    <div class="offices-responsive content_centered" ng-controller="OfficesCtrl">
-        <div class="row main-filter">
-            <div class="span4">
-                <p><b>Show sales offices</b></p>
-            </div>
-
-            <div class="span8 form-horizontal">
-                <div class="control-group">
-                    <label class="control-label">Search by Country</label>
-
-                    <div class="controls">
-                        <select id="selectedCountry" ng-model="selectedCountry" style="width: 100%" ng-cloak>
-                            <option value="" selected>All countries</option>
-                            <option ng-repeat="country in countries" value="{{country}}" ng-if="country" ng-cloak>{{country}}</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="control-group">
-                    <label class="control-label">Search by city, address or schedule</label>
-                    <div class="controls"><input id="query" ng-model="query" style="width: 96%" type="text" /></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="span12">
-                <ul class="ul-head ul-table">
-                    <li>Country</li>
-                    <li>City</li>
-                    <li>Address</li>
-                    <li>Schedules</li>
-                </ul>
-
-                <div 
-                    class="countries" 
-                    ng-repeat="country in offices | filter: selectedCountry | orderBy: country.countryName"
-                >
-                    <div
-                         ng-repeat="office in country.cities"
-                    >
-                        <ul class="ul-body ul-table" ng-if="$index === 0"> 
-                            <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
-                            <li ng-bind-html="office.name" ng-cloak>&nbsp;</li>
-                            <li ng-bind-html="office.address" ng-cloak>&nbsp;</li>
-                            <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak>&nbsp;</li>
-                        </ul>
-                        <ul class="ul-body ul-table" ng-if="$index > 0">
-                            <li>&nbsp;</li>
-                            <li ng-bind-html="office.name" ng-cloak>&nbsp;</li>
-                            <li ng-bind-html="office.address" ng-cloak>&nbsp;</li>
-                            <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak>&nbsp;</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="span12">
-                <h2>Offices in Europe, Asia, Middle East and Oceania.</h2>
-            </div>
-        </div>
-         <div class="row">
-            <div class="span12">
-                <ul class="ul-head ul-table">
-                    <li>Country</li>
-                    <li>City</li>
-                    <li>Address</li>
-                    <li>Reservations</li>
-                </ul>
-
-                <ul 
-                    class="ul-body ul-table" 
-                    ng-repeat="o in farCountries | orderBy: 'country'"
-                >
-                    <li><b ng-bind-html="o.country" ng-cloak></b></li>
-                    <li ng-bind-html="o.city" ng-cloak>&nbsp;</li>
-                    <li ng-bind-html="o.address" ng-cloak>&nbsp;</li>
-                    <li>
-                        <p ng-bind-html="o.phone" ng-cloak>{{ o.phone }}</p>
-                        <a ng-if="o.email" ng-href="mailto:{{ o.email }}" ng-cloak>{{ o.email }}</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-</div>
-<script>
 angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
 
-	var reservaciones = 'For assistance before your trip, please contact our <a href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/reservation-center" target="_blank">Reservation Center</a>';
+    var reservaciones = 'For assistance before your trip, please contact our <a href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/reservation-center" target="_blank">Reservation Center</a>';
 
     $scope.query = '';
     $scope.selectedCountry = "";
-    $scope.countries = [];
     $scope.offices = [
         {
             countryName: "Antillas Holandesas",
@@ -143,39 +51,39 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
             ]
         },
         {
-        	
+            
             countryName: 'Bolivia',
             cities: [
                 {
-                	name: 'Santa Cruz de la Sierra',
-                	address: 'La Pascana Building Office #3, 24 de septiembre St., Centro Histórico Zone',
-                	schedules: 'Monday - Friday 8:30am-12:30pm<br>2:30pm -6:30pm<br>Saturday 9:00am-12:30pm'
+                    name: 'Santa Cruz de la Sierra',
+                    address: 'La Pascana Building Office #3, 24 de septiembre St., Centro Histórico Zone',
+                    schedules: 'Monday - Friday 8:30am-12:30pm<br>2:30pm -6:30pm<br>Saturday 9:00am-12:30pm'
                 }
             ]
         },
         {
-        	
+            
             countryName: 'Brazil',
             cities: [
                 {
-                	name: 'Belo Horizonte',
-                	address: 'Av. Bias Fortes, 472 Lourdes A/B CEP : 30170-01',
-                	schedules: 'Monday - Friday 9:00am - 6:00pm'  
+                    name: 'Belo Horizonte',
+                    address: 'Av. Bias Fortes, 472 Lourdes A/B CEP : 30170-01',
+                    schedules: 'Monday - Friday 9:00am - 6:00pm'  
                 },
                 {
-                	name:'Brasilia',
-                	address: 'Brasilia Airport S/N aeroporto lago sul Brasilia -DF 71.608-900',
-                	schedules: 'Monday - Friday 9:00am - 6:00pm'
+                    name:'Brazilia',
+                    address: 'Brasilia Airport S/N aeroporto lago sul Brazilia -DF 71.608-900',
+                    schedules: 'Monday - Friday 9:00am - 6:00pm'
                 },
                 {
-                	name: 'Campinas',
-                	address: 'Rod Santos Dumont km 66 Term 1 Level 1 Viracopos Airport',
-                	schedules: 'Monday - Friday 9:00am - 6:00pm'
+                    name: 'Campinas',
+                    address: 'Rod Santos Dumont km 66 Term 1 Level 1 Viracopos Airport',
+                    schedules: 'Monday - Friday 9:00am - 6:00pm'
                 },
                 {
-                	name: 'Manaos',
-                	address: 'Av. Santos Dumont, 1350 Bairro Taruma - Terreo <br>International Airport Eduardo Gomes CEP 69.041-000',
-                	schedules: 'Monday - Friday 9:00am - 6:00pm'
+                    name: 'Manaos',
+                    address: 'Av. Santos Dumont, 1350 Bairro Taruma - Terreo <br>International Airport Eduardo Gomes CEP 69.041-000',
+                    schedules: 'Monday - Friday 9:00am - 6:00pm'
                 },
                 {
                     name: 'Porto Alegre',
@@ -188,14 +96,14 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                     schedules: 'Monday - Friday 9:00am - 6:00pm'
                 },
                 {
-                	name: 'Rio de Janeiro',
-                	address: 'Atlantic Avenue, 1130 - 15 andar Copacabana',
-                	schedules: 'Monday - Friday 9:00am - 6:00pm'
+                    name: 'Rio de Janeiro',
+                    address: 'Atlantic Avenue, 1130 - 15 andar Copacabana',
+                    schedules: 'Monday - Friday 9:00am - 6:00pm'
                 },
                 {
-                	name: 'Sao Paulo',
-                	address: 'Paulista Avenue 1337 – 4º floor ZIP 01311-200',
-                	schedules: 'Monday - Friday 9:00am - 6:00pm'
+                    name: 'Sao Paulo',
+                    address: 'Paulista Avenue 1337 – 4º floor ZIP 01311-200',
+                    schedules: 'Monday - Friday 9:00am - 6:00pm'
                 }
 
             ]
@@ -205,14 +113,14 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
             countryName: 'Canada',
             cities: [
                 {
-                	name: 'Montreal',
-                	address: 'International Airport de montreal pierre elliott trudeau 975 boul. Romeo vachon nord Suite 429',
-                	schedules: reservaciones
+                    name: 'Montreal',
+                    address: 'International Airport de montreal pierre elliott trudeau 975 boul. Romeo vachon nord Suite 429',
+                    schedules: reservaciones
                 },
                 {
-                	name: 'Toronto',
-                	address: 'International Airport Pearson Terminal 1 . Oficina GA 2202<br>**Only Canadian dollars and Visa cards are accepted, MasterCard.',
-                	schedules: 'Monday - Friday 9:00am-12:00pm'
+                    name: 'Toronto',
+                    address: 'International Airport Pearson Terminal 1 . Oficina GA 2202<br>**Only Canadian dollars and Visa cards are accepted, MasterCard.',
+                    schedules: 'Monday - Friday 9:00am-12:00pm'
                 }
                 
             ]
@@ -221,9 +129,9 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
             countryName: 'Chile',
             cities: [
                 {
-                	name: 'Santiago de Chile',
-                	address: 'Av. El Golf 99 office 101ª Las Condes',
-                	schedules: 'Monday - Friday 9:00am-5:00pm'
+                    name: 'Santiago de Chile',
+                    address: 'Av. El Golf 99 office 101ª Las Condes',
+                    schedules: 'Monday - Friday 9:00am-5:00pm'
                 }
             ]
         },
@@ -231,14 +139,14 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
             countryName: 'Colombia',
             cities: [
                 {
-                	name: 'Barranquilla',
-                	address: 'street 72 N. 54 - 49 office 1 y 2',
-                	schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 9:00am-1:00pm'
+                    name: 'Barranquilla',
+                    address: 'street 72 N. 54 - 49 office 1 y 2',
+                    schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 9:00am-1:00pm'
                 },
                 {
                     name: 'Bogota',
                     address: 'street 100 #. 7 A - 81 office 3 building Universa',
-                    schedules: 'Momday - Friday<br> 8:00am-7:00pm<br>Saturday<br> 8:00am-12:00pm y 1:00pm-5:00pm<br>Sunday<br> 11:00am-4:00pm'
+                    schedules: 'Momday - Friday<br> 8:00am-7:00pm<br>Saturday 8:00am-12:00pm y 1:00pm-5:00pm<br>Sunday 11:00am-4:00pm'
                 },
                 {
                     name: 'Bogota',
@@ -258,7 +166,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 {
                     name: 'Bogota',
                     address: 'Unicentro commercial center<br>Avenue 15th # 124 - 30 floor 1<br> office 1-101 Entrance 8',
-                    schedules: 'Monday - Friday 9:00am-8:00pm<br>Saturday<br> 10:00am-7:00pm<br>Sun &amp; Holidays 10:00am-4:00pm'
+                    schedules: 'Monday - Friday 9:00am-8:00pm<br>Saturday 10:00am-7:00pm<br>Sun &amp; Holidays 10:00am-4:00pm'
                 },
                 {
                     name: 'Bucaramanga',
@@ -273,7 +181,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 {
                     name: 'Cali',
                     address: '14 Paso Ancho commercial center<br>13th street # 80 - 60',
-                    schedules: 'Monday - Friday 9:00am-7:00pm<br>Saturday<br>8:00am-12:00pm and 1:00pm-5:00pm<br>Sun &amp; Holidays<br> 11:00am-4:00pm'
+                    schedules: 'Monday - Friday 9:00am-7:00pm<br>Saturday 8:00am-12:00pm and 1:00pm-5:00pm<br>Sun &amp; Holidays 11:00am-4:00pm'
                 },
                 {
                     name: 'Cartagena',
@@ -316,15 +224,15 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                     schedules: 'Monday - Friday 8:00am-5:00pm<br>Saturday 8:00am-12:00pm'
                 }
             ]
-        	
+            
         },
         {
             countryName: 'Cuba',
             cities: [
                 {
-                	name: 'La Habana',
-                	address: 'Centro de Negocios Miramar, Planta baja Edif. Barcelona 5ta Avenida entre 76 y 78, Playa.',
-                	schedules: 'Monday - Friday 8:30am-5:00pm<br>Saturday 9:00am-1:00pm '
+                    name: 'La Habana',
+                    address: 'Centro de Negocios Miramar, Planta baja Edif. Barcelona 5ta Avenida entre 76 y 78, Playa.',
+                    schedules: 'Monday - Friday 8:30am-5:00pm<br>Saturday 9:00am-1:00pm '
                 }
             ]
         },
@@ -332,9 +240,9 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
             countryName: 'Curazao',
             cities: [
                 {
-                	name: 'Willemstand',
-                	address: 'Zuikertuin Mall Tower Unit 1B y 1C Willemstad, Curazao',
-                	schedules: 'Monday - Friday 8:00am-5:00pm'
+                    name: 'Willemstand',
+                    address: 'Zuikertuin Mall Tower Unit 1B y 1C Willemstad, Curazao',
+                    schedules: 'Monday - Friday 8:00am-5:00pm'
                 },
                 {
                     name: 'Willemstand',
@@ -344,13 +252,13 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
             ]
         },
         {
-        	
+            
             countryName: 'Ecuador',
             cities: [
                 {
-                	name: 'Cuenca',
-                	address: 'Miguel Cordero y Av Paucarbamba Edif Work Center Planta baja Ofic N 09',
-                	schedules: 'Monday - Friday 9:00am-1:00pm y 2:00pm-5:45pm<br>Saturday 9:00am-1:00pm' 
+                    name: 'Cuenca',
+                    address: 'Miguel Cordero y Av Paucarbamba Edif Work Center Planta baja Ofic N 09',
+                    schedules: 'Monday - Friday 9:00am-1:00pm y 2:00pm-5:45pm<br>Saturday 9:00am-1:00pm' 
                 }, 
                 {
                     name: 'Guayaquil',
@@ -376,34 +284,34 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
         },
        
         {
-        	
+            
             countryName: 'El Salvador',
             cities: [
                 {
-                	name: 'San Salvador',
-                	address: 'building World Trade Center, 1er. Level, office 107, Colonia Escalon entre street El Mirador y 89 Av. Norte',
-                	schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 8:00am-12:00pm '
+                    name: 'San Salvador',
+                    address: 'building World Trade Center, 1er. Level, office 107, Colonia Escalon entre street El Mirador y 89 Av. Norte',
+                    schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 8:00am-12:00pm '
                 }
             ]
         },
         {
-        	
+            
             countryName: 'United States',
             cities: [
                 {
-                	name: 'Chicago',
-                	address: 'Chicago Ohare International Airport Terminal 5 Chicago Berssie Coleman Drive 10000 Chicago IL 60666. Para consultas sobre ventas, escriba a: <a href="mailto:chicagosales@copaair.com">chicagosales@copaair.com</a>',
-                	schedules: 'Monday - Sunday 4:30am-12:30pm'
+                    name: 'Chicago',
+                    address: 'Chicago Ohare International Airport Terminal 5 Chicago Berssie Coleman Drive 10000 Chicago IL 60666. Para consultas sobre ventas, escriba a: <a href="mailto:chicagosales@copaair.com">chicagosales@copaair.com</a>',
+                    schedules: 'Monday - Sunday 4:30am-12:30pm'
                 },
                 {
-                	name: 'Fort Lauderdale',
-                	address: 'International Airport Fort Lauderdale – Hollywood',
-                	schedules: reservaciones
+                    name: 'Fort Lauderdale',
+                    address: 'International Airport Fort Lauderdale – Hollywood',
+                    schedules: reservaciones
                 },
                 {
-                	name: 'Las Vegas',
-                	address: 'International Airport McCarran, Terminal 3, 5757 Wayne Newton Blvd , Las Vegas ,NV 89119',
-                	schedules: 'Mon - Sun &amp; Holidays<br>12:00pm-4:00pm y 7:00pm-12:00am'
+                    name: 'Las Vegas',
+                    address: 'International Airport McCarran, Terminal 3, 5757 Wayne Newton Blvd , Las Vegas ,NV 89119',
+                    schedules: 'Mon - Sun &amp; Holidays<br>12:00pm-4:00pm y 7:00pm-12:00am'
                 },
                 {
                     name: 'Los Angeles',
@@ -416,72 +324,72 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                     schedules: 'Monday - Friday 9:00am-6:00pm'
                 },
                 {
-                	name: 'New York',
-                	address: 'New York International Airport , Terminal 4 Councourse A',
-                	schedules: 'Mon - Sun &amp; Holidays 8:45am-9:20am 1:30pm-2:30pm'
+                    name: 'New York',
+                    address: 'New York International Airport , Terminal 4 Councourse A',
+                    schedules: 'Mon - Sun &amp; Holidays 8:45am-9:20am 1:30pm-2:30pm'
                 },
                 {
-                	name: 'Orlando',
-                	address: 'International Airport de Orlando , Terminal A 9303 Jeff Fuqua Blvd Orlando FL 32827',
-                	schedules: 'Monday - Friday 9:00am-3:00pm '
+                    name: 'Orlando',
+                    address: 'International Airport de Orlando , Terminal A 9303 Jeff Fuqua Blvd Orlando FL 32827',
+                    schedules: 'Monday - Friday 9:00am-3:00pm '
                 },
                 {
-                	name: 'Tampa',
-                	address: 'Waterford Center , 6205 Blue Lagoon Drive Suite 200 Miami Fl 33126',
-                	schedules: reservaciones
+                    name: 'Tampa',
+                    address: 'Waterford Center , 6205 Blue Lagoon Drive Suite 200 Miami Fl 33126',
+                    schedules: reservaciones
                 },
                 {
-                	name: 'Washington, D.C',
-                	address: 'International Airport Washington-Dulles, 1 Saarinen Circle Dulles Va , Terminal principal Puerta N° 2 salida de vuelos terminal A puerta 19',
-                	schedules: 'Monday - Sunday<br>6:00am - 9:00am y 12:00pm - 2:30pm'
+                    name: 'Washington, D.C',
+                    address: 'International Airport Washington-Dulles, 1 Saarinen Circle Dulles Va , Terminal principal Puerta N° 2 salida de vuelos terminal A puerta 19',
+                    schedules: 'Monday - Sunday<br>6:00am - 9:00am y 12:00pm - 2:30pm'
                 }
             ]
         },
-        {       	
+        {           
             countryName: 'Guatemala',
             cities: [
                 {
-                	name: 'Ciudad de Guatemala',
-                	address: '5 avenida 5-55 zona 14 building Euro Plaza Torre 3 Planta Baja, Oficina 102',
-                	schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 8:00am-12:00pm'
+                    name: 'Ciudad de Guatemala',
+                    address: '5 avenida 5-55 zona 14 building Euro Plaza Torre 3 Planta Baja, Oficina 102',
+                    schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday 8:00am-12:00pm'
                 }
             ]
         },
         {
-        	
+            
             countryName: 'Guyana',
             cities: [
                 {
-                	name: 'Georgetown',
-                	address: '#212 Camp Street, North Cummingsburg, Georgetown, Guyana',
-                	schedules: 'Monday - Friday 8:30am-5:00pm<br>Saturday 9:00am-12:00pm'
+                    name: 'Georgetown',
+                    address: '#212 Camp Street, North Cummingsburg, Georgetown, Guyana',
+                    schedules: 'Monday - Friday 8:30am-5:00pm<br>Saturday 9:00am-12:00pm'
                 }
             ]
         },
          {
-        	
+            
             countryName: 'Haití',
             cities: [
                 {
-                	name: 'Puerto Principe',
-                	address: 'Av. 30 , Marie Jeanne',
-                	schedules: 'Monday - Friday 8:30am-3:30pm'
+                    name: 'Puerto Principe',
+                    address: 'Av. 30 , Marie Jeanne',
+                    schedules: 'Monday - Friday 8:30am-3:30pm'
                 }
             ]
         },
         {
-        	
+            
             countryName: 'Honduras',
             cities: [
                 {
-                	name: 'San Pedro Sula',
-                	address: 'Avenida Circunvalacion Barrio Paz Barahona, 13 street esquina opuesta a sears, Plaza Geosur, office 1',
-                	schedules: 'Monday - Friday 8:00am-5:00pm<br>Saturday 8:00am-12:00m '
+                    name: 'San Pedro Sula',
+                    address: 'Avenida Circunvalacion Barrio Paz Barahona, 13 street esquina opuesta a sears, Plaza Geosur, office 1',
+                    schedules: 'Monday - Friday 8:00am-5:00pm<br>Saturday 8:00am-12:00m '
                 },
                 {
-                	name: 'Tegucigalpa',
-                	address: 'building Corporativo Contiguo al Hotel Clarion 1era Planta, Col. Alameda  Avenida Juan Manuel Galvez',
-                	schedules: 'Monday - Friday 8:00am-5:00pm<br>Saturday 8:00am-12:00m'
+                    name: 'Tegucigalpa',
+                    address: 'building Corporativo Contiguo al Hotel Clarion 1era Planta, Col. Alameda  Avenida Juan Manuel Galvez',
+                    schedules: 'Monday - Friday 8:00am-5:00pm<br>Saturday 8:00am-12:00m'
                 }
             ]
         },
@@ -489,51 +397,51 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
             countryName: 'Jamaica',
             cities: [
                 {
-                	name: 'Kingston',
-                	address: 'Courtleigh Corporate Center, 8 St. Lucia Avenue, Kingston 5, Jamaica',
-                	schedules: 'Monday - Friday 8:30am-5:00pm '
+                    name: 'Kingston',
+                    address: 'Courtleigh Corporate Center, 8 St. Lucia Avenue, Kingston 5, Jamaica',
+                    schedules: 'Monday - Friday 8:30am-5:00pm '
                 },
                 {
-                	name: 'Montego Bay',
-                	address: 'International Airport Sangster Montego Bay, Jamaica W.I.',
-                	schedules: reservaciones
+                    name: 'Montego Bay',
+                    address: 'International Airport Sangster Montego Bay, Jamaica W.I.',
+                    schedules: reservaciones
                 }
             ]
         },
-        {	
+        {   
             countryName: 'México',
             cities: [
                 {
-                	name: 'Cancún',
-                	address: 'International Airport de Cancún Terminal 2 , detrás de mostradores 83 y 84 Oficina N. 43',
-                	schedules: 'Monday - Saturday 9:00am-4:00pm<br>Sun &amp; Holidays 10:00am-4:00pm'
+                    name: 'Cancún',
+                    address: 'International Airport de Cancún Terminal 2 , detrás de mostradores 83 y 84 Oficina N. 43',
+                    schedules: 'Monday - Saturday 9:00am-4:00pm<br>Sun &amp; Holidays 10:00am-4:00pm'
                 },
                 {
-                	name: 'Guadalajara',
-                	address: 'AV Moctezuma N. 3515 officees 8 e 9, Hotel Presidente Intercontinental Colonia Ciudad del Sol , Zapopan Jalisco México',
-                	schedules: 'Monday - Friday 9:00am-6:00pm<br>Saturday 9:00am-1:00pm '
+                    name: 'Guadalajara',
+                    address: 'AV Moctezuma N. 3515 officees 8 e 9, Hotel Presidente Intercontinental Colonia Ciudad del Sol , Zapopan Jalisco México',
+                    schedules: 'Monday - Friday 9:00am-6:00pm<br>Saturday 9:00am-1:00pm '
                 },
                 {
-                	name: 'Monterrey',
-                	address: 'Av. Lázaro Cárdenas #2225, Torre Latitud, office 2 Planta Baja, Colonia Valle Oriente, San Pedro Garza Garcia, Nuevo León, México.',
-                	schedules: 'Monday - Friday 9:00am-6:00pm<br>Saturday 9:00am-1:00pm '
+                    name: 'Monterrey',
+                    address: 'Av. Lázaro Cárdenas #2225, Torre Latitud, office 2 Planta Baja, Colonia Valle Oriente, San Pedro Garza Garcia, Nuevo León, México.',
+                    schedules: 'Monday - Friday 9:00am-6:00pm<br>Saturday 9:00am-1:00pm '
                 },
                 {
-                	name: 'México D.F',
-                	address: 'Berna Numero 06 Planta Baja, Colonia Juarez México Delegacion Cuauhtemoc CP 06600 DF',
-                	schedules: 'Monday - Friday 9:00am-6:00pm<br>Saturday 10:00am-2:00pm '
+                    name: 'México D.F',
+                    address: 'Berna Numero 06 Planta Baja, Colonia Juarez México Delegacion Cuauhtemoc CP 06600 DF',
+                    schedules: 'Monday - Friday 9:00am-6:00pm<br>Saturday 10:00am-2:00pm '
                 }
             ]
         },
      
         {
-        	
+            
             countryName: 'Nicaragua',
             cities: [
                 {
-                	name: 'Managua',
-                	address: 'Commercial center Galerías Santo Domingo, km. 7 carretera a Masaya',
-                	schedules: 'Monday - Saturday 10:00am - 8:00pm<br>Sunday 11:00am - 8:00pm'
+                    name: 'Managua',
+                    address: 'Commercial center Galerías Santo Domingo, km. 7 carretera a Masaya',
+                    schedules: 'Monday - Saturday 10:00am - 8:00pm<br>Sunday 11:00am - 8:00pm'
                 },
                 {
                     name: 'Managua',
@@ -705,13 +613,8 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
         }
        
     ];
-    for( var i in $scope.offices){
 
-        if( $scope.countries.indexOf( $scope.offices[i].countryName ) == -1 ){
-            $scope.countries.push( $scope.offices[i].countryName );
-        }
-
-    }
+    $scope.countries = [];
 
     //Europe, Asia, middke east and oceania
     $scope.farCountries = [
@@ -902,10 +805,11 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
         }
        
     ];
-   
+    for( var i in $scope.offices){
+
+        if( $scope.countries.indexOf( $scope.offices[i].country ) == -1 ){
+            $scope.countries.push( $scope.offices[i].country );
+        }
+
+    }
 }]);
-
-
-
-	
-</script>

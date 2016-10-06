@@ -10,11 +10,10 @@
                 <div class="control-group">
                     <label class="control-label">Busca por País</label>
                     <div class="controls">
-                        <select
-                            ng-model="selectedCountry"
-                            style="width:100%" ng-cloak>
-                            <option ng-repeat="country in countries" value="{{country}}" ng-cloak>{{country}}</option>        
-                        </select>             
+                        <select id="selectedCountry" ng-model="selectedCountry" style="width: 100%" ng-cloak>
+                            <option value="" selected>Todos os paises</option>
+                            <option ng-repeat="country in countries" value="{{country}}" ng-if="country" ng-cloak>{{country}}</option>
+                        </select>           
                         
                     </div>
                     
@@ -43,19 +42,27 @@
                     <li>Agenda</li>
                 </ul>
                 
-                <ul 
-                    class="ul-body ul-table" 
-                    ng-repeat="office in offices | filter:query | filter:selectedCountry | orderBy: 'country'"
+                <div 
+                    class="countries" 
+                    ng-repeat="country in offices | filter: selectedCountry | orderBy: country.countryName"
                 >
-                    <li><b ng-bind-html="office.country" ng-cloak></b></li>
-                    <li ng-bind-html="office.city" ng-cloak>&nbsp;</li>
-                    <li ng-bind-html="office.address" ng-cloak>&nbsp;</li>
-                    <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak>&nbsp;</li>
-                    <li ng-if="office.phone || office.email">
-                        <p ng-bind-html="office.phone" ng-cloak>{{ office.phone }}</p>
-                        <a ng-if="office.email" ng-href="mailto:{{ office.email }}" ng-cloak>{{ office.email }}</a>
-                    </li>
-                </ul>
+                    <div
+                         ng-repeat="office in country.cities"
+                    >
+                        <ul class="ul-body ul-table" ng-if="$index === 0"> 
+                            <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
+                            <li ng-bind-html="office.name" ng-cloak>&nbsp;</li>
+                            <li ng-bind-html="office.address" ng-cloak>&nbsp;</li>
+                            <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak>&nbsp;</li>
+                        </ul>
+                        <ul class="ul-body ul-table" ng-if="$index > 0">
+                            <li>&nbsp;</li>
+                            <li ng-bind-html="office.name" ng-cloak>&nbsp;</li>
+                            <li ng-bind-html="office.address" ng-cloak>&nbsp;</li>
+                            <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak>&nbsp;</li>
+                        </ul>
+                    </div>
+                </div>
               
             </div>
         </div>
@@ -92,6 +99,7 @@
 </div><!--container-->
 <script>
 
+
 angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
 
     var reservaciones = 'Para obter assistência antes de sua viagem, entre em contato com a nossa <a href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/central-de-reservas" target="_blank">Central de Reservas</a>';
@@ -101,574 +109,620 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
     $scope.countries = [];  
 
 
-   $scope.offices = [
+  $scope.offices = [
         {
-            country: "Antillas Holandesas",
-            city: "St Marteen",
-            address: "Aeroporto Internacional <br>Princesa Juliana Escritório # 1030",
-            schedules: reservaciones
+            countryName: "Antillas Holandesas",
+            cities: [
+                {
+                    name: "St Marteen",
+                    address: "Aeroporto Internacional <br>oficina Princess Juliana  # 1030",
+                    schedules: reservaciones
+                }
+            ]
+            
         },
         {
-            country: "Argentina",
-            city: "Buenos Aires",
-            address: "Emma de la Barra 353 andar 7, Puerto Madero Este",
-            schedules: 'Segunda - Sexta<br> 9:00am-5:00pm'
+            countryName: "Argentina",
+            cities: [
+                {
+                    name: "Buenos Aires",
+                    address: "Emma de la Barra 353, 7th floor, East Puerto Madero",
+                    schedules: "Segunda - Sexta 9:00am-5:00pm"
+                }
+            ]
         },
         {
-            country: "Argentina",
-            city: "Cordoba",
-            address: "Av. Dr. Velez Sarsfield 478 - B° Nueva Córdoba",
-            schedules: 'Segunda - Sexta<br> 9:00am-5:00pm'
+            
+            countryName: "Aruba",
+            cities: [
+                {
+                    name: "Oranjestad",
+                    address: "Aeroporto Queen Beatrix<br>(International flights section)",
+                    schedules: reservaciones
+                    
+                }
+            ]
         },
         {
-            country: "Aruba",
-            city: "Oranjestad",
-            address: "Aeroporto Internacional Reina Beatrix<br>(Modulos de vuelos Internacionales)",
-            schedules: reservaciones
+            
+            countryName: "Bahamas",
+            cities: [
+                {
+                    name: "Nassau",
+                    address: "Aeroporto Internacional Lynden Pindling Terminal A",
+                    schedules: reservaciones
+                    
+                }
+            ]
         },
         {
-            country: "Bahamas",
-            city: "Nassau",
-            address: "Aeroporto Internacional Lynden Pindling Terminal A",
-            schedules: reservaciones
+            
+            countryName: 'Bolivia',
+            cities: [
+                {
+                    name: 'Santa Cruz de la Sierra',
+                    address: 'La Pascana Edifício oficina #3, 24 de septiembre St., Centro Histórico Zone',
+                    schedules: 'Segunda - Sexta 8:30am-12:30pm<br>2:30pm -6:30pm<br>Sábado<br>9:00am-12:30pm'
+                }
+            ]
         },
         {
-            country: 'Bolívia',
-            alias: 'Bolivia',
-            city: 'Santa Cruz de la Sierra',
-            address: 'Edifício La Pascana, Local número 3 Calle 24 de septiembre, esquina Sucre, Zona Centro Histórico, Manzana 3',
-            schedules: 'Segunda - Sexta<br> 8:30am-12:30pm<br>2:30pm -6:30pm<br>Sábado<br> 9:00am-12:30pm'
-        },
-        {
-            country: 'Brasil',
-            city: 'Belo Horizonte',
-            address: 'Av. Bias Fortes, 472 Lourdes A/B CEP : 30170-01',
-            schedules: 'Segunda - Sexta<br> 9:00am - 6:00pm'
-        },
-        {
-            country:'Brasil',
-            city:'Brasilia',
-            address: 'Aeroporto de Brasilia S/N aeroporto lago sul Brasilia -DF 71.608-900',
-            schedules: 'Segunda - Sexta<br> 9:00am - 6:00pm'
-        },
-        {
-            country: 'Brasil',
-            city: 'Campinas',
-            address: 'Rod Santos Dumont km 66 Term 1 nível 1 Aeroporto de Viracopos',
-            schedules: 'Segunda - Sexta<br> 9:00am - 6:00pm'
-        },
-        {
-            country: 'Brasil',
-            city: 'Manaos',
-            address: 'Av. Santos Dumont, 1350 Bairro Taruma - Terreo <br>Aeroporto Internacional Eduardo Gomes CEP 69.041-000',
-            schedules: 'Segunda - Sexta<br> 9:00am - 6:00pm'
-        },
-        {
-            country: 'Brasil',
-            city: 'Porto Alegre',
-            address: 'Av. Severo Dulius, 90010 Sao João',
-            schedules: 'Segunda - Sexta<br> 9:00am - 6:00pm'
+            
+            countryName: 'Brasil',
+            cities: [
+                {
+                    name: 'Belo Horizonte',
+                    address: 'Av. Bias Fortes, 472 Lourdes A/B CEP : 30170-01',
+                    schedules: 'Segunda - Sexta 9:00am - 6:00pm'  
+                },
+                {
+                    name:'Brasilia',
+                    address: 'Aeroporto de Brasilia S/N lago sul Brasilia -DF 71.608-900',
+                    schedules: 'Segunda - Sexta 9:00am - 6:00pm'
+                },
+                {
+                    name: 'Campinas',
+                    address: 'Rod Santos Dumont km 66 Term 1 nível 1 Aeroporto Viracopos',
+                    schedules: 'Segunda - Sexta 9:00am - 6:00pm'
+                },
+                {
+                    name: 'Manaos',
+                    address: 'Av. Santos Dumont, 1350 Bairro Taruma - Terreo <br>Aeroporto Internacional Eduardo Gomes CEP 69.041-000',
+                    schedules: 'Segunda - Sexta 9:00am - 6:00pm'
+                },
+                {
+                    name: 'Porto Alegre',
+                    address: 'Av. Severo Dulius, 90010 Sao João',
+                    schedules: 'Segunda - Sexta 9:00am - 6:00pm'
+                },
+                {
+                    name: 'Recife',
+                    address: 'Praça Ministro Salgado Filho s / n – Imbiribeira Aeroporto Internacional Gilberto Freyre',
+                    schedules: 'Segunda - Sexta 9:00am - 6:00pm'
+                },
+                {
+                    name: 'Rio de Janeiro',
+                    address: 'Atlantic Avenida, 1130 - 15 andar Copacabana',
+                    schedules: 'Segunda - Sexta 9:00am - 6:00pm'
+                },
+                {
+                    name: 'Sao Paulo',
+                    address: 'Paulista Avenida 1337 – 4º floor ZIP 01311-200',
+                    schedules: 'Segunda - Sexta 9:00am - 6:00pm'
+                }
 
+            ]
+        },
+       
+        {
+            countryName: 'Canada',
+            cities: [
+                {
+                    name: 'Montreal',
+                    address: 'Aeroporto Internacional de montreal pierre elliott trudeau 975 boul. Romeo vachon nord Suite 429',
+                    schedules: reservaciones
+                },      
+                {
+                    name: 'Toronto',
+                    address: 'Aeroporto Internacional Pearson Terminal 1 . Oficina GA 2202<br>**Únicamente se aceptan dólares Canadienses e tarjetas Visa, MasterCard.',
+                    schedules: 'Segunda - Sexta 9:00am-12:00pm'
+                }
+                
+            ]
         },
         {
-            country:'Brasil',
-            city: 'Recife',
-            address: 'Praça Ministro Salgado Filho s / n – Imbiribeira Aeroporto Internacional Gilberto Freyre',
-            schedules: 'Segunda - Sexta<br> 9:00am - 6:00pm'
+            countryName: 'Chile',
+            cities: [
+                {
+                    name: 'Santiago de Chile',
+                    address: 'Av. El Golf 99 oficina 101ª Las Condes',
+                    schedules: 'Segunda - Sexta 9:00am-5:00pm'
+                }
+            ]
         },
         {
-            country:'Brasil',
-            city: 'Rio de Janeiro',
-            address: 'Avenida Atlántica, 1130 - 15 andar Copacabana',
-            schedules: 'Segunda - Sexta<br> 9:00am - 6:00pm'
+            countryName: 'Colômbia',
+            cities: [
+                {
+                    name: 'Barranquilla',
+                    address: 'Calle 72 N. 54 - 49 oficina 1 e 2',
+                    schedules: 'Segunda - Sexta 8:00am-6:00pm<br>Sábado<br>9:00am-1:00pm'
+                },
+                {
+                    name: 'Bogotá',
+                    address: 'Calle 100 #. 7 A - 81 oficina 3 Edifício Universa',
+                    schedules: 'Segunda - Sexta<br> 8:00am-7:00pm<br>Sábado<br> 8:00am-12:00pm e 1:00pm-5:00pm<br>Domingo<br> 11:00am-4:00pm'
+                },
+                {
+                    name: 'Bogotá',
+                    address: 'Calle 76 Cra 11 No. 76-57 oficina 01',
+                    schedules: 'Segunda - Sexta 8:00am-6:00pm<br>Sábado<br>9:00am-12:00pm'
+                },
+                {
+                    name: 'Bogotá',
+                    address: 'Gran Estacion Mall, Costado sphere, first floor, Entry 1',
+                    schedules: 'Segunda - Sábado 10:00am-8:30pm<br> Domingos e feriados 11:00am-7:00pm'
+                },
+                {
+                    name: 'Bogotá',
+                    address: 'Aeroporto El Dorado, Entrance 8 Front oficina 13 e 16, second floor',
+                    schedules: 'Segunda - Sábado 5:00am-9:00pm<br> Domingos e feriados 5:00am-1:00pm'
+                },
+                {
+                    name: 'Bogotá',
+                    address: 'centro comercial Unicentro<br>Avenida 15th # 124 - 30 floor 1<br> oficina 1-101 Entrance 8',
+                    schedules: 'Segunda - Sexta 9:00am-8:00pm<br>Sábado<br> 10:00am-7:00pm<br>Domingos e feriados 10:00am-4:00pm'
+                },
+                {
+                    name: 'Bucaramanga',
+                    address: 'Carrera 35 No.54-114',
+                    schedules: 'Segunda - Sexta 8:00am-6:00pm<br>Sábado<br>9:00am-12:00pm'
+                },
+                {
+                    name: 'Cali',
+                    address: 'Norte AV 6ta BIS NO. 30 N- 25',
+                    schedules: 'Segunda - Sexta 8:00am-7:00pm<br>Sábado<br>9:00am-6:00pm<br>Domingos e feriados 9:00am-1:00pm'
+                },
+                {
+                    name: 'Cali',
+                    address: '14 centro comercial Paso Ancho<br>13th Calle # 80 - 60',
+                    schedules: 'Segunda - Sexta 9:00am-7:00pm<br>Sábado<br>8:00am-12:00pm and 1:00pm-5:00pm<br>Domingos e feriados<br> 11:00am-4:00pm'
+                },
+                {
+                    name: 'Cartagena',
+                    address: 'Aeroporto Internacional Rafael Nuñez<br>Crespo – Cartagena first floor',
+                    schedules: 'Segunda - Sexta 8:00am-6:00pm<br>Sábado, Domingos e feriados 8:00am-5:00pm'
+                },
+                {
+                    name: 'Cúcuta',
+                    address: '15th Calle N0. 0 E - 18 Los Caobos',
+                    schedules: 'Segunda - Sexta 8 :00am – 6:00pm<br>Sábado<br>9:00am – 1pm'
+                },
+                {
+                    name: 'Medellín',
+                    address: 'centro comercial Almacentro<br>Cra 43 A # 34 – 95 oficina 099',
+                    schedules: 'Segunda - Sexta 8 :00am – 6:00pm<br>Sábado<br>9:00am – 12:00pm'
+                },
+                {
+                    name: 'Pereira',
+                    address: 'AV circunvalar # 8b-51 Edifício Bancafe oficina 103',
+                    schedules: 'Segunda - Sexta 8 :00am – 6:00pm<br>Sábado<br>9:00am – 12:00pm'
+                },
+                {
+                    name: 'San Andres',
+                    address: 'Ave. Newball Torre Sunrise Beach No. 4- 141 oficina 125-b6',
+                    schedules: 'Segunda - Sexta<br>8:00am-12:00m<br>2:00pm-6:00pm<br>Sábado<br>9:00am-1:00pm'
+                }
+            ]
         },
         {
-            country: 'Brasil',
-            city: 'Sao Paulo',
-            address: 'Avenida Paulista 1337 – 4º andar ZIP 01311-200',
-            schedules: 'Segunda - Sexta<br> 9:00am - 6:00pm'
+            countryName: 'Costa Rica',
+            cities: [
+                {
+                    name: 'Liberia',
+                    address: 'Aeroporto Daniel Oduber',
+                    schedules: 'Jueves &amp; Domingo 7:00am-2:00pm'
+                },
+                {
+                    name: 'San José',
+                    address: 'Edif. Torres Mercedes, 1er floor, Paseo Colón San José',
+                    schedules: 'Segunda - Sexta 8:00am-5:00pm<br>Sábado<br>8:00am-12:00pm'
+                }
+            ]
+            
         },
         {
-            country: 'Canada',
-            city: 'Montreal',
-            address: 'Aeroporto internacional de montreal pierre elliott trudeau 975 boul. Romeo vachon nord Suite 429',
-            schedules: reservaciones
+            countryName: 'Cuba',
+            cities: [
+                {
+                    name: 'La Habana',
+                    address: 'Centro de Negocios Miramar, Planta baja Edif. Barcelona 5ta Avenida entre 76 e 78, Playa.',
+                    schedules: 'Segunda - Sexta 8:30am-5:00pm<br>Sábado<br>9:00am-1:00pm '
+                }
+            ]
         },
         {
-            country:'Canada',
-            city: 'Toronto',
-            address: 'Aeroporto Internacional Pearson Terminal 1 . Escritório GA 2202 **Somente dólares canadenses e Visa, os cartões MasterCard são aceitos.',
-            schedules: 'Segunda - Sexta<br> 9:00am-12:00pm'
+            countryName: 'Curazao',
+            cities: [
+                {
+                    name: 'Willemstand',
+                    address: 'Zuikertuin Mall Tower Unit 1B e 1C Willemstad, Curazao',
+                    schedules: 'Segunda - Sexta 8:00am-5:00pm'
+                },
+                {
+                    name: 'Willemstand',
+                    address: 'Curaçao Aeroporto Internacional',
+                    schedules: 'Terça-feira, quinta, sexta e Domingo 8:00am-4:00pm'
+                }
+            ]
         },
         {
-            country: 'Chile',
-            city: 'Santiago de Chile',
-            address: 'Av. El Golf 99 local 101ª Las Condes',
-            schedules: 'Segunda - Sexta<br> 9:00am-5:00pm'
+            
+            countryName: 'Ecuador',
+            cities: [
+                {
+                    name: 'Cuenca',
+                    address: 'Miguel Cordero e Av Paucarbamba Edif Work Center Planta baja Ofic N 09',
+                    schedules: 'Segunda - Sexta 9:00am-1:00pm e 2:00pm-5:45pm<br>Sábado<br>9:00am-1:00pm' 
+                }, 
+                {
+                    name: 'Guayaquil',
+                    address: 'Nove de outubro 100 e Malecón Simón Bolívar, andar 25',
+                    schedules: 'Segunda - Sexta 8:00am-5:45pm<br>Sábado<br>8:00am-1:45pm'
+                },
+                {
+                   name: 'Guayaquil',
+                    address: 'Village Plaza Mall, Km 11/2 Vía Samborondón Planta alta',
+                    schedules: 'Segunda - Sábado 10:00am-9:00pm<br>Domingos e feriados 10:00am-8:00pm' 
+                },
+                {
+                    name: 'Quito',
+                    address: 'Av. República de El Salvador 361 e Moscú, Edifício Aseguradora del Sur, Planta Baja.',
+                    schedules: 'Segunda - Sexta 8:00am-6:00pm<br>Sábado<br>9:00am-2:00pm'
+                },
+                {
+                    name: 'Quito',
+                    address: 'Mall El Jardín Av. República 6-114 e Amazonas',
+                    schedules: 'Segunda - Sábado 10:00am-8:30pm<br>Domingos e feriados 10:00am-7:30pm '
+                }
+            ]
+        },
+       
+        {
+            
+            countryName: 'El Salvador',
+            cities: [
+                {
+                    name: 'San Salvador',
+                    address: 'Edifício World Trade Center, 1er. nível, oficina 107, Colonia Escalon entre Calle El Mirador e 89 Av. Norte',
+                    schedules: 'Segunda - Sexta 8:00am-6:00pm<br>Sábado<br>8:00am-12:00pm '
+                }
+            ]
         },
         {
-            country: 'Colômbia',
-            alias: 'Colombia',
-            city: 'Barranquilla',
-            address: 'Calle 72 N. 54 - 49 Local 1 y 2',
-            schedules: 'Segunda - Sexta<br> 8:00am-6:00pm<br>Sábado<br> 9:00am-1:00pm'
+            
+            countryName: 'Estados Unidos',
+            cities: [
+                {
+                    name: 'Chicago',
+                    address: 'Chicago Ohare Aeroporto Internacional Terminal 5 Chicago Berssie Coleman Drive 10000 Chicago IL 60666. Para consultas sobre ventas, escriba a: <a href="mailto:chicagosales@copaair.com">chicagosales@copaair.com</a>',
+                    schedules: 'Segunda - Domingo 4:30am-12:30pm'
+                },
+                {
+                    name: 'Fort Lauderdale',
+                    address: 'Aeroporto Internacional Fort Lauderdale – Hollywood',
+                    schedules: reservaciones
+                },
+                {
+                    name: 'Las Vegas',
+                    address: 'Aeroporto Internacional McCarran, Terminal 3, 5757 Wayne Newton Blvd , Las Vegas ,NV 89119',
+                    schedules: 'Mon - Domingos e feriados<br>12:00pm-4:00pm e 7:00pm-12:00am'
+                },
+                {
+                    name: 'Los Angeles',
+                    address: 'Aeroporto Internacional de Los Angeles Terminal 6, 600 World Way , Los Angeles, CA 90045',
+                    schedules: 'Mon - Domingos e feriados<br>7:30am-9:30am e 6:00pm-9:30pm'
+                },
+                {
+                    name: 'Miami',
+                    address: 'Waterford Center , 6205 Blue Lagoon Drive Suite 200 Miami Fl 33126',
+                    schedules: 'Segunda - Sexta 9:00am-6:00pm'
+                },
+                {
+                    name: 'New York',
+                    address: 'New York Aeroporto Internacional , Terminal 4 Councourse A',
+                    schedules: 'Mon - Domingos e feriados 8:45am-9:20am 1:30pm-2:30pm'
+                },
+                {
+                    name: 'Orlando',
+                    address: 'Aeroporto Internacional de Orlando , Terminal A 9303 Jeff Fuqua Blvd Orlando FL 32827',
+                    schedules: 'Segunda - Sexta 9:00am-3:00pm '
+                },
+                {
+                    name: 'Tampa',
+                    address: 'Waterford Center , 6205 Blue Lagoon Drive Suite 200 Miami Fl 33126',
+                    schedules: reservaciones
+                },
+                {
+                    name: 'Washington, D.C',
+                    address: 'Aeroporto Internacional Washington-Dulles, 1 Saarinen Circle Dulles Va , Terminal principal Puerta N° 2 salida de vuelos terminal A puerta 19',
+                    schedules: 'Segunda - Domingo<br>6:00am - 9:00am e 12:00pm - 2:30pm'
+                }
+            ]
+        },
+        {           
+            countryName: 'Guatemala',
+            cities: [
+                {
+                    name: 'Ciudad de Guatemala',
+                    address: '5 avenida 5-55 zona 14 Edifício Euro Plaza Torre 3 Planta Baja, Oficina 102',
+                    schedules: 'Segunda - Sexta 8:00am-6:00pm<br>Sábado<br>8:00am-12:00pm'
+                }
+            ]
         },
         {
-            country: 'Colômbia',
-            city: 'Bogotá',
-            alias: 'Colômbia, Bogota',
-            address: 'Calle 100 Nro. 7 A - 81 local 3 Edifício Universa',
-            schedules: 'Segunda - Sexta<br> 8:00am-6:00pm<br>Sábado<br> 9:00am-12:00pm'
-        },
-        {
-            country: 'Colômbia',
-            city: 'Bogotá',
-            alias: 'Colombia, Bogota',
-            address: 'CALLE 76 Cra 11 No. 76-57 Local 01',
-            schedules: 'Segunda - Sexta<br> 8:00am-6:00pm<br>Sábado<br> 9:00am-12:00pm'
-        },
-        {
-            country: 'Colômbia',
-            city: 'Bogotá',
-            alias: 'Colombia, Bogota',
-            address: 'Mall Gran Estación, Costado esfera, primeiro andar, entrada 1',
-            schedules: 'Segunda - Sábado<br> 10:00am-8:30pm<br> Domingos e Feriados 11:00am-7:00pm'
-        },
-        {
-            country: 'Colômbia',
-            city: 'Bogotá',
-            alias: 'Colombia, Bogota',
-            address: 'Aeroporto El Dorado, Entrada 8 Front office 13 y 16, segundo andar',
-            schedules: 'Segunda - Sábado<br> 5:00am-9:00pm<br> Domingos e Feriados 5:00am-1:00pm'
-        },
-        {
-            country: 'Colômbia',
-            city: 'Bogotá',
-            alias: 'Colombia, Bogota',
-            address: 'Mall Unicentro<br>Avenida 15 Nro 124 - 30 andar 1<br> Local 1-101 Entrada 8',
-            schedules: 'Segunda - Sexta<br> 9:00am-8:00pm<br>Sábado<br>10:00am-7:00pm<br>Domingos e Feriados 10:00am-4:00pm'
-        },
-        {
-            country: 'Colômbia',
-            alias: 'Colombia',
-            city: 'Bucaramanga',
-            address: 'Carrera 35 No.54-114',
-            schedules: 'Segunda - Sexta<br> 8:00am-6:00pm<br>Sábado<br> 9:00am-12:00pm'
-        },
-        {
-            country: 'Colômbia',
-            alias: 'Colombia',
-            city: 'Cali',
-            address: 'Norte AV 6ta BIS NO. 30 N- 25',
-            schedules: 'Segunda - Sexta<br> 8:00am-7:00pm<br>Sábado<br> 9:00am-6:00pm<br>Domingos e Feriados 9:00am-1:00pm'
-        },
-        {
-            country: 'Colômbia',
-            alias: 'Colombia',
-            city: 'Cali',
-            address: 'Mall 14 Paso Ancho<br>Calle 13 Nro 80 - 60',
-            schedules: 'Segunda - Sexta<br> 10:00am-7:00pm<br>Sábado<br> 9:00am-6:00pm<br>Domingos e Feriados 11:00am-4:00pm'
-        },
-        {
-            country: 'Colômbia',
-            alias: 'Colombia',
-            city: 'Cartagena',
-            address: 'Aeroporto Internacional Rafael Nuñez<br>Crespo – Cartagena primeiro andar',
-            schedules: 'Segunda - Sexta<br> 8:00am-6:00pm<br>Sábados, Domingos e Feriados<br> 8:00am-5:00pm'
-        },
-        {
-            country: 'Colômbia',
-            city: 'Cúcuta',
-            address: 'Calle 15 N0. 0 E - 18 Barrio los Caobos',
-            schedules: 'Segunda - Sexta<br> 8 :00am – 6:00pm<br>Sábado<br> 9:00am – 1pm'
-        },
-        {
-            country: 'Colômbia',
-            city: 'Medellín',
-            alias: 'Medellin, Colombia',
-            address: 'Mall Almacentro<br>Cra 43 A Nro 34 – 95 local 099',
-            schedules: 'Segunda - Sexta<br> 8 :00am – 6:00pm<br>Sábado<br> 9:00am – 12:00pm'
-        },
-        {
-            country: 'Colômbia',
-            alias: 'Colombia',
-            city: 'Pereira',
-            address: 'AV circunvalar # 8b-51 Edifício Bancafe local 103',
-            schedules: 'Segunda - Sexta<br> 8 :00am – 6:00pm<br>Sábado<br> 9:00am – 12:00pm'
-        },
-        {
-            country: 'Colômbia',
-            city: 'San Andrés',
-            alias: 'San Andres, Colombia',
-            address: 'Ave. Newball Torre Sunrise Beach No. 4- 141 Local 125-b6',
-            schedules: 'Segunda - Sexta<br><br>8:00am-12:00m<br>2:00pm-6:00pm<br>Sábado<br> 9:00am-1:00pm'
-        },
-        {
-            country: 'Costa Rica',
-            city: 'Liberia',
-            address: 'Aeroporto Daniel Oduber',
-            schedules: 'Jueves y Domingo<br> 7:00am-2:00pm'
-        },
-        {
-            country: 'Costa Rica',
-            city: 'San José',
-            alias: 'San Jose',
-            address: 'Edif. Torres Mercedes, 1er andar, Paseo Colón San José',
-            schedules: 'Segunda - Sexta<br> 8:00am-5:00pm<br>Sábado<br> 8:00am-12:00pm'
-        },
-        {
-            country: 'Costa Rica',
-            city: 'San José',
-            alias: 'San Jose',
-            address: 'Plaza Antares, Rotonda de la Bandera, primeiro nível',
-            schedules: 'Segunda - Sexta<br> 9:00am-7:00pm<br>Sábado<br> 12:00pm-7:00pm<br>Domingo 10:00am-5:00pm'
-        },
-        {
-            country: 'Cuba',
-            city: 'La Habana',
-            address: 'Centro de Negocios Miramar, Planta baja Edif. Barcelona 5ta Avenida entre 76 y 78, Playa.',
-            schedules: 'Segunda - Sexta<br> 8:30am-5:00pm<br>Sábado<br> 9:00am-1:00pm '
-        },
-        {
-            country: 'Curaçao',
-            alias: 'Curacao, Curazao',
-            city: 'Willemstand',
-            address: 'Zuikertuin Mall Tower Unit 1B y 1C Willemstad, Curaçao',
-            schedules: 'Segunda - Sexta<br> 8:00am-5:00pm'
-        },
-        {
-            country: 'Curaçao',
-            alias: 'Curacao, Curazao',
-            city: 'Willemstand',
-            address: 'Curaçao Aeroporto Internacional',
-            schedules: 'Martes, Jueves,<br>Viernes y Domingo<br>8:00am-4:00pm'
-        },
-        {
-            country: 'Ecuador',
-            city: 'Cuenca',
-            address: 'Miguel Cordero y Av Paucarbamba Edif Work Center Planta baja Ofic N 09',
-            schedules: 'Segunda - Sexta<br> 9:00am-1:00pm y 2:00pm-5:45pm<br>Sábado<br> 9:00am-1:00pm'
-        },
-        {
-            country: 'Ecuador',
-            city: 'Guayaquil',
-            address: 'Nueve de Octubre 100 y Malecón Simón Bolívar, andar 25',
-            schedules: 'Segunda - Sexta<br> 8:00am-5:45pm<br>Sábado<br> 8:00am-1:45pm'
-        },
-        {
-            country: 'Ecuador',
-            city: 'Guayaquil',
-            address: 'Village Plaza Mall, Km 1.5 Vía Samborondón Planta baja',
-            schedules: 'Segunda - Sábado<br> 10:00am-9:00pm<br>Domingos e Feriados 10:00am-8:00pm'
-        },
-        {
-            country: 'Ecuador',
-            city: 'Quito',
-            address: 'Av. República de El Salvador 361 e Moscú, Edifício Aseguradora del Sur, Planta Baja.',
-            schedules: 'Segunda - Sexta<br> 8:00am-6:00pm<br>Sábado<br> 9:00am-2:00pm'
-        },
-        {
-            country: 'Ecuador',
-            city: 'Quito',
-            address: 'Mall El Jardín Av. República 6-114 y Amazonas',
-            schedules: 'Segunda - Sábado<br> 10:00am-8:30pm<br>Domingos e Feriados 10:00am-7:30pm '
-        },
-        {
-            country: 'El Salvador',
-            city: 'San Salvador',
-            address: 'Edifício World Trade Center, 1er. nível, local 107, Colonia Escalon entre Calle El Mirador y 89 Av. Norte',
-            schedules: 'Segunda - Sexta<br> 8:00am-6:00pm<br>Sábado<br> 8:00am-12:00pm '
-        },
-        {
-            country: 'Estados Unidos',
-            city: 'Chicago',
-            address: 'Chicago Ohare Aeroporto Internacional Terminal 5 Chicago Berssie Coleman Drive 10000 Chicago IL 60666. Para consultas sobre ventas, escriba a: <a href="mailto:chicagosales@copaair.com">chicagosales@copaair.com</a>',
-            schedules: 'Segunda - Domingo 4:30am-12:30pm'
-        },
-        {
-            country: 'Estados Unidos',
-            city: 'Fort Lauderdale',
-            address: 'Aeroporto Internacional Fort Lauderdale – Hollywood',
-            schedules: reservaciones
-        },
-        {
-            country: 'Estados Unidos',
-            city: 'Las Vegas',
-            address: 'Aeroporto Internacional McCarran, Terminal 3, 5757 Wayne Newton Blvd , Las Vegas ,NV 89119',
-            schedules: 'Segunda - Domingoingos y Feriados<br>12:00pm-4:00pm y 7:00pm-12:00am'
-        },
-        {
-            country: 'Estados Unidos',
-            city: 'Los Angeles',
-            address: 'Aeroporto Internacional de Los Angeles Terminal 6, 600 World Way , Los Angeles, CA 90045',
-            schedules: 'Segunda - Domingoingos y Feriados<br>7:30am-9:30am y 6:00pm-9:30pm'
-        },
-        {
-            country: 'Estados Unidos',
-            city: 'Miami',
-            address: 'Waterford Center , 6205 Blue Lagoon Drive Suite 200 Miami Fl 33126',
-            schedules: 'Segunda - Sexta<br> 9:00am-6:00pm'
-        },
-        {
-            country: 'Estados Unidos',
-            city: 'New York',
-            address: 'New York Aeroporto Internacional , Terminal 4 Councourse A',
-            schedules: 'Segunda - Domingoingos y Feriados 8:45am-9:20am 1:30pm-2:30pm'
-        },
-        {
-            country: 'Estados Unidos',
-            city: 'Orlando',
-            address: 'Aeroporto Internacional de Orlando , Terminal A 9303 Jeff Fuqua Blvd Orlando FL 32827',
-            schedules: 'Segunda - Sexta<br> 9:00am-3:00pm '
-        },
-        {
-            country: 'Estados Unidos',
-            city: 'Tampa',
-            address: 'Waterford Center , 6205 Blue Lagoon Drive Suite 200 Miami Fl 33126',
-            schedules: reservaciones
-        },
-        {
-            country: 'Estados Unidos',
-            city: 'Washington, D.C',
-            address: 'Aeroporto Internacional Washington-Dulles, 1 Saarinen Circle Dulles Va , Terminal principal Puerta N° 2 salida de vuelos terminal A puerta 19',
-            schedules: 'Segunda - Domingo<br>6:00am - 9:00am y 12:00pm - 2:30pm'
-        },
-        {
-            country: 'Guatemala',
-            city: 'Ciudad de Guatemala',
-            address: '5 avenida 5-55 zona 14 Edifício Euro Plaza Torre 3 Planta Baja, Escritório 102',
-            schedules: 'Segunda - Sexta<br> 8:00am-6:00pm<br>Sábado<br> 8:00am-12:00pm'
-        },
-        {
-            country: 'Guyana',
-            city: 'Georgetown',
-            address: '#212 Camp Street, North Cummingsburg, Georgetown, Guyana',
-            schedules: 'Segunda - Sexta<br> 8:30am-5:00pm<br>Sábado<br> 9:00am-12:00pm'
+            
+            countryName: 'Guyana',
+            cities: [
+                {
+                    name: 'Georgetown',
+                    address: '#212 Camp Calle, North Cummingsburg, Georgetown, Guyana',
+                    schedules: 'Segunda - Sexta 8:30am-5:00pm<br>Sábado<br>9:00am-12:00pm'
+                }
+            ]
         },
          {
-            country: 'Haití',
-            alias: 'Haiti',
-            city: 'Puerto Principe',
-            address: 'Av. 30 , Marie Jeanne',
-            schedules: 'Segunda - Sexta<br> 8:30am-3:30pm'
+            
+            countryName: 'Haití',
+            cities: [
+                {
+                    name: 'Puerto Principe',
+                    address: 'Av. 30 , Marie Jeanne',
+                    schedules: 'Segunda - Sexta 8:30am-3:30pm'
+                }
+            ]
         },
         {
-            country: 'Honduras',
-            city: 'San Pedro Sula',
-            address: 'Avenida Circunvalacion Barrio Paz Barahona, 13 Calle esquina opuesta a sears, Plaza Geosur, local 1',
-            schedules: 'Segunda - Sexta<br> 8:00am-5:00pm<br>Sábado<br> 8:00am-12:00m '
+            
+            countryName: 'Honduras',
+            cities: [
+                {
+                    name: 'San Pedro Sula',
+                    address: 'Avenida Circunvalacion Barrio Paz Barahona, 13 Calle esquina opuesta a sears, Plaza Geosur, oficina 1',
+                    schedules: 'Segunda - Sexta 8:00am-5:00pm<br>Sábado<br>8:00am-12:00m '
+                },
+                {
+                    name: 'Tegucigalpa',
+                    address: 'Edifício Corporativo Contiguo al Hotel Clarion 1era Planta, Col. Alameda  Avenida Juan Manuel Galvez',
+                    schedules: 'Segunda - Sexta 8:00am-5:00pm<br>Sábado<br>8:00am-12:00m'
+                }
+            ]
         },
         {
-            country: 'Honduras',
-            city: 'Tegucigalpa',
-            address: 'Edifício Corporativo Contiguo al Hotel Clarion 1era Planta, Col. Alameda  Avenida Juan Manuel Galvez',
-            schedules: 'Segunda - Sexta<br> 8:00am-5:00pm<br>Sábado<br> 8:00am-12:00m'
+            countryName: 'Jamaica',
+            cities: [
+                {
+                    name: 'Kingston',
+                    address: 'Courtleigh Corporate Center, 8 St. Lucia Avenida, Kingston 5, Jamaica',
+                    schedules: 'Segunda - Sexta 8:30am-5:00pm '
+                },
+                {
+                    name: 'Montego Bay',
+                    address: 'Aeroporto Internacional Sangster Montego Bay, Jamaica W.I.',
+                    schedules: reservaciones
+                }
+            ]
+        },
+        {   
+            countryName: 'México',
+            cities: [
+                {
+                    name: 'Cancún',
+                    address: 'Aeroporto Internacional de Cancún Terminal 2 , detrás de mostradores 83 e 84 Oficina N. 43',
+                    schedules: 'Segunda - Sábado 9:00am-4:00pm<br>Domingos e feriados 10:00am-4:00pm'
+                },
+                {
+                    name: 'Guadalajara',
+                    address: 'AV Moctezuma N. 3515 oficinaes 8 e 9, Hotel Presidente Intercontinental Colonia Ciudad del Sol , Zapopan Jalisco México',
+                    schedules: 'Segunda - Sexta 9:00am-6:00pm<br>Sábado<br>9:00am-1:00pm '
+                },
+                {
+                    name: 'Monterrey',
+                    address: 'Av. Lázaro Cárdenas #2225, Torre Latitud, oficina 2 Planta Baja, Colonia Valle Oriente, San Pedro Garza Garcia, Nuevo León, México.',
+                    schedules: 'Segunda - Sexta 9:00am-6:00pm<br>Sábado<br>9:00am-1:00pm '
+                },
+                {
+                    name: 'México D.F',
+                    address: 'Berna Numero 06 Planta Baja, Colonia Juarez México Delegacion Cuauhtemoc CP 06600 DF',
+                    schedules: 'Segunda - Sexta 9:00am-6:00pm<br>Sábado<br>10:00am-2:00pm '
+                }
+            ]
+        },
+     
+        {
+            
+            countryName: 'Nicaragua',
+            cities: [
+                {
+                    name: 'Managua',
+                    address: 'centro comercial Galerías Santo Domingo, km. 7 carretera a Masaya',
+                    schedules: 'Segunda - Sábado 10:00am - 8:00pm<br>Domingo 11:00am - 8:00pm'
+                },
+                {
+                    name: 'Managua',
+                    address: 'Km. 4.5 carretera Masaya, Edifício CAR No. 6 Planes de Altamira',
+                    schedules: 'Segunda - Sexta 8:00am - 5:30pm<br>Sábado<br>8:00am - 12:00pm'
+                }
+            ]
         },
         {
-            country: 'Jamaica',
-            city: 'Kingston',
-            address: 'Courtleigh Corporate Center, 8 St. Lucia Avenue, Kingston 5, Jamaica',
-            schedules: 'Segunda - Sexta<br> 8:30am-5:00pm '
+            
+            countryName: 'Panamá',
+            cities: [
+                {
+                    name: 'Panamá',
+                    address: 'Galerías Hotel Riande Continental, Vía España.',
+                    schedules: 'Segunda - Sexta 8:00am-5:00pm<br>Sábado<br>9:00am-1:00pm '
+                },
+                {
+                    name: 'Panamá',
+                    address: 'Casco Antiguo – oficinaes comerciales del Hotel American Trade, Calle José de Obaldía, Avenida Central entre Calle 9na e 10am',
+                    schedules: 'Segunda - Sexta 8:00am-6:00pm<br>Sábado<br>9:00am-1:00pm'
+                },
+                {
+                    name: 'Panamá',
+                    address: 'Complejo Business Park, Torre Norte, Planta Baja; Costa del Este',
+                    schedules: 'Segunda - Sexta 8:00am-6:00pm<br>Sábado<br>8:00am-12:00pm'
+                },
+                {
+                    name: 'Panamá',
+                    address: 'centro comercial Altaplaza Mall, nível 2 - área de cines',
+                    schedules: 'Segunda - Sábado 10:00am-8:00pm<br>Domingo 11:00am-7:00pm'
+                },
+                {
+                    name: 'Panamá',
+                    address: 'centro comercial Multiplaza, Plaza del Mar, primeiro nível',
+                    schedules: 'Segunda - Sábado 10:00am-8:00pm<br>Domingo 11:00am-7:00pm'
+                },
+                {
+                    name: 'Panamá',
+                    address: 'centro comercial Albrook Mall, Pasillo del Koala',
+                    schedules: 'Segunda - Sábado 10:00am-8:00pm<br>Domingo 11:00am-7:00pm'
+                },
+                {
+                    name: 'Panamá',
+                    address: 'centro comercial Metromall, primeiro nível, stand K1-17 frente a Dunkin Donnuts ',
+                    schedules: 'Segunda - Sábado 10:00am-8:00pm<br>Domingo 11:00am-7:00pm'
+                },
+                {
+                    name: 'Panamá',
+                    address: 'Hotel Sheraton, Planta Baja',
+                    schedules: 'Segunda - Sexta <br>8:00am-12:00pm e 1:00pm-5:00pm<br>Sábado<br>8:00am-12:00pm'
+                },
+                {
+                    name: 'Zona Libre Colón',
+                    address: 'Calle 14 Av Rusbell e Santa Isabel ',
+                    schedules: 'Segunda - Sexta 8:00am-5:00pm'
+                },
+                {
+                    name: 'David, Chiriquí',
+                    address: 'Ave. Domingo Díaz Edifício Garrido, planta baja, oficina #1 David, Provincia de Chiriquí',
+                    schedules: 'Segunda - Sexta 8:00am-5:00pm<br>Sábado<br>8:00am-12:00pm '
+                }
+                
+            ]
+        },
+       
+        {  
+            countryName: 'Paraguai',
+            cities: [
+                {
+                    name: 'Asunción',
+                    address: 'Ave. Boggiani Esq. Cap. Nudelman Edifício Boggiani, Planta Baja',
+                    schedules: 'Segunda - Sexta 8:30am-5:30pm<br>Sábado<br>8:30am-12:30pm'
+                }
+            ]
         },
         {
-            country: 'Jamaica',
-            city: 'Montego Bay',
-            address: 'Aeroporto Internacional Sangster Montego Bay, Jamaica W.I.',
-            schedules: reservaciones
+            
+            countryName: 'Perú',
+            cities: [
+                {
+                    name: 'Lima',
+                    address: 'Calle Los Halcones 105 San Isidro, Cruce de Canaval e Moreyra con República de Panamá ',
+                    schedules: 'Segunda - Sexta 9:00am-6:00pm<br>Sábado<br>9:00am-1:00pm '
+                },
+                {
+                    name: 'Iquitos',
+                    address: 'Calle Sargento Lores 379',
+                    schedules: 'Segunda - Sexta 9:00am- 7:00pm<br>Sábado<br>9:00am- 1:00pm'
+                }
+            ]
         },
-        {
-            country: 'México',
-            alias: 'Mexico',
-            city: 'Cancún',
-            address: 'Aeroporto Internacional de Cancún Terminal 2 , detrás de mostradores 83 y 84 Escritório N. 43',
-            schedules: 'Segunda - Sábado<br> 9:00am-4:00pm<br>Domingos e Feriados 10:00am-4:00pm'
-        },
-        {
-            country: 'México',
-            alias: 'Mexico',
-            city: 'Guadalajara',
-            address: 'AV Moctezuma N. 3515 Locales 8 e 9, Hotel Presidente Intercontinental Colonia Ciudad del Sol , Zapopan Jalisco México',
-            schedules: 'Segunda - Sexta<br> 9:00am-6:00pm<br>Sábado<br> 9:00am-1:00pm '
-        },
-        {
-            country: 'México',
-            alias: 'Mexico',
-            city: 'Monterrey',
-            address: 'Av. Lázaro Cárdenas #2225, Torre Latitud, Local 2 Planta Baja, Colonia Valle Oriente, San Pedro Garza Garcia, Nuevo León, México.',
-            schedules: 'Segunda - Sexta<br> 9:00am-6:00pm<br>Sábado<br> 9:00am-1:00pm '
-        },
-        {
-            country: 'México',
-            alias: 'Mexico',
-            city: 'México D.F',
-            address: 'Berna Numero 06 Planta Baja, Colonia Juarez México Delegacion Cuauhtemoc CP 06600 DF',
-            schedules: 'Segunda - Sexta<br> 9:00am-6:00pm<br>Sábado<br> 10:00am-2:00pm '
-        },
-        {
-            country: 'Nicaragua',
-            city: 'Managua',
-            address: 'Mall Galerías Santo Domingo, km. 7 carretera a Masaya',
-            schedules: 'Segunda - Sábado<br> 10:00am - 8:00pm<br>Domingo 11:00am - 8:00pm'
-        },
-        {
-            country: 'Nicaragua',
-            city: 'Managua',
-            address: 'Km. 4.5 carretera Masaya, Edifício CAR No. 6 Planes de Altamira',
-            schedules: 'Segunda - Sexta<br> 8:00am - 5:30pm<br>Sábado<br> 8:00am - 12:00pm'
-        },
-        {
-            country: 'Panamá',
-            alias: 'Panama',
-            city: 'Panamá',
-            address: 'Galerías Hotel Riande Continental, Vía España.',
-            schedules: 'Segunda - Sexta<br> 8:00am-5:00pm<br>Sábado<br> 9:00am-1:00pm '
-        },
-        {
-            country: 'Panamá',
-            alias: 'Panama',
-            city: 'Panamá',
-            address: 'Casco Antiguo – Locales comerciales del Hotel American Trade, Calle José de Obaldía, Avenida Central entre Calle 9na y 10am',
-            schedules: 'Segunda - Sexta<br> 8:00am-6:00pm<br>Sábado<br> 9:00am-1:00pm'
-        },
-        {
-            country: 'Panamá',
-            alias: 'Panama',
-            city: 'Panamá',
-            address: 'Complejo Business Park, Torre Norte, Planta Baja; Costa del Este',
-            schedules: 'Segunda - Sexta<br> 8:00am-5:00pm<br>Sábado<br> 8:00am-12:00pm'
-        },
-        {
-            country: 'Panamá',
-            alias: 'Panama',
-            city: 'Panamá',
-            address: 'Mall Altaplaza Mall, nível 2 - área de cines',
-            schedules: 'Segunda - Sábado<br> 10:30am-9:00pm<br>Domingo 11:00am-7:00pm'
-        },
-        {
-            country: 'Panamá',
-            alias: 'Panama',
-            city: 'Panamá',
-            address: 'Mall Multiplaza, Plaza del Mar, primeiro nível',
-            schedules: 'Segunda - Sábado<br> 10:00am-8:00pm<br>Domingo 11:00am-7:00pm'
-        },
-        {
-            country: 'Panamá',
-            alias: 'Panama',
-            city: 'Panamá',
-            address: 'Mall Albrook Mall, Pasillo del Koala',
-            schedules: 'Segunda - Sábado<br> 10:00am-8:00pm<br>Domingo 11:00am-7:00pm'
-        },
-        {
-            country: 'Panamá',
-            alias: 'Panama',
-            city: 'Panamá',
-            address: 'Mall Metromall, primeiro nível, stand K1-17 frente a Dunkin Donnuts ',
-            schedules: 'Segunda - Sábado<br> 10:00am-8:00pm<br>Domingo 11:00am-7:00pm'
-        },
-        {
-            country: 'Panamá',
-            alias: 'Panama',
-            city: 'Panamá',
-            address: 'Hotel Sheraton, Planta Baja',
-            schedules: 'Segunda - Sexta<br>9:00am-1:00pm y 2:00pm-6:00pm<br>Sábado 9:00am-1:00pm'
-        },
+        
          {
-            country: 'Panamá',
-            alias: 'Panama',
-            city: 'Zona Libre Colón',
-            address: 'Calle 14 Av Rusbell y Santa Isabel ',
-            schedules: 'Segunda - Sexta<br> 8:00am-5:00pm'
+            
+            countryName: 'Puerto Rico',
+            cities: [
+                {
+                    name: 'San Juan',
+                    address: '#15 Calle 2 Millenium Park Plaza, Suite 102, Metro oficina Park Guaynabo P.R. 00968',
+                    schedules: 'Segunda - Sexta 8:30am-5:00pm<br>Sábado<br>9:00am-1:00pm '
+                }
+            ]
         },
         {
-            country: 'Panamá',
-            alias: 'Panama',
-            city: 'David, Chiriquí',
-            address: 'Ave. Domingo Díaz Edifício Garrido, planta baja, local #1 David, Provincia de Chiriquí',
-            schedules: 'Segunda - Sexta<br> 8:00am-5:00pm<br>Sábado<br> 8:00am-12:00pm '
+            
+            countryName: 'Republica Dominicana',
+            cities: [
+                {
+                    name: 'Punta Cana',
+                    address: 'Aeroporto Internacional Punta Cana ',
+                    schedules: reservaciones
+                },
+                {
+                    name: 'Santiago de los Caballeros',
+                    address: 'Carretera Luperón kilometro 1, Plaza Galerías Luperón, oficina 1- Planta Baja',
+                    schedules: 'Segunda - Sexta<br>9:00am-1:00pm e 2:00pm-6:00pm<br>Sábado<br>9:00am-1:00pm'
+                },
+                {
+                    name: 'Santo Domingo',
+                    address: 'Ave. Abraham Lincoln esq. Jacinto Mañon Torre Ejecutiva Sonora, Suite 101-A, 1er nível ',
+                    schedules: 'Segunda - Sexta<br>8:00am-1:00pm e 2:00pm-6:00pm<br>Sábado<br>9:00am-1:00pm'
+                }
+
+            ]
+        },
+       
+        {
+            
+            countryName: 'Trinidad e Tobago',
+            cities: [
+                {
+                    name: 'Puerto España',
+                    address: 'Aeroporto Internacional Piarco floor uno, Terminal Principal Atrium ',
+                    schedules: 'Segunda - Sexta 9:00am-5:00pm'
+                }
+            ]
         },
         {
-            country: 'Paraguay',
-            city: 'Asunción',
-            address: 'Ave. Boggiani Esq. Cap. Nudelman Edifício Boggiani, Planta Baja',
-            schedules: 'Segunda - Sexta<br> 8:30am-5:30pm<br>Sábado<br> 8:30am-12:30pm'
+            
+            countryName: 'Uruguai',
+            cities: [
+                {
+                    name: 'Montevideo',
+                    address: 'Luis Alberto de Herrera 1248 oficina 43 Torre 3 (Entrance por 26 de Marzo) World Trade Center',
+                    schedules: 'Segunda - Sexta 9:00am-5:30pm'
+                }
+            ]
         },
-        {
-            country: 'Perú',
-            alias: 'Peru',
-            city: 'Lima',
-            address: 'Calle Los Halcones 105 San Isidro, Cruce de Canaval y Moreyra con República de Panamá ',
-            schedules: 'Segunda - Sexta<br> 9:00am-6:00pm<br>Sábado<br> 9:00am-1:00pm '
-        },
-        {
-            country: 'Perú',
-            alias: 'Peru',
-            city: 'Iquitos',
-            address: 'Calle Sargento Lores 379',
-            schedules: 'Segunda - Sexta<br> 9:00am- 7:00pm<br>Sábado<br> 9:00am- 1:00pm'
-        },
-         {
-            country: 'Porto Rico',
-            city: 'San Juan',
-            address: '#15 Calle 2 Millenium Park Plaza, Suite 102, Metro Office Park Guaynabo P.R. 00968',
-            schedules: 'Segunda - Sexta<br> 8:30am-5:00pm<br>Sábado<br> 9:00am-1:00pm '
-        },
-        {
-            country: 'República Dominicana',
-            alias: 'Republica Dominicana',
-            city: 'Punta Cana',
-            address: 'Aeroporto Internacional Punta Cana ',
-            schedules: reservaciones
-        },
-         {
-            country: 'República Dominicana',
-            alias: 'Republica Dominicana',
-            city: 'Santiago de los Caballeros',
-            address: 'Carretera Luperón kilometro 1, Plaza Galerías Luperón, Local 1- Planta Baja',
-            schedules: 'Segunda - Sexta<br><br>9:00am-1:00pm y 2:00pm-6:00pm<br>Sábado<br> 9:00am-1:00pm'
-        },
-        {
-            country: 'República Dominicana',
-            alias: 'Republica Dominicana',
-            city: 'Santo Domingo',
-            address: 'Ave. Abraham Lincoln esq. Jacinto Mañon Torre Ejecutiva Sonora, Suite 101-A, 1er nível ',
-            schedules: 'Segunda - Sexta<br><br>8:00am-1:00pm y 2:00pm-6:00pm<br>Sábado<br> 9:00am-1:00pm'
-        },
-        {
-            country: 'Trinidad e Tobago',
-            city: 'Porto Espanha',
-            address: 'Aeroporto Internacional Piarco andar uno, Terminal Principal Atrium ',
-            schedules: 'Segunda - Sexta<br> 9:00am-5:00pm'
-        },
-        {
-            country: 'Uruguay',
-            city: 'Montevideo',
-            address: 'Luis Alberto de Herrera 1248 local 43 Torre 3 (entrada por 26 de Marzo) World Trade Center',
-            schedules: 'Segunda - Sexta<br> 9:00am-5:30pm'
-        },
-        {
-            country: 'Venezuela',
-            city: 'Caracas',
-            address: 'Ave. Francisco Miranda, Centro Lido, nível Miranda, Local 22 - Urb. El Rosal.',
-            schedules: 'Segunda - Sexta<br> 8:00am-5:00pm'
-        },
-        {
-            country: 'Venezuela',
-            city: 'Maracaibo',
-            address: 'Calle 78 con Av 3E, Mall Kalakawa Local 08',
-            schedules: 'Segunda - Sexta<br> 8:00am-5:00pm'
-        },
-         {
-            country: 'Venezuela',
-            city: 'Valencia',
-            address: 'Mall Via Veneto, nível Florencia Local F 34 Mañongo, Municipio Naguanagua - Carabobo',
-            schedules: 'Segunda - Sábado<br> 12:00pm-7:00pm'
+        {       
+            countryName: 'Venezuela',
+            cities: [
+                {
+                    name: 'Caracas',
+                    address: 'Ave. Francisco Miranda, Centro Lido, nível Miranda, oficina 22 - Urb. El Rosal.',
+                    schedules: 'Segunda - Sexta 8:00am-5:00pm'
+                },
+                {
+                    name: 'Maracaibo',
+                    address: 'Calle 78 con Av 3E, centro comercial Kalakawa oficina 08',
+                    schedules: 'Segunda - Sexta 8:00am-5:00pm'
+                },
+                {
+                    name: 'Valencia',
+                    address: 'centro comercial Via Veneto, nível Florencia oficina F 34 Mañongo, Town Naguanagua - Carabobo',
+                    schedules: 'Segunda - Sábado 12:00pm-7:00pm'
+                }
+            ]
         }
+       
     ];
 
     for( var i in $scope.offices){
 
-        if( $scope.countries.indexOf( $scope.offices[i].country ) == -1 ){
-            $scope.countries.push( $scope.offices[i].country );
+        if( $scope.countries.indexOf( $scope.offices[i].countryName ) == -1 ){
+            $scope.countries.push( $scope.offices[i].countryName );
         }
 
     }
@@ -688,7 +742,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
             america: false,
             country: 'Australia',
             city: 'Sydney',
-            address: 'Discover the World Marketing. Level 7, 89 York Street, Sydney NSW 2000, Australia.',
+            address: 'Discover the World Marketing. nível 7, 89 York Street, Sydney NSW 2000, Australia.',
             phone: 'Tel:  +612 9959 3696<br>Fax: +612 9929 8438',
             email: null
         },
@@ -800,7 +854,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
             america: false,
             country: 'New Zeland',
             city: 'Auckland',
-            address: 'Discover the World, Central Park, Building 5, Level 3, 666 Great South Road, 1051.',
+            address: 'Discover the World, Central Park, Building 5, nível 3, 666 Great South Road, 1051.',
             phone: 'Tel:  +649 280 3133<br>Tel: 0800 623 4293',
             email: null
         },
@@ -864,6 +918,5 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
     ];
 
 }]);
-
     
 </script>
