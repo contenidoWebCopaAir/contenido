@@ -31,13 +31,9 @@
                 <li>Horarios</li>
             </ul>
 
-            <div 
-                class="countries"  
-                ng-repeat="country in offices | filter: selectedCountry | orderBy: country.countryName"
-            >                               
-                <div ng-repeat="office in country.cities">
-                     
-                    <ul class="ul-body ul-table" ng-if="$index === 0"> 
+            <div  ng-repeat="country in offices | filter: selectedCountry | orderBy: country.countryName track by $index">                             
+                <div ng-repeat="office in country.cities | filter: query">
+                    <ul class="ul-body ul-table" ng-if="$index == 0"> 
                         <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
                         <li ng-bind-html="office.name" ng-cloak>&nbsp;</li>
                         <li ng-bind-html="office.address" ng-cloak>&nbsp;</li>
@@ -50,7 +46,7 @@
                         <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak>&nbsp;</li>
                     </ul>
                 </div>
-                </div>
+            </div>
         </div>
     </div>
 
@@ -268,12 +264,12 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 {
                     name: "Cali",
                     address: "Norte AV 6ta BIS NO. 30 N- 25",
-                    schedules: "Lunes - Viernes 8:00am-7:00pm<br>Sábado<br>9:00am-6:00pm<br>Domingos y festivos 9:00am-1:00pm"
+                     schedules: "Lunes - Viernes 8:00am-7:00pm<br>Sábado<br>8:00am-12:00pm y 1:00pm-5:00pm<br>Domingos y festivos<br> Temporalmente cerrado"
                 },
                 {
                     name: "Cali",
                     address: "14 Paso Ancho commercial center<br>13th Calle # 80 - 60",
-                    schedules: "Lunes - Viernes 9:00am-7:00pm<br>Sábado<br>8:00am-12:00pm and 1:00pm-5:00pm<br>Domingos y festivos<br> 11:00am-4:00pm"
+                    schedules: "Lunes - Viernes 9:00am-7:00pm<br>Sábado<br>8:00am-12:00pm y 1:00pm-5:00pm<br>Domingos y festivos<br> 11:00am-4:00pm"
                 },
                 {
                     name: "Cartagena",
@@ -313,8 +309,13 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 {
                     name: "San José",
                     address: "Edif. Torres Mercedes, 1er floor, Paseo Colón San José",
-                    schedules: "Lunes - Viernes 8:00am-5:00pm<br>Sábado<br>8:00am-12:00pm"
-                }
+                    schedules: 'Lunes - Viernes<br> 9:00am-7:00pm<br>Sábado y Domingo 10:00am-5:00pm'
+                },
+               {
+                    name: "San José",
+                    address: 'Plaza Antares, Rotonda de la Bandera, Primer Nivel',
+                    schedules: 'Lunes - Viernes<br> 9:00am-7:00pm<br>Sábado y Domingo 10:00am-5:00pm'
+               }
             ]
             
         },
@@ -359,7 +360,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 },
                 {
                    name: "Guayaquil",
-                    address: "Village Plaza Mall, Km 11/2 Vía Samborondón Planta alta",
+                    address: "Village Plaza Mall, Km. 1,5 via Samborondon, Plata alta.",
                     schedules: "Lunes - Sábado 10:00am-9:00pm<br>Domingos y festivos 10:00am-8:00pm" 
                 },
                 {
