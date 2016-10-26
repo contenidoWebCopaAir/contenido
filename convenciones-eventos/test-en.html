@@ -1,4 +1,12 @@
-<div class="container">
+<!DOCTYPE html>
+<html ng-app="copa">
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+	<!-- <script src="../copa-vacations-mayoristas/angular.min.js"></script> -->
+</head>
+<body>
+	<div class="container">
 	<div class="row">
 		<div class="span12">
 			<h2>Featured events and conferences</h2>
@@ -73,7 +81,7 @@
 						<b 
 							ng-if="e.contactName" 
 							ng-cloak
-						>{{ e.contactName }}</b><br ng-if="e.contactName" />
+						>{{e.contactName | capitalize }}</b><br ng-if="e.contactName" />
 					<a href="mailto:{{e.email}}" ng-if="e.email" ng-cloak>{{e.email | lowercase}} </a><br ng-if="e.email" />
 					<a href="{{e.url}}" ng-if="e.url" target="_blank">Web</a></p>
 					</address>
@@ -88,9 +96,10 @@
 		</div>
 	</div>
 </div>
-
-<script>
-	angular.module('copa').controller('EventsCtrl', ["$scope",
+	
+	<script>
+	var copa = angular.module('copa', []);
+	copa.controller('EventsCtrl', ["$scope",
 		function ($scope) {
 
 			$scope.query = '';
@@ -318,5 +327,12 @@
 		}
 	]);
 
-	
+	copa.filter('capitalize', function() {
+    	return function(input) {
+      		return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+    	}
+	});
 </script>
+</body>
+
+</html>
