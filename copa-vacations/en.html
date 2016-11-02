@@ -36,7 +36,7 @@
 					</div>
 				</div>
 
-				<div class="row" ng-repeat="countrie in world | orderBy: 'origin' | filter: selectedCountry">
+				<div class="row" ng-repeat="countrie in world | orderBy: 'origin' | filter: {origin: selectedCountry}">
 
 					<div class="web-content-copa common-styles country-title">
 						FROM <strong ng-cloak>{{countrie.origin | uppercase}}</strong>
@@ -106,11 +106,16 @@
 	<script>
 	 
 		angular.module("copa").controller('copaVacationsCtrl', [ "$scope", function($scope){
+			var url = window.location.href.toString().split(window.location.host)[‌​1];
+			if( url.indexOf('?') != -1 ){
+				var countryUrl = url.split('?')[1].toLowerCase();
+			}
 			$scope.countries = [];
 			$scope.selectedCountry = '';
 			$scope.world = [
 				{
 					origin: 'Peru',
+					a2: 'pe',
 					packages: [
 						{
 							destination: {
@@ -189,6 +194,7 @@
 				},
 				{
 					origin: 'Argentina',
+					a2: 'ar',
 					packages: [
 						{
 							destination: {
@@ -249,6 +255,7 @@
 				
 				{
 					origin: 'Ecuador',
+					a2: 'ec',
 					packages: [
 						{
 							destination: {
@@ -326,6 +333,7 @@
 				},
 				{
 					origin: 'Colombia',
+					a2: 'co',
 					packages: [
 						{
 							destination: {
@@ -403,6 +411,7 @@
 				},
 				{
 					origin: 'Paraguay',
+					a2: 'py',
 					packages: [
 						{
 							destination: {
@@ -501,6 +510,10 @@
 			for( var i in $scope.world){
 		        if( $scope.countries.indexOf( $scope.world[i].origin ) == -1 ){
 		            $scope.countries.push( $scope.world[i].origin );
+		        }
+
+		        if( countryUrl && $scope.world[i].a2 == countryUrl ){
+		        	$scope.selectedCountry = $scope.world[i].origin;
 		        }
     		}
 
