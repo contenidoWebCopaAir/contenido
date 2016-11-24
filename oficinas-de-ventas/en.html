@@ -12,14 +12,23 @@
                     <div class="controls">
                         <select id="selectedCountry" ng-model="selectedCountry" style="width: 100%" ng-cloak>
                             <option value="" selected>All countries</option>
-                            <option ng-repeat="country in countries" value="{{country}}" ng-if="country" ng-cloak>{{country}}</option>
+                            <option 
+                                ng-repeat="country in countries" 
+                                value="{{country}}" 
+                                ng-if="country" 
+                                ng-cloak
+                            >
+                                {{country}}
+                            </option>
                         </select>
                     </div>
                 </div>
 
                 <div class="control-group">
                     <label class="control-label">Search by city, address or schedule</label>
-                    <div class="controls"><input id="query" ng-model="query" style="width: 96%" type="text" /></div>
+                    <div class="controls">
+                        <input id="query" ng-model="query" style="width: 96%" type="text" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -33,7 +42,9 @@
                     <li>Schedules</li>
                 </ul>
 
-                <div  ng-repeat="country in offices | filter: selectedCountry | orderBy: country.countryName track by $index">                             
+                <div 
+                    ng-repeat="country in offices | filter: selectedCountry | orderBy: country.countryName"
+                >                             
                     <div ng-repeat="office in country.cities | filter: query">
                         <ul class="ul-body ul-table" ng-if="$index == 0"> 
                             <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
@@ -41,7 +52,7 @@
                             <li ng-bind-html="office.address" ng-cloak>&nbsp;</li>
                             <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak>&nbsp;</li>
                         </ul>
-                        <ul class="ul-body ul-table" ng-if="$index > 0">
+                        <ul class="ul-body ul-table" ng-if="! $first">
                             <li>&nbsp;</li>
                             <li ng-bind-html="office.name" ng-cloak>&nbsp;</li>
                             <li ng-bind-html="office.address" ng-cloak>&nbsp;</li>
@@ -110,6 +121,11 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                     name: "Buenos Aires",
                     address: "Emma de la Barra 353, 7th floor, East Puerto Madero",
                     schedules: 'Monday - Friday 9:00am-5:00pm'
+                },
+                {
+                    name: "Cordoba",
+                    address: "Av. Velez Sarsfield 478",
+                    schedules: "Monday - Friday 9:00am-5:00pm"
                 }
             ]
         },
@@ -184,7 +200,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 },
                 {
                 	name: 'Rio de Janeiro',
-                	address: 'Atlantic Avenue, 1130 - 15 andar Copacabana',
+                	address: 'Avenida Nilo Peçanha, 50 - Centro <br>Predio Rodolpho De Paoli - 3ª andar - sala 311',
                 	schedules: 'Monday - Friday 9:00am - 6:00pm'
                 },
                 {

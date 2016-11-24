@@ -42,15 +42,15 @@
                     <li>Agenda</li>
                 </ul>
                 
-                <div  ng-repeat="country in offices | filter: selectedCountry | orderBy: country.countryName track by $index">                             
+                <div  ng-repeat="country in offices | filter: selectedCountry | orderBy: country.countryName">                             
                     <div ng-repeat="office in country.cities | filter: query">
-                        <ul class="ul-body ul-table" ng-if="$index == 0"> 
+                        <ul class="ul-body ul-table" ng-if="$first"> 
                             <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
                             <li ng-bind-html="office.name" ng-cloak>&nbsp;</li>
                             <li ng-bind-html="office.address" ng-cloak>&nbsp;</li>
                             <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak>&nbsp;</li>
                         </ul>
-                        <ul class="ul-body ul-table" ng-if="$index > 0">
+                        <ul class="ul-body ul-table" ng-if="! $first">
                             <li>&nbsp;</li>
                             <li ng-bind-html="office.name" ng-cloak>&nbsp;</li>
                             <li ng-bind-html="office.address" ng-cloak>&nbsp;</li>
@@ -122,6 +122,11 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 {
                     name: "Buenos Aires",
                     address: "Emma de la Barra 353, 7th floor, East Puerto Madero",
+                    schedules: "Segunda - Sexta 9:00am-5:00pm"
+                },
+                {
+                    name: "Córdoba",
+                    address: "Av. Velez Sarsfield 478",
                     schedules: "Segunda - Sexta 9:00am-5:00pm"
                 }
             ]
@@ -197,7 +202,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 },
                 {
                     name: 'Rio de Janeiro',
-                    address: 'Atlantic Avenida, 1130 - 15 andar Copacabana',
+                    address: 'Avenida Nilo Peçanha, 50 - Centro <br>Predio Rodolpho De Paoli - 3ª andar - sala 311',
                     schedules: 'Segunda - Sexta 9:00am - 6:00pm'
                 },
                 {
