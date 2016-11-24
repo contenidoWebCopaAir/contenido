@@ -1,0 +1,17 @@
+.box { padding: 20px; }
+
+.box-title { border-bottom: 1px dotted #bbb;}
+
+.columns {
+	display: flex;
+}
+
+.columns:not(:last-child) {
+	margin-bottom: 20px;
+}
+
+.column { flex:1; }
+
+@media(max-width: 770px) {
+	.columns { flex-direction: column; }
+}
