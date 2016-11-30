@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 gulp.task('html', function() {
     gulp.src([source + '*.html', source + '**/*.html'])
     .pipe(htmlmin({
-        collapseWhitespace: true,
+        collapseWhitespace: false,
         minifyJS: true,
         removeComments: true,
         removeEmptyAttributes: true
