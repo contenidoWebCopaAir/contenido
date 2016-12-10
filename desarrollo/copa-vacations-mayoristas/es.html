@@ -61,11 +61,11 @@
 			            						</td>
 			            						<td 
 			            							style="width:33%" 
-			            							ng-if="contact.name == 'JET Tours'"
+			            							ng-if="contact.name == 'JE Tours'"
 			            							ng-cloak
 			            						>
 		            								<a href="http://www.copavacations.com.co/" target="_blank">
-		            									Jet Tours
+		            									Je Tours
 		            								</a>
 			            						</td>
 
@@ -93,7 +93,7 @@
 
 </div>
 <script>
-	
+	'use strict';
 	angular.module('copa').controller('wholeSalersCtrl', [ '$scope', function($scope){
 		$scope.selectedCountry = '';
 		$scope.wholesalers = [
@@ -205,6 +205,11 @@
 									name: 'Multidestinos',
 									email: 'pepe@multidestinos.com.br',
 									phone: '55 21 25330470'
+								},
+								{
+									name: 'Abreu',
+									email: 'ronnie.correa@abreutur.com.br',
+									phone: '55 (21) 2586 1888'
 								}
 							]
 						},
@@ -218,8 +223,30 @@
 								},
 								{
 									name: 'MMT',
-									email: 'roberto@mmtgapnet.com.br',
-									phone: '55 (11) 3124-6444'
+									email: 'fabio@mmtgapnet.com.br',
+									phone: '55 (11) 3154 55400'
+								},
+								
+								{
+									name: 'Sanchat Turismo',
+									email: 'roberto@sanchattour.com.br',
+									phone: '55 (11) 3017-3140'
+								},
+								{
+									name: 'ANCORADOURO OPERADORA',
+									email: 'cacalo.destro@ancoradouro.com.br',
+									phone: '55 (19) 2137 3040'
+								},
+								
+								{
+									name: 'CVC Viajes',
+									email: 'vicente@cvc.com.br',
+									phone: '55 (11) 2191-1026'
+								},
+								{
+									name: 'FLYTOUR OPERADORA',
+									email: 'michael@flytour.com.br',
+									phone: '55 (11) 4503 1900'
 								},
 								{
 									name: 'New Age',
@@ -227,9 +254,59 @@
 									phone: '55 (11) 3138 4888'
 								},
 								{
+									name: 'Orinter Repre Viag Tur Ltda',
+									email: 'sanches@orinter.com.br',
+									phone: '55 (11) 4514 4404'
+								},
+								{
+									name: 'RCI Travel',
+									email: 'anderson.canazza@rcitravel.com.br',
+									phone: '55 (11) 3524 3543'
+								},
+								{
 									name: 'Sanchat Turismo',
 									email: 'roberto@sanchattour.com.br',
 									phone: '55 (11) 3017-3140'
+								},
+								{
+									name: 'Trend',
+									email: 'cjayme@trendoperadora.com.br',
+									phone: '55 (11) 3041-7510'
+								},
+								{
+									name: 'Visual Turismo',
+									email: 'Afonso@visualturismo.com.br',
+									phone: '55 (11) 3235-2000'
+								},
+								{
+									name: 'Interglobe Tours',
+									email: 'marcio@interglobe.tur.br',
+									phone: '55 (61) 3223 2000'
+								},
+								{
+									name: 'Master Turismo',
+									email: 'daniel.dias@viagensmaster.com.br',
+									phone: '55 (31) 3505 3678 '
+								}
+							]
+						},
+						{
+							city: 'Porto Alegre',
+							contacts: [
+								{
+									name: 'Best Way Trips Agencia de Viagens e Turismo LTDA',
+									email: 'gabrielc@bwtoperadora.com.br',
+									phone: '55 (27) 3237-1789'
+								},
+								{
+									name: 'MGM Operadora',
+									email: 'jaqueline@mgmoperadora.com.br',
+									phone: '55 (41) 2104 6400'
+								},
+								{
+									name: 'Schultz Ville Turismo LTDA',
+									email: 'aroldo@schultz.com.br',
+									phone: '55 (41) 3303-6565'
 								}
 							]
 						}
@@ -293,21 +370,6 @@
 									phone: '01 800 952 0663'
 								},
 								{
-									name: 'Viva Viajando',
-									email: 'gerencia@vivaviajando.com',
-									phone: '6212775'
-								},
-								{
-									name: 'Los Nómadas',
-									email: 'gerencia@viajeslosnomadas.com',
-									phone: '6324000'
-								},
-								{
-									name: 'Fuerza Delta',
-									email: 'gduque@vchapinero.com',
-									phone: '571 7443434 ext 157'
-								},
-								{
 									name: 'Falabella',
 									email: 'fbasto@falabella.com.co',
 									phone: '76503711'
@@ -358,17 +420,12 @@
 							city: 'Cali',
 							contacts: [
 								{
-									name: 'Daviajes',
-									email: 'gerenciadaviajes@yahoo.com',
-									phone: '572 6674797'
-								},
-								{
 									name: 'Copa Vacations',
 									email: 'gerencia.lrinco@jetours.com.co',
 									phone: '572 6680221'
 								},
 								{
-									name: 'JET Tours',
+									name: 'JE Tours',
 									email: 'comercial.xbernal@jetours.com.co',
 									phone: '572 6680221'
 								},

@@ -4,12 +4,33 @@
 	<title>Mayoristas</title>
 	<script type="text/javascript" src="angular.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .box { padding: 20px; }
+
+        .box-title { border-bottom: 1px dotted #bbb;}
+
+        .columns {
+            display: flex;
+        }
+
+        .columns:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        .column { flex:1; }
+
+        @media(max-width: 770px) {
+            .columns { flex-direction: column; }
+            .title { display: none }
+        }
+    </style>
 </head>
 <body>
 
 	
 <div class="container">
-<div class="oficinas-responsive content_centered" ng-controller="oficinasCtrl">
+<div class="content_centered" ng-controller="wholeSalersCtrl">
     <div class="row main-filter">
         <div class="span4">
             <p><b>Mostrar oficinas de venta</b></p>
@@ -34,14 +55,37 @@
 
     <div class="row">
         <div class="span12">
-            <ul class="ul-head ul-table">
-                <li>País</li>
-                <li>Ciudad</li>
-                <li>Dirección</li>
-                <li>Horarios</li>
-            </ul>
+            <div class="columns title">
+                <div class="column">
+                    <div class="box">
+                        <h2>Country</h2>
+                    </div>
+                </div>
+                 <div class="column">
+                    <div class="box">
+                        <h2>Wholesaler</h2>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <h2>Email</h2>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <h2>Phone</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <div class="box">
+                        
+                    </div>
+                </div>
+            </div>
 
-            <div class="countries"  ng-repeat="country in oficinas | filter: selectedCountry | orderBy: country.countryName">                   
+     <!--        <div class="countries"  ng-repeat="country in wholesalers | filter: selectedCountry | orderBy: country.countryName">                   
                 
                     <div
                          ng-repeat="office in country.cities"
@@ -59,861 +103,771 @@
                             <li ng-if="office.schedules" ng-cloak>{{office.schedules}}</li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
         </div>
     </div>
 
-    <div class="row">
-        <div class="span12">
-            <h2>Oficinas en Europa, Asia, Medio Oriente y Oceanía.</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="span12">
-            <ul class="ul-head ul-table">
-                <li>País</li>
-                <li>Ciudad</li>
-                <li>Dirección</li>
-                <li>Reservaciones</li>
-            </ul>
+   
 
-            <ul 
-                class="ul-body ul-table" 
-                ng-repeat="o in farCountries | orderBy: 'country'"
-            >
-                <li><b ng-cloak>{{o.country}}</b></li>
-                <li ng-cloak>{{o.city}}</li>
-                <li ng-cloak>{{o.address}}</li>
-                <li>
-                    <p ng-cloak>{{ o.phone }}</p>
-                    <a ng-if="o.email" ng-href="mailto:{{ o.email }}" ng-cloak>{{ o.email }}</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-</div>
-</div>
+    </div><!-- content_centered -->
+</div><!-- container -->
 
 <script>
-var copa = angular.module('copa', []);
-copa.controller('oficinasCtrl', ["$scope", function ($scope) {
+'use strict';
+    angular.module('copa').controller('wholeSalersCtrl', [ "$scope", function($scope){
+        $scope.selectedCountry = '';
+        $scope.wholesalers = [
+            {
+                country: 'Argentina',
+                cities: [
+                        {
+                            city: 'Buenos Aires',
+                            contacts: [
+                                {
+                                    name: 'Logan',
+                                    email: 'lionel@logantravel.com',
+                                    phone: '011-4124 6000'
+                                }, 
+                                {
+                                    name: 'Solways',
+                                    email: 'hfontenla@solways.com.ar',
+                                    phone: '011-4320 9300'
+                                },
+                                {
+                                    name: 'Top Dest',
+                                    email: 'pepe@topdest.com.ar',
+                                    phone: '011-5555 3700'
+                                },
+                                {
+                                    name: 'Tower Travel',
+                                    email: 'gustavod@towertravel.com.ar',
+                                    phone: '011-5217 7400'
+                                }
+                            ]
+                        },
+                        {
+                            city: 'Córdoba',
+                            contacts: [
+                                {
+                                    name: 'Delfos',
+                                    email: 'gcristiani@delfos.tur.ar',
+                                    phone: '351-442 1200'
+                                },
+                                {
+                                    name: 'Siga',
+                                    email: 'javier.araya@sigaturismo.com',
+                                    phone: '0351-568 0920'
+                                }
+                            ]
+                        },
+                        
+                    ]
+            }, 
+                {
+                    country: 'Bolivia',
+                    cities: [
+                        {
+                            city: 'Santa Cruz del a Sierra',
+                            contacts: [
+                                {
+                                    name: 'Travel Olympus',
+                                    email: 'gerenciagral@travelolympus.com',
+                                    phone: '591-3399595'
+                                }, 
+                                {
+                                    name: 'Orbis Tour Operator',
+                                    email: 'carola@orbistouroperator.com',
+                                    phone: '591 3 3350207'
+                                }, 
+                                {
+                                    name: 'Cuarta Dimensión',
+                                    email: 'mrodo@cuartadimension.com.bo',
+                                    phone: '591-3-3363636'
+                                }
 
-    var reservaciones = 'Para asistencia previa a su viaje contactarse con nuestro <a href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/centro-de-reservaciones" target="_blank">Centro de Reservaciones</a>';
-
-    $scope.query = '';
-    $scope.selectedCountry = '';
-    $scope.countries = [];
-
-   $scope.oficinas = [
-        {
-            countryName: "Antillas Holandesas",
-            cities: [
-                {
-                    name: "St Marteen",
-                    address: "Aeropuerto Internacional <br>oficina Princess Juliana  # 1030",
-                    schedules: reservaciones
-                }
-            ]
-            
-        },
-        {
-            countryName: "Argentina",
-            cities: [
-                {
-                    name: "Buenos Aires",
-                    address: "Emma de la Barra 353, 7th floor, East Puerto Madero",
-                    schedules: 'Lunes - Viernes 9:00am-5:00pm'
-                }
-            ]
-        },
-        {
-            
-            countryName: "Aruba",
-            cities: [
-                {
-                    name: "Oranjestad",
-                    address: "Aeropuerto Queen Beatrix<br>(International flights section)",
-                    schedules: reservaciones
-                    
-                }
-            ]
-        },
-        {
-            
-            countryName: "Bahamas",
-            cities: [
-                {
-                    name: "Nassau",
-                    address: "Aeropuerto Internacional Lynden Pindling Terminal A",
-                    schedules: reservaciones
-                    
-                }
-            ]
-        },
-        {
-            
-            countryName: 'Bolivia',
-            cities: [
-                {
-                    name: 'Santa Cruz de la Sierra',
-                    address: 'La Pascana Edificio oficina #3, 24 de septiembre St., Centro Histórico Zone',
-                    schedules: 'Lunes - Viernes 8:30am-12:30pm<br>2:30pm -6:30pm<br>Sábado<br>9:00am-12:30pm'
-                }
-            ]
-        },
-        {
-            
-            countryName: 'Brazil',
-            cities: [
-                {
-                    name: 'Belo Horizonte',
-                    address: 'Av. Bias Fortes, 472 Lourdes A/B CEP : 30170-01',
-                    schedules: 'Lunes - Viernes 9:00am - 6:00pm'  
-                },
-                {
-                    name:'Brazilia',
-                    address: 'Aeropuerto de Brasilia S/N lago sul Brazilia -DF 71.608-900',
-                    schedules: 'Lunes - Viernes 9:00am - 6:00pm'
-                },
-                {
-                    name: 'Campinas',
-                    address: 'Rod Santos Dumont km 66 Term 1 Level 1 Aeropuerto Viracopos',
-                    schedules: 'Lunes - Viernes 9:00am - 6:00pm'
-                },
-                {
-                    name: 'Manaos',
-                    address: 'Av. Santos Dumont, 1350 Bairro Taruma - Terreo <br>Aeropuerto Internacional Eduardo Gomes CEP 69.041-000',
-                    schedules: 'Lunes - Viernes 9:00am - 6:00pm'
-                },
-                {
-                    name: 'Porto Alegre',
-                    address: 'Av. Severo Dulius, 90010 Sao João',
-                    schedules: 'Lunes - Viernes 9:00am - 6:00pm'
-                },
-                {
-                    name: 'Recife',
-                    address: 'Praça Ministro Salgado Filho s / n – Imbiribeira Aeropuerto Internacional Gilberto Freyre',
-                    schedules: 'Lunes - Viernes 9:00am - 6:00pm'
-                },
-                {
-                    name: 'Rio de Janeiro',
-                    address: 'Atlantic Avenida, 1130 - 15 andar Copacabana',
-                    schedules: 'Lunes - Viernes 9:00am - 6:00pm'
-                },
-                {
-                    name: 'Sao Paulo',
-                    address: 'Paulista Avenida 1337 – 4º floor ZIP 01311-200',
-                    schedules: 'Lunes - Viernes 9:00am - 6:00pm'
-                }
-
-            ]
-        },
-       
-        {
-            countryName: 'Canada',
-            cities: [
-                {
-                    name: 'Montreal',
-                    address: 'Aeropuerto Internacional de montreal pierre elliott trudeau 975 boul. Romeo vachon nord Suite 429',
-                    schedules: reservaciones
-                },      
-                {
-                    name: 'Toronto',
-                    address: 'Aeropuerto Internacional Pearson Terminal 1 . Oficina GA 2202<br>**Únicamente se aceptan dólares Canadienses y tarjetas Visa, MasterCard.',
-                    schedules: 'Lunes - Viernes 9:00am-12:00pm'
-                }
-                
-            ]
-        },
-        {
-            countryName: 'Chile',
-            cities: [
-                {
-                    name: 'Santiago de Chile',
-                    address: 'Av. El Golf 99 oficina 101ª Las Condes',
-                    schedules: 'Lunes - Viernes 9:00am-5:00pm'
-                }
-            ]
-        },
-        {
-            countryName: 'Colombia',
-            cities: [
-                {
-                    name: 'Barranquilla',
-                    address: 'Calle 72 N. 54 - 49 oficina 1 y 2',
-                    schedules: 'Lunes - Viernes 8:00am-6:00pm<br>Sábado<br>9:00am-1:00pm'
-                },
-                {
-                    name: 'Bogota',
-                    address: 'Calle 100 #. 7 A - 81 oficina 3 Edificio Universa',
-                    schedules: 'Lunes - Viernes<br> 8:00am-7:00pm<br>Sábado<br> 8:00am-12:00pm y 1:00pm-5:00pm<br>Domingo<br> 11:00am-4:00pm'
-                },
-                {
-                    name: 'Bogota',
-                    address: 'Calle 76 Cra 11 No. 76-57 oficina 01',
-                    schedules: 'Lunes - Viernes 8:00am-6:00pm<br>Sábado<br>9:00am-12:00pm'
-                },
-                {
-                    name: 'Bogota',
-                    address: 'Gran Estacion Mall, Costado sphere, first floor, Entry 1',
-                    schedules: 'Lunes - Sábado 10:00am-8:30pm<br> Domingos y festivos 11:00am-7:00pm'
-                },
-                {
-                    name: 'Bogota',
-                    address: 'Aeropuerto El Dorado, Entrance 8 Front oficina 13 y 16, second floor',
-                    schedules: 'Lunes - Sábado 5:00am-9:00pm<br> Domingos y festivos 5:00am-1:00pm'
-                },
-                {
-                    name: 'Bogota',
-                    address: 'Unicentro commercial center<br>Avenida 15th # 124 - 30 floor 1<br> oficina 1-101 Entrance 8',
-                    schedules: 'Lunes - Viernes 9:00am-8:00pm<br>Sábado<br> 10:00am-7:00pm<br>Domingos y festivos 10:00am-4:00pm'
-                },
-                {
-                    name: 'Bucaramanga',
-                    address: 'Carrera 35 No.54-114',
-                    schedules: 'Lunes - Viernes 8:00am-6:00pm<br>Sábado<br>9:00am-12:00pm'
-                },
-                {
-                    name: 'Cali',
-                    address: 'Norte AV 6ta BIS NO. 30 N- 25',
-                    schedules: 'Lunes - Viernes 8:00am-7:00pm<br>Sábado<br>9:00am-6:00pm<br>Domingos y festivos 9:00am-1:00pm'
-                },
-                {
-                    name: 'Cali',
-                    address: '14 Paso Ancho commercial center<br>13th Calle # 80 - 60',
-                    schedules: 'Lunes - Viernes 9:00am-7:00pm<br>Sábado<br>8:00am-12:00pm and 1:00pm-5:00pm<br>Domingos y festivos<br> 11:00am-4:00pm'
-                },
-                {
-                    name: 'Cartagena',
-                    address: 'Aeropuerto Internacional Rafael Nuñez<br>Crespo – Cartagena first floor',
-                    schedules: 'Lunes - Viernes 8:00am-6:00pm<br>Sábado, Domingos y festivos 8:00am-5:00pm'
-                },
-                {
-                    name: 'Cúcuta',
-                    address: '15th Calle N0. 0 E - 18 Los Caobos',
-                    schedules: 'Lunes - Viernes 8 :00am – 6:00pm<br>Sábado<br>9:00am – 1pm'
-                },
-                {
-                    name: 'Medellin',
-                    address: 'Almacentro commercial center<br>Cra 43 A # 34 – 95 oficina 099',
-                    schedules: 'Lunes - Viernes 8 :00am – 6:00pm<br>Sábado<br>9:00am – 12:00pm'
-                },
-                {
-                    name: 'Pereira',
-                    address: 'AV circunvalar # 8b-51 Edificio Bancafe oficina 103',
-                    schedules: 'Lunes - Viernes 8 :00am – 6:00pm<br>Sábado<br>9:00am – 12:00pm'
-                },
-                {
-                    name: 'San Andres',
-                    address: 'Ave. Newball Torre Sunrise Beach No. 4- 141 oficina 125-b6',
-                    schedules: 'Lunes - Viernes<br>8:00am-12:00m<br>2:00pm-6:00pm<br>Sábado<br>9:00am-1:00pm'
-                }
-            ]
-        },
-        {
-            countryName: 'Costa Rica',
-            cities: [
-                {
-                    name: 'Liberia',
-                    address: 'Aeropuerto Daniel Oduber',
-                    schedules: 'Thursday &amp; Domingo 7:00am-2:00pm'
-                },
-                {
-                    name: 'San José',
-                    address: 'Edif. Torres Mercedes, 1er floor, Paseo Colón San José',
-                    schedules: 'Lunes - Viernes 8:00am-5:00pm<br>Sábado<br>8:00am-12:00pm'
-                }
-            ]
-            
-        },
-        {
-            countryName: 'Cuba',
-            cities: [
-                {
-                    name: 'La Habana',
-                    address: 'Centro de Negocios Miramar, Planta baja Edif. Barcelona 5ta Avenida entre 76 y 78, Playa.',
-                    schedules: 'Lunes - Viernes 8:30am-5:00pm<br>Sábado<br>9:00am-1:00pm '
-                }
-            ]
-        },
-        {
-            countryName: 'Curazao',
-            cities: [
-                {
-                    name: 'Willemstand',
-                    address: 'Zuikertuin Mall Tower Unit 1B y 1C Willemstad, Curazao',
-                    schedules: 'Lunes - Viernes 8:00am-5:00pm'
-                },
-                {
-                    name: 'Willemstand',
-                    address: 'Curaçao Aeropuerto Internacional',
-                    schedules: 'Tuesday, Thursday, Viernes y Domingo 8:00am-4:00pm'
-                }
-            ]
-        },
-        {
-            
-            countryName: 'Ecuador',
-            cities: [
-                {
-                    name: 'Cuenca',
-                    address: 'Miguel Cordero y Av Paucarbamba Edif Work Center Planta baja Ofic N 09',
-                    schedules: 'Lunes - Viernes 9:00am-1:00pm y 2:00pm-5:45pm<br>Sábado<br>9:00am-1:00pm' 
+                            ]
+                        }
+                    ]
                 }, 
                 {
-                    name: 'Guayaquil',
-                    address: 'Nueve de Octubre 100 y Malecón Simón Bolívar, floor 25',
-                    schedules: 'Lunes - Viernes 8:00am-5:45pm<br>Sábado<br>8:00am-1:45pm'
+                    country: 'Brazil',
+                    cities: [
+                        {
+                            city: 'Belo Horizonte',
+                            contacts: [
+                                {
+                                    name: 'MMT',
+                                    email: 'marcelo.carvalho@mmtgapnet.com.br',
+                                    phone: '55 (61) 3202 8668'
+                                }, 
+                                {
+                                    name: 'MMT',
+                                    email: 'hugo.lagares@mmtgapnet.com.br',
+                                    phone: '55 31 32751355'
+                                }
+
+                            ]
+                        },
+                        {
+                            city: 'Brasilia',
+                            contacts: [
+                                {
+                                    name: 'MMT',
+                                    email: 'marcelo.carvalho@mmtgapnet.com.br',
+                                    phone: '55 (61) 3202 8668'
+                                }
+                            ]
+                        },
+                        {
+                            city: 'Rio de Janeiro',
+                            contacts: [
+                                {
+                                    name: 'Multidestinos',
+                                    email: 'pepe@multidestinos.com.br',
+                                    phone: '55 21 25330470'
+                                },
+                                {
+                                    name: 'Abreu',
+                                    email: 'ronnie.correa@abreutur.com.br',
+                                    phone: '55 (21) 2586 1888'
+                                }
+                            ]
+                        },
+                        {
+                            city: 'Sao Paulo',
+                            contacts: [
+                                {
+                                    name: 'ADV Operadora',
+                                    email: 'roberto.sanovicz@advtour.com.br',
+                                    phone: '55 (11) 2167-0633'
+                                },
+                                {
+                                    name: 'MMT',
+                                    email: 'fabio@mmtgapnet.com.br',
+                                    phone: '55 (11) 3154 55400'
+                                },
+                                
+                                {
+                                    name: 'Sanchat Turismo',
+                                    email: 'roberto@sanchattour.com.br',
+                                    phone: '55 (11) 3017-3140'
+                                },
+                                {
+                                    name: 'ANCORADOURO OPERADORA',
+                                    email: 'cacalo.destro@ancoradouro.com.br',
+                                    phone: '55 (19) 2137 3040'
+                                },
+                                
+                                {
+                                    name: 'CVC Viajes',
+                                    email: 'vicente@cvc.com.br',
+                                    phone: '55 (11) 2191-1026'
+                                },
+                                {
+                                    name: 'FLYTOUR OPERADORA',
+                                    email: 'michael@flytour.com.br',
+                                    phone: '55 (11) 4503 1900'
+                                },
+                                {
+                                    name: 'New Age',
+                                    email: 'carla@newage.tur.br',
+                                    phone: '55 (11) 3138 4888'
+                                },
+                                {
+                                    name: 'Orinter Repre Viag Tur Ltda',
+                                    email: 'sanches@orinter.com.br',
+                                    phone: '55 (11) 4514 4404'
+                                },
+                                {
+                                    name: 'RCI Travel',
+                                    email: 'anderson.canazza@rcitravel.com.br',
+                                    phone: '55 (11) 3524 3543'
+                                },
+                                {
+                                    name: 'Sanchat Turismo',
+                                    email: 'roberto@sanchattour.com.br',
+                                    phone: '55 (11) 3017-3140'
+                                },
+                                {
+                                    name: 'Trend',
+                                    email: 'cjayme@trendoperadora.com.br',
+                                    phone: '55 (11) 3041-7510'
+                                },
+                                {
+                                    name: 'Visual Turismo',
+                                    email: 'Afonso@visualturismo.com.br',
+                                    phone: '55 (11) 3235-2000'
+                                },
+                                {
+                                    name: 'Interglobe Tours',
+                                    email: 'marcio@interglobe.tur.br',
+                                    phone: '55 (61) 3223 2000'
+                                },
+                                {
+                                    name: 'Master Turismo',
+                                    email: 'daniel.dias@viagensmaster.com.br',
+                                    phone: '55 (31) 3505 3678 '
+                                }
+                            ]
+                        },
+                        {
+                            city: 'Porto Alegre',
+                            contacts: [
+                                {
+                                    name: 'Best Way Trips Agencia de Viagens e Turismo LTDA',
+                                    email: 'gabrielc@bwtoperadora.com.br',
+                                    phone: '55 (27) 3237-1789'
+                                },
+                                {
+                                    name: 'MGM Operadora',
+                                    email: 'jaqueline@mgmoperadora.com.br',
+                                    phone: '55 (41) 2104 6400'
+                                },
+                                {
+                                    name: 'Schultz Ville Turismo LTDA',
+                                    email: 'aroldo@schultz.com.br',
+                                    phone: '55 (41) 3303-6565'
+                                }
+                            ]
+                        }
+                        
+                    ]
+                }, 
+                {
+                    country: 'Chile',
+                    cities: [
+                        {
+                            city: 'Santiago de Chile',
+                            contacts: [
+                                {
+                                    name: 'Caribbean Chile',
+                                    email: 'rmorales@caribbeanchile.cl',
+                                    phone: '562-23358259'
+                                },
+                                {
+                                    name: 'Tourmundial',
+                                    email: 'ibachler@tourmundial.cl',
+                                    phone: '24904436'
+                                },
+                                {
+                                    name: 'Euroandino',
+                                    email: 'cnavarrete@euroandino.cl',
+                                    phone: '562-4723700'
+                                },
+                                {
+                                    name: 'Panamericana',
+                                    email: 'omontenegro@panamericanaturismo.cl',
+                                    phone: '562 2476 58 00'
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                   name: 'Guayaquil',
-                    address: 'Village Plaza Mall, Km 11/2 Vía Samborondón Planta alta',
-                    schedules: 'Lunes - Sábado 10:00am-9:00pm<br>Domingos y festivos 10:00am-8:00pm' 
+                    country: 'Colombia',
+                cities: [
+                        {
+                            city: 'Barranquilla',
+                            contacts: [
+                                {
+                                    name: 'CIC Travel',
+                                    email: 'directorcomercial@ciccolombia.travel',
+                                    phone: '571 6368601'
+                                },
+                                {
+                                    name: 'Copa Vacations',
+                                    email: 'copavacations.co@copaair.com',
+                                    phone: '01 800 952 0663'
+                                }
+                            ]
+                        }, 
+                        {
+                            city: 'Bogota',
+                            contacts: [
+                                {
+                                    name: 'Copa Vacations',
+                                    email: 'copavacations.co@copaair.com',
+                                    phone: '01 800 952 0663'
+                                },
+                                {
+                                    name: 'Falabella',
+                                    email: 'fbasto@falabella.com.co',
+                                    phone: '76503711'
+                                },
+                                {
+                                    name: 'A Volar',
+                                    email: 'mduran@copaair.com',
+                                    phone: '3578080 ext 165'
+                                },
+                                {
+                                    name: 'Operando Viajes y Turismo',
+                                    email: 'gerencia@operandoviajes.com',
+                                    phone: '(571)2534011'
+                                },
+                                {
+                                    name: 'UGA Turismo',
+                                    email: 'dorisgarcia@ugaturismo.com',
+                                    phone: '(571)2181613'
+                                },
+                                {
+                                    name: 'Decameron',
+                                    email: 'Ximena.Gomez@decameron.com',
+                                    phone: '(571) 2193030'
+                                },
+                                {
+                                    name: 'CIC Travel',
+                                    email: 'directorcomercial@ciccolombia.travel',
+                                    phone: '571 6368601'
+                                }
+                            ]
+                        }, 
+                        {
+                            city: 'Bucaramanga',
+                            contacts: [
+                                {
+                                    name: 'Scape',
+                                    email: 'dirección@scapemayorista.com',
+                                    phone: '6473535'
+                                }, 
+                                {
+                                    name: 'Copa Vacations',
+                                    email: 'copavacations.co@copaair.com',
+                                    phone: '01 800 952 0663'
+                                }
+                            ]
+                        },
+                        {
+                            city: 'Cali',
+                            contacts: [
+                                {
+                                    name: 'Copa Vacations',
+                                    email: 'gerencia.lrinco@jetours.com.co',
+                                    phone: '572 6680221'
+                                },
+                                {
+                                    name: 'JE Tours',
+                                    email: 'comercial.xbernal@jetours.com.co',
+                                    phone: '572 6680221'
+                                },
+                                {
+                                    name: 'CIC Travel',
+                                    email: 'directorcomercial@ciccolombia.travel',
+                                    phone: '571 6368601'
+                                },
+                                {
+                                    name: 'Copa Vacations',
+                                    email: 'copavacations.co@copaair.com',
+                                    phone: '01 800 952 0663'
+                                },
+                                {
+                                    name: 'Turismo Total',
+                                    email: 'diroperativa@turismototal.com.co',
+                                    phone: '574 2687811'
+                                }
+                            ]
+                        },
+                        {
+                            city: 'Medellin',
+                            contacts: [
+                                {
+                                    name: 'CIC Travel',
+                                    email: 'directorcomercial@ciccolombia.travel',
+                                    phone: '571 6368601'
+                                },
+                                {
+                                    name: 'Copa Vacations',
+                                    email: 'copavacations.co@copaair.com',
+                                    phone: '01 800 952 0663'
+                                },
+                                {
+                                    name: 'Turismo Total',
+                                    email: 'diroperativa@turismototal.com.co',
+                                    phone: '574 2687811'
+                                },
+                                {
+                                    name: 'Luz Verde',
+                                    email: 'luzverdereps@une.net.co',
+                                    phone: '574 4442737'
+                                },
+                                {
+                                    name: 'Prestigio',
+                                    email: 'gproducto@viajesveracruz.co',
+                                    phone: '574 4482525'
+                                },
+                                {
+                                    name: 'Mayorplus',
+                                    email: 'atobon@mayorplus.com',
+                                    phone: '574 4444476'
+                                }
+                            ]
+                        },
+                        {
+                            city: 'Pereira',
+                            contacts: [
+                                {
+                                    name: 'Mayorplus',
+                                    email: 'atobon@mayorplus.com',
+                                    phone: '574 4444476'
+                                },
+                                {
+                                    name: 'Copa Vacations',
+                                    email: 'copavacations.co@copaair.com',
+                                    phone: '01 800 952 0663'
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    name: 'Quito',
-                    address: 'Av. República de El Salvador 361 e Moscú, Edificio Aseguradora del Sur, Planta Baja.',
-                    schedules: 'Lunes - Viernes 8:00am-6:00pm<br>Sábado<br>9:00am-2:00pm'
+                    country: 'Costa Rica',
+                    cities: [
+                        {
+                            city: 'San Jose',
+                            contacts: [
+                                {
+                                    name: 'Viajes Euroamerica',
+                                    email: 'aaroyo@euroamericacr.com'
+                                },
+                                {
+                                    name: 'EASA Almendares',
+                                    email: 'xinia@easaalmendares.com'
+                                },
+                                {
+                                    name: 'Obelisko',
+                                    email: 'miriam@obelisko.com'
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    name: 'Quito',
-                    address: 'Mall El Jardín Av. República 6-114 y Amazonas',
-                    schedules: 'Lunes - Sábado 10:00am-8:30pm<br>Domingos y festivos 10:00am-7:30pm '
-                }
-            ]
-        },
-       
-        {
-            
-            countryName: 'El Salvador',
-            cities: [
-                {
-                    name: 'San Salvador',
-                    address: 'Edificio World Trade Center, 1er. Level, oficina 107, Colonia Escalon entre Calle El Mirador y 89 Av. Norte',
-                    schedules: 'Lunes - Viernes 8:00am-6:00pm<br>Sábado<br>8:00am-12:00pm '
-                }
-            ]
-        },
-        {
-            
-            countryName: 'United States',
-            cities: [
-                {
-                    name: 'Chicago',
-                    address: 'Chicago Ohare Aeropuerto Internacional Terminal 5 Chicago Berssie Coleman Drive 10000 Chicago IL 60666. Para consultas sobre ventas, escriba a: <a href="mailto:chicagosales@copaair.com">chicagosales@copaair.com</a>',
-                    schedules: 'Lunes - Domingo 4:30am-12:30pm'
+                    country: 'Ecuador',
+                    cities: [
+                        {
+                            city: 'Quito',
+                            contacts: [
+                                {
+                                    name: 'Decameron',
+                                    email: 'zully.duran@decameron.com',
+                                    phone: '6046989'
+                                },
+                                {
+                                    name: 'Blue Sky',
+                                    email: 'gerencia@bluesky.com.ec',
+                                    phone: '2435535'
+                                }
+                            ]
+                        },
+                        {
+                            city: 'Guayaquil',
+                            contacts: [
+                                {
+                                    name: 'Mas Travel',
+                                    email: 'geovanny.carrera@mastravel.com.ec',
+                                    phone: '2512430'
+                                },
+                                {
+                                    name: 'Golden Vacation',
+                                    email: 'parias@goldenvacations.com.ec',
+                                    phone: '2265882'
+                                },
+                                {
+                                    name: 'Recordmundo',
+                                    email: 'presidencia@recormundo.com',
+                                    phone: '2280014'
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    name: 'Fort Lauderdale',
-                    address: 'Aeropuerto Internacional Fort Lauderdale – Hollywood',
-                    schedules: reservaciones
+                    country: 'El Salvador',
+                    cities: [
+                        {
+                            city: 'San Salvador',
+                            contacts: [
+                                {
+                                    name: 'All American Tours',
+                                    email: 'jeflores@allamerican.com.sv'
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    name: 'Las Vegas',
-                    address: 'Aeropuerto Internacional McCarran, Terminal 3, 5757 Wayne Newton Blvd , Las Vegas ,NV 89119',
-                    schedules: 'Mon - Domingos y festivos<br>12:00pm-4:00pm y 7:00pm-12:00am'
+                    country: 'Guatemala',
+                    cities: [
+                        {
+                            city: 'Ciudad de Guatemala',
+                            contacts: [
+                                {
+                                    name: 'V. Euroamerica',
+                                    email: 'acastro@euroamericacr.com'
+                                },
+                                {
+                                    name: 'Amtours',
+                                    email: 'msaenz@gtm.com.gt'
+                                },
+                                {
+                                    name: 'Easa',
+                                    email: 'msaenz@gtm.com.gt'
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    name: 'Los Angeles',
-                    address: 'Aeropuerto Internacional de Los Angeles Terminal 6, 600 World Way , Los Angeles, CA 90045',
-                    schedules: 'Mon - Domingos y festivos<br>7:30am-9:30am y 6:00pm-9:30pm'
+                    country: 'Honduras',
+                    cities: [
+                        {
+                            city: 'San Pedro Sula',
+                            contacts: [
+                                {
+                                    name: 'Arrecife tours',
+                                    email: 'hjalmar@arrecifetours.com'
+                                },
+                                {
+                                    name: 'Go Travel',
+                                    email: 'melbin@gotravelhn.com',
+                                    phone: '504 2544-0657'
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    name: 'Miami',
-                    address: 'Waterford Center , 6205 Blue Lagoon Drive Suite 200 Miami Fl 33126',
-                    schedules: 'Lunes - Viernes 9:00am-6:00pm'
+                    country: 'Mexico',
+                    cities: [
+                        {
+                            city: 'Mexico DF',
+                            contacts: [
+                                {
+                                    name: 'DETOUROPER S.A. DE C.V',
+                                    email: 'jgutierrez@detouroper.com'
+                                },
+                                {
+                                    name: 'JULIA TOURS',
+                                    email: 'choucinop@juliatours.com.mx'
+                                },
+                                {
+                                    name: 'MEGA TRAVEL',
+                                    email: 'ventas31@megatravel.com.mx'
+                                },
+                                {
+                                    name: 'PUNTA DEL ESTE OPERADORA',
+                                    email: 'adriana@operadorapuntadeleste.com'
+                                },
+                                {
+                                    name: 'TURISMO SIBARITA',
+                                    email: 'lulu.robleda@mundosibarita.com.mx'
+                                }
+                            ]
+                        }
+                    ] 
                 },
                 {
-                    name: 'New York',
-                    address: 'New York Aeropuerto Internacional , Terminal 4 Councourse A',
-                    schedules: 'Mon - Domingos y festivos 8:45am-9:20am 1:30pm-2:30pm'
+                    country: 'Nicaragua',
+                    cities: [
+                        {
+                            city: 'Managua',
+                            contacts: [
+                                {
+                                    name: 'Schuvar Tours',
+                                    email: 'gerencia@schuvartours.com'
+                                },
+                                {
+                                    name: 'American Travel and Tours',
+                                    email: 'ligia@americantravelandtours.com'
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    name: 'Orlando',
-                    address: 'Aeropuerto Internacional de Orlando , Terminal A 9303 Jeff Fuqua Blvd Orlando FL 32827',
-                    schedules: 'Lunes - Viernes 9:00am-3:00pm '
+                    country: 'Panama',
+                    cities: [
+                        {
+                            city: 'Ciudad de Panama',
+                            contacts: [
+                                {
+                                    name: 'Pesantez Tours',
+                                    email: 'lorena@pesantez-tours.com',
+                                    phone: '300-0073'
+                                },
+                                {
+                                    name: 'Decameron',
+                                    email: 'analida.delaespriella@decameronpty.com',
+                                    phone: '206-5383'
+                                },
+                                {
+                                    name: 'Columbia Tours',
+                                    email: 'alfredo@columbiatours.com.pa',
+                                    phone: '223-9800'
+                                },
+                                {
+                                    name: 'Margo Tours',
+                                    email: 'luciana@margotours.com',
+                                    phone: '269-6693'
+                                },
+                                {
+                                    name: 'Findanque',
+                                    email: 'gmarin@fidanquetravel.com',
+                                    phone: '265-5505'
+                                },
+                                {
+                                    name: 'Lubel',
+                                    email: 'ricardo@lubeltours.com',
+                                    phone: '264-2533'
+                                },
+                                {
+                                    name: 'Xplora L\'Alianxa',
+                                    email: 'direccion.comercial@xplora.travel',
+                                    phone: '209-2774'
+                                },
+                                {
+                                    name: 'All Ways Tours',
+                                    email: 'carolina@allwaystours.com',
+                                    phone: '214 9171'
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    name: 'Tampa',
-                    address: 'Waterford Center , 6205 Blue Lagoon Drive Suite 200 Miami Fl 33126',
-                    schedules: reservaciones
+                    country: 'Paraguay',
+                    cities: [
+                        {
+                            city: 'Asunción',
+                            contacts: [
+                                {
+                                    name: 'Intertours',
+                                    email: 'ventas04@intertours.com.py',
+                                    phone: '595-21-211747'
+                                },
+                                {
+                                    name: 'VIPs Tour',
+                                    email: 'jefe@vipstour.com',
+                                    phone: '595-21-441199'
+                                },
+                                {
+                                    name: 'Maral Tourismo',
+                                    email: 'jose@vacaciones.com.py',
+                                    phone: '595-21-615507'
+                                },
+                                {
+                                    name: 'Oppy',
+                                    email: 'aquevedo@oppy.com.py',
+                                    phone: '595-21-622920'
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    country: 'Perú',
+                    cities: [
+                        {
+                            city: 'Lima',
+                            contacts: [
+                                {
+                                    name: 'American Reps',
+                                    email: 'Pancho@americanreps.com.pe',
+                                    phone: '512-2121'
+                                },
+                                {
+                                    name: 'Destinos Mundiales',
+                                    email: 'amorin@destinosmundialesperu.com',
+                                    phone: '610-6060'
+                                },
+                                {
+                                    name: 'Kiss Solway',
+                                    email: 'adrian.bravo@solways.com.pe',
+                                    phone: '221-5600'
+                                },
+                                {
+                                    name: 'CTM',
+                                    email: 'i.garcia@ctmtoursperu.com',
+                                    phone: '615-5050'
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    name: 'Washington, D.C',
-                    address: 'Aeropuerto Internacional Washington-Dulles, 1 Saarinen Circle Dulles Va , Terminal principal Puerta N° 2 salida de vuelos terminal A puerta 19',
-                    schedules: 'Lunes - Domingo<br>6:00am - 9:00am y 12:00pm - 2:30pm'
-                }
-            ]
-        },
-        {           
-            countryName: 'Guatemala',
-            cities: [
-                {
-                    name: 'Ciudad de Guatemala',
-                    address: '5 avenida 5-55 zona 14 Edificio Euro Plaza Torre 3 Planta Baja, Oficina 102',
-                    schedules: 'Lunes - Viernes 8:00am-6:00pm<br>Sábado<br>8:00am-12:00pm'
-                }
-            ]
-        },
-        {
-            
-            countryName: 'Guyana',
-            cities: [
-                {
-                    name: 'Georgetown',
-                    address: '#212 Camp Calle, North Cummingsburg, Georgetown, Guyana',
-                    schedules: 'Lunes - Viernes 8:30am-5:00pm<br>Sábado<br>9:00am-12:00pm'
-                }
-            ]
-        },
-         {
-            
-            countryName: 'Haití',
-            cities: [
-                {
-                    name: 'Puerto Principe',
-                    address: 'Av. 30 , Marie Jeanne',
-                    schedules: 'Lunes - Viernes 8:30am-3:30pm'
-                }
-            ]
-        },
-        {
-            
-            countryName: 'Honduras',
-            cities: [
-                {
-                    name: 'San Pedro Sula',
-                    address: 'Avenida Circunvalacion Barrio Paz Barahona, 13 Calle esquina opuesta a sears, Plaza Geosur, oficina 1',
-                    schedules: 'Lunes - Viernes 8:00am-5:00pm<br>Sábado<br>8:00am-12:00m '
+                    country: 'Puerto Rico',
+                    cities: [
+                        {
+                            city: 'San Juan',
+                            contacts: [
+                                {
+                                    name: 'Hector Travel',
+                                    email: 'andres@hectourspr.com'
+                                },
+                                {
+                                    name: 'Madrid Travel',
+                                    email: 'hsoriano@madridtravelpr.com'
+                                },
+                                {
+                                    name: 'Turismo Tony Perez',
+                                    email: 'mperez@ttp.travel'
+                                },
+                                {
+                                    name: 'AA Tours',
+                                    email: 'alina@aatours.net'
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    name: 'Tegucigalpa',
-                    address: 'Edificio Corporativo Contiguo al Hotel Clarion 1era Planta, Col. Alameda  Avenida Juan Manuel Galvez',
-                    schedules: 'Lunes - Viernes 8:00am-5:00pm<br>Sábado<br>8:00am-12:00m'
-                }
-            ]
-        },
-        {
-            countryName: 'Jamaica',
-            cities: [
-                {
-                    name: 'Kingston',
-                    address: 'Courtleigh Corporate Center, 8 St. Lucia Avenida, Kingston 5, Jamaica',
-                    schedules: 'Lunes - Viernes 8:30am-5:00pm '
-                },
-                {
-                    name: 'Montego Bay',
-                    address: 'Aeropuerto Internacional Sangster Montego Bay, Jamaica W.I.',
-                    schedules: reservaciones
-                }
-            ]
-        },
-        {   
-            countryName: 'México',
-            cities: [
-                {
-                    name: 'Cancún',
-                    address: 'Aeropuerto Internacional de Cancún Terminal 2 , detrás de mostradores 83 y 84 Oficina N. 43',
-                    schedules: 'Lunes - Sábado 9:00am-4:00pm<br>Domingos y festivos 10:00am-4:00pm'
-                },
-                {
-                    name: 'Guadalajara',
-                    address: 'AV Moctezuma N. 3515 oficinaes 8 e 9, Hotel Presidente Intercontinental Colonia Ciudad del Sol , Zapopan Jalisco México',
-                    schedules: 'Lunes - Viernes 9:00am-6:00pm<br>Sábado<br>9:00am-1:00pm '
-                },
-                {
-                    name: 'Monterrey',
-                    address: 'Av. Lázaro Cárdenas #2225, Torre Latitud, oficina 2 Planta Baja, Colonia Valle Oriente, San Pedro Garza Garcia, Nuevo León, México.',
-                    schedules: 'Lunes - Viernes 9:00am-6:00pm<br>Sábado<br>9:00am-1:00pm '
-                },
-                {
-                    name: 'México D.F',
-                    address: 'Berna Numero 06 Planta Baja, Colonia Juarez México Delegacion Cuauhtemoc CP 06600 DF',
-                    schedules: 'Lunes - Viernes 9:00am-6:00pm<br>Sábado<br>10:00am-2:00pm '
-                }
-            ]
-        },
-     
-        {
-            
-            countryName: 'Nicaragua',
-            cities: [
-                {
-                    name: 'Managua',
-                    address: 'Commercial center Galerías Santo Domingo, km. 7 carretera a Masaya',
-                    schedules: 'Lunes - Sábado 10:00am - 8:00pm<br>Domingo 11:00am - 8:00pm'
-                },
-                {
-                    name: 'Managua',
-                    address: 'Km. 4.5 carretera Masaya, Edificio CAR No. 6 Planes de Altamira',
-                    schedules: 'Lunes - Viernes 8:00am - 5:30pm<br>Sábado<br>8:00am - 12:00pm'
-                }
-            ]
-        },
-        {
-            
-            countryName: 'Panamá',
-            cities: [
-                {
-                    name: 'Panamá',
-                    address: 'Galerías Hotel Riande Continental, Vía España.',
-                    schedules: 'Lunes - Viernes 8:00am-5:00pm<br>Sábado<br>9:00am-1:00pm '
-                },
-                {
-                    name: 'Panamá',
-                    address: 'Casco Antiguo – oficinaes comerciales del Hotel American Trade, Calle José de Obaldía, Avenida Central entre Calle 9na y 10am',
-                    schedules: 'Lunes - Viernes 8:00am-6:00pm<br>Sábado<br>9:00am-1:00pm'
-                },
-                {
-                    name: 'Panamá',
-                    address: 'Complejo Business Park, Torre Norte, Planta Baja; Costa del Este',
-                    schedules: 'Lunes - Viernes 8:00am-6:00pm<br>Sábado<br>8:00am-12:00pm'
-                },
-                {
-                    name: 'Panamá',
-                    address: 'Commercial center Altaplaza Mall, Level 2 - área de cines',
-                    schedules: 'Lunes - Sábado 10:00am-8:00pm<br>Domingo 11:00am-7:00pm'
-                },
-                {
-                    name: 'Panamá',
-                    address: 'Commercial center Multiplaza, Plaza del Mar, Primer Level',
-                    schedules: 'Lunes - Sábado 10:00am-8:00pm<br>Domingo 11:00am-7:00pm'
-                },
-                {
-                    name: 'Panamá',
-                    address: 'Commercial center Albrook Mall, Pasillo del Koala',
-                    schedules: 'Lunes - Sábado 10:00am-8:00pm<br>Domingo 11:00am-7:00pm'
-                },
-                {
-                    name: 'Panamá',
-                    address: 'Commercial center Metromall, Primer Level, stand K1-17 frente a Dunkin Donnuts ',
-                    schedules: 'Lunes - Sábado 10:00am-8:00pm<br>Domingo 11:00am-7:00pm'
-                },
-                {
-                    name: 'Panamá',
-                    address: 'Hotel Sheraton, Planta Baja',
-                    schedules: 'Lunes - Viernes <br>8:00am-12:00pm y 1:00pm-5:00pm<br>Sábado<br>8:00am-12:00pm'
-                },
-                {
-                    name: 'Zona Libre Colón',
-                    address: 'Calle 14 Av Rusbell y Santa Isabel ',
-                    schedules: 'Lunes - Viernes 8:00am-5:00pm'
-                },
-                {
-                    name: 'David, Chiriquí',
-                    address: 'Ave. Domingo Díaz Edificio Garrido, planta baja, oficina #1 David, Provincia de Chiriquí',
-                    schedules: 'Lunes - Viernes 8:00am-5:00pm<br>Sábado<br>8:00am-12:00pm '
+                    country: 'Uruguay',
+                    cities: [
+                        {
+                            city: 'Montevideo',
+                            contacts: [
+                                {
+                                    name: 'Abtour',
+                                    email: 'javier.botta@abtour.com.uy',
+                                    phone: '00 5982 9085152'
+                                },
+                                {
+                                    name: 'Lintur / Lares',
+                                    email: 'pperelli@lares.com.uy',
+                                    phone: '005982 9030340'
+                                },
+                                {
+                                    name: 'Planet Travel',
+                                    email: 'gonzalo@ptravel.com.uy',
+                                    phone: '005982 9001514'
+                                },
+                                {
+                                    name: 'Plus Travel',
+                                    email: 'Julio@plustravel.com.uy',
+                                    phone: '00598 29031777'
+                                },
+                                {
+                                    name: 'Siur',
+                                    email: 'giorgiovalenti@siur.com.uy',
+                                    phone: '005982 9002120'
+                                },
+                                {
+                                    name: 'Top Tour',
+                                    email: 'ffernandez@toptour.com.uy',
+                                    phone: '005982 9020793 / 005982 9022233'
+                                }
+                            ]
+                        }
+                    ]
                 }
                 
-            ]
-        },
-       
-        {  
-            countryName: 'Paraguay',
-            cities: [
-                {
-                    name: 'Asunción',
-                    address: 'Ave. Boggiani Esq. Cap. Nudelman Edificio Boggiani, Planta Baja',
-                    schedules: 'Lunes - Viernes 8:30am-5:30pm<br>Sábado<br>8:30am-12:30pm'
-                }
-            ]
-        },
-        {
             
-            countryName: 'Perú',
-            cities: [
-                {
-                    name: 'Lima',
-                    address: 'Calle Los Halcones 105 San Isidro, Cruce de Canaval y Moreyra con República de Panamá ',
-                    schedules: 'Lunes - Viernes 9:00am-6:00pm<br>Sábado<br>9:00am-1:00pm '
-                },
-                {
-                    name: 'Iquitos',
-                    address: 'Calle Sargento Lores 379',
-                    schedules: 'Lunes - Viernes 9:00am- 7:00pm<br>Sábado<br>9:00am- 1:00pm'
-                }
-            ]
-        },
-        
-         {
-            
-            countryName: 'Puerto Rico',
-            cities: [
-                {
-                    name: 'San Juan',
-                    address: '#15 Calle 2 Millenium Park Plaza, Suite 102, Metro oficina Park Guaynabo P.R. 00968',
-                    schedules: 'Lunes - Viernes 8:30am-5:00pm<br>Sábado<br>9:00am-1:00pm '
-                }
-            ]
-        },
-        {
-            
-            countryName: 'Republica Dominicana',
-            cities: [
-                {
-                    name: 'Punta Cana',
-                    address: 'Aeropuerto Internacional Punta Cana ',
-                    schedules: reservaciones
-                },
-                {
-                    name: 'Santiago de los Caballeros',
-                    address: 'Carretera Luperón kilometro 1, Plaza Galerías Luperón, oficina 1- Planta Baja',
-                    schedules: 'Lunes - Viernes<br>9:00am-1:00pm y 2:00pm-6:00pm<br>Sábado<br>9:00am-1:00pm'
-                },
-                {
-                    name: 'Santo Domingo',
-                    address: 'Ave. Abraham Lincoln esq. Jacinto Mañon Torre Ejecutiva Sonora, Suite 101-A, 1er Level ',
-                    schedules: 'Lunes - Viernes<br>8:00am-1:00pm y 2:00pm-6:00pm<br>Sábado<br>9:00am-1:00pm'
-                }
+        ];
 
-            ]
-        },
-       
-        {
-            
-            countryName: 'Trinidad y Tobago',
-            cities: [
-                {
-                    name: 'Puerto España',
-                    address: 'Aeropuerto Internacional Piarco floor uno, Terminal Principal Atrium ',
-                    schedules: 'Lunes - Viernes 9:00am-5:00pm'
-                }
-            ]
-        },
-        {
-            
-            countryName: 'Uruguay',
-            cities: [
-                {
-                    name: 'Montevideo',
-                    address: 'Luis Alberto de Herrera 1248 oficina 43 Torre 3 (Entrance por 26 de Marzo) World Trade Center',
-                    schedules: 'Lunes - Viernes 9:00am-5:30pm'
-                }
-            ]
-        },
-        {       
-            countryName: 'Venezuela',
-            cities: [
-                {
-                    name: 'Caracas',
-                    address: 'Ave. Francisco Miranda, Centro Lido, Level Miranda, oficina 22 - Urb. El Rosal.',
-                    schedules: 'Lunes - Viernes 8:00am-5:00pm'
-                },
-                {
-                    name: 'Maracaibo',
-                    address: 'Calle 78 con Av 3E, Commercial center Kalakawa oficina 08',
-                    schedules: 'Lunes - Viernes 8:00am-5:00pm'
-                },
-                {
-                    name: 'Valencia',
-                    address: 'Commercial center Via Veneto, Level Florencia oficina F 34 Mañongo, Town Naguanagua - Carabobo',
-                    schedules: 'Lunes - Sábado 12:00pm-7:00pm'
-                }
-            ]
-        }
-       
-    ];
- 
-    for( var i in $scope.oficinas){
-
-        if( $scope.countries.indexOf( $scope.oficinas[i].country ) == -1 ){
-            $scope.countries.push( $scope.oficinas[i].country );
-        }
-    }
-
-         //Europe, Asia, middke east and oceania
-    $scope.farCountries = [
-        {
-            america: false,
-            country: 'Germany',
-            city: 'Wiesbaden',
-            address: 'Discover the World Marketing. Schenkendorfstr. 1 65187',
-            phone: 'Tel: ++49 611 267 670<br>Fax.: ++49 611 267 6760',
-            email: 'discover@discover-fra.com'
-        },
-        {
-            america: false,
-            country: 'Australia',
-            city: 'Sydney',
-            address: 'Discover the World Marketing. Level 7, 89 York Calle, Sydney NSW 2000, Australia.',
-            phone: 'Tel:  +612 9959 3696<br>Fax: +612 9929 8438',
-            email: null
-        },
-        {
-            america: false,
-            country: 'Austria',
-            city: 'Vienna',
-            address: 'Discover the World Marketing. Vorgartenstrasse 132/1/131. A -1020.',
-            phone: 'Tel: +43 1 512 86 86<br>Fax:+43 1 512 8686 60',
-            email: 'oficina@discovertheworld.at'
-        },
-        {
-            america: false,
-            country: 'Belgium',
-            city: 'Hilversum',
-            address: 'Stationsplein 3 (2nd floor), 1211 EX',
-            phone: '+32 (0) 25881979',
-            email: null
-        },
-        {
-            america: false,
-            country: 'Denmark',
-            city: 'Copenhagen',
-            address: 'Trommesalen 5, 5th Floor DK-1614',
-            phone: '+45 3325 2566',
-            email: 'info@discoverthworld.dk'
-        },
-        {
-            america: false,
-            country: 'England',
-            city: 'London',
-            address: 'Studio 403, VOX Studios. 1-45 Durham Calle, London SE11 5RH',
-            phone: '+44 203 598 8036',
-            email: 'support@copaair.eu'
-        },
+    }]);
     
-        {
-            america: false,
-            country: 'Korea',
-            city: 'Seoul',
-            address: 'Discover the World Marketing. 9th Floor, Injoo Edificio 22 Jong-ro, Jongno-gu, 03188',
-            phone: 'Tel: +82 2 771 5622<br>Fax: +82 2 771 1157'
-        },
-        {
-            america: false,
-            country: 'France',
-            city: 'Paris',
-            address: 'Discover the World Marketing.  82, Rue Taitbout 75009',
-            phone: 'Tel:  +33 (0)1 5822 2004<br>Fax: +33 (0)1 5822 2010',
-            email: null 
-        },
-        {
-            america: false,
-            country: 'Germany',
-            city: 'Wiesbaden',
-            address: 'Schenkendorfstr, 65187',
-            phone: 'Tel:  +49 611 267 6770<br>Fax: +49 611 267 6760',
-            email: 'discover@discover-fra.com'
-        },
-        {
-            america: false,
-            country: 'Greece',
-            city: 'Athens',
-            address: 'Intermodal. 25, Filellinon Calle.105.57',
-            phone: 'Tel:  0030 210 371 6370',
-            email: null     
-        },
-        {
-            america: false,
-            country: 'Netherlands',
-            city: 'Hilversum',
-            address: 'Discover the World Stationsplein 3 (2nd floor) 1211',
-            phone: 'Tel:  +31 (0) 20 2410168',
-            email: 'info@discoverthworld.dk'
-        },
-        {
-            america: false, 
-            country: 'India',
-            city: 'Mumbai',
-            address: 'Discover the World Marketing. 209, The Avenida, Aeropuerto Internacional Road, Opp. The Leela Hotel– Marol Andheri-East Naka, Mumbai – 400 069',
-            phone: 'Tel:  +91 22 2921 0300',
-            email: 'info@discovertheworld.co.in'
-        }, 
-        {
-            america: false,
-            country: 'Israel',
-            city: 'Tel Aviv-Yafo',
-            address: '2nd floor, Migdalot Edificio, 25 Ben Yehuda St, 6380602',
-            phone: 'Tel: 037951333',
-            email: null        
-        },
-        {
-            america: false,
-            country: 'Italy',
-            city: 'Milan',
-            address: 'Discover the World Marketing. Via Teglio, 9 – 20158',
-            phone: 'Tel: +39 02 67077382<br>Fax: +39 02 39304137',
-            email: 'info@discovertheworld-mil.com'
-        },
-        {
-            america: false,
-            country: 'Japan',
-            city: 'Tokyo',
-            address: 'Discover the World Marketing. Hibiya Kokusai Bldg. 2-3, Uchisaiwaicho 2-chome, Chiyoda-ku. 100-0011',
-            phone: 'Tel:  +81 3 3597 9480',
-            email: 'dscvrtyo@cc.mbn.or.jp'
-        },
-        {
-            america: false,
-            country: 'New Zeland',
-            city: 'Auckland',
-            address: 'Discover the World, Central Park, Edificio 5, Level 3, 666 Great South Road, 1051.',
-            phone: 'Tel:  +649 280 3133<br>Tel: 0800 623 4293',
-            email: null
-        },
-        {
-            america: false,
-            country: 'Portugal',
-            city: 'Lisboa',
-            address: 'Av. Defensores de Chaves, 15-3ºE 1000-109',
-            phone: 'Tel:  (+351) 21 358 44 56',
-            email: 'copaairlines@selectaviation.pt'
-        },
-        {
-            america: false,
-            country: 'Portugal',
-            city: 'Porto',
-            address: 'CE Capitólio Loja 44. Av. França, 256 4050-276',
-            phone: 'Tel:  (+351) 21 358 44 56',
-            email: 'copaairlines@selectaviation.pt' 
-        },
-        {
-            america: false,
-            country: 'Rusia',
-            city: 'Moscow',
-            address: 'Discover the World Marketing. 40/2 build. 1, str. Prechistenka, Entrance 1, oficina 34. Moscow, 119034. Russian Federation.',
-            phone: 'Tel: +7  (495) 744 0490<br>Fax: +7 (495) 425 1800',
-            email: 'info@discovertheworld.ru'
-        },
-        {
-            america: false,
-            country: 'Singapore',
-            city: 'Singapore',
-            address: 'Discover the World 180B Bencoolen Calle #05-01 The Bencoolen oficina Tower, Singapore 189648',
-            phone: 'Tel:  +65 6884-9119<br>Fax: +65 6884-9919',
-            email: 'dtwmsin@discovertheworld.com.sg'
-        },
-        {
-            america: false,
-            country: 'Spain',
-            city: 'Madrid',
-            address: ' Select Aviation.  C/Princesa #2, Planta 2, Oficina 1 28008 Madrid, Spain.',
-            phone: 'Tel: (34) 91 547 8588',
-            email: null
-        },
-        {
-            america: false,
-            country: 'Switzerland',
-            city: 'Merenschwand',
-            address: 'Bremgartenstrasse 11, 5634 Merenschwand (Switzerland)',
-            phone: 'Tel:  +41 58 201 32 01<br>Fax: +41 58 201 32 11',
-            email: 'info@discoverzrh.ch'
-        },
-        {
-            america: false,
-            country: 'Taiwan',
-            city: 'Taipei',
-            address: 'Elite Holiday Travel Service. 5F-1, No. 62. Sec 2, Nan king E. Rd Taipei, Taiwan.',
-            phone: 'Tel: +886 2 25413366',
-            email: null
-        }
-       
-    ];
-}]);
-
-
 </script>
+
+
 
 
 </body>
