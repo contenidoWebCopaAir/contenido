@@ -12,20 +12,38 @@
 					packages: [
 						{
 							destination: {
-								city: 'Montego Bay',
-								country: 'Jamaica'
+								city: 'Havana',
+								country: 'Cuba'
 							}, 
-							price: 1319,
+							price: 1097,
 							tickets: 1,
 							hotel: 1,
 							transport: 1,
 							allInclusive: 1,
 							days: 5,
 							nights: 4,
-							url: '/peru-montego-bay',
+							url: '/peru-havana',
 							img: {
-								src: '/documents/20182/174915/montegoBaySmall.png',
-								alt: 'Playa de Montego bay'
+								src: '/documents/20182/174915/hav-small.jpg',
+								alt: 'Havana'
+							}
+						},
+						{
+							destination: {
+								city: 'Santo Domingo',
+								country: 'Rep. Dominicana'
+							},
+							price: 1188,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 5,
+							nights: 4,
+							url: '/peru-santo-domingo',
+							img: {
+								src: '/documents/20182/174915/sti-small.jpg',
+								alt: 'Santo Domingo'
 							}
 						},
 						{
@@ -33,119 +51,21 @@
 								city: 'Panamá',
 								country: 'Panamá'
 							},
-							price: 469,
+							price: 695,
 							tickets: 1,
 							hotel: 1,
-							transport: 0,
+							transport: 1,
 							allInclusive: 0,
 							days: 4,
 							nights: 3,
 							url: '/peru-panama',
 							img: {
-								src: '/documents/20182/174915/Panamá-city400.jpg',
-								alt: 'Ciudad de Panamá'
-							}
-						},
-						{
-							destination: {
-								city: 'Punta Cana',
-								country: 'Rep. Dominicana'
-							},
-							price: 1075,
-							tickets: 1,
-							hotel: 1,
-							transport: 1,
-							allInclusive: 1,
-							days: 5,
-							nights: 4,
-							url: '/peru-punta-cana',
-							img: {
-								src: '/documents/20182/174915/puj-small.jpg',
-								alt: 'Playa de Punta Cana'
-							}
-						},
-						{
-							destination: {
-								city: 'Cancún',
-								country: 'México'
-							},
-							price: 1159,
-							tickets: 1,
-							hotel: 1,
-							transport: 1,
-							allInclusive: 1,
-							days: 5,
-							nights: 4,
-							url: '/peru-cancun',
-							img: {
-								src: '/documents/20182/174915/cun-small.jpg',
-								alt: 'Playa de Cancún'
-							}
-						},
-
-					]
-				},
-				{
-					origin: 'Argentina',
-					a2: 'ar',
-					packages: [
-						{
-							destination: {
-								city: 'Cancún',
-								country: 'México'
-							},
-							price: 2478,
-							tickets: 1,
-							hotel: 1,
-							transport: 1,
-							allInclusive: 1,
-							days: 8,
-							nights: 7,
-							url: '/argentina-cancun',
-							img: {
-								src: '/documents/20182/174915/cancun400.jpg',
-								alt: 'Playa de Cancun'
-							}
-						},
-						{
-							destination: {
-								city: 'San Andres Isla',
-								country: 'Colombia'
-							},
-							price: 1619,
-							tickets: 1,
-							hotel: 1,
-							transport: 1,
-							allInclusive: 1,
-							days: 8,
-							nights: 7,
-							url: '/argentina-san-andres',
-							img: {
-								src: '/documents/20182/174915/adz-small.jpg',
-								alt: 'San Andres Isla'
-							}
-						},
-						{
-							destination: {
-								city: 'Punta Cana',
-								country: 'Rep. Dominicana'
-							},
-							price: 2619,
-							tickets: 1,
-							hotel: 1,
-							transport: 1,
-							allInclusive: 1,
-							days: 10,
-							nights: 9,
-							url: '/argentina-punta-cana',
-							img: {
-								src: '/documents/20182/174915/PUNTA-CANA400.jpg',
-								alt: 'Playa de Punta Cana'
+								src: '/documents/20182/174915/pty-small.jpg',
+								alt: 'Panamá'
 							}
 						}
 					]
 				},
-				
 				{
 					origin: 'Ecuador',
 					a2: 'ec',
@@ -155,7 +75,7 @@
 								city: 'Santiago de los Caballeros',
 								country: 'Rep. Dominicana'
 							},
-							price: 874,
+							price: 1155,
 							tickets: 1,
 							hotel: 1,
 							transport: 1,
@@ -170,28 +90,10 @@
 						},
 						{
 							destination: {
-								city: 'Punta Cana',
-								country: 'Rep. Dominicana'
-							},
-							price: 985,
-							tickets: 1,
-							hotel: 1,
-							transport: 1,
-							allInclusive: 1,
-							days: 4,
-							nights: 3,
-							url: '/ecuador-punta-cana',
-							img: {
-								src: '/documents/20182/174915/puj-small.jpg',
-								alt: 'Punta Cana beach'
-							}
-						},
-						{
-							destination: {
 								city: 'Panamá',
 								country: 'Panamá'
 							},
-							price: 555,
+							price: 666,
 							tickets: 1,
 							hotel: 1,
 							transport: 1,
@@ -200,28 +102,47 @@
 							nights: 3,
 							url: '/ecuador-panama',
 							img: {
-								src: '/documents/20182/174915/Panamá-Canal400.jpg',
-								alt: 'Panamá canal'
+								src: '/documents/20182/174915/Panama-Canal400.jpg',
+								alt: 'Canal de Panamá'
 							}
 						},
 						{
 							destination: {
-								city: 'St Maarten',
-								country: ''
+								city: 'Miami',
+								country: 'USA'
 							},
-							price: 1134,
+							price: 836,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 0,
+							days: 4,
+							nights: 3,
+							url: '/ecuador-miami',
+							img: {
+								src: '/documents/20182/174915/mia-small.jpg',
+								alt: 'Miami beach'
+							}
+						},
+						{
+							destination: {
+								city: 'Curaçao',
+								country: 'Curaçao'
+							},
+							price: 1079,
 							tickets: 1,
 							hotel: 1,
 							transport: 1,
 							allInclusive: 1,
 							days: 4,
 							nights: 3,
-							url: '/ecuador-st-maarten',
+							url: '/ecuador-curazao',
 							img: {
-								src: '/documents/20182/174915/SXM-small.jpg',
-								alt: 'St Maarten'
+								src: '/documents/20182/174915/cur-small.jpg',
+								alt: 'Curazao beach'
 							}
 						}
+				
 					]
 				},
 				{
@@ -233,7 +154,7 @@
 								city: 'Panamá',
 								country: 'Panamá'
 							},
-							price: 599,
+							price: 689,
 							tickets: 1,
 							hotel: 1,
 							transport: 1,
@@ -243,61 +164,61 @@
 							url: '/colombia-panama',
 							img: {
 								src: '/documents/20182/174915/pty-small.jpg',
-								alt: 'Ciudad de Panamá'
+								alt: 'Panama City'
 							}
 						},
 						{
 							destination: {
-								city: 'Orlando',
-								country: 'Estados Unidos'
+								city: 'Punta Cana',
+								country: 'Rep. Dominicana'
 							},
-							price: 849,
+							price: 959,
 							tickets: 1,
 							hotel: 1,
-							transport: 0,
-							allInclusive: 0,
+							transport: 1,
+							allInclusive: 1,
 							days: 4,
 							nights: 3,
-							url: '/colombia-orlando',
+							url: '/colombia-punta-cana',
 							img: {
-								src: '/documents/20182/174915/mco-small.jpg',
-								alt: 'Gran sobrero de mago'
+								src: '/documents/20182/174915/puj-small.jpg',
+								alt: 'Punta Cana'
 							}
 						},
 						{
 							destination: {
-								city: 'Miami',
-								country: 'Estados Unidos'
+								city: 'Curaçao',
+								country: 'Curaçao'
 							},
-							price: 779,
+							price: 749,
 							tickets: 1,
 							hotel: 1,
-							transport: 0,
+							transport: 1,
 							allInclusive: 0,
 							days: 4,
 							nights: 3,
-							url: '/colombia-miami',
+							url: '/colombia-curazao',
 							img: {
-								src: '/documents/20182/174915/mia-small.jpg',
-								alt: 'Miami en la noche'
+								src: '/documents/20182/174915/cur-small.jpg',
+								alt: 'Curaçao'
 							}
 						},
 						{
 							destination: {
-								city: 'Las Vegas',
-								country: 'Estados Unidos'
+								city: 'Aruba',
+								country: 'Aruba'
 							},
-							price: 789,
+							price: 899,
 							tickets: 1,
 							hotel: 1,
-							transport: 0,
+							transport: 1,
 							allInclusive: 0,
 							days: 4,
 							nights: 3,
-							url: '/colombia-las-vegas',
+							url: '/colombia-aruba',
 							img: {
-								src: '/documents/20182/174915/LAS-small.jpg',
-								alt: 'Las Vegas'
+								src: '/documents/20182/174915/aua-small.jpg',
+								alt: 'Aruba'
 							}
 						},
 					]
@@ -309,7 +230,7 @@
 						{
 							destination: {
 								city: 'Los Angeles',
-								country: 'Estados Unidos'
+								country: 'United States'
 							},
 							price: 1090,
 							tickets: 1,
@@ -347,7 +268,7 @@
 								city: 'Montego Bay',
 								country: 'Jamaica'
 							},
-							price: 1150,
+							price: 1440,
 							tickets: 1,
 							hotel: 1,
 							transport: 1,
@@ -392,11 +313,131 @@
 							nights: 4,
 							url: '/paraguay-panama',
 							img: {
-								src: '/documents/20182/174915/Panamá-ruinas400.jpg',
+								src: '/documents/20182/174915/panama-ruinas400.jpg',
 								alt: 'Panamá'
 							}
 						}
 					]	
+				},
+				{
+					origin: "Argentina",
+					a2: 'ar',
+					packages: [
+						{
+							destination: {
+								city: 'San Andres Island',
+								country: 'Colombia'
+							},
+							price: 1872,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 8,
+							nights: 7,
+							url: '/argentina-san-andres',
+							img: {
+								src: '/documents/20182/174915/adz-small.jpg',
+								alt: 'Los Angeles'
+							}
+						},
+						{
+							destination: {
+								city: 'Montego Bay',
+								country: 'Jamaica'
+							},
+							price: 2403,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 8,
+							nights: 7,
+							url: '/argentina-montego-bay',
+							img: {
+								src: '/documents/20182/174915/mbj-small.jpg',
+								alt: 'Montego Bay'
+							}
+						},
+						{
+							destination: {
+								city: 'Aruba',
+								country: 'Aruba'
+							},
+							price: 2129,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 8,
+							nights: 7,
+							url: '/argentina-aruba',
+							img: {
+								src: '/documents/20182/174915/aua-small.jpg',
+								alt: 'Aruba'
+							}
+						}
+					]
+				},
+				{
+					origin: 'México',
+					a2: 'mx',
+					packages: [
+						{
+							destination: {
+								city: 'Montego Bay',
+								country: 'Jamaica'
+							},
+							price: 1749,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 8,
+							nights: 7,
+							url: '/mexico-montego-bay',
+							img: {
+								src: '/documents/20182/174915/mbj-small.jpg',
+								alt: 'Montego Bay'
+							}
+						},
+						{
+							destination: {
+								city: 'Bogotá',
+								country: 'Colombia'
+							},
+							price: 789,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 6,
+							nights: 5,
+							url: '/mexico-bogota',
+							img: {
+								src: '/documents/20182/174915/bog-small',
+								alt: 'Bogotá'
+							}
+						},
+						{
+							destination: {
+								city: 'Punta Cana',
+								country: 'Rep. Dominicana'
+							},
+							price: 1685,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 6,
+							nights: 5,
+							url: '/mexico-punta-cana',
+							img: {
+								src: '/documents/20182/174915/puj-small.jpg',
+								alt: 'Punta Cana'
+							}
+						}
+					]
 				}
 			];
 

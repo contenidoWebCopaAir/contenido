@@ -5,6 +5,8 @@ var gulp = require('gulp'),
     precss = require('precss'),
     image = require('gulp-image'),
     htmlmin = require('gulp-htmlmin'),
+    minify = require('gulp-minify'),
+    cssnano = require('cssnano'),
 
     source = 'desarrollo/copa-vacations/',
     dest = 'produccion/copa-vacations/';
@@ -14,7 +16,7 @@ var gulp = require('gulp'),
 gulp.task('html', function() {
     gulp.src([source + '*.html', source + '**/*.html'])
     .pipe(htmlmin({
-        collapseWhitespace: false,
+        collapseWhitespace: true,
         minifyJS: true,
         removeComments: true,
         removeEmptyAttributes: true
@@ -24,19 +26,21 @@ gulp.task('html', function() {
 
 // JavaScript
 gulp.task('javascript', function() {
-    gulp.src(source + 'JS/*.js')
-    .pipe(gulp.dest(dest + 'JS'));
+    gulp.src(source + '*.js')
+    .pipe(minify())
+    .pipe(gulp.dest(dest));
 
-    gulp.src(source + 'JS/libs/*.js')
-    .pipe(gulp.dest(dest + 'JS/libs/'));
+    // gulp.src(source + 'JS/libs/*.js')
+    // .pipe(gulp.dest(dest + 'JS/libs/'));
 });
 
 // CSS
 gulp.task('css', function() {
-    gulp.src(source + '**/*.css')
+    gulp.src(source + '*.css')
     .pipe(postcss([
         precss(),
-        autoprefixer()
+        autoprefixer(),
+        cssnano()
     ]))
     .pipe(gulp.dest(dest));
 });

@@ -9,28 +9,38 @@
 	</div>
 
 	<div class="offices-responsive content_centered" ng-controller="EventsCtrl">
-		<!-- <div class="row">
-			<div class="span2">
+		<div class="row">
+			<div class="span5">
 				<h4>Próximo evento importante</h4>
 			</div>
-			<div class="span4">
+			<div class="span3">
 				<p>
-					<img src="/documents/20182/148499/logo-cumbre-iberoamericana" alt="Cumbre iberoamericana">
+					<img src="/documents/20182/2039647/Logoblsnco" alt="Logo Curso Intersiduo de Ultrasonografía Ocular">
 				</p>
 			</div>
-			<div class="span6">
+			<div class="span4">
 				<address>
-					<p><b>Cartagena, Colômbia</b><br>
-					Maria Cristina Pimiento Barrera<br>
-					<a href="mailto:coordinacionlogistica@cumbreiberoamericana2016.gov.co">coordinacionlogistica@cumbreiberoamericana2016.gov.co</a><br>
-					<b>Código promocional: </b> D7040</p>
+					<p>V Curso Intersiduo de Ultrasonografía Ocular</p>
+					<p><b>Panamá, Panamá</b></p>
+					<p>BELEN GALERA</p>
+					<p><b>Código Promocional: </b> D7214</p>
 				</address>
 			</div>
-		</div> -->
+		</div>
 		<dov class="row">
-			<div class="span12">
-				<h3>Eventos Novembro</h3>
-				<form class="form-inline">
+			<form class="form-inline">
+				<div class="span4">
+					<div class="form-group">
+						<select 
+							style="width:296px" 
+							class="form-control"
+							ng-model="dateFilter">
+							<option value="2016/12">Dezembro - 2016</option>
+							<option value="2017/1">Janeiro - 2017</option>
+						</select>
+					</div>
+				</div>
+				<div class="span4">
 					<div class="form-group">
 						<input 
 							type="text" 
@@ -41,8 +51,8 @@
 							style="width:296px" 
 						/>
 					</div>
-				</form>
-			</div>
+				</div>
+			</form>
 		</dov>
 		<div class="row">
 			<div class="span12">
@@ -56,7 +66,7 @@
 
 				<ul 
 					class="ul-body ul-table" 
-					ng-repeat="e in events | orderBy: 'startDate' | filter: query"
+					ng-repeat="e in events | orderBy: 'startDate' | filter: query | filter: dateFilter"
 				>
 					<li>
 						<h4 ng-cloak>{{e.startDate}} - {{e.endDate}}</h4>
@@ -89,228 +99,151 @@
 	angular.module('copa').controller('EventsCtrl', ["$scope",
 		function ($scope) {
 
+			$scope.dateFilter = '2016/12';
 			$scope.query = '';
-				$scope.events = [
+			$scope.events = [
 				{
-					startDate: new Date("2016/11/1").getDate(),
-					endDate: new Date("2016/11/4").getDate(),
-					title: 'Congreso ALCVA-Angiocaribe-2016',
-					city: 'Havana',
-					country: 'Cuba',
-					contactName: 'Lic. María Eugenia Triana Mantilla',
-					email: 'angiocaribe@infomed.sld.cu',
-					url: 'http://www.angiocaribe.com/',
-					promoCode: 'C7104'
+					startDate: new Date("2016/12/3").getDate(),
+					endDate: new Date("2016/12/9").getDate(),
+					dateQuery: '2016/12',
+					title: 'Conferencia Mundial de Ingeniería en Reducción de Riesgos de Desastres Naturales - Sede Lima',
+					city: 'Lima',
+					country: 'Peru',
+					contactName: 'Luis H. Hernandez Berton',
+					email: 'presidenciacopimera@gmail.com',
+					url: 'www.copimerainternacional.org',
+					promoCode: 'C7100'
 				},
 				{
-					startDate: new Date("2016/11/5").getDate(),
-					endDate: new Date("2016/11/11").getDate(),
-					title: 'XIX JORNADAS LATINOAMERICANAS DE DERECHO TRIBUTARIO-ILADT 2016',
+					startDate: new Date("2016/12/4").getDate(),
+					endDate: new Date("2016/12/9").getDate(),
+					dateQuery: '2016/12',
+					title: 'FORO INTERNACIONAL DE EMPRENDEDORES Guatemala',
 					city: null,
-					country: 'Bolivia',
-					contactName: 'Gustavo Bazoberry Otero',
-					email: 'eventus@enterlnet.bo',
-					url: 'http://www.iladtbolivia2016.com/',
-					promoCode: 'C6928'
+					country: 'Guatemala',
+					contactName: 'Juan Carlos Solorzano',
+					promoCode: 'B7087'
 				},
 				{
-					startDate: new Date("2016/11/6").getDate(),
-					endDate: new Date("2016/11/6").getDate(),
-					title: '42K Adventure Marathon México',
-					city: 'México DF',
-					country: 'México',
-					contactName: 'Adriana Malave',
-					email: 'contacto@trailrunve.org',
+					startDate: new Date("2016/12/5").getDate(),
+					endDate: new Date("2016/12/9").getDate(),
+					dateQuery: '2016/12',
+					title: 'II Simposio Nacional de Muerte Súbita Cardiovascular',
+					city: 'Habana',
+					country: 'Cuba',
+					contactName: 'Dr.C. Luis Alberto Ochoa',
+					email: 'muertesubitacuba@infomed.sld.cu ',
 					url: 'https://www.facebook.com/trailrunve/',
-					promoCode: 'C7064'
+					promoCode: 'B6645'
 				},
 				{
-					startDate: new Date("2016/11/8").getDate(),
-					endDate: new Date("2016/11/11").getDate(),
-					title: 'I Congreso Internacional del Transporte',
+					startDate: new Date("2016/12/6").getDate(),
+					endDate: new Date("2016/12/9").getDate(),
+					dateQuery: '2016/12',
+					title: 'III Congreso Multidisciplinario de Ciencias Aplicadas en Latinoamérica',
 					city: 'Havana',
 					country: 'Cuba',
-					contactName: 'Msc Xiomara Martínez Soltura',
-					email: 'alina.puig@gea.transnet.cu',
-					promoCode: 'B7047'
+					contactName: 'Dr. Cutberto Romero',
+					email: 'cutberto@correo.azc.uam.mx',
+					promoCode: 'B7120'
 				},
 				{
-					startDate: new Date("2016/11/9").getDate(),
-					endDate: new Date("2016/11/10").getDate(),
-					title: 'Guatemala investment Sumit 2016',
-					city: 'Guatemala',
-					country: 'Guatemala',
-					contactName: 'Gladys Fuentes',
-					email: 'coordinadoragis@industriaguate.com',
-					url: 'http://www.gis.com.gt/2016/index.php/es/',
-					promoCode: 'D6958'
+					startDate: new Date("2016/12/6").getDate(),
+					endDate: new Date("2016/12/18").getDate(),
+					dateQuery: '2016/12',
+					title: 'Festival Internacional del Nuevo Cine Latinoamericano',
+					city: 'Havana',
+					country: 'Cuba',
+					contactName: 'Pedro Enrique Ortega Lang',
+					email: 'habanafest@festival.icaic.cu',
+					url: 'www.habanafilmfestival.com',
+					promoCode: 'D6788'
 				},
 				{
-					startDate: new Date("2016/11/9").getDate(),
-					endDate: new Date("2016/11/11").getDate(),
-					title: 'XX CONGRESO IBEROAMERICCANO DE DERECHO DE TRABAJO Y SEGURIDAD SOCIAL',
-					city: 'Guatemala',
-					country: 'Guatemala',
-					contactName: 'LIC. Heidy Garcia',
-					email: 'ASGUATRA@GMAIL.COM',
-					promoCode: 'C6885'
+					startDate: new Date("2016/12/10").getDate(),
+					endDate: new Date("2016/12/17").getDate(),
+					dateQuery: '2016/12',
+					title: 'Medellin Soccer Cup',
+					city: 'Medellín',
+					country: 'Colombia',
+					contactName: 'Carlos Cambero Cañadas',
+					email: 'info@bss.com.pa',
+					web: 'BSS.com.pa',
+					promoCode: 'B7084'
 				},
 				{
-					startDate: new Date("2016/11/9").getDate(),
-					endDate: new Date("2016/11/12").getDate(),
-					title: 'VIII Congresso Panamericano e Ibérico de Medicina Intensiva e XXI Congresso Brasileiro de Medicina Intensiva',
-					city: 'Porto Alegre',
-					country: 'Brasil',
+					startDate: new Date("2016/12/11").getDate(),
+					endDate: new Date("2016/12/14").getDate(),
+					dateQuery: '2016/12',
+					title: 'MEETINGS CARTAGENA 2016',
+					city: 'Cartagena',
+					country: 'Colombia',
 					contactName: 'Ramon Correa',
-					email: 'aereo@blumar.com.br',
-					url: 'http://www.blumar.com.br/',
-					promoCode: 'B6867'
+					email: 'mabuarbara@procolombia.co',
+					url: 'www.procolombia.co',
+					promoCode: 'D7206'
 				},
 				{
-					startDate: new Date("2016/11/9").getDate(),
-					endDate: new Date("2016/11/12").getDate(),
-					title: 'Americas Alliance Conference',
-					city: 'Cancun',
-					country: 'Mexixo',
-					contactName: 'Juan Cruz Recana',
-					email: 'info@americasalliance.com.ar',
-					url: 'http://www.americasalliance.net/',
-					promoCode: 'B6969'
+					startDate: new Date("2017/1/9").getDate(),
+					endDate: new Date("2017/1/12").getDate(),
+					dateQuery: '2017/1',
+					title: 'Visit FL Huddle 2017',
+					city: 'Orlando',
+					country: 'USA',
+					contactName: 'Steven Bonda, CMP',
+					email: 'sbonda@VISITFLORIDA.org',
+					url: 'http://www.floridahuddle.com/',
+					promoCode: 'F7204'
 				},
 				{
-					startDate: new Date("2016/11/10").getDate(),
-					endDate: new Date("2016/11/13").getDate(),
-					title: '21st ANNUAL CARIBBEAN MULTI-NATIONAL BUSINESS CONFERENCE',
-					city: 'Panamá',
-					country: 'Panamá',
-					contactName: 'FAYE RODNEY',
-					email: 'Rodneyfaye@aol.com',
-					url: 'http://www.nycaribnews.com/',
-					promoCode: 'D7102'
+					startDate: new Date("2017/1/12").getDate(),
+					endDate: new Date("2017/1/15").getDate(),
+					dateQuery: '2017/1',
+					title: 'Retail Industry Leaders Association (RILA)',
+					city: 'Orlando',
+					country: 'USA',
+					contactName: 'Marianela Dengo de de Obaldía',
+					email: 'mdengo@pancanal.com',
+					url: 'http://micanaldepanama.com/',
+					promoCode: 'B7096'
 				},
 				{
-					startDate: new Date("2016/11/11").getDate(),
-					endDate: new Date("2016/11/13").getDate(),
-					title: 'VII CONGRESO INTERNACIONAL PROVIDA-GENERACIÓN-VIDA',
-					city: 'Guatemala',
-					country: 'Guatemala',
-					contactName: 'Mónica Marín',
-					email: 'monicamarin3008@gmail.com',
-					url: 'http://www.generacionvida.gt/',
-					promoCode: 'D7131'
+					startDate: new Date("2017/1/14").getDate(),
+					endDate: new Date("2017/1/21").getDate(),
+					dateQuery: '2017/1',
+					title: 'Operation Walk Bolivia',
+					city: 'Santa Cruz',
+					country: 'Bolivia',
+					contactName: 'Laura McCormack',
+					email: 'lfmack@verizon.com',
+					url: 'http://www.operationwalkvirginia.org',
+					promoCode: 'B7005'
 				},
 				{
-					startDate: new Date("2016/11/12").getDate(),
-					endDate: new Date("2016/11/20").getDate(),
-					title: 'FOCAP Honduras 2016',
-					city: 'Tegucigalpa',
-					country: 'Honduras',
-					contactName: 'Marielos Reyes',
-					email: 'congraziamaria@gmail.com',
-					url: 'http://www.generacionvida.gt/',
-					promoCode: 'B7059'
+					startDate: new Date("2017/1/22").getDate(),
+					endDate: new Date("2017/1/27").getDate(),
+					dateQuery: '2017/1',
+					title: 'WINTER MARKET LAS VEGAS 2017',
+					city: 'Las Vegas',
+					country: 'USA',
+					contactName: 'Joana Torres',
+					email: 'Jtorres@imcenters.com',
+					url: 'www.imcenters.com',
+					promoCode: 'C7121'
 				},
 				{
-					startDate: new Date("2016/11/13").getDate(),
-					endDate: new Date("2016/11/15").getDate(),
-					title: 'ALTA AIRLINE LEADERS FORUM',
-					city: 'México DF',
-					country: 'México',	
-					contactName: 'ALBERTO CORTES',
-					email: 'acortes@alta.aero',
-					url: 'http://www.alta.aero/',
-					promoCode: 'D6734'
-				},
-
-				{
-					startDate: new Date("2016/11/13").getDate(),
-					endDate: new Date("2016/11/18").getDate(),
-					title: 'Seminario Servicio al Cliente "El Efecto Wow"',
-					city: 'San Juan',
-					country: 'Puerto Rico',	
-					contactName: 'Osvalo Laurido',
-					email: 'info@osvaldolaurido.com',
-					url: 'http://www.osvaldolaurido.com/',
-					promoCode: 'B7051'
-				},
-				{
-					startDate: new Date("2016/11/14").getDate(),
-					endDate: new Date("2016/11/18").getDate(),
-					title: 'CONGRESO INTERNACIONAL SOBRE PATRIMONIO CULTURAL Y NATURAL CENTROAMERICANO: AGUA, CULTURA Y TERRITORIO 2016"',
-					city: 'San Jose',
-					country: 'Costa Rica',	
-					contactName: 'Ing. José Millán',
-					email: 'jmillan325@gmail.com',
-					url: 'http://www.una.ac.cr/priga',
-					promoCode: 'C7097'
-				},
-				{
-					startDate: new Date("2016/11/15").getDate(),
-					endDate: new Date("2016/11/17").getDate(),
-					title: 'Canalys Channels Forum"',
-					city: 'Cancún',
-					country: 'México',	
-					contactName: 'Michele Kayser',
-					email: 'michele_kayser@canalys.com',
-					url: 'https://www.canalyschannelsforum.com/',
-					promoCode: 'C6929'
-				},
-				{
-					startDate: new Date("2016/11/17").getDate(),
-					endDate: new Date("2016/11/19").getDate(),
-					title: 'Coloquio Iberoamericano para la Persona Adulta Media y Adulta Mayor 2016"',
-					city: 'Panamá',
-					country: 'Panamá',	
-					contactName: 'Adriel Armengol ',
-					email: 'coloquioiberoamericano@hellentravel.com',
-					promoCode: 'B6933'
-				},
-				{
-					startDate: new Date("2016/11/14").getDate(),
-					endDate: new Date("2016/11/19").getDate(),
-					title: 'II JORNADA CIENTÍFICA DEL Cecess',
-					city: 'Habana',
-					country: 'Cuba',	
-					contactName: 'Eldis Román Cao',
-					email: 'coloquioiberoamericano@hellentravel.com',
-					url: 'http://www.jornadacecess.reededu.org/',
-					promoCode: 'B7054'
-				},
-				{
-					startDate: new Date("2016/11/16").getDate(),
-					endDate: new Date("2016/11/18").getDate(),
-					title: 'MDRT LATAM & CARIBBEAN ENCOUNTER',
-					city: 'Panamá',
-					country: 'Panamá',	
-					contactName: 'Melisa del Castillo',
-					email: 'melisa@partnerscorp.net',
-					promoCode: 'D6967'
-				},
-				{
-					startDate: new Date("2016/11/23").getDate(),
-					endDate: new Date("2016/11/24").getDate(),
-					title: '2do Congreso Internacional de Minería y Geología',
-					city: 'Panamá',
-					country: 'Panamá',	
-					contactName: 'Mayte Cuesta Taylor',
-					email: 'mcuesta@paragong.com',
-					url: 'http://www.paragonlatam.com/',
-					promoCode: 'C7117'
-				},
-				{
-					startDate: new Date("2016/11/23").getDate(),
-					endDate: new Date("2016/11/25").getDate(),
-					title: 'V Congreso Latinoamericano de Gestión Integral de Riesgos',
-					city: 'Panamá',
-					country: 'Panamá',	
-					contactName: 'Ernesto Bazán',
-					email: 'ernesto@ernestobazan.com',
-					url: 'http://www.ernestobazan.com/',
-					promoCode: 'C7082'
-				},
-
+					startDate: new Date("2017/1/18").getDate(),
+					endDate: new Date("2017/1/22").getDate(),
+					dateQuery: '2017/1',
+					title: 'XLVI FORO LATINOAMERICANO Y DEL CARIBE GUAYAQUIL 2017',
+					city: 'Guayaquil',
+					country: 'Ecuador',	
+					contactName: 'Nora Karina Cobo',
+					email: 'corporativo@ltnecuador.travel',
+					url: 'www.folac2017.org',
+					promoCode: 'D6962'
+				}
 			];
-
 		}
 	]);
 </script>
