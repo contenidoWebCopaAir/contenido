@@ -1,19 +1,13 @@
-.container { max-width: 1024px }
-.row { margin: 0 !important; }
-a.contact-icon {
-padding-right: 10px;
-padding-left: 5px;
-text-decoration: none !important;
+div.side1 > a > img { max-width: 65px; padding: 23px }
+div.side2 > h2 { color: #444 !important; }
+
+
+@media (min-width:1027px) { 
+	div.side1 > a > img { float:right; }
 }
 
-a.contact-icon img {width: 65px !important;}
-
-@media  only screen and (min-width: 1051px){
-	.container > .row > .span6:nth-child(1) > a.contact-icon { padding-left:30px }
-	
+@media (min-width:1281px) { 
+	div.side1 > a > img { float:right; }
 }
 
-@media  only screen and (max-width: 376px){
-	a.contact-icon { margin-left: 10px; font-size: 14px; }
-	a.contact-icon img {max-width: 50px}
-}
+.link_more { font-size: 14px !important }
