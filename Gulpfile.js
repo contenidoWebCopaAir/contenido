@@ -8,8 +8,8 @@ var gulp = require('gulp'),
     minify = require('gulp-minify'),
     cssnano = require('cssnano'),
 
-    source = 'desarrollo/copa-vacations/',
-    dest = 'produccion/copa-vacations/';
+    source = 'desarrollo/alianzas/',
+    dest = 'produccion/alianzas/';
 
 
 // HTML
@@ -43,6 +43,22 @@ gulp.task('css', function() {
         cssnano()
     ]))
     .pipe(gulp.dest(dest));
+});
+
+gulp.task('image', function(){
+    gulp.src(source + 'img/*')
+        .pipe(image({
+          pngquant: true,
+          optipng: false,
+          zopflipng: true,
+          jpegRecompress: false,
+          jpegoptim: true,
+          mozjpeg: true,
+          gifsicle: true,
+          svgo: true,
+          concurrent: 10
+        }))
+        .pipe(gulp.dest(dest + 'img/'));
 });
 
 // Watch everything
