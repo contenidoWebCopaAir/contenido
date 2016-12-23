@@ -1,6 +1,39 @@
-.container { max-width: 1024px; }
-.row { margin-left:0 !important; }
-.aui select { max-width: 99% !important; }
+.aui select, .aui input { padding: 0 6px }
+input.input-large { 
+	height: 20px;
+	padding: 4px;
+    margin-top: 7px;
+    margin-left: 20px; 
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.search-box { width: 93% }
+
+.offices-responsive .ul-table li + li + li + li {
+    width: 29% !important;
+}
+
+.offices-responsive div > p { margin: 0; }
+
+.offices-responsive .ul-table.ul-body {
+    border-bottom: 1px dotted #888;
+    padding: 16px 0;
+    margin: 0;
+}
+
+.offices-responsive .ul-table > li {list-style:none;}
+
+
+
+@media screen (min-width: 1051px)
+.portlet-asset-publisher .asset-content br {
+    display: inherit !important; 
+}
+
+.separator { display: none; }
 
 @media screen (min-width: 1025px){
 	.offices-responsive .ul-table.ul-head {
@@ -15,23 +48,14 @@
 
 }
 
-.offices-responsive .ul-table li + li + li + li {
-    width: 29% !important;
+@media screen and (max-width: 766px){
+	.content_centered { overflow-x: hidden; }
+	.offices-responsive .ul-table li + li + li + li {
+    	width: 100% !important;
+	}
 }
 
-.offices-responsive .ul-table.ul-body {
-    border-bottom: 1px dotted #888;
-    padding: 16px 0;
-    margin: 0;
-}
-
-.offices-responsive .ul-table > li {list-style:none;}
-
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
-}
-
-@media screen (min-width: 1051px)
-.portlet-asset-publisher .asset-content br {
-    display: inherit !important; 
+@media screen and (max-width: 380px){
+	select.input-medium { max-width: 100% !important; }
+	input.input-medium {  max-width: 96% !important; }
 }

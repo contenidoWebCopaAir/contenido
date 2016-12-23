@@ -1,0 +1,221 @@
+<div class="columns-1 offices-responsive content_centered" ng-controller="farCountriesCtrl">
+	<div class="row-fluid main-filter">
+    	<div class="span12">
+        	<h2>Oficinas en Europa, Asia, Medio Oriente y Oceanía.</h2>
+    	</div>
+	</div>
+	<div class="portlet-layout row-fluid">
+    	<div class="span12">
+            <ul class="ul-head ul-table">
+                <li>País</li>
+                <li>Ciudad</li>
+                <li>Dirección</li>
+                <li>Reservaciones</li>
+            </ul>
+
+            <ul 
+                class="ul-body ul-table" 
+                ng-repeat="o in farCountries | orderBy: 'country'"
+            >
+                <li><b ng-bind-html="o.country" ng-cloak></b></li>
+                <li ng-bind-html="o.city" ng-cloak></li>
+                <li ng-bind-html="o.address" ng-cloak></li>
+                <li>
+                    <p ng-bind-html="o.phone" ng-cloak></p>
+                    <a ng-if="o.email" ng-href="mailto:{{ o.email }}" ng-cloak>{{ o.email }}</a>
+                </li>
+            </ul>
+    	</div>
+	</div>
+</div>
+<script>
+angular.module('copa').controller('farCountriesCtrl', ['$scope', function($scope){
+		  //Europe, Asia, middke east and oceania
+    $scope.farCountries = [
+        {
+            country: 'Alemania',
+            city: 'Wiesbaden',
+            address: 'Discover the World Marketing. Schenkendorfstr. 1 65187',
+            phone: 'Tel: ++49 611 267 670<br>Fax.: ++49 611 267 6760',
+            email: 'discover@discover-fra.com'
+        },
+        {
+            
+            country: 'Australia',
+            city: 'Sydney',
+            address: 'Discover the World Marketing. Level 7, 89 York Calle, Sydney NSW 2000, Australia.',
+            phone: 'Tel:  +612 9959 3696<br>Fax: +612 9929 8438',
+            email: null
+        },
+        {
+            
+            country: 'Austria',
+            city: 'Vienna',
+            address: 'Discover the World Marketing. Vorgartenstrasse 132/1/131. A -1020.',
+            phone: 'Tel: +43 1 512 86 86<br>Fax:+43 1 512 8686 60',
+            email: 'oficina@discovertheworld.at'
+        },
+        {
+            
+            country: 'Bélgica',
+            city: 'Hilversum',
+            address: 'Stationsplein 3 (2nd piso), 1211 EX',
+            phone: '+32 (0) 25881979',
+            email: null
+        },
+        {
+            
+            country: 'Dinamarca',
+            city: 'Copenhague',
+            address: 'Trommesalen 5, 5th piso DK-1614',
+            phone: '+45 3325 2566',
+            email: 'info@discoverthworld.dk'
+        },
+        {
+            
+            country: 'Inglaterra',
+            city: 'Londres',
+            address: 'Studio 403, VOX Studios. 1-45 Durham Calle, Londres SE11 5RH',
+            phone: '+44 203 598 8036',
+            email: 'support@copaair.eu'
+        },
+    
+        {
+            
+            country: 'Korea',
+            city: 'Seoul',
+            address: 'Discover the World Marketing. 9th piso, Injoo Edificio 22 Jong-ro, Jongno-gu, 03188',
+            phone: 'Tel: +82 2 771 5622<br>Fax: +82 2 771 1157'
+        },
+        {
+            
+            country: 'Francia',
+            city: 'Paris',
+            address: 'Discover the World Marketing.  82, Rue Taitbout 75009',
+            phone: 'Tel:  +33 (0)1 5822 2004<br>Fax: +33 (0)1 5822 2010',
+            email: null 
+        },
+        {
+            
+            country: 'Alemania',
+            city: 'Wiesbaden',
+            address: 'Schenkendorfstr, 65187',
+            phone: 'Tel:  +49 611 267 6770<br>Fax: +49 611 267 6760',
+            email: 'discover@discover-fra.com'
+        },
+        {
+            
+            country: 'Grecia',
+            city: 'Atenas',
+            address: 'Intermodal. 25, Filellinon Calle.105.57',
+            phone: 'Tel:  0030 210 371 6370',
+            email: null     
+        },
+        {
+            
+            country: 'Países Bajos',
+            city: 'Hilversum',
+            address: 'Discover the World Stationsplein 3 (2nd piso) 1211',
+            phone: 'Tel:  +31 (0) 20 2410168',
+            email: 'info@discoverthworld.dk'
+        },
+        {
+             
+            country: 'India',
+            city: 'Mumbai',
+            address: 'Discover the World Marketing. 209, The Avenida, Aeropuerto Internacional Road, Opp. The Leela Hotel– Marol Andheri-East Naka, Mumbai – 400 069',
+            phone: 'Tel:  +91 22 2921 0300',
+            email: 'info@discovertheworld.co.in'
+        }, 
+        {
+            
+            country: 'Israel',
+            city: 'Tel Aviv-Yafo',
+            address: '2nd piso, Migdalot Edificio, 25 Ben Yehuda St, 6380602',
+            phone: 'Tel: 037951333',
+            email: null        
+        },
+        {
+            
+            country: 'Italia',
+            city: 'Milan',
+            address: 'Discover the World Marketing. Via Teglio, 9 – 20158',
+            phone: 'Tel: +39 02 67077382<br>Fax: +39 02 39304137',
+            email: 'info@discovertheworld-mil.com'
+        },
+        {
+            
+            country: 'Japón',
+            city: 'Tokyo',
+            address: 'Discover the World Marketing. Hibiya Kokusai Bldg. 2-3, Uchisaiwaicho 2-chome, Chiyoda-ku. 100-0011',
+            phone: 'Tel:  +81 3 3597 9480',
+            email: 'dscvrtyo@cc.mbn.or.jp'
+        },
+        {
+            
+            country: 'Nueva Zelandia',
+            city: 'Auckland',
+            address: 'Discover the World, Central Park, Edificio 5, Level 3, 666 Great South Road, 1051.',
+            phone: 'Tel:  +649 280 3133<br>Tel: 0800 623 4293',
+            email: null
+        },
+        {
+            
+            country: 'Portugal',
+            city: 'Lisboa',
+            address: 'Av. Defensores de Chaves, 15-3ºE 1000-109',
+            phone: 'Tel:  (+351) 21 358 44 56',
+            email: 'copaairlines@selectaviation.pt'
+        },
+        {
+            
+            country: 'Portugal',
+            city: 'Porto',
+            address: 'CE Capitólio Loja 44. Av. França, 256 4050-276',
+            phone: 'Tel:  (+351) 21 358 44 56',
+            email: 'copaairlines@selectaviation.pt' 
+        },
+        {
+            
+            country: 'Rusia',
+            city: 'Moscow',
+            address: 'Discover the World Marketing. 40/2 build. 1, str. Prechistenka, Entrance 1, oficina 34. Moscow, 119034. Russian Federation.',
+            phone: 'Tel: +7  (495) 744 0490<br>Fax: +7 (495) 425 1800',
+            email: 'info@discovertheworld.ru'
+        },
+        {
+            
+            country: 'Singapur',
+            city: 'Singapore',
+            address: 'Discover the World 180B Bencoolen Calle #05-01 The Bencoolen oficina Tower, Singapore 189648',
+            phone: 'Tel:  +65 6884-9119<br>Fax: +65 6884-9919',
+            email: 'dtwmsin@discovertheworld.com.sg'
+        },
+        {
+            
+            country: 'España',
+            city: 'Madrid',
+            address: ' Select Aviation.  C/Princesa #2, Planta 2, Oficina 1 28008 Madrid',
+            phone: 'Tel: (34) 91 547 8588',
+            email: null
+        },
+        {
+            
+            country: 'Suza',
+            city: 'Merenschwand',
+            address: 'Bremgartenstrasse 11, 5634 Merenschwand',
+            phone: 'Tel:  +41 58 201 32 01<br>Fax: +41 58 201 32 11',
+            email: 'info@discoverzrh.ch'
+        },
+        {
+            
+            country: 'Taiwan',
+            city: 'Taipei',
+            address: 'Elite Holiday Travel Service. 5F-1, No. 62. Sec 2, Nan king E. Rd Taipei, Taiwan.',
+            phone: 'Tel: +886 2 25413366',
+            email: null
+        }
+       
+    ];
+	}]);
+</script>
