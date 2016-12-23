@@ -8,8 +8,8 @@ var gulp = require('gulp'),
     minify = require('gulp-minify'),
     cssnano = require('cssnano'),
 
-    source = 'desarrollo/alianzas/',
-    dest = 'produccion/alianzas/';
+    source = 'desarrollo/',
+    dest = 'produccion/';
 
 
 // HTML
@@ -26,7 +26,7 @@ gulp.task('html', function() {
 
 // JavaScript
 gulp.task('javascript', function() {
-    gulp.src(source + '*.js')
+    gulp.src(source + '**/*.js')
     .pipe(minify())
     .pipe(gulp.dest(dest));
 
@@ -36,7 +36,7 @@ gulp.task('javascript', function() {
 
 // CSS
 gulp.task('css', function() {
-    gulp.src(source + '*.css')
+    gulp.src(source + '**/*.css')
     .pipe(postcss([
         precss(),
         autoprefixer(),

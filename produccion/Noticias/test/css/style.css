@@ -1,0 +1,1 @@
+body{width:1024px;margin:0 auto}.contenedor{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}.noticia{-webkit-box-flex:1;-ms-flex:1;flex:1;padding:20px}.light{background-color:#efefef}.darken{background-color:#dcdbd9}div.contenedor>div.noticia>img{margin-top:20px}.noticia img{width:300px;margin:0 auto}
