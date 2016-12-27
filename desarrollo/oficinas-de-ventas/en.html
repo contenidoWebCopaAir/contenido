@@ -1,11 +1,11 @@
 <div id="main-content" class="columns-1 offices-responsive content_centered" ng-controller="OfficesCtrl">
     <div class="row-fluid main-filter">
         <div class="span4">
-            <p><b>Show sales offices</b></p>
+            <p><b>Show sales offices in:</b></p>
         </div>
 
         <div class="span8 form-inline">
-            <select ng-model="selectedCountry" class="input-large" ng-cloak>
+            <select id="selectedCountry" ng-model="selectedCountry" class="input-large" ng-cloak>
                 <option value="" selected>All countries</option>
                 <option 
                     ng-repeat="country in countries" 
@@ -36,7 +36,7 @@
             </ul>
 
             <div 
-                ng-repeat="country in offices | filter: selectedCountry | orderBy: country.countryName"
+                ng-repeat="country in offices | filter: selectedCountry | orderBy: countryName"
             >                             
                 <div ng-repeat="office in country.cities | filter: query">
                     <ul class="ul-body ul-table" ng-if="$first"> 
@@ -46,7 +46,7 @@
                         <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak></li>
                     </ul>
                     <ul class="ul-body ul-table" ng-if="! $first">
-                        <li></li>
+                        <li class="empty"></li>
                         <li ng-bind-html="office.name" ng-cloak></li>
                         <li ng-bind-html="office.address" ng-cloak></li>
                         <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak></li>

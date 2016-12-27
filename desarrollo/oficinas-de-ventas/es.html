@@ -7,9 +7,16 @@
             <div class="span8 form-inline">
                 <select id="selectedCountry" ng-model="selectedCountry" class="input-large" ng-cloak>
                     <option value="" selected>Todos los países</option>
-                    <option ng-repeat="country in countries" value="{{country}}" ng-if="country" ng-cloak>{{country}}</option>
+                    <option 
+                        ng-repeat="country in countries" 
+                        value="{{country}}" 
+                        ng-if="country" 
+                        ng-cloak
+                    >
+                        {{country}}
+                    </option>
                 </select>
-
+ 
                 <input 
                     ng-model="query" 
                     class="input-large" 
@@ -38,7 +45,7 @@
                         <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak></li>
                     </ul>
                     <ul class="ul-body ul-table" ng-if="! $first">
-                        <li></li>
+                        <li class="empty"></li>
                         <li ng-bind-html="office.name" ng-cloak></li>
                         <li ng-bind-html="office.address" ng-cloak></li>
                         <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak></li>

@@ -1,36 +1,33 @@
 <div class="columns-1 offices-responsive content_centered" ng-controller="farCountriesCtrl">
 	<div class="row-fluid main-filter">
+        <div class="span12">
+            <h2>Escritórios na Europa, Ásia, Oriente Médio e Oceania</h2>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
+            <ul class="ul-head ul-table">
+                <li>País</li>
+                <li>Cidade</li>
+                <li>Endereço </li>
+                <li>Reservas</li>
+            </ul>
 
-	 	<div class="row-fluid">
-	        <div class="span12">
-	            <h2>Escritórios na Europa, Ásia, Oriente Médio e Oceania</h2>
-	        </div>
-	    </div>
-	    <div class="row-fluid">
-	        <div class="span12">
-	            <ul class="ul-head ul-table">
-	                <li>País</li>
-	                <li>Cidade</li>
-	                <li>Endereço </li>
-	                <li>Reservas</li>
-	            </ul>
-
-	            <ul 
-	                class="ul-body ul-table" 
-	                ng-repeat="o in farCountries | orderBy: o.country"
-	            >
-	                <li><b ng-bind-html="o.country" ng-cloak></b></li>
-	                <li ng-bind-html="o.city" ng-cloak>&nbsp;</li>
-	                <li ng-bind-html="o.address" ng-cloak>&nbsp;</li>
-	                <li>
-	                    <p ng-bind-html="o.phone" ng-cloak></p>
-	                    <a ng-if="o.email" ng-href="mailto:{{ o.email }}" ng-cloak>{{ o.email }}</a>
-	                </li>
-	            </ul>
-	        </div>
-	    </div>
- 	</div>
-</div>
+            <ul 
+                class="ul-body ul-table" 
+                ng-repeat="o in farCountries | orderBy: o.country"
+            >
+                <li><b ng-bind-html="o.country" ng-cloak></b></li>
+                <li ng-bind-html="o.city" ng-cloak></li>
+                <li ng-bind-html="o.address" ng-cloak></li>
+                <li>
+                    <p ng-bind-html="o.phone" ng-cloak></p>
+                    <a ng-if="o.email" ng-href="mailto:{{ o.email }}" ng-cloak>{{ o.email }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+ </div>
 <script>
 	angular.module('copa').controller('farCountriesCtrl', ['$scope', function($scope){
 		      //Europe, Asia, middke east and oceania

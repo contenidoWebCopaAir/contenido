@@ -11,7 +11,7 @@
 	                    <select class="form-control" ng-model="selectedCountry" style="width:100%" ng-cloak>
 	                    	<option value="">Todos los países</option>
 	                        <option 
-	                        	ng-repeat="country in wholesalers" 
+	                        	ng-repeat="country in wholesalers | orderBy country" 
 	                        	value="{{country.country}}" ng-cloak>
 	                        	{{country.country}}
 	                        </option>
@@ -833,6 +833,76 @@
 									name: 'Top Tour',
 									email: 'ffernandez@toptour.com.uy',
 									phone: '005982 9020793 / 005982 9022233'
+								}
+							]
+						}
+					]
+				},
+				{
+					country: 'Estados Unidos',
+					cities: [
+						{
+							city: 'Washington',
+							contacts: [
+								{
+									name: 'Apple Vacation',
+									email: 'ksammart@applevac.com',
+									phone: '610-359-6535'
+								},
+								{
+									name: 'Gate 1 Travel',
+									email: 'dbiddington@gate1travel.com',
+									phone: '215-572-7676 Ext 1152'
+								}
+							]
+						},
+						{
+							city: 'Miami',
+							contacts: [
+								{
+									name: 'Orbitz',
+									email: 'julianna.hill@orbitz.com',
+									phone: '203-254-3984'
+								},
+								{
+									name: 'PRICELINE',
+									email: 'gregory.rodriguez@priceline.com',
+									phone: '203-299-8509'
+								}
+							]
+						},
+						{
+							city: 'Chicago',
+							contacts: [
+								{
+									name: 'Funjet Vacations',
+									email: 'cbritton@marktravel.com',
+									phone: '414 934-2643'
+								}
+							]
+						},
+						{
+							city: 'Los Angeles',
+							contacts: [
+								{
+									name: 'Pleasant Holidays',
+									email: 'mike.pede@pleasant.net',
+									phone: '805-744-62605'
+								},
+								{
+									name: 'Latin Escapes',
+									email: 'karla@latinescapes.com',
+									phone: '818-844-3199'
+								}
+							]
+						},
+						{
+							city: 'New York',
+							contacts: [
+								{
+									name: 'Great Value Vacations',
+									email: 'bbaccomando@greatvaluevacations.com',
+									phone: '516 881-3338'
 								}
 							]
 						}
