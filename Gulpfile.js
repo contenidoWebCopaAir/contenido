@@ -36,13 +36,13 @@ gulp.task('javascript', function() {
 
 // CSS
 gulp.task('css', function() {
-    gulp.src(source + '**/*.css')
+    gulp.src(source + 'oficinas-de-ventas/*.css')
     .pipe(postcss([
         precss(),
         autoprefixer(),
         cssnano()
     ]))
-    .pipe(gulp.dest(dest));
+    .pipe(gulp.dest(dest + 'oficinas-de-ventas/*.css'));
 });
 
 gulp.task('image', function(){

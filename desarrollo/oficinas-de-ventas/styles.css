@@ -1,4 +1,4 @@
-.aui select, .aui input { padding: 0 6px }
+.aui select, .aui input { padding: 0 6px; height: 27px; }
 input.input-large { 
 	height: 20px;
 	padding: 4px;
@@ -43,22 +43,15 @@ input.input-large {
 	}
 }
 
-@media screen and (max-width: 766px){
-	.content_centered { overflow-x: hidden; }
-	.offices-responsive .ul-table li + li + li + li {
-    	width: 83% !important;
-	}
-	input.input-large {  margin-left:0; }
-	
-}
+
 
 @media screen and (max-width: 380px){
 	select.input-large, input.input-large { max-width: 96% !important; }
 }
 
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen
-and (min-device-width : 320px){
+@media only screen and (min-device-width : 320px){
+	body { overflow-x: hidden; }
 	.offices-responsive .ul-table li + li + li + li {
     	width: 86% !important;
 	}
@@ -67,9 +60,21 @@ and (min-device-width : 320px){
 
 @media only screen and (min-device-width: 480px){}
 
+/*--- Tablets ---*/
+@media only screen and (min-device-width: 765px) {
+	
+	.offices-responsive .ul-table li + li + li + li {
+    	width: 83% !important;
+	}
+	input.input-large { margin-left:20px; width: 53% !important; }
+	select.input-large { width:30% !important; }
+}
+
+
 /* Desktops and laptops ----------- */
 @media only screen
 and (min-width : 1224px) {
+	body { overflow-x: inherit; }
 	input.input-large { width:40% !important; }
 	.offices-responsive .ul-table li + li + li + li {
     	width: 29% !important;
