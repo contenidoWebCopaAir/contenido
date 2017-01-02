@@ -24,10 +24,13 @@ input.input-large {
 
 
 
-@media screen (min-width: 1051px)
-.portlet-asset-publisher .asset-content br {
-    display: inherit !important; 
-}
+
+	.portlet-asset-publisher .asset-content br {
+    	display: inherit !important; 
+	}
+
+
+
 
 .separator { display: none; }
 
