@@ -36,9 +36,9 @@
 						<select 
 							style="width:296px" 
 							class="form-control"
-							ng-model="dateFilter">
-							<option value="2016/12">Diciembre - 2016</option>
-							<option value="2017/1">Enero - 2017</option>
+							ng-model="dateFilter"
+							ng-cloak>
+							<option value="{{ month }}" ng-repeat="month in months">{{ month }}</option>
 						</select>
 					</div>
 				</div>
@@ -101,94 +101,15 @@
 	angular.module('copa').controller('EventsCtrl', ["$scope",
 		function ($scope) {
 
-			$scope.dateFilter = '2016/12';
+			$scope.dateFilter = 'Enero 2017'; 
+			$scope.months = [];
 			$scope.query = '';
 			$scope.events = [
-				{
-					startDate: new Date("2016/12/3").getDate(),
-					endDate: new Date("2016/12/9").getDate(),
-					dateQuery: '2016/12',
-					title: 'Conferencia Mundial de Ingeniería en Reducción de Riesgos de Desastres Naturales - Sede Lima',
-					city: 'Lima',
-					country: 'Peru',
-					contactName: 'Luis H. Hernandez Berton',
-					email: 'presidenciacopimera@gmail.com',
-					url: 'www.copimerainternacional.org',
-					promoCode: 'C7100'
-				},
-				{
-					startDate: new Date("2016/12/4").getDate(),
-					endDate: new Date("2016/12/9").getDate(),
-					dateQuery: '2016/12',
-					title: 'FORO INTERNACIONAL DE EMPRENDEDORES Guatemala',
-					city: null,
-					country: 'Guatemala',
-					contactName: 'Juan Carlos Solorzano',
-					promoCode: 'B7087'
-				},
-				{
-					startDate: new Date("2016/12/5").getDate(),
-					endDate: new Date("2016/12/9").getDate(),
-					dateQuery: '2016/12',
-					title: 'II Simposio Nacional de Muerte Súbita Cardiovascular',
-					city: 'Habana',
-					country: 'Cuba',
-					contactName: 'Dr.C. Luis Alberto Ochoa',
-					email: 'muertesubitacuba@infomed.sld.cu ',
-					url: 'https://www.facebook.com/trailrunve/',
-					promoCode: 'B6645'
-				},
-				{
-					startDate: new Date("2016/12/6").getDate(),
-					endDate: new Date("2016/12/9").getDate(),
-					dateQuery: '2016/12',
-					title: 'III Congreso Multidisciplinario de Ciencias Aplicadas en Latinoamérica',
-					city: 'Havana',
-					country: 'Cuba',
-					contactName: 'Dr. Cutberto Romero',
-					email: 'cutberto@correo.azc.uam.mx',
-					promoCode: 'B7120'
-				},
-				{
-					startDate: new Date("2016/12/6").getDate(),
-					endDate: new Date("2016/12/18").getDate(),
-					dateQuery: '2016/12',
-					title: 'Festival Internacional del Nuevo Cine Latinoamericano',
-					city: 'Havana',
-					country: 'Cuba',
-					contactName: 'Pedro Enrique Ortega Lang',
-					email: 'habanafest@festival.icaic.cu',
-					url: 'www.habanafilmfestival.com',
-					promoCode: 'D6788'
-				},
-				{
-					startDate: new Date("2016/12/10").getDate(),
-					endDate: new Date("2016/12/17").getDate(),
-					dateQuery: '2016/12',
-					title: 'Medellin Soccer Cup',
-					city: 'Medellín',
-					country: 'Colombia',
-					contactName: 'Carlos Cambero Cañadas',
-					email: 'info@bss.com.pa',
-					web: 'BSS.com.pa',
-					promoCode: 'B7084'
-				},
-				{
-					startDate: new Date("2016/12/11").getDate(),
-					endDate: new Date("2016/12/14").getDate(),
-					dateQuery: '2016/12',
-					title: 'MEETINGS CARTAGENA 2016',
-					city: 'Cartagena',
-					country: 'Colombia',
-					contactName: 'Ramon Correa',
-					email: 'mabuarbara@procolombia.co',
-					url: 'www.procolombia.co',
-					promoCode: 'D7206'
-				},
+	
 				{
 					startDate: new Date("2017/1/9").getDate(),
 					endDate: new Date("2017/1/12").getDate(),
-					dateQuery: '2017/1',
+					dateQuery: 'Enero 2017',
 					title: 'Visit FL Huddle 2017',
 					city: 'Orlando',
 					country: 'USA',
@@ -200,7 +121,7 @@
 				{
 					startDate: new Date("2017/1/12").getDate(),
 					endDate: new Date("2017/1/15").getDate(),
-					dateQuery: '2017/1',
+					dateQuery: 'Enero 2017',
 					title: 'Retail Industry Leaders Association (RILA)',
 					city: 'Orlando',
 					country: 'USA',
@@ -212,7 +133,7 @@
 				{
 					startDate: new Date("2017/1/14").getDate(),
 					endDate: new Date("2017/1/21").getDate(),
-					dateQuery: '2017/1',
+					dateQuery: 'Enero 2017',
 					title: 'Operation Walk Bolivia',
 					city: 'Santa Cruz',
 					country: 'Bolivia',
@@ -224,7 +145,7 @@
 				{
 					startDate: new Date("2017/1/22").getDate(),
 					endDate: new Date("2017/1/27").getDate(),
-					dateQuery: '2017/1',
+					dateQuery: 'Enero 2017',
 					title: 'WINTER MARKET LAS VEGAS 2017',
 					city: 'Las Vegas',
 					country: 'USA',
@@ -236,7 +157,7 @@
 				{
 					startDate: new Date("2017/1/18").getDate(),
 					endDate: new Date("2017/1/22").getDate(),
-					dateQuery: '2017/1',
+					dateQuery: 'Enero 2017',
 					title: 'XLVI FORO LATINOAMERICANO Y DEL CARIBE GUAYAQUIL 2017',
 					city: 'Guayaquil',
 					country: 'Ecuador',	
@@ -244,8 +165,109 @@
 					email: 'corporativo@ltnecuador.travel',
 					url: 'www.folac2017.org',
 					promoCode: 'D6962'
+				},
+				{
+					startDate: new Date("2017/2/1").getDate(),
+					endDate: new Date("2017/2/6").getDate(),
+					dateQuery: 'Febrero 2017',
+					title: 'Pan Pepin International Dinghy Regatta',
+					city: 'San Juan',
+					country: 'Puerto Rico',	
+					contactName: 'Marely Gutierrez',
+					email: 'marelyg@gmail.com',
+					url: 'www.clubnauticodesanjuan.com',
+					promoCode: 'C7170'
+				},
+				{
+					startDate: new Date("2017/2/15").getDate(),
+					endDate: new Date("2017/2/17").getDate(),
+					dateQuery: 'Febrero 2017',
+					title: 'Pandemonio',
+					city: 'Panama',
+					country: 'Panama',	
+					contactName: 'Karen',
+					email: 'bryan@quiver.zone',
+					url: 'www.pandemon.io',
+					promoCode: 'D7142'
+				},
+				{
+					startDate: new Date("2017/2/20").getDate(),
+					endDate: new Date("2017/2/24").getDate(),
+					dateQuery: 'Febrero 2017',
+					title: 'ENCUENTRO INTL DE HISTORIA ORAL MEMORIA, VOCES E IMÁGENES EN A.L Y EL CARIBE',
+					city: 'Managua',
+					country: 'Nicaragua',	
+					contactName: 'DRA. JILMA ROMERO',
+					email: 'rectoriaunanmanagua@unan.edu.ni',
+					promoCode: 'B7154'
+				},
+				{
+					startDate: new Date("2017/2/22").getDate(),
+					endDate: new Date("2017/2/24").getDate(),
+					dateQuery: 'Febrero 2017',
+					title: '1er Simposio Latinoamericano del organismo modelo Caenorhabditis elegans',
+					city: 'Montevideo',
+					country: 'Uruguay',	
+					contactName: 'Natalia López',
+					email: 'natlo@pasteur.edu.uy',
+					url: 'www.pasteur.edu.uy',
+					promoCode: 'B7107'
+				},
+				{
+					startDate: new Date("2017/2/25").getDate(),
+					endDate: new Date("2017/2/25").getDate(),
+					dateQuery: 'Febrero 2017',
+					title: 'Convención Anual Laboratorios Roche',
+					city: 'Punta Cana',
+					country: 'Costa Rica',	
+					contactName: 'María José Rodríguez',
+					email: 'mjrodriguez@turaser.com',
+					promoCode: 'C7213'
+				},
+				{
+					startDate: new Date("2017/2/9").getDate(),
+					endDate: new Date("2017/2/19").getDate(),
+					dateQuery: 'Febrero 2017',
+					title: 'Feria International del Libro de La Habana 2017',
+					city: 'Havana',
+					country: 'Cuba',	
+					contactName: 'Yailan Rodriguez Moret',
+					email: 'esperint@ccl.cult.cu',
+					promoCode: 'C7218'
+				},
+				{
+					startDate: new Date("2017/2/3").getDate(),
+					endDate: new Date("2017/2/5").getDate(),
+					dateQuery: 'Febrero 2017',
+					title: 'XIII Feria Internacional de Productos y Servicios para el Infante y la Maternidad',
+					city: 'Panama',
+					country: 'Panama',	
+					contactName: 'Johana Varela H',
+					email: 'feriadelbebe@expoeventos.com.pa',
+					url: 'www.feriadelbebepanama.com',
+					promoCode: 'D6937'
+				},
+				{
+					startDate: new Date("2017/2/8").getDate(),
+					endDate: new Date("2017/2/11").getDate(),
+					dateQuery: 'Febrero 2017',
+					title: 'XLVII Congreso Istmeño',
+					city: 'Panama',
+					country: 'Panama',	
+					contactName: 'Grethel Brown',
+					email: 'apo@aopam.org',
+					url: 'www.cpmgrespomteno.com',
+					promoCode: 'C7018'
 				}
+
 			];
+
+			for( var i in $scope.events ){
+				if( $scope.months.indexOf( $scope.events[i].dateQuery ) == -1 ){
+					$scope.months.push($scope.events[i].dateQuery);
+				}
+			}
+
 		}
 	]);
 </script>
