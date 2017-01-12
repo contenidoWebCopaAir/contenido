@@ -1,0 +1,203 @@
+.ng-daterangepicker-container {
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+  position: absolute; }
+
+.lost-item .ng-daterangepicker-container {
+  width: 100% !important; }
+
+.common-styles .ng-daterangepicker-container .day-names {
+  font-size: 12px !important; }
+
+.fecha input {
+  margin-right: 5px !important;
+  width: 72% !important;
+  padding: 5px !important; }
+
+.ng-daterangepicker {
+  display: inline-block;
+  position: absolute;
+  z-index: 9999;
+  width: 511px;
+  border: 0px solid #d5d5d5;
+  padding: 5px;
+  border-radius: 0px;
+  background: #f9f9f9;
+  left: 35%;
+  top: 34px; }
+
+.ng-daterangepicker > .ng-calendar-container {
+  background: #fff;
+  font-size: 12px;
+  color: #333333;
+  display: inline-block;
+  border: 1px solid #c4c4c4;
+  border-radius: 2px;
+  margin: 0;
+  padding: 0;
+  width: 250px;
+  float: left; }
+
+.ng-daterangepicker > .ng-calendar-container:first-child {
+  margin-right: 10px;
+  border: 0px solid #efeeee; }
+
+.ng-daterangepicker > .ng-calendar-container:last-child {
+  border: 0px solid #efeeee; }
+
+.ng-daterangepicker > .ng-calendar-container > .controls {
+  width: 250px;
+  display: inline-block;
+  padding: 5px 0 0 0;
+  margin-left: 0px !important; }
+
+.ng-daterangepicker > .ng-calendar-container > .controls i {
+  font-size: 22px;
+  cursor: pointer; }
+
+.ng-daterangepicker > .ng-calendar-container > .controls > .left {
+  width: 35px;
+  display: inline-block;
+  float: left;
+  margin: 5px 0 0 3px; }
+
+.ng-daterangepicker > .ng-calendar-container > .controls > .left > a i.prev-year-btn {
+  color: #0F3050; }
+
+.ng-daterangepicker > .ng-calendar-container > .controls > .left > a {
+  float: left;
+  font-size: 20px;
+  margin: -4px 3px 0 0; }
+
+.ng-daterangepicker > .ng-calendar-container > .controls > .left > a:focus {
+  border: 1px solid #ccc; }
+
+.ng-daterangepicker > .ng-calendar-container > .controls > .left > a i.prev-month-btn {
+  color: #0162A9; }
+
+.ng-daterangepicker > .ng-calendar-container > .controls > span.date {
+  width: 170px;
+  text-align: center;
+  font-size: 14px;
+  color: #0061a9;
+  font-weight: normal;
+  float: left;
+  padding: 3px 0 0 0; }
+
+.ng-daterangepicker > .ng-calendar-container > .controls > .right {
+  width: 35px;
+  display: inline-block;
+  float: right; }
+
+.ng-daterangepicker > .ng-calendar-container > .controls > .right > a i.next-year-btn {
+  color: #0F3050; }
+
+.date-gray {
+  color: #AAAAA9 !important; }
+
+.ng-daterangepicker > .ng-calendar-container > .controls > .right > a i.next-month-btn {
+  color: #0162A9; }
+
+.ng-daterangepicker > .ng-calendar-container > .day-names {
+  width: 250px;
+  border-bottom: 0px solid #c4c4c4;
+  display: inline-block;
+  background: #aaaaa9;
+  padding: 3px 0; }
+
+.ng-daterangepicker > .ng-calendar-container > .day-names > span {
+  width: 35.7px;
+  text-align: center;
+  color: #ffffff;
+  float: left;
+  display: block;
+  font-weight: bold; }
+
+.ng-daterangepicker > .ng-calendar-container > .cal {
+  width: 255px;
+  display: inline-block;
+  margin: -3px 0 -4px -1px;
+  padding: 0; }
+
+.ng-daterangepicker > .ng-calendar-container > .cal > span > span.day {
+  width: 35px;
+  height: 30px;
+  border-left: 1px solid #efeeee;
+  border-bottom: 1px solid #efeeee;
+  float: left;
+  display: block;
+  color: #565a5c;
+  text-align: center;
+  font-weight: bold;
+  line-height: 28px;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  cursor: pointer; }
+
+.ng-daterangepicker > .ng-calendar-container > .cal > span:last-child > span.day {
+  border-right: 1px solid #EFEEEE; }
+
+.ng-daterangepicker > .ng-calendar-container > .cal > span > span.day.disabled {
+  border-left: 1px solid transparent;
+  cursor: default; }
+
+.ng-daterangepicker > .ng-calendar-container > .cal > span > span.day:hover, .ng-daterangepicker > .ng-calendar-container > .cal > span > span.day.active {
+  background: #0060a9;
+  color: #fff; }
+
+.ng-daterangepicker > .ng-calendar-container > .cal > span > span.day.blocked:hover, .ng-daterangepicker > .ng-calendar-container > .cal > span > span.day.blocked {
+  background: #ffffff !important;
+  color: #aaaaa9 !important; }
+
+.ng-daterangepicker > .ng-calendar-container {
+  border: 0px; }
+
+.ng-daterangepicker > .ng-calendar-container > .controls > span.date {
+  color: #0061a9;
+  text-transform: uppercase; }
+
+.ng-daterangepicker > .ng-calendar-container > .day-names > span {
+  color: #ffffff;
+  font-weight: bold; }
+
+.ng-daterangepicker > .ng-calendar-container > .cal > span > span.day {
+  border-left: 1px solid #efeeee;
+  border-bottom: 1px solid #efeeee; }
+
+.ng-daterangepicker > .ng-calendar-container {
+  color: #0162A9; }
+
+.fa-angle-right:before {
+  content: "\f0da"; }
+
+.fa-angle-left:before {
+  content: "\f0d9"; }
+
+.fa-angle-right:before {
+  content: "\f0da"; }
+
+.ng-daterangepicker > .ng-calendar-container > .cal > span > span.day:hover, .ng-daterangepicker > .ng-calendar-container > .cal > span > span.day.active {
+  font-weight: bold; }
+
+@media (max-width: 1024px) {
+  .ng-daterangepicker {
+    left: 13%; } }
+.fa-backward:before {
+  content: "\f100"; }
+
+.fa-forward:before {
+  content: "\f101"; }
+
+.ng-daterangepicker > .ng-calendar-container .day a:focus {
+  background: #0060a9 none repeat scroll 0 0;
+  color: white; }
+
+.ng-daterangepicker > .ng-calendar-container .day a {
+  display: block;
+  width: 100%;
+  color: inherit;
+  height: 32px;
+  text-decoration: none;
+  font-weight: bold; }

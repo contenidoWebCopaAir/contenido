@@ -1,0 +1,95 @@
+@media screen and (min-width: 768px) {
+  .sticky-panel {
+    margin: 0 auto;
+    position: fixed;
+    top: 115px;
+    left: 20%;
+    z-index: 2; }
+
+  .store-front-cntr {
+    background-color: cyan;
+    position: -fixed;
+    top: 5%;
+    right: 0%;
+    z-index: 99; }
+
+  /* Autocomplete */
+  .mac-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 600px;
+    background: #000;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid #d1d3d8;
+    box-sizing: border-box;
+    max-height: 325px;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .1s ease-out,visibility .1s ease-out; }
+
+  .mac-menu.visible {
+    visibility: visible;
+    opacity: 1; }
+
+  .mac-menu ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0; }
+
+  .mac-menu ul .mac-menu-item {
+    display: block;
+    padding: 0;
+    transition: background .1s ease-out;
+    color: #000;
+    cursor: pointer; }
+
+  .mac-menu ul .mac-menu-item.active {
+    background: #e0e8fb;
+    text-decoration: none; }
+
+  /*JS friendly*/
+  js-friendly {
+    display: none; }
+
+  .is-js-friendly {
+    display: block; }
+
+  /*Angular agility / Validation errors */
+  .booking div.validation-error,
+  .home div.validation-error {
+    display: none; }
+
+  /*This hides inline error messages*/
+  input.ng-dirty.ng-valid, select.ng-dirty.ng-valid {
+    border: 1px solid Green; }
+
+  div.validation-icons {
+    margin-top: 5px;
+    margin-left: -40px; }
+
+  div.validation-error {
+    color: red;
+    font-weight: bold;
+    width: 300px;
+    text-align: left;
+    display: none; }
+
+  .aa-notification {
+    z-index: 0;
+    position: relative; }
+
+  .aa-notify-close {
+    color: black;
+    font-size: 70%;
+    position: absolute;
+    right: -13px;
+    top: -12px; }
+
+  .aa-notify-close:hover {
+    cursor: pointer; }
+
+  /*.f-nav{ z-index: 9999; position: fixed; top: 108px; width: 100%;}*/
+  .hide {
+    display: none; } }

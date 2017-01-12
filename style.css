@@ -1,0 +1,5 @@
+@media(max-width: 1280px){
+			table.table { width:80%; margin:0 auto; }
+		}
+
+		table > thead > tr > th:nth-child(1) {text-align: center;}
