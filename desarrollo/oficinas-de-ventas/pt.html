@@ -29,7 +29,8 @@
                 <li>Agenda</li>
             </ul>
                 
-            <div  ng-repeat="country in offices | filter: selectedCountry | orderBy: country.countryName">                             
+            <div  ng-repeat="country in offices | filter: selectedCountry | orderBy: 'countryName'">
+                                     
                 <div ng-repeat="office in country.cities | filter: query">
                     <ul class="ul-body ul-table" ng-if="$first"> 
                         <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
@@ -45,9 +46,9 @@
                     </ul>
                 </div>
             </div>
-              
-            </div>
+          
         </div>
+    </div>
 </div><!--offices-responsive-->
 <script>
 
@@ -304,6 +305,16 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                     name: 'La Habana',
                     address: 'Centro de Negocios Miramar, Planta baja Edif. Barcelona 5ta Avenida entre 76 e 78, Playa.',
                     schedules: 'Segunda - Sexta 8:30-17:00<br>Sábado 9:00-13:00 '
+                },
+                {
+                    name: "La Habana",
+                    address: "Hotel Trip Habana Libre, esq. 23 y M, Vedado",
+                    schedules: "Segunda - Sexta 8:30am-17:00<br>Sábado 9:00am-13:00"
+                },
+                {
+                    name: "Holguin",
+                    address: "Carretera Central No.11 e/ Martí y Holguí, Centro de Negocios Holguín",
+                    schedules: "Segunda - Sexta 8:30am-17:00<br>Sábado 9:00am-13:00"
                 }
             ]
         },
@@ -538,7 +549,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 {
                     name: 'Panamá',
                     address: 'Complejo Business Park, Torre Norte, Planta Baja; Costa del Este',
-                    schedules: 'Segunda - Sexta 8:00-18:00<br>Sábado 8:00-12:00'
+                    schedules: 'Segunda - Sexta 8:00-17:00<br>Sábado 8:00-12:00'
                 },
                 {
                     name: 'Panamá',

@@ -35,9 +35,8 @@
                 <li>Hours</li>
             </ul>
 
-            <div 
-                ng-repeat="country in offices | filter: selectedCountry | orderBy: countryName"
-            >                             
+             <div  ng-repeat="country in offices | filter: selectedCountry | orderBy: 'countryName'">
+                                         
                 <div ng-repeat="office in country.cities | filter: query">
                     <ul class="ul-body ul-table" ng-if="$first"> 
                         <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
@@ -305,9 +304,19 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
             countryName: 'Cuba',
             cities: [
                 {
-                	name: 'La Habana',
+                	name: 'La Havana',
                 	address: 'Centro de Negocios Miramar, Planta baja Edif. Barcelona 5ta Avenida entre 76 y 78, Playa.',
                 	schedules: 'Monday - Friday 8:30am-5:00pm<br>Saturday 9:00am-1:00pm '
+                },
+                {
+                    name: "La Havana",
+                    address: "Hotel Trip Habana Libre, esq. 23 y M, Vedado",
+                    schedules: "Monday - Friday 8:30am-5:00pm<br>Saturday 9:00am-1:00pm"
+                },
+                {
+                    name: "Holguin",
+                    address: "Carretera Central No.11 e/ Martí y Holguí, Centro de Negocios Holguín",
+                    schedules: "Monday - Friday 8:30am-5:00pm<br>Saturday 9:00am-1:00pm"
                 }
             ]
         },
