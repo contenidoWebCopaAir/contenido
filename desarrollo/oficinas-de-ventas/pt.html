@@ -5,17 +5,17 @@
         </div>
             
         <div class="span8 form-inline">
-            <select id="selectedCountry" ng-model="selectedCountry" class="input-large" ng-cloak>
+            <select id="selectedCountry" ng-model="selectedCountry" class="form-control" ng-cloak>
                 <option value="" selected>Todos os paises</option>
                 <option ng-repeat="country in countries" value="{{country}}" ng-if="country" ng-cloak>{{country}}</option>
             </select>           
                 
-            <input 
+            <!-- <input 
                 ng-model="query"  
                 type="text"
                 placeholder="Busca por cidade, endereço ou agenda" 
                 class="input-large" 
-            />
+            /> -->
         </div>
 
     </div>
@@ -30,15 +30,14 @@
             </ul>
                 
             <div  ng-repeat="country in offices | filter: selectedCountry | orderBy: 'countryName'">
-                                     
-                <div ng-repeat="office in country.cities | filter: query">
-                    <ul class="ul-body ul-table" ng-if="$first"> 
-                        <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
-                        <li ng-bind-html="office.name" ng-cloak></li>
-                        <li ng-bind-html="office.address" ng-cloak></li>
-                        <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak></li>
-                    </ul>
-                    <ul class="ul-body ul-table" ng-if="! $first">
+                <ul class="ul-body ul-table"> 
+                    <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
+                    <li ng-bind-html="country.cities[0].name" ng-cloak></li>
+                    <li ng-bind-html="country.cities[0].address" ng-cloak></li>
+                    <li ng-if="country.cities[0].schedules" ng-bind-html="country.cities[0].schedules" ng-cloak></li>
+                </ul>
+                <div ng-repeat="office in country.cities">
+                    <ul class="ul-body ul-table" ng-if="!$primeiro">
                         <li class="empty"></li>
                         <li ng-bind-html="office.name" ng-cloak></li>
                         <li ng-bind-html="office.address" ng-cloak></li>
@@ -78,7 +77,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
             cities: [
                 {
                     name: "Buenos Aires",
-                    address: "Emma de la Barra 353, 7th floor, East Puerto Madero",
+                    address: "Emma de la Barra 353, 7th andar, East Puerto Madero",
                     schedules: "Segunda - Sexta 9:00-17:00"
                 },
                 {
@@ -164,7 +163,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 },
                 {
                     name: 'Sao Paulo',
-                    address: 'Paulista Avenida 1337 – 4º floor ZIP 01311-200',
+                    address: 'Paulista Avenida 1337 – 4º andar ZIP 01311-200',
                     schedules: 'Segunda - Sexta 9:00 - 18:00'
                 }
 
@@ -217,17 +216,17 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 },
                 {
                     name: 'Bogotá',
-                    address: 'Gran Estacion Mall, Costado sphere, first floor, Entry 1',
+                    address: 'Gran Estacion Mall, Costado sphere, primeiro andar, Entry 1',
                     schedules: 'Segunda - Sábado 10:00-20:30<br> Domingos e feriados 11:00-19:00'
                 },
                 {
                     name: 'Bogotá',
-                    address: 'Aeroporto El Dorado, Entrance 8 Front oficina 13 e 16, second floor',
+                    address: 'Aeroporto El Dorado, Entrance 8 Front oficina 13 e 16, segundo andar',
                     schedules: 'Segunda - Sábado 5:00-21:00<br> Domingos e feriados 5:00-13:00'
                 },
                 {
                     name: 'Bogotá',
-                    address: 'centro comercial Unicentro<br>Avenida 15th # 124 - 30 floor 1<br> oficina 1-101 Entrance 8',
+                    address: 'centro comercial Unicentro<br>Avenida 15th # 124 - 30 andar 1<br> oficina 1-101 Entrance 8',
                     schedules: 'Segunda - Sexta 9:00-20:00<br>Sábado 10:00-19:00<br>Domingos e feriados 10:00-16:00'
                 },
                 {
@@ -247,13 +246,8 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 },
                 {
                     name: 'Cartagena',
-                    address: 'Aeroporto Internacional Rafael Nuñez<br>Crespo – Cartagena first floor',
+                    address: 'Aeroporto Internacional Rafael Nuñez<br>Crespo – Cartagena primeiro andar',
                     schedules: 'Segunda - Sexta 8:00-18:00<br>Sábado, Domingos e feriados 8:00-17:00'
-                },
-                {
-                    name: 'Cúcuta',
-                    address: '15th Calle N0. 0 E - 18 Los Caobos',
-                    schedules: 'Segunda - Sexta 8:00 – 18:00<br>Sábado 9:00 – 13:00'
                 },
                 {
                     name: 'Medellín',
@@ -287,7 +281,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 },
                 {
                     name: 'San José',
-                    address: 'Edif. Torres Mercedes, 1er floor, Paseo Colón San José',
+                    address: 'Edif. Torres Mercedes, 1er andar, Paseo Colón San José',
                     schedules: 'Segunda - Sexta 8:00-12:00<br>Sábado 8:00-12:00'
                 },
                 {
@@ -608,11 +602,6 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                     name: 'Lima',
                     address: 'Calle Los Halcones 105 San Isidro, Cruce de Canaval e Moreyra con República de Panamá ',
                     schedules: 'Segunda - Sexta 9:00-18:00<br>Sábado 9:00-13:00 '
-                },
-                {
-                    name: 'Iquitos',
-                    address: 'Calle Sargento Lores 379',
-                    schedules: 'Segunda - Sexta 9:00- 19:00<br>Sábado 9:00- 13:00'
                 }
             ]
         },
@@ -657,7 +646,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
             cities: [
                 {
                     name: 'Puerto España',
-                    address: 'Aeroporto Internacional Piarco floor uno, Terminal Principal Atrium ',
+                    address: 'Aeroporto Internacional Piarco andar uno, Terminal Principal Atrium ',
                     schedules: 'Segunda - Sexta 9:00-17:00'
                 }
             ]

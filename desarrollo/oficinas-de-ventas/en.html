@@ -5,7 +5,7 @@
         </div>
 
         <div class="span8 form-inline">
-            <select id="selectedCountry" ng-model="selectedCountry" class="input-large" ng-cloak>
+            <select id="selectedCountry" ng-model="selectedCountry" class="form-control" ng-cloak>
                 <option value="" selected>All countries</option>
                 <option 
                     ng-repeat="country in countries" 
@@ -16,12 +16,12 @@
                     {{country}}
                 </option>
             </select>
-            <input 
+            <!-- <input 
                 ng-model="query" 
                 placeholder="Search by city, address or hours" 
                 class="input-large" 
                 type="text" 
-            />
+            /> -->
         </div>
     </div>
 
@@ -35,16 +35,15 @@
                 <li>Hours</li>
             </ul>
 
-             <div  ng-repeat="country in offices | filter: selectedCountry | orderBy: 'countryName'">
-                                         
-                <div ng-repeat="office in country.cities | filter: query">
-                    <ul class="ul-body ul-table" ng-if="$first"> 
-                        <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
-                        <li ng-bind-html="office.name" ng-cloak></li>
-                        <li ng-bind-html="office.address" ng-cloak></li>
-                        <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak></li>
-                    </ul>
-                    <ul class="ul-body ul-table" ng-if="! $first">
+            <div  ng-repeat="country in offices | filter: selectedCountry | orderBy: 'countryName'">
+                <ul class="ul-body ul-table"> 
+                    <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
+                    <li ng-bind-html="country.cities[0].name" ng-cloak></li>
+                    <li ng-bind-html="country.cities[0].address" ng-cloak></li>
+                    <li ng-if="country.cities[0].schedules" ng-bind-html="country.cities[0].schedules" ng-cloak></li>
+                </ul>
+                <div ng-repeat="office in country.cities">
+                    <ul class="ul-body ul-table" ng-if="!$first">
                         <li class="empty"></li>
                         <li ng-bind-html="office.name" ng-cloak></li>
                         <li ng-bind-html="office.address" ng-cloak></li>
@@ -60,7 +59,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
 
 	var reservaciones = 'For assistance before your trip, please contact our <a href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/reservation-center" target="_blank">Reservation Center</a>';
 
-    $scope.query = "";
+    //$scope.query = "";
     $scope.selectedCountry = "";
     $scope.countries = [];
     $scope.offices = [
@@ -251,11 +250,6 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                     name: 'Cartagena',
                     address: 'International Airport Rafael Nuñez<br>Crespo – Cartagena first floor',
                     schedules: 'Monday - Friday 8:00am-6:00pm<br>Saturday, Sun &amp; Holidays 8:00am-5:00pm'
-                },
-                {
-                    name: 'Cucuta',
-                    address: '15th street N0. 0 E - 18 Los Caobos',
-                    schedules: 'Monday - Friday 8 :00am – 6:00pm<br>Saturday 9:00am – 1pm'
                 },
                 {
                     name: 'Medellin',
@@ -610,11 +604,6 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                     name: 'Lima',
                     address: 'street Los Halcones 105 San Isidro, Cruce de Canaval y Moreyra con República de Panamá ',
                     schedules: 'Monday - Friday 9:00am-6:00pm<br>Saturday 9:00am-1:00pm '
-                },
-                {
-                    name: 'Iquitos',
-                    address: 'street Sargento Lores 379',
-                    schedules: 'Monday - Friday 9:00am- 7:00pm<br>Saturday 9:00am- 1:00pm'
                 }
             ]
         },

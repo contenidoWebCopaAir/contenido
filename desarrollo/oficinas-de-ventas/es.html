@@ -5,7 +5,7 @@
             </div>
 
             <div class="span8 form-inline">
-                <select id="selectedCountry" ng-model="selectedCountry" class="input-large" ng-cloak>
+                <select id="selectedCountry" ng-model="selectedCountry" class="form-control" ng-cloak>
                     <option value="" selected>Todos los países</option>
                     <option 
                         ng-repeat="country in countries" 
@@ -17,12 +17,12 @@
                     </option>
                 </select>
  
-                <input 
+               <!--  <input 
                     ng-model="query" 
                     class="input-large" 
                     type="text" 
                     placeholder="Busque por ciudad, dirección u horario" 
-                />
+                /> -->
             </div>
         </div>
 
@@ -36,15 +36,14 @@
             </ul>
 
             <div  ng-repeat="country in offices | filter: selectedCountry | orderBy: 'countryName'">
-                                         
-                <div ng-repeat="office in country.cities | filter: query">
-                    <ul class="ul-body ul-table" ng-if="$first"> 
-                        <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
-                        <li ng-bind-html="office.name" ng-cloak></li>
-                        <li ng-bind-html="office.address" ng-cloak></li>
-                        <li ng-if="office.schedules" ng-bind-html="office.schedules" ng-cloak></li>
-                    </ul>
-                    <ul class="ul-body ul-table" ng-if="! $first">
+                <ul class="ul-body ul-table"> 
+                    <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
+                    <li ng-bind-html="country.cities[0].name" ng-cloak></li>
+                    <li ng-bind-html="country.cities[0].address" ng-cloak></li>
+                    <li ng-if="country.cities[0].schedules" ng-bind-html="country.cities[0].schedules" ng-cloak></li>
+                </ul>
+                <div ng-repeat="office in country.cities">
+                    <ul class="ul-body ul-table" ng-if="!$first">
                         <li class="empty"></li>
                         <li ng-bind-html="office.name" ng-cloak></li>
                         <li ng-bind-html="office.address" ng-cloak></li>
@@ -62,7 +61,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
 
     var reservaciones = 'Para asistencia previa a su viaje contactarse con nuestro <a href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/centro-de-reservaciones" target="_blank">Centro de Reservaciones</a>';
 
-    $scope.query = '';
+    //$scope.query = '';
     $scope.selectedCountry = '';
     $scope.countries = [];
 
@@ -83,7 +82,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
             cities: [
                 {
                     name: "Buenos Aires",
-                    address: "Emma de la Barra 353, 7th floor, East Puerto Madero",
+                    address: "Emma de la Barra 353, 7th piso, East Puerto Madero",
                     schedules: "Lunes - Viernes 9:00am-5:00pm"
                 },
                 {
@@ -169,7 +168,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 },
                 {
                     name: "Sao Paulo",
-                    address: "Paulista Avenida 1337 – 4º floor ZIP 01311-200",
+                    address: "Paulista Avenida 1337 – 4º piso ZIP 01311-200",
                     schedules: "Lunes - Viernes 9:00am - 6:00pm"
                 }
 
@@ -222,17 +221,17 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 },
                 {
                     name: "Bogotá",
-                    address: "Gran Estacion Mall, Costado sphere, first floor, Entry 1",
+                    address: "Gran Estacion Mall, Costado sphere, primer piso, Entry 1",
                     schedules: "Lunes - Sábado 10:00am-8:30pm<br> Domingos y festivos 11:00am-7:00pm"
                 },
                 {
                     name: "Bogotá",
-                    address: "Aeropuerto El Dorado, Entrance 8 Front oficina 13 y 16, second floor",
+                    address: "Aeropuerto El Dorado, entrada 8 oficina 13 y 16, segundo piso",
                     schedules: "Lunes - Sábado 5:00am-9:00pm<br> Domingos y festivos 5:00am-1:00pm"
                 },
                 {
                     name: "Bogotá",
-                    address: "Unicentro commercial center<br>Avenida 15th # 124 - 30 floor 1<br> oficina 1-101 Entrance 8",
+                    address: "Unicentro commercial center<br>Avenida 15th # 124 - 30 piso 1<br> oficina 1-101 entrada 8",
                     schedules: "Lunes - Viernes 9:00am-8:00pm<br>Sábado<br> 10:00am-7:00pm<br>Domingos y festivos 10:00am-4:00pm"
                 },
                 {
@@ -252,14 +251,10 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 },
                 {
                     name: "Cartagena",
-                    address: "Aeropuerto Internacional Rafael Nuñez<br>Crespo – Cartagena first floor",
+                    address: "Aeropuerto Internacional Rafael Nuñez<br>Crespo – Cartagena primer piso",
                     schedules: "Lunes - Viernes 8:00am-6:00pm<br>Sábado, Domingos y festivos 8:00am-5:00pm"
                 },
-                {
-                    name: "Cúcuta",
-                    address: "15th Calle N0. 0 E - 18 Los Caobos",
-                    schedules: "Lunes - Viernes 8 :00am – 6:00pm<br>Sábado<br>9:00am – 1pm"
-                },
+                
                 {
                     name: "Medellín",
                     address: "Almacentro commercial center<br>Cra 43 A # 34 – 95 oficina 099",
@@ -292,7 +287,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 },
                 {
                     name: "San José",
-                    address: "Edif. Torres Mercedes, 1er floor, Paseo Colón San José",
+                    address: "Edif. Torres Mercedes, 1er piso, Paseo Colón San José",
                     schedules: 'Lunes - Viernes<br> 8:00am-5:00pm<br>Sábado 8:00am-12:00pm'
                 },
                {
@@ -349,7 +344,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 }, 
                 {
                     name: "Guayaquil",
-                    address: "Nueve de Octubre 100 y Malecón Simón Bolívar, floor 25",
+                    address: "Nueve de Octubre 100 y Malecón Simón Bolívar, piso 25",
                     schedules: "Lunes - Viernes 8:00am-5:45pm<br>Sábado<br>8:00am-1:45pm"
                 },
                 {
@@ -613,11 +608,6 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                     name: "Lima",
                     address: "Calle Los Halcones 105 San Isidro, Cruce de Canaval y Moreyra con República de Panamá ",
                     schedules: "Lunes - Viernes 9:00am-6:00pm<br>Sábado<br>9:00am-1:00pm "
-                },
-                {
-                    name: "Iquitos",
-                    address: "Calle Sargento Lores 379",
-                    schedules: "Lunes - Viernes 9:00am- 7:00pm<br>Sábado<br>9:00am- 1:00pm"
                 }
             ]
         },
@@ -662,7 +652,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
             cities: [
                 {
                     name: "Puerto España",
-                    address: "Aeropuerto Internacional Piarco floor uno, Terminal Principal Atrium ",
+                    address: "Aeropuerto Internacional Piarco piso uno, Terminal Principal Atrium ",
                     schedules: "Lunes - Viernes 9:00am-5:00pm"
                 }
             ]
@@ -673,7 +663,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
             cities: [
                 {
                     name: "Montevideo",
-                    address: "Luis Alberto de Herrera 1248 oficina 43 Torre 3 (Entrance por 26 de Marzo) World Trade Center",
+                    address: "Luis Alberto de Herrera 1248 oficina 43 Torre 3 (entrada por 26 de Marzo) World Trade Center",
                     schedules: "Lunes - Viernes 9:00am-5:30pm"
                 }
             ]
