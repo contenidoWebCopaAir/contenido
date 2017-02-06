@@ -10,10 +10,10 @@
 	                <div class="controls">
 	                    <select class="form-control" ng-model="selectedCountry" style="width:100%" ng-cloak>
 	                    	<option value="">Todos os países</option>
-	                        <option 
-	                        	ng-repeat="country in wholesalers | orderBy country" 
-	                        	value="{{country.country}}" ng-cloak>
-	                        	{{country.country}}
+	                       <option 
+	                        	ng-repeat="c in wholesalers" 
+	                        	value="{{c.country}}" ng-cloak>
+	                        	{{c.country}}
 	                        </option>
 	                    </select>
 	                </div>
@@ -136,7 +136,7 @@
 								{
 									name: 'Siga',
 									email: 'javier.araya@sigaturismo.com',
-									phone: '0351-568 0920'
+									phone: '0351-4426000'
 								}
 							]
 						},
@@ -145,19 +145,19 @@
 			}, 
 				{
 					country: 'Bolivia',
-					cities: [
+				cities: [
 						{
 							city: 'Santa Cruz del a Sierra',
 							contacts: [
 								{
 									name: 'Travel Olympus',
-									email: 'gerenciagral@travelolympus.com',
-									phone: '591-3399595'
+									email: 'ventas@travelolympus.com',
+									phone: '591-3-3333913'
 								}, 
 								{
 									name: 'Orbis Tour Operator',
-									email: 'carola@orbistouroperator.com',
-									phone: '591 3 3350207'
+									email: 'magali@orbistouroperator.com',
+									phone: '591-3-3888828'
 								}, 
 								{
 									name: 'Cuarta Dimensión',
@@ -315,29 +315,29 @@
 				}, 
 				{
 					country: 'Chile',
-					cities: [
+				cities: [
 						{
 							city: 'Santiago de Chile',
 							contacts: [
 								{
 									name: 'Caribbean Chile',
 									email: 'rmorales@caribbeanchile.cl',
-									phone: '562-23358259'
+									phone: '562 - 23358259'
 								},
 								{
 									name: 'Tourmundial',
 									email: 'ibachler@tourmundial.cl',
-									phone: '24904436'
+									phone: '562 - 24904436'
 								},
 								{
 									name: 'Euroandino',
 									email: 'cnavarrete@euroandino.cl',
-									phone: '562-4723700'
+									phone: '562 - 24723700'
 								},
 								{
 									name: 'Panamericana',
-									email: 'omontenegro@panamericanaturismo.cl',
-									phone: '562 2476 58 00'
+									email: 'pgongora@panamericanaturismo.cl',
+									phone: '562 - 2476 58 00'
 								}
 							]
 						}
@@ -517,15 +517,10 @@
 				},
 				{
 					country: 'Ecuador',
-					cities: [
+						cities: [
 						{
 							city: 'Quito',
 							contacts: [
-								{
-									name: 'Decameron',
-									email: 'zully.duran@decameron.com',
-									phone: '6046989'
-								},
 								{
 									name: 'Blue Sky',
 									email: 'gerencia@bluesky.com.ec',
@@ -576,21 +571,24 @@
 				},
 				{
 					country: 'Guatemala',
-					cities: [
+							cities: [
 						{
-							city: 'Ciudad de Guatemala',
+							city: 'Guatemala',
 							contacts: [
 								{
 									name: 'V. Euroamerica',
-									email: 'acastro@euroamericacr.com'
+									email: 'acastro@euroamericas.travel',
+									phone: '502-2320-4949'
 								},
 								{
 									name: 'Amtours',
-									email: 'msaenz@gtm.com.gt'
+									email: 'msaenz@amtours.com.gt',
+									phone: '502-2415-9602'
 								},
 								{
 									name: 'Easa',
-									email: 'msaenz@gtm.com.gt'
+									email: 'Efrain@easaalmendares.com',
+									phone: '502-2334-1550'
 								}
 							]
 						}
@@ -604,7 +602,8 @@
 							contacts: [
 								{
 									name: 'Arrecife tours',
-									email: 'hjalmar@arrecifetours.com'
+									email: 'hjalmar@arrecifetours.hn',
+									phone: '504 2280-3690'
 								},
 								{
 									name: 'Go Travel',
@@ -613,7 +612,8 @@
 								},
 								{
 									name: 'Turaser',
-									email: 'miguel@turaserhn.com'
+									email: 'miguel@turaserhn.com',
+									phone: '504 2236-9003'
 								}
 							]
 						}
@@ -661,7 +661,8 @@
 								},
 								{
 									name: 'American Travel and Tours',
-									email: 'ligia@americantravelandtours.com'
+									email: 'gerencia@americantravelandtours.com',
+									phone: '(505) 2250 0227'
 								}
 							]
 						}
@@ -669,7 +670,7 @@
 				},
 				{
 					country: 'Panamá',
-					cities: [
+						cities: [
 						{
 							city: 'Ciudad de Panamá',
 							contacts: [
@@ -707,6 +708,11 @@
 									name: 'All Ways Tours',
 									email: 'carolina@allwaystours.com',
 									phone: '214 9171'
+								},
+								{
+									name: 'Pesantez',
+									email: 'lorena@pesantez-tours.com',
+									phone: '507 300-0073'
 								}
 							]
 						}
@@ -779,25 +785,29 @@
 				},
 				{
 					country: 'Puerto Rico',
-					cities: [
+				cities: [
 						{
 							city: 'San Juan',
-									contacts: [
+								contacts: [
 								{
 									name: 'Hector Travel',
-									email: 'andres@hectourspr.com'
+									email: 'adriana@hectourspr.com',
+									phone: '7872683067'
 								},
 								{
 									name: 'Madrid Travel',
-									email: 'hsoriano@madridtravelpr.com'
+									email: 'hsoriano@madridtravel-pr.com',
+									phone: '7877568590'
 								},
 								{
 									name: 'Turismo Tony Perez',
-									email: 'mperez@ttp.travel'
+									email: 'tonyperez10@aol.com',
+									phone: '7877257300'
 								},
 								{
-									name: 'AA Tours',
-									email: 'alina@aatours.net'
+									name: 'A&A Tours',
+									email: 'denice@aatours.net',
+									phone: '7877924060'
 								}
 							]
 						}
