@@ -11,9 +11,9 @@
 	                    <select class="form-control" ng-model="selectedCountry" style="width:100%" ng-cloak>
 	                    	<option value="">All countries</option>
 	                        <option 
-	                        	ng-repeat="country in wholesalers | orderBy country" 
-	                        	value="{{country.country}}" ng-cloak>
-	                        	{{country.country}}
+	                        	ng-repeat="c in wholesalers" 
+	                        	value="{{c.country}}" ng-cloak>
+	                        	{{c.country}}
 	                        </option>
 	                    </select>
 	                </div>
@@ -22,47 +22,75 @@
 		</div>
 
 
-	  	<div class="row-fluid">
-            <div class="span12">
-    			<ul>
-    				<li>Country / City</li>
-                    <li>Wholesaler</li>
-                    <li>E-mail</li>
-                    <li>Telephone</li>
-    			</ul>
+	  <div class="row">
+	            <div class="span12">
+	            	<table class="table">
+	            		
+	            		<thead>
+	            			<tr>
+	            				<th style="width:18%">County / City</th>
+			                    <th style="width:26%">Wholesaler</th>
+			                    <th style="width:26%">Email</th>
+			                    <th style="width:26%">Phone</th>
+	            			</tr>
+	            		</thead>
 
-    			<div ng-repeat="country in wholesalers | filter: selectedCountry | orderBy: country.country">
-    				<div ng-repeat="wholesaler in country.cities">
-    					<ul class="ul-body ul-table"> 
-	                        <li ng-if="$first">
-	                        	<b ng-bind-html="country.country" ng-cloak></b> /
-								<b ng-bind-html="wholesaler.city" ng-cloak></b>
-	                        </li>
-	                        <li ng-if="! $first"><b ng-bind-html="wholesaler.city" ng-cloak></b></li>
-	                        <li ng-if="wholesaler.name == 'Copa Vacations'">
-	                        	<a href="http://www.copavacations.com.co/" target="_blank">
-									Copa Vacations
-								</a>
-	                        </li>
-	                        <li ng-if="wholesaler.name == 'JET Tours'">
-								<a href="http://www.copavacations.com.co/" target="_blank">
-									Jet Tours
-								</a>
-            				</li>
-    						<li
-    							ng-if="wholesaler.name != 'Copa Vacations' && wholesaler.name != 'JET Tours'" 
-    							ng-cloak
-    						>
-    							{{ wholesaler.name }}
-    						</li>
-    						<li ng-cloak>{{ wholesaler.email }}</td>
-    						<li ng-cloak>{{ wholesaler.phone ? wholesaler.phone : '&nbsp;' }}</td>
-                    	</ul>
-	                    
-    				</div>
-    			</div>
-            </div>
-        </div> 
+	            		<tbody>
+	            			<table 
+	            				class="table table-striped" 
+	            				ng-repeat="wholesaler in wholesalers | filter: selectedCountry | orderBy: wholesaler.country"
+	            			>
+	            				<tr>
+									<td colspan="4" ng-cloak>
+	            						{{wholesaler.country}}
+									</td>		
+		            			</tr>	
+		            			<tr ng-repeat="city in wholesaler.cities">
+			            			<td colspan="2" style="font-size:12px; width:18%; border:none;" ng-cloak>			
+			            				&nbsp;&nbsp;&nbsp;&nbsp;{{city.city}}
+			            			</td>
+			            			<td colspan="2" style="width:82%; border:none">
+			            				<table class="table">
+			            					<tr ng-repeat="contact in city.contacts">
+			            						<td 
+			            							style="width:33%" 
+			            							ng-if="contact.name == 'Copa Vacations'"
+			            							ng-cloak
+			            						>
+		            								<a href="http://www.copavacations.com.co/" target="_blank">
+		            									Copa Vacations
+		            								</a>
+			            						</td>
+			            						<td 
+			            							style="width:33%" 
+			            							ng-if="contact.name == 'JE Tours'"
+			            							ng-cloak
+			            						>
+		            								<a href="http://www.copavacations.com.co/" target="_blank">
+		            									Je Tours
+		            								</a>
+			            						</td>
+
+			            						<td 
+			            							style="width:33%" 
+			            							ng-if="contact.name != 'Copa Vacations' && contact.name != 'JET Tours'"
+			            							ng-cloak 
+			            						>
+			            							{{ contact.name }}
+			            						</td>
+			            						<td style="width:33%" ng-cloak>{{ contact.email }}</td>
+			            						<td style="width:33%" ng-cloak>{{ contact.phone ? contact.phone : '&nbsp;' }}</td>
+			            					</tr>
+			            				</table>
+			            			</td>				
+		            			</tr>
+	            			</table>
+	            		</tbody>
+	            	</table>
+	               
+	               
+	            </div>
+	    </div> 
 	</div>
 </div>
 <script>
@@ -99,7 +127,7 @@
 							]
 						},
 						{
-							city: 'Córdoba',
+							city: 'Cordova',
 							contacts: [
 								{
 									name: 'Delfos',
@@ -109,7 +137,7 @@
 								{
 									name: 'Siga',
 									email: 'javier.araya@sigaturismo.com',
-									phone: '0351-568 0920'
+									phone: '0351-4426000'
 								}
 							]
 						},
@@ -124,13 +152,13 @@
 							contacts: [
 								{
 									name: 'Travel Olympus',
-									email: 'gerenciagral@travelolympus.com',
-									phone: '591-3399595'
+									email: 'ventas@travelolympus.com',
+									phone: '591-3-3333913'
 								}, 
 								{
 									name: 'Orbis Tour Operator',
-									email: 'carola@orbistouroperator.com',
-									phone: '591 3 3350207'
+									email: 'magali@orbistouroperator.com',
+									phone: '591-3-3888828'
 								}, 
 								{
 									name: 'Cuarta Dimensión',
@@ -295,22 +323,22 @@
 								{
 									name: 'Caribbean Chile',
 									email: 'rmorales@caribbeanchile.cl',
-									phone: '562-23358259'
+									phone: '562 - 23358259'
 								},
 								{
 									name: 'Tourmundial',
 									email: 'ibachler@tourmundial.cl',
-									phone: '24904436'
+									phone: '562 - 24904436'
 								},
 								{
 									name: 'Euroandino',
 									email: 'cnavarrete@euroandino.cl',
-									phone: '562-4723700'
+									phone: '562 - 24723700'
 								},
 								{
 									name: 'Panamericana',
-									email: 'omontenegro@panamericanaturismo.cl',
-									phone: '562 2476 58 00'
+									email: 'pgongora@panamericanaturismo.cl',
+									phone: '562 - 2476 58 00'
 								}
 							]
 						}
@@ -318,7 +346,7 @@
 				},
 				{
 					country: 'Colombia',
-				cities: [
+					cities: [
 						{
 							city: 'Barranquilla',
 							contacts: [
@@ -495,11 +523,6 @@
 							city: 'Quito',
 							contacts: [
 								{
-									name: 'Decameron',
-									email: 'zully.duran@decameron.com',
-									phone: '6046989'
-								},
-								{
 									name: 'Blue Sky',
 									email: 'gerencia@bluesky.com.ec',
 									phone: '2435535'
@@ -555,15 +578,18 @@
 							contacts: [
 								{
 									name: 'V. Euroamerica',
-									email: 'acastro@euroamericacr.com'
+									email: 'acastro@euroamericas.travel',
+									phone: '502-2320-4949'
 								},
 								{
 									name: 'Amtours',
-									email: 'msaenz@gtm.com.gt'
+									email: 'msaenz@amtours.com.gt',
+									phone: '502-2415-9602'
 								},
 								{
 									name: 'Easa',
-									email: 'msaenz@gtm.com.gt'
+									email: 'Efrain@easaalmendares.com',
+									phone: '502-2334-1550'
 								}
 							]
 						}
@@ -577,7 +603,8 @@
 							contacts: [
 								{
 									name: 'Arrecife tours',
-									email: 'hjalmar@arrecifetours.com'
+									email: 'hjalmar@arrecifetours.hn',
+									phone: '504 2280-3690'
 								},
 								{
 									name: 'Go Travel',
@@ -586,7 +613,8 @@
 								},
 								{
 									name: 'Turaser',
-									email: 'miguel@turaserhn.com'
+									email: 'miguel@turaserhn.com',
+									phone: '504 2236-9003'
 								}
 							]
 						}
@@ -634,7 +662,8 @@
 								},
 								{
 									name: 'American Travel and Tours',
-									email: 'ligia@americantravelandtours.com'
+									email: 'gerencia@americantravelandtours.com',
+									phone: '(505) 2250 0227'
 								}
 							]
 						}
@@ -644,7 +673,7 @@
 					country: 'Panama',
 					cities: [
 						{
-							city: 'Ciudad de Panama',
+							city: 'Panama',
 							contacts: [
 								{
 									name: 'Decameron',
@@ -680,6 +709,11 @@
 									name: 'All Ways Tours',
 									email: 'carolina@allwaystours.com',
 									phone: '214 9171'
+								},
+								{
+									name: 'Pesantez',
+									email: 'lorena@pesantez-tours.com',
+									phone: '507 300-0073'
 								}
 							]
 						}
@@ -689,7 +723,7 @@
 					country: 'Paraguay',
 					cities: [
 						{
-							city: 'Asunción',
+							city: 'Asuncion',
 							contacts: [
 								{
 									name: 'Intertours',
@@ -755,22 +789,26 @@
 					cities: [
 						{
 							city: 'San Juan',
-							contacts: [
+								contacts: [
 								{
 									name: 'Hector Travel',
-									email: 'andres@hectourspr.com'
+									email: 'adriana@hectourspr.com',
+									phone: '7872683067'
 								},
 								{
 									name: 'Madrid Travel',
-									email: 'hsoriano@madridtravelpr.com'
+									email: 'hsoriano@madridtravel-pr.com',
+									phone: '7877568590'
 								},
 								{
 									name: 'Turismo Tony Perez',
-									email: 'mperez@ttp.travel'
+									email: 'tonyperez10@aol.com',
+									phone: '7877257300'
 								},
 								{
-									name: 'AA Tours',
-									email: 'alina@aatours.net'
+									name: 'A&A Tours',
+									email: 'denice@aatours.net',
+									phone: '7877924060'
 								}
 							]
 						}
