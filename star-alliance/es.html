@@ -19,7 +19,7 @@
 				<div ng-class="{'row-fluid': true, 'type_banner2': $odd, 'type_banner3': $even, 'banner_template': true, 'back-gray': true}"> 
 					<div class="content_wrap">
 						<div class="side1">
-							<img alt="{{ item.alt }}" title="{{ item.alt }}" ng-src="{{ item.imgSrc }}">
+							<img alt="{{ item.alt }}" title="{{ item.alt }}" ng-src="{{ item.imgSrc }}" ng-cloak>
 						</div>
 						<div class="side2">
 							<h2 ng-cloak>{{ item.title }}</h2>
@@ -229,7 +229,7 @@
 				description: 'Acumule y canjee millas aéreas con cualquier aerolínea miembro de la red Star Alliance.'
 			},
 			{
-				imgSrc: '/documents/20182/157353/img-checkin-web-450.jpg',
+				imgSrc: '/documents/20182/166632/img-checkin-web-450.jpg',
 				alt: 'Disfrute de nuestros Salones VIP',
 				url: 'http://www.staralliance.com/es/lounges',
 				title: 'Salones VIP',
