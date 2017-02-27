@@ -1,25 +1,18 @@
-.container { max-width: 1024px; }
-.row { margin-left:0 !important; }
-.aui select { max-width: 99% !important; }
-
-table.table.table-striped.ng-scope > tbody > tr { border:none; }
-
-@media screen (min-width: 1025px){
-	.offices-responsive .ul-table.ul-head {
-	    display: block;
-	    background: #a9aaaa;
-	    font-size: 20px;
-	    font-weight: bold;
-	    color: #fff;
-	    padding: 4px 0;
-	    margin: 0;
-	}
-
+.aui select, .aui input { padding: 0 6px; height: 27px; }
+input.input-large { 
+	height: 20px;
+	padding: 4px;
+    margin-top: 7px;
+    margin-left: 20px; 
 }
 
-.offices-responsive .ul-table li + li + li + li {
-    width: 29% !important;
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }
+
+.search-box { width: 93% }
+.ul-body > li.empty { display: none; }
+.offices-responsive div > p { margin: 0; }
 
 .offices-responsive .ul-table.ul-body {
     border-bottom: 1px dotted #888;
@@ -29,13 +22,58 @@ table.table.table-striped.ng-scope > tbody > tr { border:none; }
 
 .offices-responsive .ul-table > li {list-style:none;}
 
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
-}
-
-@media screen (min-width: 1051px)
 .portlet-asset-publisher .asset-content br {
-    display: inherit !important; 
+	display: inherit !important; 
+}
+
+.separator { display: none; }
+
+@media screen and (max-width: 380px){
+	select.input-large, input.input-large { max-width: 96% !important; }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-width : 480px){
+	body { overflow-x: hidden; }
+	
+	input.input-large {  margin-left:0; }
+	.offices-responsive .ul-table > li {
+    	width: 86% !important;
+	}
+}
+
+@media only screen and (min-width: 769px) {
+	.offices-responsive .ul-table + li, .offices-responsive .ul-table + li + li  {
+    	width:20% !important;
+	}
+
+	.offices-responsive .ul-table + li + li + li {
+		width: 50% !important;
+	}
+}
+
+/*--- Tablets ---*/
+@media only screen and (min-width: 1025px) {
+
+	.offices-responsive .ul-table.ul-head {
+	    display: block;
+	    background: #a9aaaa;
+	    font-size: 20px;
+	    font-weight: bold;
+	    color: #fff;
+	    padding: 4px 0;
+	    margin: 0;
+	}
+	input.input-large { margin-left:20px; width: 53% !important; }
+	select.input-large { width:30% !important; }
 }
 
 
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+	body { overflow-x: inherit; }
+	input.input-large { width:40% !important; }
+	input.input-large {  margin-left:20px; }
+
+	
+}
