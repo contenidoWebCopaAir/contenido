@@ -50,7 +50,6 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
 
     var reservaciones = 'Para obter assistência antes de sua viagem, entre em contato com a nossa <a href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/central-de-reservas" target="_blank">Central de Reservas</a>';
 
-    $scope.query = '';
     $scope.selectedCountry = '';
     $scope.countries = [];  
 
@@ -201,7 +200,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 {
                     name: 'Bogotá',
                     address: 'Calle 100 #. 7 A - 81 oficina 3 Edifício Universa',
-                    schedules: 'Segunda - Sexta 8:00-19:00<br>Sábado 8:00-12:00 e 13:00-17:00<br>Domingo  11:00-16:00'
+                    schedules: 'Segunda - Sexta 8:00-18:00<br>Sábado 9:00-12:00'
                 },
                 {
                     name: 'Bogotá',
@@ -221,7 +220,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 {
                     name: 'Bogotá',
                     address: 'centro comercial Unicentro<br>Avenida 15th # 124 - 30 andar 1<br> oficina 1-101 Entrance 8',
-                    schedules: 'Segunda - Sexta 9:00-20:00<br>Sábado 10:00-19:00<br>Domingos e feriados 10:00-16:00'
+                    schedules: 'Segunda - Sexta 9:00-20:00<br>Sábado 10:00-19:00<br>Domingos 10:00-16:00'
                 },
                 {
                     name: 'Bucaramanga',
@@ -672,7 +671,7 @@ angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
                 {
                     name: 'Valencia',
                     address: 'centro comercial Via Veneto, nível Florencia oficina F 34 Mañongo, Town Naguanagua - Carabobo',
-                    schedules: 'Segunda - Sábado 12:00-19:00'
+                    schedules: 'Segunda - Sábado 10:00-19:00'
                 }
             ]
         }
