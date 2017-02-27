@@ -16,12 +16,6 @@
                     {{country}}
                 </option>
             </select>
-            <!-- <input 
-                ng-model="query" 
-                placeholder="Search by city, address or hours" 
-                class="input-large" 
-                type="text" 
-            /> -->
         </div>
     </div>
 
@@ -34,8 +28,7 @@
                 <li>Address</li>
                 <li>Hours</li>
             </ul>
-
-            <div  ng-repeat="country in offices | filter: selectedCountry | orderBy: 'countryName'">
+            <div  ng-repeat="country in offices | filter:{countryName: selectedCountry} | orderBy: 'countryName'">
                 <ul class="ul-body ul-table"> 
                     <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
                     <li ng-bind-html="country.cities[0].name" ng-cloak></li>
@@ -43,7 +36,7 @@
                     <li ng-if="country.cities[0].schedules" ng-bind-html="country.cities[0].schedules" ng-cloak></li>
                 </ul>
                 <div ng-repeat="office in country.cities">
-                    <ul class="ul-body ul-table" ng-if="!$first">
+                    <ul class="ul-body ul-table" ng-if="$index != 0">
                         <li class="empty"></li>
                         <li ng-bind-html="office.name" ng-cloak></li>
                         <li ng-bind-html="office.address" ng-cloak></li>

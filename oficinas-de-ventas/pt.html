@@ -10,12 +10,6 @@
                 <option ng-repeat="country in countries" value="{{country}}" ng-if="country" ng-cloak>{{country}}</option>
             </select>           
                 
-            <!-- <input 
-                ng-model="query"  
-                type="text"
-                placeholder="Busca por cidade, endereço ou agenda" 
-                class="input-large" 
-            /> -->
         </div>
 
     </div>
@@ -29,7 +23,7 @@
                 <li>Agenda</li>
             </ul>
                 
-            <div  ng-repeat="country in offices | filter: selectedCountry | orderBy: 'countryName'">
+            <div  ng-repeat="country in offices | filter:{countryName: selectedCountry} | orderBy: 'countryName'">
                 <ul class="ul-body ul-table"> 
                     <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
                     <li ng-bind-html="country.cities[0].name" ng-cloak></li>
@@ -37,7 +31,7 @@
                     <li ng-if="country.cities[0].schedules" ng-bind-html="country.cities[0].schedules" ng-cloak></li>
                 </ul>
                 <div ng-repeat="office in country.cities">
-                    <ul class="ul-body ul-table" ng-if="!$primeiro">
+                    <ul class="ul-body ul-table" ng-if="!$first">
                         <li class="empty"></li>
                         <li ng-bind-html="office.name" ng-cloak></li>
                         <li ng-bind-html="office.address" ng-cloak></li>

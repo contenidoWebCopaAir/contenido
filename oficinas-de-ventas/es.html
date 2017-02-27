@@ -16,13 +16,6 @@
                         {{country}}
                     </option>
                 </select>
- 
-               <!--  <input 
-                    ng-model="query" 
-                    class="input-large" 
-                    type="text" 
-                    placeholder="Busque por ciudad, dirección u horario" 
-                /> -->
             </div>
         </div>
 
@@ -35,7 +28,7 @@
                 <li>Horarios</li>
             </ul>
 
-            <div  ng-repeat="country in offices | filter: selectedCountry | orderBy: 'countryName'">
+            <div  ng-repeat="country in offices | filter: {countryName:selectedCountry} | orderBy: 'countryName'">
                 <ul class="ul-body ul-table"> 
                     <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
                     <li ng-bind-html="country.cities[0].name" ng-cloak></li>
@@ -59,7 +52,7 @@
 
 angular.module('copa').controller('OfficesCtrl', ["$scope", function ($scope) {
 
-    var reservaciones = 'Para asistencia previa a su viaje contactarse con nuestro <a href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/centro-de-reservaciones" target="_blank">Centro de Reservaciones</a>';
+    var reservaciones = 'Para asistencia previa a su viaje contactarse con nuestro <a href="/es/centro-de-reservaciones" target="_blank">Centro de Reservaciones</a>';
 
     //$scope.query = '';
     $scope.selectedCountry = '';
