@@ -1,360 +1,334 @@
-<div class="container">
-	
-	<div class="offices-responsive content_centered" ng-controller="wholeSalersCtrl">
-		<div class="title_legal  common-styles type_title1">
+<div class="columns-1 offices-responsive content_centered" ng-controller="wholeSalersCtrl">
+	<div class="row-fluid main-filter">
+
+		<div class="span4">
 			<h2>Listado de mayoristas</h2>
 		</div>
-		<div class="row main-filter">
-			<div class="span8 form-horizontal">
-	            <div class="control-group"><label class="control-label">Mostrar mayoristas en: </label>
-	                <div class="controls">
-	                    <select class="form-control" ng-model="selectedCountry" style="width:100%" ng-cloak>
-	                    	<option value="">Todos los países</option>
-	                        <option 
-	                        	ng-repeat="c in wholesalers" 
-	                        	value="{{c.country}}" ng-cloak>
-	                        	{{c.country}}
-	                        </option>
-	                    </select>
-	                </div>
-	            </div>
-        	</div>
+
+		<div class="span8 form-inline">
+			<select id="selectedCountry" ng-model="selectedCountry" class="form-control" ng-cloak>
+	            <option value="" selected>Todos los paises</option>
+	            <option 
+	                ng-repeat="country in wholesalers" 
+	                value="{{country.countryName}}" 
+	                ng-if="country" 
+	                ng-cloak
+	            >
+	                {{country.countryName}}
+	            </option>
+	        </select>
 		</div>
-		<div class="row">
-	            <div class="span12">
-	            	<table class="table">
-	            		
-	            		<thead>
-	            			<tr>
-	            				<th style="width:18%">País / Ciudad</th>
-			                    <th style="width:26%">Mayorista</th>
-			                    <th style="width:26%">Correo electrónico</th>
-			                    <th style="width:26%">Teléfono</th>
-	            			</tr>
-	            		</thead>
+	</div>
 
-	            		<tbody>
-	            			<table 
-	            				class="table table-striped" 
-	            				ng-repeat="wholesaler in wholesalers | filter: selectedCountry | orderBy: wholesaler.country"
-	            			>
-	            				<tr>
-									<td colspan="4" ng-cloak>
-	            						{{wholesaler.country}}
-									</td>		
-		            			</tr>	
-		            			<tr ng-repeat="city in wholesaler.cities">
-			            			<td colspan="2" style="font-size:12px; width:18%; border:none;" ng-cloak>			
-			            				&nbsp;&nbsp;&nbsp;&nbsp;{{city.city}}
-			            			</td>
-			            			<td colspan="2" style="width:82%; border:none">
-			            				<table class="table">
-			            					<tr ng-repeat="contact in city.contacts">
-			            						<td 
-			            							style="width:33%" 
-			            							ng-if="contact.name == 'Copa Vacations'"
-			            							ng-cloak
-			            						>
-		            								<a href="http://www.copavacations.com.co/" target="_blank">
-		            									Copa Vacations
-		            								</a>
-			            						</td>
-			            						<td 
-			            							style="width:33%" 
-			            							ng-if="contact.name == 'JE Tours'"
-			            							ng-cloak
-			            						>
-		            								<a href="http://www.copavacations.com.co/" target="_blank">
-		            									Je Tours
-		            								</a>
-			            						</td>
+	<div class="row-fluid">
+		<div class="span12">
+			<ul class="ul-head ul-table">
+				<li>País</li>
+				<li>Ciudad</li>
+				<li>Contacto</li>
+			</ul>
+			<div ng-repeat="country in wholesalers | filter: {countryName: selectedCountry} | orderBy: 'country' | orderBy: 'city'">
+				<ul class="ul-body ul-table"> 
+                    <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
+                    <li ng-bind-html="country.wholesalers[0].city" ng-cloak></li>
+                    <li>
+                    	<address>
+                    		<p>
+                    			<b><span ng-if="country.wholesalers[0].name" ng-cloak>{{country.wholesalers[0].name}}<br></span></b>
+                    			<span ng-if="country.wholesalers[0].email" ng-cloak>{{country.wholesalers[0].email}}<br></span>
+                    			<a 
+                    				href="{{country.wholesalers[0].web}}" 
+                    				ng-if="country.wholesalers[0].web"
+                    				target="_blank"
+                    				rel="nofollow" 
+                    				ng-cloak>Web<br></a>
+                    			<span ng-if="country.wholesalers[0].phone" ng-cloak>{{country.wholesalers[0].phone}}</span>
+                    		</p>
+                    	</address>
+                    </li>
+                </ul>
+				
+				<div ng-if="$index != 0" ng-repeat="w in country.wholesalers">
+					<ul class="ul-body ul-table"> 
+	                    <li class="empty"></li>
+	                    <li ng-bind-html="w.city" ng-cloak></li>
+	                    <li>
+	                    	<address>
+	                    		<p>
+	                    			<b><span ng-if="w.name" ng-cloak>{{w.name}}<br></span></b>
+	                    			<span ng-if="w.email" ng-cloak>{{w.email}}<br></span>
+	                    			<a 
+	                    				href="{{w.web}}" 
+	                    				ng-if="w.web"
+	                    				target="_blank"
+	                    				rel="nofollow"
+	                    				ng-cloak>Web<br></a>
+	                    			<span ng-if="w.phone" ng-cloak>{{w.phone}}</span>
+	                    		</p>
+	                    	</address>
+	                    </li>
+                	</ul>
+				</div>
 
-			            						<td 
-			            							style="width:33%" 
-			            							ng-if="contact.name != 'Copa Vacations' && contact.name != 'JET Tours'"
-			            							ng-cloak 
-			            						>
-			            							{{ contact.name }}
-			            						</td>
-			            						<td style="width:33%" ng-cloak>{{ contact.email }}</td>
-			            						<td style="width:33%" ng-cloak>{{ contact.phone ? contact.phone : '&nbsp;' }}</td>
-			            					</tr>
-			            				</table>
-			            			</td>				
-		            			</tr>
-	            			</table>
-	            		</tbody>
-	            	</table>
-	               
-	               
-	            </div>
-	    </div> 
+			</div>
+		</div>
 	</div>
 
 </div>
+
 <script>
 	'use strict';
 	angular.module('copa').controller('wholeSalersCtrl', [ '$scope', function($scope){
 		$scope.selectedCountry = '';
 		$scope.wholesalers = [
 			{
-				country: 'Argentina',
-				cities: [
+				countryName: 'Argentina',
+				wholesalers: [
 						{
 							city: 'Buenos Aires',
-							contacts: [
-								{
-									name: 'Logan',
-									email: 'lionel@logantravel.com',
-									phone: '011-4124 6000'
-								}, 
-								{
-									name: 'Solways',
-									email: 'hfontenla@solways.com.ar',
-									phone: '011-4320 9300'
-								},
-								{
-									name: 'Top Dest',
-									email: 'pepe@topdest.com.ar',
-									phone: '011-5555 3700'
-								},
-								{
-									name: 'Tower Travel',
-									email: 'gustavod@towertravel.com.ar',
-									phone: '011-5217 7400'
-								}
-							]
+							name: 'Logan',
+							email: 'lionel@logantravel.com',
+							phone: '011-4124 6000'
+						}, 
+						{
+							city: 'Buenos Aires',
+							name: 'Solways',
+							email: 'hfontenla@solways.com.ar',
+							phone: '011-4320 9300'
+						},
+						{
+							city: 'Buenos Aires',
+							name: 'Top Dest',
+							email: 'pepe@topdest.com.ar',
+							phone: '011-5555 3700'
+						},
+						{
+							city: 'Buenos Aires',
+							name: 'Tower Travel',
+							email: 'gustavod@towertravel.com.ar',
+							phone: '011-5217 7400'
 						},
 						{
 							city: 'Córdoba',
-							contacts: [
-								{
-									name: 'Delfos',
-									email: 'gcristiani@delfos.tur.ar',
-									phone: '351-442 1200'
-								},
-								{
-									name: 'Siga',
-									email: 'javier.araya@sigaturismo.com',
-									phone: '0351-4426000'
-								}
-							]
+							name: 'Delfos',
+							email: 'gcristiani@delfos.tur.ar',
+							phone: '351-442 1200'
 						},
+						{
+							city: 'Córdoba',
+							name: 'Siga',
+							email: 'javier.araya@sigaturismo.com',
+							phone: '0351-4426000'
+						}
 						
 					]
 			}, 
 				{
-					country: 'Bolivia',
-					cities: [
-						{
-							city: 'Santa Cruz del a Sierra',
-							contacts: [
-								{
-									name: 'Travel Olympus',
-									email: 'ventas@travelolympus.com',
-									phone: '591-3-3333913'
-								}, 
-								{
-									name: 'Orbis Tour Operator',
-									email: 'magali@orbistouroperator.com',
-									phone: '591-3-3888828'
-								}, 
-								{
-									name: 'Cuarta Dimensión',
-									email: 'mrodo@cuartadimension.com.bo',
-									phone: '591-3-3363636'
-								}
+					countryName: 'Bolivia',
+					wholesalers: [
+							{
+								city: 'Santa Cruz de la Sierra',
+								name: 'Travel Olympus',
+								email: 'ventas@travelolympus.com',
+								phone: '591-3-3333913'
+							}, 
+							{
+								city: 'Santa Cruz de la Sierra',
+								name: 'Orbis Tour Operator',
+								email: 'magali@orbistouroperator.com',
+								phone: '591-3-3888828'
+							}, 
+							{
+								city: 'Santa Cruz de la Sierra',
+								name: 'Cuarta Dimensión',
+								email: 'mrodo@cuartadimension.com.bo',
+								phone: '591-3-3363636'
+							}
 
-							]
-						}
 					]
 				}, 
 				{
-					country: 'Brasil',
-					cities: [
+					countryName: 'Brasil',
+					wholesalers: [
 						{
 							city: 'Belo Horizonte',
-							contacts: [
-								{
-									name: 'MMT',
-									email: 'marcelo.carvalho@mmtgapnet.com.br',
-									phone: '55 (61) 3202 8668'
-								}, 
-								{
-									name: 'MMT',
-									email: 'hugo.lagares@mmtgapnet.com.br',
-									phone: '55 31 32751355'
-								}
-
-							]
+							name: 'MMT',
+							email: 'marcelo.carvalho@mmtgapnet.com.br',
+							phone: '55 (61) 3202 8668'
+						}, 
+						{
+							city: 'Belo Horizonte',
+							name: 'MMT',
+							email: 'hugo.lagares@mmtgapnet.com.br',
+							phone: '55 31 32751355'
 						},
 						{
 							city: 'Brasilia',
-							contacts: [
-								{
-									name: 'MMT',
-									email: 'marcelo.carvalho@mmtgapnet.com.br',
-									phone: '55 (61) 3202 8668'
-								}
-							]
+							name: 'MMT',
+							email: 'marcelo.carvalho@mmtgapnet.com.br',
+							phone: '55 (61) 3202 8668'
 						},
 						{
 							city: 'Rio de Janeiro',
-							contacts: [
-								{
-									name: 'Multidestinos',
-									email: 'pepe@multidestinos.com.br',
-									phone: '55 21 25330470'
-								},
-								{
-									name: 'Abreu',
-									email: 'ronnie.correa@abreutur.com.br',
-									phone: '55 (21) 2586 1888'
-								}
-							]
+							name: 'Multidestinos',
+							email: 'pepe@multidestinos.com.br',
+							phone: '55 21 25330470'
 						},
 						{
-							city: 'Sao Paulo',
-							contacts: [
+							city: 'Rio de Janeiro',
+							name: 'Abreu',
+							email: 'ronnie.correa@abreutur.com.br',
+							phone: '55 (21) 2586 1888'
+						},
 								{
+									city: 'Sao Paulo',
 									name: 'ADV Operadora',
 									email: 'roberto.sanovicz@advtour.com.br',
 									phone: '55 (11) 2167-0633'
 								},
 								{
+									city: 'Sao Paulo',
 									name: 'MMT',
 									email: 'fabio@mmtgapnet.com.br',
 									phone: '55 (11) 3154 55400'
 								},
 								
 								{
+									city: 'Sao Paulo',
 									name: 'Sanchat Turismo',
 									email: 'roberto@sanchattour.com.br',
 									phone: '55 (11) 3017-3140'
 								},
 								{
+									city: 'Sao Paulo',
 									name: 'ANCORADOURO OPERADORA',
 									email: 'cacalo.destro@ancoradouro.com.br',
 									phone: '55 (19) 2137 3040'
 								},
 								
 								{
+									city: 'Sao Paulo',
 									name: 'CVC Viajes',
 									email: 'vicente@cvc.com.br',
 									phone: '55 (11) 2191-1026'
 								},
 								{
+									city: 'Sao Paulo',
 									name: 'FLYTOUR OPERADORA',
 									email: 'michael@flytour.com.br',
 									phone: '55 (11) 4503 1900'
 								},
 								{
+									city: 'Sao Paulo',
 									name: 'New Age',
 									email: 'carla@newage.tur.br',
 									phone: '55 (11) 3138 4888'
 								},
 								{
+									city: 'Sao Paulo',
 									name: 'Orinter Repre Viag Tur Ltda',
 									email: 'sanches@orinter.com.br',
 									phone: '55 (11) 4514 4404'
 								},
 								{
+									city: 'Sao Paulo',
 									name: 'RCI Travel',
 									email: 'anderson.canazza@rcitravel.com.br',
 									phone: '55 (11) 3524 3543'
 								},
 								{
+									city: 'Sao Paulo',
 									name: 'Sanchat Turismo',
 									email: 'roberto@sanchattour.com.br',
 									phone: '55 (11) 3017-3140'
 								},
 								{
+									city: 'Sao Paulo',
 									name: 'Trend',
 									email: 'cjayme@trendoperadora.com.br',
 									phone: '55 (11) 3041-7510'
 								},
 								{
+									city: 'Sao Paulo',
 									name: 'Visual Turismo',
 									email: 'Afonso@visualturismo.com.br',
 									phone: '55 (11) 3235-2000'
 								},
 								{
+									city: 'Sao Paulo',
 									name: 'Interglobe Tours',
 									email: 'marcio@interglobe.tur.br',
 									phone: '55 (61) 3223 2000'
 								},
 								{
+									city: 'Sao Paulo',
 									name: 'Master Turismo',
 									email: 'daniel.dias@viagensmaster.com.br',
 									phone: '55 (31) 3505 3678 '
-								}
-							]
-						},
-						{
-							city: 'Porto Alegre',
-							contacts: [
+								},
 								{
+									city: 'Porto Alegre',
 									name: 'Best Way Trips Agencia de Viagens e Turismo LTDA',
 									email: 'gabrielc@bwtoperadora.com.br',
 									phone: '55 (27) 3237-1789'
 								},
 								{
+									city: 'Porto Alegre',
 									name: 'MGM Operadora',
 									email: 'jaqueline@mgmoperadora.com.br',
 									phone: '55 (41) 2104 6400'
 								},
 								{
+									city: 'Porto Alegre',
 									name: 'Schultz Ville Turismo LTDA',
 									email: 'aroldo@schultz.com.br',
 									phone: '55 (41) 3303-6565'
 								}
-							]
-						}
 						
 					]
 				}, 
 				{
-					country: 'Chile',
-					cities: [
-						{
-							city: 'Santiago de Chile',
-							contacts: [
-								{
-									name: 'Caribbean Chile',
-									email: 'rmorales@caribbeanchile.cl',
-									phone: '562 - 23358259'
-								},
-								{
-									name: 'Tourmundial',
-									email: 'ibachler@tourmundial.cl',
-									phone: '562 - 24904436'
-								},
-								{
-									name: 'Euroandino',
-									email: 'cnavarrete@euroandino.cl',
-									phone: '562 - 24723700'
-								},
-								{
-									name: 'Panamericana',
-									email: 'pgongora@panamericanaturismo.cl',
-									phone: '562 - 2476 58 00'
-								}
-							]
-						}
-					]
+					countryName: 'Chile',
+					wholesalers: [
+							{
+								city: 'Santiago de Chile',
+								name: 'Caribbean Chile',
+								email: 'rmorales@caribbeanchile.cl',
+								phone: '562 - 23358259'
+							},
+							{
+								city: 'Santiago de Chile',
+								name: 'Tourmundial',
+								email: 'ibachler@tourmundial.cl',
+								phone: '562 - 24904436'
+							},
+							{
+								city: 'Santiago de Chile',
+								name: 'Euroandino',
+								email: 'cnavarrete@euroandino.cl',
+								phone: '562 - 24723700'
+							},
+							{
+								city: 'Santiago de Chile',
+								name: 'Panamericana',
+								email: 'pgongora@panamericanaturismo.cl',
+								phone: '562 - 2476 58 00'
+							}
+						]
 				},
 				{
-					country: 'Colombia',
-					cities: [
+					countryName: 'Colombia',
+					wholesalers: [
 						{
-							city: 'Barranquilla',
 							contacts: [
 								{
+									city: 'Barranquilla',
 									name: 'CIC Travel',
 									email: 'directorcomercial@ciccolombia.travel',
 									phone: '571 6368601'
 								},
 								{
+									city: 'Barranquilla',
 									name: 'Copa Vacations',
 									email: 'copavacations.co@copaair.com',
 									phone: '01 800 952 0663'
@@ -362,34 +336,39 @@
 							]
 						}, 
 						{
-							city: 'Bogotá',
 							contacts: [
 								{
+									city: 'Bogotá',
 									name: 'Copa Vacations',
 									email: 'copavacations.co@copaair.com',
 									phone: '01 800 952 0663'
 								},
 								{
+									city: 'Bogotá',
 									name: 'Falabella',
 									email: 'fbasto@falabella.com.co',
 									phone: '76503711'
 								},
 								{
+									city: 'Bogotá',
 									name: 'Operando Viajes y Turismo',
 									email: 'gerencia@operandoviajes.com',
 									phone: '(571)2534011'
 								},
 								{
+									city: 'Bogotá',
 									name: 'UGA Turismo',
 									email: 'dorisgarcia@ugaturismo.com',
 									phone: '(571)2181613'
 								},
 								{
+									city: 'Bogotá',
 									name: 'Decameron',
 									email: 'Ximena.Gomez@decameron.com',
 									phone: '(571) 2193030'
 								},
 								{
+									city: 'Bogotá',
 									name: 'CIC Travel',
 									email: 'directorcomercial@ciccolombia.travel',
 									phone: '571 6368601'
@@ -398,524 +377,504 @@
 						}, 
 						{
 							city: 'Bucaramanga',
-							contacts: [
-								{
-									name: 'Scape',
-									email: 'dirección@scapemayorista.com',
-									phone: '6473535'
-								}, 
-								{
-									name: 'Copa Vacations',
-									email: 'copavacations.co@copaair.com',
-									phone: '01 800 952 0663'
-								}
-							]
+							name: 'Scape',
+							email: 'dirección@scapemayorista.com',
+							phone: '6473535'
+						}, 
+						{
+							city: 'Bucaramanga',
+							name: 'Copa Vacations',
+							email: 'copavacations.co@copaair.com',
+							phone: '01 800 952 0663'
 						},
 						{
 							city: 'Cali',
-							contacts: [
-								{
-									name: 'Copa Vacations',
-									email: 'gerencia.lrinco@jetours.com.co',
-									phone: '572 6680221'
-								},
-								{
-									name: 'JE Tours',
-									email: 'comercial.xbernal@jetours.com.co',
-									phone: '572 6680221'
-								},
-								{
-									name: 'CIC Travel',
-									email: 'directorcomercial@ciccolombia.travel',
-									phone: '571 6368601'
-								},
-								{
-									name: 'Copa Vacations',
-									email: 'copavacations.co@copaair.com',
-									phone: '01 800 952 0663'
-								},
-								{
-									name: 'Turismo Total',
-									email: 'diroperativa@turismototal.com.co',
-									phone: '574 2687811'
-								}
-							]
+							name: 'Copa Vacations',
+							email: 'gerencia.lrinco@jetours.com.co',
+							phone: '572 6680221'
+						},
+						{
+							city: 'Cali',
+							name: 'JE Tours',
+							email: 'comercial.xbernal@jetours.com.co',
+							phone: '572 6680221'
+						},
+						{
+							city: 'Cali',
+							name: 'CIC Travel',
+							email: 'directorcomercial@ciccolombia.travel',
+							phone: '571 6368601'
+						},
+						{
+							city: 'Cali',
+							name: 'Copa Vacations',
+							email: 'copavacations.co@copaair.com',
+							phone: '01 800 952 0663'
+						},
+						{
+							city: 'Cali',
+							name: 'Turismo Total',
+							email: 'diroperativa@turismototal.com.co',
+							phone: '574 2687811'
 						},
 						{
 							city: 'Medellín',
-							contacts: [
-								{
-									name: 'CIC Travel',
-									email: 'directorcomercial@ciccolombia.travel',
-									phone: '571 6368601'
-								},
-								{
-									name: 'Copa Vacations',
-									email: 'copavacations.co@copaair.com',
-									phone: '01 800 952 0663'
-								},
-								{
-									name: 'Turismo Total',
-									email: 'diroperativa@turismototal.com.co',
-									phone: '574 2687811'
-								},
-								{
-									name: 'Luz Verde',
-									email: 'luzverdereps@une.net.co',
-									phone: '574 4442737'
-								},
-								{
-									name: 'Prestigio',
-									email: 'gproducto@viajesveracruz.co',
-									phone: '574 4482525'
-								},
-								{
-									name: 'Mayorplus',
-									email: 'atobon@mayorplus.com',
-									phone: '574 4444476'
-								}
-							]
+							name: 'CIC Travel',
+							email: 'directorcomercial@ciccolombia.travel',
+							phone: '571 6368601'
+						},
+						{
+							city: 'Medellín',
+							name: 'Copa Vacations',
+							email: 'copavacations.co@copaair.com',
+							phone: '01 800 952 0663'
+						},
+						{
+							city: 'Medellín',
+							name: 'Turismo Total',
+							email: 'diroperativa@turismototal.com.co',
+							phone: '574 2687811'
+						},
+						{
+							city: 'Medellín',
+							name: 'Luz Verde',
+							email: 'luzverdereps@une.net.co',
+							phone: '574 4442737'
+						},
+						{
+							city: 'Medellín',
+							name: 'Prestigio',
+							email: 'gproducto@viajesveracruz.co',
+							phone: '574 4482525'
+						},
+						{
+							city: 'Medellín',
+							name: 'Mayorplus',
+							email: 'atobon@mayorplus.com',
+							phone: '574 4444476'
 						},
 						{
 							city: 'Pereira',
-							contacts: [
-								{
-									name: 'Mayorplus',
-									email: 'atobon@mayorplus.com',
-									phone: '574 4444476'
-								},
-								{
-									name: 'Copa Vacations',
-									email: 'copavacations.co@copaair.com',
-									phone: '01 800 952 0663'
-								}
-							]
-						}
-					]
-				},
-				{
-					country: 'Costa Rica',
-					cities: [
-						{
-							city: 'San Jose',
-							contacts: [
-								{
-									name: 'Viajes Euroamerica',
-									email: 'aaroyo@euroamericacr.com'
-								},
-								{
-									name: 'EASA Almendares',
-									email: 'xinia@easaalmendares.com'
-								},
-								{
-									name: 'Obelisko',
-									email: 'miriam@obelisko.com'
-								}
-							]
-						}
-					]
-				},
-				{
-					country: 'Ecuador',
-					cities: [
-						{
-							city: 'Quito',
-							contacts: [
-								{
-									name: 'Blue Sky',
-									email: 'gerencia@bluesky.com.ec',
-									phone: '2435535'
-								}
-							]
+							name: 'Mayorplus',
+							email: 'atobon@mayorplus.com',
+							phone: '574 4444476'
 						},
 						{
-							city: 'Guayaquil',
-							contacts: [
-								{
-									name: 'Mas Travel',
-									email: 'geovanny.carrera@mastravel.com.ec',
-									phone: '2512430'
-								},
-								{
-									name: 'Golden Vacation',
-									email: 'parias@goldenvacations.com.ec',
-									phone: '2265882'
-								},
-								{
-									name: 'Recordmundo',
-									email: 'presidencia@recormundo.com',
-									phone: '2280014'
-								}
-							]
+							city: 'Pereira',
+							name: 'Copa Vacations',
+							email: 'copavacations.co@copaair.com',
+							phone: '01 800 952 0663'
 						}
 					]
 				},
 				{
-					country: 'El Salvador',
-					cities: [
-						{
-							city: 'San Salvador',
-							contacts: [
-								{
-									name: 'All American Tours',
-									email: 'jeflores@allamerican.com.sv'
-								},
-								{
-									name: 'Galaxia',
-									email: 'rene.avalos@panamextravel.com.sv',
-									phone: '503 2524-1800' 
-								}
-							]
-						}
+					countryName: 'Costa Rica',
+					wholesalers: [
+							{
+								city: 'San Jose',
+								name: 'Viajes Euroamerica',
+								email: 'aaroyo@euroamericacr.com'
+							},
+							{
+								city: 'San Jose',
+								name: 'EASA Almendares',
+								email: 'xinia@easaalmendares.com'
+							},
+							{
+								city: 'San Jose',
+								name: 'Obelisko',
+								email: 'miriam@obelisko.com'
+							}
 					]
 				},
 				{
-					country: 'Guatemala',
-					cities: [
-						{
-							city: 'Ciudad de Guatemala',
-							contacts: [
-								{
-									name: 'V. Euroamerica',
-									email: 'acastro@euroamericas.travel',
-									phone: '502-2320-4949'
-								},
-								{
-									name: 'Amtours',
-									email: 'msaenz@amtours.com.gt',
-									phone: '502-2415-9602'
-								},
-								{
-									name: 'Easa',
-									email: 'Efrain@easaalmendares.com',
-									phone: '502-2334-1550'
-								}
-							]
-						}
+					countryName: 'Ecuador',
+					wholesalers: [
+							{
+								city: 'Quito',
+								name: 'Blue Sky',
+								email: 'gerencia@bluesky.com.ec',
+								phone: '2435535'
+							},
+							{
+								city: 'Guayaquil',
+								name: 'Mas Travel',
+								email: 'geovanny.carrera@mastravel.com.ec',
+								phone: '2512430'
+							},
+							{
+								city: 'Guayaquil',
+								name: 'Golden Vacation',
+								email: 'parias@goldenvacations.com.ec',
+								phone: '2265882'
+							},
+							{
+								city: 'Guayaquil',
+								name: 'Recordmundo',
+								email: 'presidencia@recormundo.com',
+								phone: '2280014'
+							}
+						]
+				},
+				{
+					countryName: 'El Salvador',
+					wholesalers: [
+							{
+								city: 'San Salvador',
+								name: 'All American Tours',
+								email: 'jeflores@allamerican.com.sv'
+							},
+							{
+								city: 'San Salvador',
+								name: 'Galaxia',
+								email: 'rene.avalos@panamextravel.com.sv',
+								phone: '503 2524-1800' 
+							}
+						]
+				},
+				{
+					countryName: 'Guatemala',
+					wholesalers: [
+							{
+								city: 'Ciudad de Guatemala',
+								name: 'V. Euroamerica',
+								email: 'acastro@euroamericas.travel',
+								phone: '502-2320-4949'
+							},
+							{
+								city: 'Ciudad de Guatemala',
+								name: 'Amtours',
+								email: 'msaenz@amtours.com.gt',
+								phone: '502-2415-9602'
+							},
+							{
+								city: 'Ciudad de Guatemala',
+								name: 'Easa',
+								email: 'Efrain@easaalmendares.com',
+								phone: '502-2334-1550'
+							}
 					]
 				},
 				{
-					country: 'Honduras',
-					cities: [
-						{
-							city: 'San Pedro Sula',
-							contacts: [
-								{
-									name: 'Arrecife tours',
-									email: 'hjalmar@arrecifetours.hn',
-									phone: '504 2280-3690'
-								},
-								{
-									name: 'Go Travel',
-									email: 'melbin@gotravelhn.com',
-									phone: '504 2544-0657'
-								},
-								{
-									name: 'Turaser',
-									email: 'miguel@turaserhn.com',
-									phone: '504 2236-9003'
-								}
-							]
-						}
+					countryName: 'Honduras',
+					wholesalers: [
+							{
+								city: 'San Pedro Sula',
+								name: 'Arrecife tours',
+								email: 'hjalmar@arrecifetours.hn',
+								phone: '504 2280-3690'
+							},
+							{
+								city: 'San Pedro Sula',
+								name: 'Go Travel',
+								email: 'melbin@gotravelhn.com',
+								phone: '504 2544-0657'
+							},
+							{
+								city: 'San Pedro Sula',
+								name: 'Turaser',
+								email: 'miguel@turaserhn.com',
+								phone: '504 2236-9003'
+							}
 					]
 				},
 				{
-					country: 'México',
-					cities: [
-						{
-							city: 'México DF',
-							contacts: [
-								{
-									name: 'DETOUROPER S.A. DE C.V',
-									email: 'jgutierrez@detouroper.com'
-								},
-								{
-									name: 'JULIA TOURS',
-									email: 'choucinop@juliatours.com.mx'
-								},
-								{
-									name: 'MEGA TRAVEL',
-									email: 'ventas31@megatravel.com.mx'
-								},
-								{
-									name: 'PUNTA DEL ESTE OPERADORA',
-									email: 'adriana@operadorapuntadeleste.com'
-								},
-								{
-									name: 'TURISMO SIBARITA',
-									email: 'lulu.robleda@mundosibarita.com.mx'
-								}
-							]
-						}
+					countryName: 'México',
+					wholesalers: [
+							{
+								city: 'México DF',
+								name: 'DETOUROPER S.A. DE C.V',
+								email: 'jgutierrez@detouroper.com'
+							},
+							{
+								city: 'México DF',
+								name: 'JULIA TOURS',
+								email: 'choucinop@juliatours.com.mx'
+							},
+							{
+								city: 'México DF',
+								name: 'MEGA TRAVEL',
+								email: 'ventas31@megatravel.com.mx'
+							},
+							{
+								city: 'México DF',
+								name: 'PUNTA DEL ESTE OPERADORA',
+								email: 'adriana@operadorapuntadeleste.com'
+							},
+							{
+								city: 'México DF',
+								name: 'TURISMO SIBARITA',
+								email: 'lulu.robleda@mundosibarita.com.mx'
+							}
 					] 
 				},
 				{
-					country: 'Nicaragua',
-					cities: [
-						{
-							city: 'Managua',
-							contacts: [
-								{
-									name: 'Schuvar Tours',
-									email: 'gerencia@schuvartours.com'
-								},
-								{
-									name: 'American Travel and Tours',
-									email: 'gerencia@americantravelandtours.com',
-									phone: '(505) 2250 0227'
-								}
-							]
-						}
-					]
+					countryName: 'Nicaragua',
+					wholesalers: [
+							{
+								city: 'Managua',
+								name: 'Schuvar Tours',
+								email: 'gerencia@schuvartours.com'
+							},
+							{
+								city: 'Managua',
+								name: 'American Travel and Tours',
+								email: 'gerencia@americantravelandtours.com',
+								phone: '(505) 2250 0227'
+							}
+						]
 				},
 				{
-					country: 'Panamá',
-					cities: [
-						{
-							city: 'Ciudad de Panamá',
-							contacts: [
+					countryName: 'Panamá',
+					wholesalers: [
 								{
+									city: 'Ciudad de Panamá',
 									name: 'Decameron',
 									email: 'analida.delaespriella@decameronpty.com',
 									phone: '206-5383'
 								},
 								{
+									city: 'Ciudad de Panamá',
 									name: 'Columbia Tours',
 									email: 'alfredo@columbiatours.com.pa',
 									phone: '223-9800'
 								},
 								{
+									city: 'Ciudad de Panamá',
 									name: 'Margo Tours',
 									email: 'luciana@margotours.com',
 									phone: '269-6693'
 								},
 								{
+									city: 'Ciudad de Panamá',
 									name: 'Findanque',
 									email: 'gmarin@fidanquetravel.com',
 									phone: '265-5505'
 								},
 								{
+									city: 'Ciudad de Panamá',
 									name: 'Lubel',
 									email: 'ricardo@lubeltours.com',
 									phone: '264-2533'
 								},
 								{
+									city: 'Ciudad de Panamá',
 									name: 'Xplora L\'Alianxa',
 									email: 'direccion.comercial@xplora.travel',
 									phone: '209-2774'
 								},
 								{
+									city: 'Ciudad de Panamá',
 									name: 'All Ways Tours',
 									email: 'carolina@allwaystours.com',
 									phone: '214 9171'
 								},
 								{
+									city: 'Ciudad de Panamá',
 									name: 'Pesantez',
 									email: 'lorena@pesantez-tours.com',
 									phone: '507 300-0073'
 								}
-							]
-						}
 					]
 				},
 				{
-					country: 'Paraguay',
-					cities: [
-						{
-							city: 'Asunción',
-							contacts: [
+					countryName: 'Paraguay',
+					wholesalers: [
 								{
+									city: 'Asunción',
 									name: 'Intertours',
 									email: 'ventas04@intertours.com.py',
 									phone: '595-21-211747'
 								},
 								{
+									city: 'Asunción',
 									name: 'VIPs Tour',
 									email: 'jefe@vipstour.com',
 									phone: '595-21-441199'
 								},
 								{
+									city: 'Asunción',
 									name: 'Maral Tourismo',
 									email: 'jose@vacaciones.com.py',
 									phone: '595-21-615507'
 								},
 								{
+									city: 'Asunción',
 									name: 'Oppy',
 									email: 'aquevedo@oppy.com.py',
 									phone: '595-21-622920'
 								}
-							]
-						}
 					]
 				}, 
 				{
-					country: 'Perú',
-					cities: [
-						{
-							city: 'Lima',
-							contacts: [
+					countryName: 'Perú',
+					wholesalers: [
 								{
+									city: 'Lima',
 									name: 'American Reps',
 									email: 'Pancho@americanreps.com.pe',
 									phone: '512-2121'
 								},
 								{
+									city: 'Lima',
 									name: 'Destinos Mundiales',
 									email: 'amorin@destinosmundialesperu.com',
 									phone: '610-6060'
 								},
 								{
+									city: 'Lima',
 									name: 'Kiss Solway',
 									email: 'adrian.bravo@solways.com.pe',
 									phone: '221-5600'
 								},
 								{
+									city: 'Lima',
 									name: 'CTM',
 									email: 'i.garcia@ctmtoursperu.com',
 									phone: '615-5050'
 								},
 								{
+									city: 'Lima',
 									name: 'CIC',
 									email: 'catalina.castro@cicperu.travel',
 									phone: '500-0140'
 								}
-							]
-						}
+						]
+				},
+				{
+					countryName: 'Puerto Rico',
+					wholesalers: [
+							{
+								city: 'San Juan',
+								name: 'Hector Travel',
+								email: 'adriana@hectourspr.com',
+								phone: '7872683067'
+							},
+							{
+								city: 'San Juan',
+								name: 'Madrid Travel',
+								email: 'hsoriano@madridtravel-pr.com',
+								phone: '7877568590'
+							},
+							{
+								city: 'San Juan',
+								name: 'Turismo Tony Perez',
+								email: 'tonyperez10@aol.com',
+								phone: '7877257300'
+							},
+							{
+								city: 'San Juan',
+								name: 'A&A Tours',
+								email: 'denice@aatours.net',
+								phone: '7877924060'
+							}
+						]
+				},
+				{
+					countryName: 'Uruguay',
+					wholesalers: [
+							{
+								city: 'Montevideo',
+								name: 'Abtour',
+								email: 'javier.botta@abtour.com.uy',
+								phone: '00 5982 9085152'
+							},
+							{
+								city: 'Montevideo',
+								name: 'Lintur / Lares',
+								email: 'pperelli@lares.com.uy',
+								phone: '005982 9030340'
+							},
+							{
+								city: 'Montevideo',
+								name: 'Plus Travel',
+								email: 'Julio@plustravel.com.uy',
+								phone: '00598 29031777'
+							},
+							{
+								city: 'Montevideo',
+								name: 'Siur',
+								email: 'giorgiovalenti@siur.com.uy',
+								phone: '005982 9002120'
+							},
+							{
+								city: 'Montevideo',
+								name: 'Top Tour',
+								email: 'ffernandez@toptour.com.uy',
+								phone: '005982 9020793 / 005982 9022233'
+							}
 					]
 				},
 				{
-					country: 'Puerto Rico',
-					cities: [
-						{
-							city: 'San Juan',
-								contacts: [
-								{
-									name: 'Hector Travel',
-									email: 'adriana@hectourspr.com',
-									phone: '7872683067'
-								},
-								{
-									name: 'Madrid Travel',
-									email: 'hsoriano@madridtravel-pr.com',
-									phone: '7877568590'
-								},
-								{
-									name: 'Turismo Tony Perez',
-									email: 'tonyperez10@aol.com',
-									phone: '7877257300'
-								},
-								{
-									name: 'A&A Tours',
-									email: 'denice@aatours.net',
-									phone: '7877924060'
-								}
-							]
-						}
-					]
-				},
-				{
-					country: 'Uruguay',
-					cities: [
-						{
-							city: 'Montevideo',
-							contacts: [
-								{
-									name: 'Abtour',
-									email: 'javier.botta@abtour.com.uy',
-									phone: '00 5982 9085152'
-								},
-								{
-									name: 'Lintur / Lares',
-									email: 'pperelli@lares.com.uy',
-									phone: '005982 9030340'
-								},
-								{
-									name: 'Plus Travel',
-									email: 'Julio@plustravel.com.uy',
-									phone: '00598 29031777'
-								},
-								{
-									name: 'Siur',
-									email: 'giorgiovalenti@siur.com.uy',
-									phone: '005982 9002120'
-								},
-								{
-									name: 'Top Tour',
-									email: 'ffernandez@toptour.com.uy',
-									phone: '005982 9020793 / 005982 9022233'
-								}
-							]
-						}
-					]
-				},
-				{
-					country: 'Estados Unidos',
-					cities: [
-						{
-							city: 'Washington',
-							contacts: [
-								{
-									name: 'Apple Vacation',
-									email: 'ksammart@applevac.com',
-									phone: '610-359-6535'
-								},
-								{
-									name: 'Gate 1 Travel',
-									email: 'dbiddington@gate1travel.com',
-									phone: '215-572-7676 Ext 1152'
-								}
-							]
-						},
-						{
-							city: 'Miami',
-							contacts: [
-								{
-									name: 'Orbitz',
-									email: 'julianna.hill@orbitz.com',
-									phone: '203-254-3984'
-								},
-								{
-									name: 'PRICELINE',
-									email: 'gregory.rodriguez@priceline.com',
-									phone: '203-299-8509'
-								}
-							]
-						},
-						{
-							city: 'Chicago',
-							contacts: [
-								{
-									name: 'Funjet Vacations',
-									email: 'cbritton@marktravel.com',
-									phone: '414 934-2643'
-								}
-							]
-						},
-						{
-							city: 'Los Angeles',
-							contacts: [
-								{
-									name: 'Pleasant Holidays',
-									email: 'mike.pede@pleasant.net',
-									phone: '805-744-62605'
-								},
-								{
-									name: 'Latin Escapes',
-									email: 'karla@latinescapes.com',
-									phone: '818-844-3199'
-								}
-							]
-						},
-						{
-							city: 'New York',
-							contacts: [
-								{
-									name: 'Great Value Vacations',
-									email: 'bbaccomando@greatvaluevacations.com',
-									phone: '516 881-3338'
-								}
-							]
-						}
+					countryName: 'United States',
+					wholesalers: [
+							{
+								city: 'Washington',
+								name: 'Apple Vacation',
+								web: 'http://www.applevacations.com',
+								phone: '610-359-6535'
+							},
+							{
+								city: 'Washington',
+								name: 'CheapCaribbean.com',
+								web: 'http://www.cheapcaribbean.com',
+								phone: '1 (800) 786-0435'
+							},
+							{
+								city: 'Washington',
+								name: 'Travel Impressions',
+								web: 'http://www.travimp.com',
+								phone: '1 (800) 284-0044'
+							},
+
+							{
+								city: 'Washington',
+								name: 'Gate 1 Travel',
+								web: 'https://www.gate1travel.com',
+								phone: '1 (800) 682-3333'
+							},
+							{
+								city: 'Miami',
+								name: 'Expedia',
+								web: 'https://www.expedia.com/Vacation-Packages',
+								phone: '1 (866) 310-5768'	
+							},
+							{
+								city: 'Miami',
+								name: 'Orbitz',
+								web: 'https://www.orbitz.com/Vacation-Packages',
+								phone: '1 (844) 803-5576'
+							},
+							{
+								city: 'Miami',
+								name: 'PRICELINE',
+								web: 'http://www.priceline.com/vacationpackages',
+								phone: '1 (877) 477-5807'
+							},
+							{
+								city: 'Chicago',
+								name: 'Funjet Vacations',
+								web: 'http://www.funjet.com',
+								phone: '1 (888) 558-6654'
+							},
+							{
+								city: 'Los Angeles',
+								name: 'Pleasant Holidays',
+								web: 'http://pleasantholidays.com',
+								phone: '1 (800) 742-9244'
+							},
+							{
+								city: 'Los Angeles',
+								name: 'LatinEscapes (The Travel Superstore)',
+								web: 'http://www.latinescapes.com',
+								phone: '1 (800) 878-9986'
+							},
+							{
+								city: 'New York',
+								name: 'Great Value Vacations',
+								web: 'https://www.greatvaluevacations.com',
+								phone: '1 (800) 896-4600'
+							}
 					]
 				}
 				
