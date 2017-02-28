@@ -71,10 +71,10 @@
 					ng-repeat="e in events | orderBy: 'startDate' | filter: query | filter: dateFilter"
 				>
 					<li>
-						<h4 ng-cloak>{{e.startDate}} - {{e.endDate}}</h4>
+						<h4 ng-cloak>{{e.startDate | date: 'd'}} - {{e.endDate | date: 'd'}}</h4>
 					</li>
 					<li>
-						<h4 ng-cloak>{{e.title}}</h4>
+						<h4 ng-cloak ng-bind-html="e.title | uppercase"></h4>
 					</li>
 					<li>
 						<h4 ng-cloak ng-if="e.country && e.city">{{e.country}},<br>{{e.city}}</h4>
@@ -101,103 +101,11 @@
 	angular.module('copa').controller('EventsCtrl', ["$scope",
 		function ($scope) {
 
-			$scope.dateFilter = 'Fevereiro 2017'; 
+			$scope.dateFilter = 'Março 2017'; 
 			$scope.months = [];
 			$scope.query = '';
 			$scope.events = [
-				{
-					startDate: new Date("2017/2/1").getDate(),
-					endDate: new Date("2017/2/6").getDate(),
-					dateQuery: 'Fevereiro 2017',
-					title: 'Pan Pepin International Dinghy Regatta',
-					city: 'San Juan',
-					country: 'Puerto Rico',	
-					contactName: 'Marely Gutierrez',
-					email: 'marelyg@gmail.com',
-					url: 'www.clubnauticodesanjuan.com',
-					promoCode: 'C7170'
-				},
-				{
-					startDate: new Date("2017/2/15").getDate(),
-					endDate: new Date("2017/2/17").getDate(),
-					dateQuery: 'Fevereiro 2017',
-					title: 'Pandemonio',
-					city: 'Panamá',
-					country: 'Panamá',	
-					contactName: 'Karen',
-					email: 'bryan@quiver.zone',
-					url: 'www.pandemon.io',
-					promoCode: 'D7142'
-				},
-				{
-					startDate: new Date("2017/2/20").getDate(),
-					endDate: new Date("2017/2/24").getDate(),
-					dateQuery: 'Fevereiro 2017',
-					title: 'ENCUENTRO INTL DE HISTORIA ORAL MEMORIA, VOCES E IMÁGENES EN A.L Y EL CARIBE',
-					city: 'Managua',
-					country: 'Nicaragua',	
-					contactName: 'DRA. JILMA ROMERO',
-					email: 'rectoriaunanmanagua@unan.edu.ni',
-					promoCode: 'B7154'
-				},
-				{
-					startDate: new Date("2017/2/22").getDate(),
-					endDate: new Date("2017/2/24").getDate(),
-					dateQuery: 'Fevereiro 2017',
-					title: '1er Simposio Latinoamericano del organismo modelo Caenorhabditis elegans',
-					city: 'Montevideo',
-					country: 'Uruguay',	
-					contactName: 'Natalia López',
-					email: 'natlo@pasteur.edu.uy',
-					url: 'www.pasteur.edu.uy',
-					promoCode: 'B7107'
-				},
-				{
-					startDate: new Date("2017/2/25").getDate(),
-					endDate: new Date("2017/2/25").getDate(),
-					dateQuery: 'Fevereiro 2017',
-					title: 'Convención Anual Laboratorios Roche',
-					city: 'Punta Cana',
-					country: 'Costa Rica',	
-					contactName: 'María José Rodríguez',
-					email: 'mjrodriguez@turaser.com',
-					promoCode: 'C7213'
-				},
-				{
-					startDate: new Date("2017/2/9").getDate(),
-					endDate: new Date("2017/2/19").getDate(),
-					dateQuery: 'Fevereiro 2017',
-					title: 'Feria International del Libro de La Habana 2017',
-					city: 'Havana',
-					country: 'Cuba',	
-					contactName: 'Yailan Rodriguez Moret',
-					email: 'esperint@ccl.cult.cu',
-					promoCode: 'C7218'
-				},
-				{
-					startDate: new Date("2017/2/3").getDate(),
-					endDate: new Date("2017/2/5").getDate(),
-					dateQuery: 'Fevereiro 2017',
-					title: 'XIII Feria Internacional de Productos y Servicios para el Infante y la Maternidad',
-					city: 'Panamá',
-					country: 'Panamá',	
-					contactName: 'Johana Varela H',
-					email: 'feriadelbebe@expoeventos.com.pa',
-					url: 'www.feriadelbebepanama.com',
-					promoCode: 'D6937'
-				},
-				{
-					startDate: new Date("2017/2/8").getDate(),
-					endDate: new Date("2017/2/11").getDate(),
-					dateQuery: 'Fevereiro 2017',
-					title: 'XLVII Congreso Istmeño',
-					city: 'Panamá',
-					country: 'Panamá',	
-					contactName: 'Grethel Brown',
-					email: 'apo@aopam.org',
-					url: 'www.cpmgrespomteno.com',
-					promoCode: 'C7018'
-				},
+				
 				{
 					startDate: new Date("2017/3/1").getDate(),
 					endDate: new Date("2017/3/20").getDate(),
@@ -404,7 +312,152 @@
 					email: 'pcevallos@memorialinternational.com',
 					url: 'http://www.miamifuner.com/en/index',
 					promoCode: 'D7271'
-				}
+				},
+				{
+					startDate: new Date("2017/4/10"),
+					endDate: new Date("2017/4/14"),
+					dateQuery: 'April 2017',
+					title: `
+							-> VII Congreso Internacional de Urgencias, Emergencias y Cuidados Intensivos (URGRAV 2017).<br><br>
+							-> V Congreso Internacional de Enfermería en Medicina Crítica. IV Foro de la Asociación Latinoamericana de Cooperación en Emergencias.<br><br>
+							-> Medicos y Desastres`,
+					
+					city: 'Havana',
+					country: 'Cuba',	
+					contactName: 'Dr Pedro Luis Véliz Martínez',
+					email: 'urgrav@infomed.sld.cu',
+					url: 'http://www.urgravcuba.com/',
+					promoCode: 'B7321'
+				},
+				{
+					startDate: new Date('2017/4/11'),
+					endDate: new Date('2017/4/16'),
+					dateQuery: 'April 2017',
+					title: 'Camporee de Conquistadores',
+					city: 'Santo Domingo',
+					country: 'República Dominicana',
+					contactName: 'Carlos Saldaña',
+					email: 'prsaldana@hotmail.com',
+					web: 'www.interamerica.org',
+					promoCode: 'D7065'
+				},
+				{
+					startDate: new Date('2017/4/11'),
+					endDate: new Date('2017/4/16'),
+					dateQuery: 'April 2017',
+					title: 'COPAPROSE NICARAGUA 2017',
+					city: 'Managua',
+					country: 'Nicaragua',
+					contactName: 'Maria Gamez'
+					email: 'gamez.mariamercedes@gmail.com',
+					web: 'www.copaprose.org',
+					promoCode: 'D7152'
+				},
+				{
+					startDate: new Date('2017/4/20'),
+					endDate: new Date('2017/4/21'),
+					dateQuery: 'April 2017',
+					title: 'Aero Expo Panama Pacifico',
+					city: 'Panama',
+					country: 'Panama',
+					contactName: 'Madelene Lopez',
+					email: 'mlopez@proyecciones.com.pa',
+					web: 'http://aeroexpo-panama.com',
+					promoCode: 'D7209'
+				},
+				{
+					startDate: new Date('2017/4/20'),
+					endDate: new Date('2017/5/4'),
+					dateQuery: 'April 2017',
+					title: 'LATINO FILM FESTIVAL 2017',
+					city: 'Chicago',
+					country: 'USA',
+					contactName: 'Pepe vargas',
+					email: 'pvargas@latinoculturalcenter',
+					web: 'http://chicagolatinofilmfestival.org/',
+					promoCode: 'B7333'
+				},
+				{
+					startDate: new Date('2017/4/21'),
+					endDate: new Date('2017/5/9'),
+					dateQuery: 'April 2017',
+					title: '43a FERIA INTERNACIONAL DEL LIBRO BUENOS AIRES',
+					city: 'Buenos Aires',
+					country: 'Argentina',
+					contactName: 'Jorge Gutierrez Brianza',
+					email: 'jorgegutierrez@el-libro.org.ar',
+					web: 'www.el-libro.org.ar',
+					promoCode: 'B7220'
+				},
+				{
+					startDate: new Date('2017/4/24'),
+					endDate: new Date('2017/4/27'),
+					dateQuery: 'April 2017',
+					title: 'Accelerate – Lenovo',
+					city: 'Orlando',
+					country: 'USA',
+					contactName: 'Fabian Wisniacki',
+					email: 'BGF@Bellsouth.net',
+					web: 'http://shop.lenovo.com/us/en/accelerate',
+					promoCode: 'C7293'
+				},
+				{
+					startDate: new Date('2017/4/24'),
+					endDate: new Date('2017/4/28'),
+					dateQuery: 'April 2017',
+					title: 'ACI LATIN AMERICA - CARIBEAN/ WORLD ANNUAL GENERAL ASSAMBLY, CONFERENCE & EXHIBITON',
+					contactName: 'LILIAN GALEANO',
+					city: 'Panama',
+					country: 'Panama',
+					email: 'asociacionshalompy@gmail.com',
+					promoCode: 'C7169'
+				},
+				{
+					startDate: new Date('2017/4/25'),
+					endDate: new Date('2017/4/29'),
+					dateQuery: 'April 2017',
+					title: 'VI Conferencia Internacional sobre Giardia y Cryptosporidium',
+					contactName: 'Dr. Angel Escobedo',
+					city: 'Havana',
+					country: 'Cuba',
+					email: 'escobedo@infomed.sld.cu',
+					web: 'www.giardiacrypto2017.sld.cu',
+					promoCode: 'C7325'
+				},
+				{
+					startDate: new Date('2017/4/26'),
+					endDate: new Date('2017/5/1'),
+					dateQuery: 'April 2017',
+					title: 'Campeonato Cheerleading and Dance Worlds, Orlando-Florida 2017',
+					contactName: 'Pamela Chang',
+					city: 'Orlando',
+					country: 'USA',
+					email: 'pamela.adventurebrands@gmail.com',
+					promoCode: 'C7244'
+				},
+				{
+					startDate: new Date('2017/4/27'),
+					endDate: new Date('2017/4/28'),
+					dateQuery: 'April 2017',
+					title: 'EXPERIENCIA PUERTO RICO 2017',
+					contactName: 'Mickey Espada Medina',
+					city: 'San Juan',
+					country: 'Puerto Rico',
+					email: 'mickeymabudeg@gmail.com',
+					web: 'www.ExperienciaPuertoRico.com',
+					promoCode: 'D7305'
+				},
+				{
+					startDate: new Date('2017/4/27'),
+					endDate: new Date('2017/4/30'),
+					dateQuery: 'April 2017',
+					title: 'Congreso Foro Internacional de Diabetes',
+					contactName: 'Dra. Dolores Mejía de la Cruz',
+					city: 'Punta Cana',
+					country: 'República Dominicana',
+					email: 'sociedadendocrino@gmail.com',
+					promoCode: 'C7326'
+				},
 
 			];
 
