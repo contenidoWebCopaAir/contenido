@@ -1,22 +1,25 @@
 <div class="columns-1 offices-responsive content_centered" ng-controller="wholeSalersCtrl">
+	<div class="title_legal common-styles type_title1">
+		<h2>List of travel agents</h2>
+	</div>
 	<div class="row-fluid main-filter">
-
-		<div class="span4">
-			<h2>Show travel agents in</h2>
-		</div>
-
-		<div class="span8 form-inline">
-			<select id="selectedCountry" ng-model="selectedCountry" class="form-control" ng-cloak>
-	            <option value="" selected>All countries</option>
-	            <option 
-	                ng-repeat="country in wholesalers" 
-	                value="{{country.countryName}}" 
-	                ng-if="country" 
-	                ng-cloak
-	            >
-	                {{country.countryName}}
-	            </option>
-	        </select>
+		<div class="span8 form-horizontal">
+			<div class="control-group">
+				<label class="control-label">Show travel agents in</label>
+				<div class="controls">
+					<select id="selectedCountry" ng-model="selectedCountry" ng-cloak>
+			            <option value="" selected>All countries</option>
+			            <option 
+			                ng-repeat="country in wholesalers" 
+			                value="{{country.countryName}}" 
+			                ng-if="country" 
+			                ng-cloak
+			            >
+			                {{country.countryName}}
+			            </option>
+			        </select>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -56,7 +59,7 @@
 	                    	<address>
 	                    		<p>
 	                    			<b><span ng-if="w.name" ng-cloak>{{w.name}}<br></span></b>
-	                    			<span ng-if="w.email" ng-cloak>{{w.email}}<br></span>
+	                    			<a ng-if="w.email" href="mailto:{{w.email}}" ng-cloak>{{w.email}}<br></a>
 	                    			<a 
 	                    				href="{{w.web}}" 
 	                    				ng-if="w.web"
