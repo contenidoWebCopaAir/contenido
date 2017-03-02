@@ -24,7 +24,7 @@
 							nights: 4,
 							url: '/peru-havana',
 							img: {
-								src: '/documents/20182/174915/hav-small.jpg',
+								src: '/documents/20182/2147306/hav-small.jpg',
 								alt: 'Havana'
 							}
 						},
@@ -42,7 +42,7 @@
 							nights: 4,
 							url: '/peru-santo-domingo',
 							img: {
-								src: '/documents/20182/174915/sti-small.jpg',
+								src: '/documents/20182/2147306/sti-small.jpg',
 								alt: 'Santo Domingo'
 							}
 						},
@@ -60,7 +60,7 @@
 							nights: 3,
 							url: '/peru-panama',
 							img: {
-								src: '/documents/20182/174915/pty-small.jpg',
+								src: '/documents/20182/2147306/pty-small.jpg',
 								alt: 'Panamá'
 							}
 						}
@@ -84,7 +84,7 @@
 							nights: 3,
 							url: '/ecuador-santiago-de-los-caballeros',
 							img: {
-								src: '/documents/20182/174915/STI-small.jpg',
+								src: '/documents/20182/2147306/STI-small.jpg',
 								alt: 'Santiago de los Caballeros'
 							}
 						},
@@ -102,7 +102,7 @@
 							nights: 3,
 							url: '/ecuador-panama',
 							img: {
-								src: '/documents/20182/174915/Panama-Canal400.jpg',
+								src: '/documents/20182/2147306/Panama-Canal400.jpg',
 								alt: 'Canal de Panamá'
 							}
 						},
@@ -120,7 +120,7 @@
 							nights: 3,
 							url: '/ecuador-miami',
 							img: {
-								src: '/documents/20182/174915/mia-small.jpg',
+								src: '/documents/20182/2147306/mia-small.jpg',
 								alt: 'Miami beach'
 							}
 						},
@@ -138,7 +138,7 @@
 							nights: 3,
 							url: '/ecuador-curazao',
 							img: {
-								src: '/documents/20182/174915/cur-small.jpg',
+								src: '/documents/20182/2147306/cur-small.jpg',
 								alt: 'Curazao beach'
 							}
 						}
@@ -163,7 +163,7 @@
 							nights: 3,
 							url: '/colombia-panama',
 							img: {
-								src: '/documents/20182/174915/pty-small.jpg',
+								src: '/documents/20182/2147306/pty-small.jpg',
 								alt: 'Panama City'
 							}
 						},
@@ -181,7 +181,7 @@
 							nights: 3,
 							url: '/colombia-punta-cana',
 							img: {
-								src: '/documents/20182/174915/puj-small.jpg',
+								src: '/documents/20182/2147306/puj-small.jpg',
 								alt: 'Punta Cana'
 							}
 						},
@@ -199,7 +199,7 @@
 							nights: 3,
 							url: '/colombia-curazao',
 							img: {
-								src: '/documents/20182/174915/cur-small.jpg',
+								src: '/documents/20182/2147306/cur-small.jpg',
 								alt: 'Curaçao'
 							}
 						},
@@ -217,7 +217,7 @@
 							nights: 3,
 							url: '/colombia-aruba',
 							img: {
-								src: '/documents/20182/174915/aua-small.jpg',
+								src: '/documents/20182/2147306/aua-small.jpg',
 								alt: 'Aruba'
 							}
 						},
@@ -241,7 +241,7 @@
 							nights: 5,
 							url: '/paraguay-los-angeles',
 							img: {
-								src: '/documents/20182/174915/lax-small.jpg',
+								src: '/documents/20182/2147306/lax-small.jpg',
 								alt: 'Los Angeles'
 							}
 						},
@@ -259,7 +259,7 @@
 							nights: 5,
 							url: '/paraguay-punta-cana',
 							img: {
-								src: '/documents/20182/174915/PUNTA-CANA400.jpg',
+								src: '/documents/20182/2147306/PUNTA-CANA400.jpg',
 								alt: 'Punta Cana'
 							}
 						},
@@ -277,7 +277,7 @@
 							nights: 5,
 							url: '/paraguay-montego-bay',
 							img: {
-								src: '/documents/20182/174915/mbj-small.jpg',
+								src: '/documents/20182/2147306/mbj-small.jpg',
 								alt: 'Montego Bay'
 							}	
 						},
@@ -295,7 +295,7 @@
 							nights: 7,
 							url: '/paraguay-nassau',
 							img: {
-								src: '/documents/20182/174915/NAS-small.jpg',
+								src: '/documents/20182/2147306/NAS-small.jpg',
 								alt: 'Nassau'
 							}
 						},
@@ -313,7 +313,7 @@
 							nights: 4,
 							url: '/paraguay-panama',
 							img: {
-								src: '/documents/20182/174915/panama-ruinas400.jpg',
+								src: '/documents/20182/2147306/panama-ruinas400.jpg',
 								alt: 'Panamá'
 							}
 						}
@@ -337,7 +337,7 @@
 							nights: 7,
 							url: '/argentina-san-andres',
 							img: {
-								src: '/documents/20182/174915/adz-small.jpg',
+								src: '/documents/20182/2147306/adz-small.jpg',
 								alt: 'Los Angeles'
 							}
 						},
@@ -355,7 +355,7 @@
 							nights: 7,
 							url: '/argentina-montego-bay',
 							img: {
-								src: '/documents/20182/174915/mbj-small.jpg',
+								src: '/documents/20182/2147306/mbj-small.jpg',
 								alt: 'Montego Bay'
 							}
 						},
@@ -373,7 +373,7 @@
 							nights: 7,
 							url: '/argentina-aruba',
 							img: {
-								src: '/documents/20182/174915/aua-small.jpg',
+								src: '/documents/20182/2147306/aua-small.jpg',
 								alt: 'Aruba'
 							}
 						}
@@ -397,7 +397,7 @@
 							nights: 7,
 							url: '/mexico-montego-bay',
 							img: {
-								src: '/documents/20182/174915/mbj-small.jpg',
+								src: '/documents/20182/2147306/mbj-small.jpg',
 								alt: 'Montego Bay'
 							}
 						},
@@ -415,7 +415,7 @@
 							nights: 5,
 							url: '/mexico-bogota',
 							img: {
-								src: '/documents/20182/174915/bog-small',
+								src: '/documents/20182/2147306/bog-small',
 								alt: 'Bogotá'
 							}
 						},
@@ -433,7 +433,7 @@
 							nights: 5,
 							url: '/mexico-punta-cana',
 							img: {
-								src: '/documents/20182/174915/puj-small.jpg',
+								src: '/documents/20182/2147306/puj-small.jpg',
 								alt: 'Punta Cana'
 							}
 						}

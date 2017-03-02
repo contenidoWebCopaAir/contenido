@@ -17,19 +17,19 @@
 					<div class="filter_vacations list-style">
 						<ul>
 							<li>
-								<img src="/documents/20182/157353/conv_aereos.png"> 
+								<img src="/documents/20182/2147306/conv_aereos.png"> 
 								<div>Flights</div> 
 							</li> 
 							<li>
-								<img src="/documents/20182/157353/conv_hotel.png">
+								<img src="/documents/20182/2147306/conv_hotel.png">
 								<div>Hotel</div> 
 							</li> 
 							<li>
-								<img src="/documents/20182/157353/conv_transalados.png"> 
+								<img src="/documents/20182/2147306/conv_transalados.png"> 
 								<div>Moving</div> 
 							</li> 
 							<li>
-								<img src="/documents/20182/157353/conv_inclusive.png"> 
+								<img src="/documents/20182/2147306/conv_inclusive.png"> 
 								<div>All inclusive</div> 
 							</li> 
 						</ul> 
@@ -49,8 +49,16 @@
 										col3: $index == 2 || $index == 5} ]"
 						>
 							<div class="promo-destination"> 
-								<span class="city" ng-cloak>{{package.destination.city}}</span>
-								<span class="country" ng-cloak>{{package.destination.country}}</span>
+								<span class="city" ng-cloak>
+									{{package.destination.city}}
+								</span>
+								<a 
+									class="country" 
+									href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/{{package.url}}"
+									ng-cloak
+								>
+									{{package.destination.country}}
+								</a>
 							</div>
 							<div class="promo-details">
 								<span class="promo">FROM</span>
@@ -58,11 +66,11 @@
 								<span class="value" ng-cloak>{{package.price}}</span>
 								<span class="stay">
 									<span class="days" ng-cloak>
-										<img src="/documents/20182/174915/mini-sun.png">
+										<img src="/documents/20182/2147306/mini-sun.png">
 										{{package.days}}
 									</span>
 									<span class="nights" ng-cloak>
-										<img src="/documents/20182/174915/mini-moon.png">
+										<img src="/documents/20182/2147306/mini-moon.png">
 										{{package.nights}}
 									</span>
 								</span> 
@@ -80,19 +88,20 @@
 							<div class="promo-info">
 								<span class="includes">INCLUDE</span> 
 								<span class="picture flight" ng-if="package.tickets">
-									<img src="/documents/20182/174915/sw-flight.png" align="top">
+									<img src="/documents/20182/2147306/sw-flight.png" align="top">
 								</span> 
 								<span class="picture hotel" ng-if="package.hotel">
-									<img src="/documents/20182/174915/sw-hotel.png" align="top">
+									<img src="/documents/20182/2147306/sw-hotel.png" align="top">
 								</span> 
 								<span class="picture transport" ng-if="package.transport">
-									<img src="/documents/20182/174915/sw-transport.png" align="top">
+									<img src="/documents/20182/2147306/sw-transport.png" align="top">
 								</span> 
 								<span class="picture service" ng-if="package.allInclusive">
-									<img src="/documents/20182/174915/sw-service.png" align="top">
+									<img src="/documents/20182/2147306/sw-service.png" align="top">
 								</span> 
 								<span class="go">
-									<a href="/en/{{package.url}}" ng-cloak>	SEE MORE
+									<a href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/{{package.url}}" ng-cloak>
+										SEE MORE
 									</a>
 								</span> 
 							</div>
@@ -131,9 +140,9 @@
 							allInclusive: 1,
 							days: 8,
 							nights: 7,
-							url: '/en/argentina-aruba',
+							url: 'argentina-aruba',
 							img: {
-								src: '/documents/20182/174915/aua-small.jpg',
+								src: '/documents/20182/2147306/aua-small.jpg',
 								alt: 'Aruba'
 							}
 						},
@@ -151,7 +160,7 @@
 							allInclusive: 1,
 							days: 8,
 							nights: 7,
-							url: '/en/argentina-holguin',
+							url: 'argentina-holguin',
 							img: {
 								src: '/documents/20182/2147306/hog-small.jpg',
 								alt: 'Holguin'
@@ -179,9 +188,9 @@
 							allInclusive: 1,
 							days: 4,
 							nights: 3,
-							url: '/en/colombia-panama',
+							url: 'colombia-panama',
 							img: {
-								src: '/documents/20182/174915/pty-small.jpg',
+								src: '/documents/20182/2147306/pty-small.jpg',
 								alt: 'Panama City'
 							}
 						},
@@ -199,9 +208,9 @@
 							allInclusive: 1,
 							days: 4,
 							nights: 3,
-							url: '/en/colombia-punta-cana',
+							url: 'colombia-punta-cana',
 							img: {
-								src: '/documents/20182/174915/puj-small.jpg',
+								src: '/documents/20182/2147306/puj-small.jpg',
 								alt: 'Punta Cana'
 							}
 						},
@@ -219,7 +228,7 @@
 							allInclusive: 1,
 							days: 4,
 							nights: 3,
-							url: '/en/colombia-montego-bay',
+							url: 'colombia-montego-bay',
 							img: {
 								src: '/documents/20182/2147306/mbj-small.jpg',
 								alt: 'Montego Bay'
@@ -239,7 +248,7 @@
 							allInclusive: 1,
 							days: 4,
 							nights: 3,
-							url: '/en/colombia-cancun',
+							url: 'colombia-cancun',
 							img: {
 								src: '/documents/20182/2147306/cun-small.jpg',
 								alt: 'Cancun'
@@ -266,7 +275,7 @@
 							allInclusive: 0,
 							days: 5,
 							nights: 4,
-							url: '/en/panama-los-angeles',
+							url: 'panama-los-angeles',
 							img: {
 								src: '/documents/20182/2147306/lax-small.jpg',
 								alt: 'Los Angeles'
@@ -286,9 +295,9 @@
 							allInclusive: 1,
 							days: 7,
 							nights: 6,
-							url: '/panama-panama',
+							url: 'panama-panama',
 							img: {
-								src: '/documents/20182/174915/pty-small.jpg',
+								src: '/documents/20182/2147306/pty-small.jpg',
 								alt: 'Panama'
 							}
 						},
@@ -306,9 +315,9 @@
 							allInclusive: 1,
 							days: 6,
 							nights: 5,
-							url: '/en/panama-punta-cana',
+							url: 'panama-punta-cana',
 							img: {
-								src: '/documents/20182/174915/puj-small.jpg',
+								src: '/documents/20182/2147306/puj-small.jpg',
 								alt: 'Punta Cana'
 							}
 						},
@@ -326,7 +335,7 @@
 							allInclusive: 1,
 							days: 6,
 							nights: 5,
-							url: '/en/panama-montego-bay',
+							url: 'panama-montego-bay',
 							img: {
 								src: '/documents/20182/2147306/mbj-small.jpg',
 								alt: 'Montego Bay'
@@ -346,9 +355,9 @@
 							allInclusive: 0,
 							days: 8,
 							nights: 7,
-							url: '/en/panama-nassau',
+							url: 'panama-nassau',
 							img: {
-								src: '/documents/20182/174915/nassau400.jpg',
+								src: '/documents/20182/2147306/NAS-small.jpg',
 								alt: 'Nassau'
 							}
 						}
@@ -373,9 +382,9 @@
 							allInclusive: 0,
 							days: 4,
 							nights: 3,
-							url: '/en/ecuador-panama',
+							url: 'ecuador-panama',
 							img: {
-								src: '/documents/20182/174915/pty-small.jpg',
+								src: '/documents/20182/2147306/pty-small.jpg',
 								alt: 'Panama'
 							}
 						},	
@@ -393,7 +402,7 @@
 							allInclusive: 1,
 							days: 4,
 							nights: 3,
-							url: '/en/ecuador-havana',
+							url: 'ecuador-havana',
 							img: {
 								src: '/documents/20182/2147306/hav-small.jpg',
 								alt: 'Havana'
@@ -413,7 +422,7 @@
 							allInclusive: 1,
 							days: 4,
 							nights: 3,
-							url: '/en/ecuador-cancun',
+							url: 'ecuador-cancun',
 							img: {
 								src: '/documents/20182/2147306/cun-small.jpg',
 								alt: 'Cancun'
@@ -433,9 +442,9 @@
 							allInclusive: 1,
 							days: 4,
 							nights: 3,
-							url: '/en/ecuador-punta-cana',
+							url: 'ecuador-punta-cana',
 							img: {
-								src: '/documents/20182/174915/puj-small.jpg',
+								src: '/documents/20182/2147306/puj-small.jpg',
 								alt: 'Punta Cana'
 							}
 						},
