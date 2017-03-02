@@ -42,18 +42,10 @@ input.input-large {
 	}
 }
 
-@media only screen and (min-width: 769px) {
-	.offices-responsive .ul-table + li, .offices-responsive .ul-table + li + li  {
-    	width:20% !important;
-	}
-
-	.offices-responsive .ul-table + li + li + li {
-		width: 50% !important;
-	}
-}
-
 /*--- Tablets ---*/
 @media only screen and (min-width: 1025px) {
+
+	.offices-responsive .ul-table li { width:27% !important; }
 
 	.offices-responsive .ul-table.ul-head {
 	    display: block;
