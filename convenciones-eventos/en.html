@@ -89,7 +89,7 @@
 							ng-cloak
 						>{{ e.contactName }}</b><br ng-if="e.contactName" />
 					<a href="mailto:{{e.email}}" ng-if="e.email" ng-cloak>{{e.email | lowercase}} </a><br ng-if="e.email" />
-					<a href="{{e.url}}" ng-if="e.url" target="_blank">Web</a></p>
+					<a href="{{e.url}}" ng-if="e.url" target="_blank">{{e.url}}</a></p>
 					</address>
 					</li>
 					<li ng-if="e.promoCode">
@@ -104,7 +104,6 @@
 </div>
 
 <script>
-'use strict';
 	angular.module('copa').controller('EventsCtrl', ["$scope",
 		function ($scope) {
 
@@ -345,7 +344,7 @@
 					country: 'Dominican Republic',
 					contactName: 'Carlos Saldaña',
 					email: 'prsaldana@hotmail.com',
-					web: 'www.interamerica.org',
+					url: 'www.interamerica.org',
 					promoCode: 'D7065'
 				},
 				{
@@ -357,7 +356,7 @@
 					country: 'Nicaragua',
 					contactName: 'Maria Gamez',
 					email: 'gamez.mariamercedes@gmail.com',
-					web: 'www.copaprose.org',
+					url: 'www.copaprose.org',
 					promoCode: 'D7152'
 				},
 				{
@@ -369,7 +368,7 @@
 					country: 'Panama',
 					contactName: 'Madelene Lopez',
 					email: 'mlopez@proyecciones.com.pa',
-					web: 'http://aeroexpo-panama.com',
+					url: 'http://aeroexpo-panama.com',
 					promoCode: 'D7209'
 				},
 				{
@@ -381,7 +380,7 @@
 					country: 'USA',
 					contactName: 'Pepe vargas',
 					email: 'pvargas@latinoculturalcenter',
-					web: 'http://chicagolatinofilmfestival.org/',
+					url: 'http://chicagolatinofilmfestival.org/',
 					promoCode: 'B7333'
 				},
 				{
@@ -393,7 +392,7 @@
 					country: 'Argentina',
 					contactName: 'Jorge Gutierrez Brianza',
 					email: 'jorgegutierrez@el-libro.org.ar',
-					web: 'www.el-libro.org.ar',
+					url: 'www.el-libro.org.ar',
 					promoCode: 'B7220'
 				},
 				{
@@ -405,7 +404,7 @@
 					country: 'USA',
 					contactName: 'Fabian Wisniacki',
 					email: 'BGF@Bellsouth.net',
-					web: 'http://shop.lenovo.com/us/en/accelerate',
+					url: 'http://shop.lenovo.com/us/en/accelerate',
 					promoCode: 'C7293'
 				},
 				{
@@ -428,7 +427,7 @@
 					city: 'Havana',
 					country: 'Cuba',
 					email: 'escobedo@infomed.sld.cu',
-					web: 'www.giardiacrypto2017.sld.cu',
+					url: 'www.giardiacrypto2017.sld.cu',
 					promoCode: 'C7325'
 				},
 				{
@@ -451,7 +450,7 @@
 					city: 'San Juan',
 					country: 'Puerto Rico',
 					email: 'mickeymabudeg@gmail.com',
-					web: 'www.ExperienciaPuertoRico.com',
+					url: 'www.ExperienciaPuertoRico.com',
 					promoCode: 'D7305'
 				},
 				{
