@@ -28,25 +28,7 @@ input.input-large {
 
 .separator { display: none; }
 
-@media screen and (max-width: 380px){
-	select.input-large, input.input-large { max-width: 96% !important; }
-}
-
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (max-width : 480px){
-	body { overflow-x: hidden; }
-	
-	input.input-large {  margin-left:0; }
-	.offices-responsive .ul-table > li {
-    	width: 86% !important;
-	}
-}
-
-/*--- Tablets ---*/
-@media only screen and (min-width: 1025px) {
-
-	.offices-responsive .ul-table li { width:27% !important; }
-
+@media screen (min-width: 1025px){
 	.offices-responsive .ul-table.ul-head {
 	    display: block;
 	    background: #a9aaaa;
@@ -56,16 +38,51 @@ input.input-large {
 	    padding: 4px 0;
 	    margin: 0;
 	}
+}
+
+@media screen and (max-width: 380px){
+	select.input-large, input.input-large { max-width: 96% !important; }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px){
+	body { overflow-x: hidden; }
+	.offices-responsive .ul-table > li {
+    	width: 86% !important;
+	}
+	input.input-large {  margin-left:0; }
+}
+
+@media only screen and (min-device-width: 480px){}
+
+/*--- Tablets ---*/
+@media only screen and (min-device-width: 765px) {
+	
+	.offices-responsive .ul-table > li {
+    	width: 15% !important;
+	}
+
+	.offices-responsive .ul-table > li:nth-child(4) {
+		width: 35% !important;
+	}
+
 	input.input-large { margin-left:20px; width: 53% !important; }
 	select.input-large { width:30% !important; }
 }
 
 
 /* Desktops and laptops ----------- */
-@media only screen and (min-width : 1224px) {
+@media only screen
+and (min-width : 1224px) {
 	body { overflow-x: inherit; }
 	input.input-large { width:40% !important; }
-	input.input-large {  margin-left:20px; }
+	.offices-responsive .ul-table > li {
+    	width: 15% !important;
+	}
 
-	
+	.offices-responsive .ul-table > li:nth-child(4) {
+		width: 35% !important;
+	}
+
+	input.input-large {  margin-left:20px; }
 }

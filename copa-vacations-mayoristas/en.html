@@ -30,48 +30,50 @@
 			<ul class="ul-head ul-table">
 				<li>Country</li>
 				<li>City</li>
-				<li>Contact</li>
+				<li>Wholesaler</li>
+				<li>Email / Web Site</li>
+				<li>Phone</li>
 			</ul>
 			<div ng-repeat="country in wholesalers | filter: {countryName: selectedCountry} | orderBy: 'country' | orderBy: 'city'">
 				<ul class="ul-body ul-table"> 
-                    <li><b ng-bind-html="country.countryName" ng-cloak></b></li>
-                    <li ng-bind-html="country.wholesalers[0].city" ng-cloak></li>
+                    <li><b ng-cloak>{{country.countryName}}</b></li>
+                    <li ng-cloak>{{country.wholesalers[0].city}}</li>
+                    <li><span ng-if="country.wholesalers[0].name" ng-cloak>{{country.wholesalers[0].name}}</span></li>
                     <li>
-                    	<address>
-                    		<p>
-                    			<b><span ng-if="country.wholesalers[0].name" ng-cloak>{{country.wholesalers[0].name}}<br></span></b>
-                    			<span ng-if="country.wholesalers[0].email" ng-cloak>{{country.wholesalers[0].email}}<br></span>
-                    			<a 
-                    				href="{{country.wholesalers[0].web}}" 
-                    				ng-if="country.wholesalers[0].web"
-                    				target="_blank"
-                    				rel="nofollow" 
-                    				ng-cloak>Web<br></a>
-                    			<span ng-if="country.wholesalers[0].phone" ng-cloak>{{country.wholesalers[0].phone}}</span>
-                    		</p>
-                    	</address>
-                    </li>
+                    	<a href="mailto:country.wholesalers[0].email" ng-if="country.wholesalers[0].email" ng-cloak>
+                			{{country.wholesalers[0].email}}
+                		</a>
+            			<a 
+            				ng-if="country.wholesalers[0].web"
+            				href="{{country.wholesalers[0].web.full}}" 
+            				target="_blank"
+            				rel="nofollow" 
+            				ng-cloak
+            			>
+            				<br>{{country.wholesalers[0].web.domain}}
+            			</a>
+                	</li>
+                	<li><span ng-if="country.wholesalers[0].phone" ng-cloak>{{country.wholesalers[0].phone}}</span></li>
                 </ul>
 				
 				<div ng-if="$index != 0" ng-repeat="w in country.wholesalers">
 					<ul class="ul-body ul-table"> 
 	                    <li class="empty"></li>
 	                    <li ng-bind-html="w.city" ng-cloak></li>
+	                    <li><span ng-if="w.name" ng-cloak>{{w.name}}</span></li>
 	                    <li>
-	                    	<address>
-	                    		<p>
-	                    			<b><span ng-if="w.name" ng-cloak>{{w.name}}<br></span></b>
-	                    			<a ng-if="w.email" href="mailto:{{w.email}}" ng-cloak>{{w.email}}<br></a>
-	                    			<a 
-	                    				href="{{w.web}}" 
-	                    				ng-if="w.web"
-	                    				target="_blank"
-	                    				rel="nofollow"
-	                    				ng-cloak>Web<br></a>
-	                    			<span ng-if="w.phone" ng-cloak>{{w.phone}}</span>
-	                    		</p>
-	                    	</address>
+	                    	<a ng-if="w.email" href="mailto:{{w.email}}" ng-cloak>{{w.email}}</a>
+	                    	<a 
+                				href="{{w.web.full}}" 
+                				ng-if="w.web"
+                				target="_blank"
+                				rel="nofollow"
+                				ng-cloak
+                			>
+                				<br>{{w.web.domain}}
+                			</a>
 	                    </li>
+	                    <li><span ng-if="w.phone" ng-cloak>{{w.phone}}</span></li>
                 	</ul>
 				</div>
 
@@ -81,7 +83,7 @@
 
 </div>
 <script>
-'use strict';
+
 	angular.module('copa').controller('wholeSalersCtrl', [ "$scope", function($scope){
 		$scope.selectedCountry = '';
 		$scope.wholesalers = [
@@ -799,74 +801,74 @@
 							}
 					]
 				},
-				{
+					{
 					countryName: 'United States',
 					wholesalers: [
 							{
 								city: 'Washington',
 								name: 'Apple Vacation',
-								web: 'http://www.applevacations.com',
+								web: {full: 'http://www.applevacations.com', domain: 'www.applevacations.com'},
 								phone: '610-359-6535'
 							},
 							{
 								city: 'Washington',
 								name: 'CheapCaribbean.com',
-								web: 'http://www.cheapcaribbean.com',
+								web: {full: 'http://www.cheapcaribbean.com', domain: 'www.cheapcaribbean.com'},
 								phone: '1 (800) 786-0435'
 							},
 							{
 								city: 'Washington',
 								name: 'Travel Impressions',
-								web: 'http://www.travimp.com',
+								web: {full: 'http://www.travimp.com', domain: 'www.travimp.com'},
 								phone: '1 (800) 284-0044'
 							},
 
 							{
 								city: 'Washington',
 								name: 'Gate 1 Travel',
-								web: 'https://www.gate1travel.com',
+								web: {full: 'https://www.gate1travel.com', domain: 'www.gate1travel.com'},
 								phone: '1 (800) 682-3333'
 							},
 							{
 								city: 'Miami',
 								name: 'Expedia',
-								web: 'https://www.expedia.com/Vacation-Packages',
+								web: {full: 'https://www.expedia.com/Vacation-Packages', domain: 'www.expedia.com'},
 								phone: '1 (866) 310-5768'	
 							},
 							{
 								city: 'Miami',
 								name: 'Orbitz',
-								web: 'https://www.orbitz.com/Vacation-Packages',
+								web: {full: 'https://www.orbitz.com/Vacation-Packages', domain: 'www.orbitz.com'},
 								phone: '1 (844) 803-5576'
 							},
 							{
 								city: 'Miami',
 								name: 'PRICELINE',
-								web: 'http://www.priceline.com/vacationpackages',
+								web: {full: 'http://www.priceline.com/vacationpackages', domain: 'www.priceline.com'},
 								phone: '1 (877) 477-5807'
 							},
 							{
 								city: 'Chicago',
 								name: 'Funjet Vacations',
-								web: 'http://www.funjet.com',
+								web: {full: 'http://www.funjet.com', domain: 'www.funjet.com'},
 								phone: '1 (888) 558-6654'
 							},
 							{
 								city: 'Los Angeles',
 								name: 'Pleasant Holidays',
-								web: 'http://pleasantholidays.com',
+								web: {full: 'http://pleasantholidays.com', domain: 'pleasantholidays.com'},
 								phone: '1 (800) 742-9244'
 							},
 							{
 								city: 'Los Angeles',
 								name: 'LatinEscapes (The Travel Superstore)',
-								web: 'http://www.latinescapes.com',
+								web: {full: 'http://www.latinescapes.com', domain: 'www.latinescapes.com'},
 								phone: '1 (800) 878-9986'
 							},
 							{
 								city: 'New York',
 								name: 'Great Value Vacations',
-								web: 'https://www.greatvaluevacations.com',
+								web: {full: 'https://www.greatvaluevacations.com', domain: 'www.greatvaluevacations.com'},
 								phone: '1 (800) 896-4600'
 							}
 					]
