@@ -49,14 +49,19 @@
 										col3: $index == 2 || $index == 5} ]"
 						>
 							<div class="promo-destination"> 
-								<span class="city" ng-cloak>{{package.destination.city}}</span>
 								<a 
+									href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/{{package.url}}" 
+									class="city" 
+									ng-cloak
+								>
+									{{package.destination.city}}
+								</a>
+								<span 
 									class="country" 
-									href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/{{package.url}}"
 									ng-cloak
 								>
 									{{package.destination.country}}
-								</a>
+								</span>
 							</div>
 							<div class="promo-details">
 								<span class="promo">DESDE</span>
