@@ -11,21 +11,32 @@
 	</div>
 
 	<div class="offices-responsive content_centered" ng-controller="EventsCtrl">
-		<div class="row">
+		<div class="row" vocab="http://schema.org/" typeof="Event">
 			<div class="span5">
 				<h4>Event outstanding</h4>
 			</div>
 			<div class="span3">
-				<a href="http://cursointersiduopanama.com/" rel="nofollow" target="_blank">
-					<img src="/documents/20182/2039647/Logoblsnco" alt="Logo Curso Intersiduo de Ultrasonografía Ocular">
+				<a property="url" href="http://cursointersiduopanama.com/" rel="nofollow" target="_blank">
+					<img property="image" src="/documents/20182/2039647/Logoblsnco" alt="Logo Curso Intersiduo de Ultrasonografía Ocular">
 				</a>
 			</div>
 			<div class="span4">
 				<address>
-					<a href="http://cursointersiduopanama.com/" rel="nofollow" target="_blank">V Curso Intersiduo de Ultrasonografía Ocular</a>
-					<p>Hotel Las Américas Golden Tower los días 9, 10 y 11 de marzo de 2017</p>
-					<p><b>Panamá, Panamá</b></p>
-					<p><b>Promo Code: </b> D7214</p>
+					<h3 property="name">V Curso Intersiduo de Ultrasonografía Ocular</h3>
+					<a  property="url" href="http://cursointersiduopanama.com/" rel="nofollow" target="_blank">
+						http://cursointersiduopanama.com/
+					</a>
+					<p property="location" typeof="place">
+						<span property="name">Hotel Las Américas Golden Tower</span><br>
+						<span property="address">Av Balboa y Calle 53 Esquina Marbella</span>
+					</p>	
+					<p property="location" typeof="PostalAddress">
+						<b><span property="addressLocality">Panamá, Panamá</span></b>
+					</p>
+					<p>
+						 los días <span property="startDate" content="2017-03-09">9</span>, 10 y <span property="endDate" content="2017-03-11">11</span> de marzo de 2017
+					</p>
+					<p property=""><b>Promo Code: </b> D7214</p>
 				</address>
 			</div>
 		</div>
@@ -69,28 +80,46 @@
 				</ul>
 
 				<ul 
+					vocab="http://schema.org/" 
+					typeof="Event"
 					class="ul-body ul-table" 
 					ng-repeat="e in events | orderBy: 'startDate' | filter: query | filter: dateFilter"
 				>
 					<li>
-						<h4 ng-cloak>{{e.startDate | date: 'd'}} - {{e.endDate | date: 'd'}}</h4>
+						<h4 ng-cloak> 
+							<span property="startDate" content="{{e.startDate | date:'yyyy-MM-dd'}}">
+								{{e.startDate | date: 'd'}}
+							</span> - 
+							<span property="endDate" content="{{e.endDate | date:'yyyy-MM-dd'}}">
+								{{e.endDate | date: 'd'}}
+							</span>
+						</h4>
 					</li>
 					<li>
-						<h4 ng-cloak ng-bind-html="e.title | uppercase"></h4>
+						<h4 property="name" ng-cloak ng-bind-html="e.title | uppercase"></h4>
+					</li>
+					<li property="location" typeof="PostalAddress">
+						<h4 ng-cloak ng-if="e.country && e.city">
+							<span property="addressLocality"> 
+								<span property="name">{{e.city}}</span>, {{e.country}}
+							</span>
+						</h4>
 					</li>
 					<li>
-						<h4 ng-cloak ng-if="e.country && e.city">{{e.country}},<br> {{e.city}}</h4>
-					</li>
-					<li>
-					<address>
-					<p>
-						<b 
-							ng-if="e.contactName" 
-							ng-cloak
-						>{{ e.contactName }}</b><br ng-if="e.contactName" />
-					<a href="mailto:{{e.email}}" ng-if="e.email" ng-cloak>{{e.email | lowercase}} </a><br ng-if="e.email" />
-					<a href="{{e.url}}" ng-if="e.url" target="_blank">{{e.url}}</a></p>
-					</address>
+						<div property="performer" typeof="Person">
+							<p>
+								<b 
+									property="name"
+									ng-if="e.contactName" 
+									ng-cloak
+								>
+									{{ e.contactName }}
+								</b><br ng-if="e.contactName" />
+								<a property="email" href="mailto:{{e.email}}" ng-if="e.email" ng-cloak>{{e.email | lowercase}} </a>
+								<br ng-if="e.email" />
+							</p>
+						</div>
+						<a property="url" href="{{e.url}}" ng-if="e.url" target="_blank">{{e.url}}</a>
 					</li>
 					<li ng-if="e.promoCode">
 					<p class="visible-phone visible-tablet" ng-if="e.promoCode" ng-cloak>Promotional Code {{e.promoCode}}</p>
