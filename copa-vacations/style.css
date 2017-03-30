@@ -27,11 +27,6 @@
 
 /** Ajuste para el enlace en el destino **/
 .promo-banner .promo-destination .country {
-	display: inherit !important;
-    position: relative;
-    right: 0 !important;
-    top: 0 !important;
-    margin-top: -20px;
-    float: right;
+	width: inherit !important;
 }
 
