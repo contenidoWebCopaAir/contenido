@@ -24,3 +24,9 @@
 .promo-banner .promo-info .go a { font-size: 12px;}
 .disclaimer { padding-top: 20px; padding-bottom: 20px }
 
+
+/** Ajuste para el enlace en el destino **/
+.promo-banner .promo-destination .country {
+	width: inherit !important;
+}
+
