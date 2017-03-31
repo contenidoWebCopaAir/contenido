@@ -11,7 +11,7 @@
 	</div>
 
 	<div class="offices-responsive content_centered" ng-controller="EventsCtrl">
-		<div class="row">
+		<!-- <div class="row">
 			<div class="span5">
 				<h4>Evento destacado</h4>
 			</div>
@@ -28,7 +28,7 @@
 					<p><b>Promo Code: </b> D7214</p>
 				</address>
 			</div>
-		</div>
+		</div> -->
 		<div class="row">
 			<form class="form-inline">
 				<div class="span4">
@@ -103,218 +103,10 @@
 	angular.module('copa').controller('EventsCtrl', ["$scope",
 		function ($scope) {
 
-			$scope.dateFilter = 'Marzo 2017'; 
+			$scope.dateFilter = 'Abril 2017'; 
 			$scope.months = [];
 			$scope.query = '';
 			$scope.events = [
-			
-				{
-					startDate: new Date("2017/3/1").getDate(),
-					endDate: new Date("2017/3/20").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: 'Extrategia',
-					city: 'Panamá',
-					country: 'Panamá',	
-					contactName: 'Belen Galera',
-					url: 'http://cursointersiduopanama.com/',
-					promoCode: 'D7214'
-				},
-				{
-					startDate: new Date("2017/3/5").getDate(),
-					endDate: new Date("2017/3/13").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: 'IX Congreso Centroamericano y del Caribe de Cirugia Plastica (FILACP)',
-					city: 'Tegucigalpa',
-					country: 'Honduras',	
-					contactName: 'Dr. Rene Fiallos',
-					email: 'info@filacpcongresoroatan2017.org',
-					url: 'http://www.filacpcongresoroatan2017.org/',
-					promoCode: 'C7156'
-				},
-				{
-					startDate: new Date("2017/3/6").getDate(),
-					endDate: new Date("2017/3/11").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: 'II Torneo ITF Seniors Copa American Express Salinas 2017',
-					city: 'Guayaquil',
-					country: 'Ecuador',	
-					contactName: 'Gonzalo Zurita',
-					email: 'gonzalozurita@hotmail.com',
-					promoCode: 'C7133'
-				},
-				{
-					startDate: new Date("2017/3/8").getDate(),
-					endDate: new Date("2017/3/10").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: 'Conferencia de la ICC en Bogotá “Resolución de Disputas de Construcción en Latinoamérica”',
-					city: 'Bogotá',
-					country: 'Colombia',	
-					contactName: 'Maria del Pilat Alfaro',
-					email: 'maria.alfaro@ccb.org.co',
-					url: 'http://www.iccwbo.org/training-and-events/',
-					promoCode: 'C7252'
-				},
-				{
-					startDate: new Date("2017/3/8").getDate(),
-					endDate: new Date("2017/3/10").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: 'CONGRESO COCAL 2017',
-					city: 'Montevideo',
-					country: 'Uruguay',	
-					email: 'dirección@personas.com.uy',
-					promoCode: 'E7045'
-				},
-				{
-					startDate: new Date("2017/3/10").getDate(),
-					endDate: new Date("2017/3/12").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: 'Campeonato UCA ALL STAR, Orlando-Florida 2017',
-					city: 'Orlando',
-					country: 'USA',	
-					contactName: 'Pamela Chang',
-					email: 'pamela.adventurebrands@gmail.com',
-					promoCode: 'D7245'
-				},
-				{
-					startDate: new Date("2017/3/10").getDate(),
-					endDate: new Date("2017/3/17").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: '32 Festival Internacional de cine de Guadalajara, 2017.',
-					city: 'Guadalajara',
-					country: 'México',	
-					contactName: 'Viajes Marplay',
-					email: 'info@ficg.mx',
-					url: 'http://www.ficg.mx/32/index.php/es/',
-					promoCode: 'C7217'
-				},
-				{
-					startDate: new Date("2017/3/12").getDate(),
-					endDate: new Date("2017/3/15").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: 'Panama Maritime XIII Conference and Exhibition 2017',
-					city: 'Panamá',
-					country: 'Panamá',	
-					contactName: 'Yenyfer Quezada',
-					email: 'president@panamamaritimeconference.com',
-					url: 'http://www.panamamaritimeconference.com/',
-					promoCode: 'D7112'
-				},
-				{
-					startDate: new Date("2017/3/14").getDate(),
-					endDate: new Date("2017/3/19").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: 'Torneo Internacional de Bolos',
-					city: 'San Juan',
-					country: 'Puerto Rico',	
-					contactName: 'Eric Pabon Santiago',
-					email: 'pabonh-up@hotmail.com',
-					url: 'http://tibpr.com/',
-					promoCode: 'B7115'
-				},
-				{
-					startDate: new Date("2017/3/16").getDate(),
-					endDate: new Date("2017/3/19").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: 'El Panamá Salsa Fest',
-					city: 'Panamá',
-					country: 'Panamá',	
-					contactName: 'Jovana M. Velarde',
-					email: 'Lady_entertainment@hotmail.com',
-					promoCode: 'D7144'
-				},
-				{
-					startDate: new Date("2017/3/16").getDate(),
-					endDate: new Date("2017/3/16").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: 'Cybertech Panama',
-					city: 'Panamá',
-					country: 'Panamá',	
-					contactName: 'Julian Kraut',
-					email: 'julia@cybertechconference.com',
-					url: 'http://panama.cybertechconference.com/',
-					promoCode: 'D7149'
-				},
-				{
-					startDate: new Date("2017/3/16").getDate(),
-					endDate: new Date("2017/3/18").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: '4rd Latin America Congress on Controversies to Consensus in Diabetes, Obesity and Hypertension',
-					city: 'Buenos Aires',
-					country: 'Argentina',	
-					contactName: 'Revital Shoan Pinkas',
-					email: 'revital@comtecmed.com',
-					url: 'http://www2.comtecmed.com/',
-					promoCode: 'B7025'
-				},
-				{
-					startDate: new Date("2017/3/18").getDate(),
-					endDate: new Date("2017/3/21").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: 'ASIPI PUERTO RICO 2017',
-					city: 'San Juan',
-					country: 'Puerto Rico',	
-					contactName: 'Pablo Iorio',
-					email: 'p.iorio@perspectiva.com.uy',
-					promoCode: 'C7167'
-				},
-				{
-					startDate: new Date("2017/3/18").getDate(),
-					endDate: new Date("2017/3/18").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: 'Congreso Santuario Schoenstatt CR',
-					city: 'San José',
-					country: 'Costa Rica',	
-					contactName: 'Walter Valverde',
-					email: 'walter.valverde@colon.cr',
-					promoCode: 'C7227'
-				},
-				{
-					startDate: new Date("2017/3/19").getDate(),
-					endDate: new Date("2017/3/19").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: 'Maratón de Los Angeles 2017',
-					city: 'Los Angeles',
-					country: 'USA',	
-					contactName: 'Angélica Arbeláez',
-					email: 'aarbelaez@copaair.com',
-					url: 'https://www.copaair.com/runners-descuentos',
-					promoCode: 'C7136'
-				},
-				{
-					startDate: new Date("2017/3/21").getDate(),
-					endDate: new Date("2017/3/25").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: 'XIII Congreso Internacional de Ingeniería Hidráulica, IX Seminario del Uso Integral del Agua y I Taller de Gestión Integrada e Cuencas HAV',
-					city: 'La Habana',
-					country: 'Cuba',	
-					contactName: 'Marta Echevarría Castellanos',
-					email: 'internacionales@unaicc.co.cu',
-					url: 'http://www.unaicc.cu/',
-					promoCode: 'B7052'
-				},
-				{
-					startDate: new Date("2017/3/22").getDate(),
-					endDate: new Date("2017/3/26").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: 'VII Congreso Interamericano de Medicina de Emergencias IAEMC 2017',
-					city: 'San Jose',
-					country: 'Costa Rica',	
-					contactName: 'Marianela Artavia',
-					email: 'martavia@branderscr.com',
-					promoCode: 'D7230'
-				},
-				{
-					startDate: new Date("2017/3/14").getDate(),
-					endDate: new Date("2017/3/17").getDate(),
-					dateQuery: 'Marzo 2017',
-					title: 'Miami Funer 2017, Worldwide Funeral Industry Expo and Conference',
-					city: 'Miami',
-					country: 'USA',	
-					contactName: 'Ing. Pablo Cevallos S',
-					email: 'pcevallos@memorialinternational.com',
-					url: 'http://www.miamifuner.com/en/index',
-					promoCode: 'D7271'
-				},
 				{
 					startDate: new Date("2017/4/10"),
 					endDate: new Date("2017/4/14"),
@@ -360,8 +152,8 @@
 					endDate: new Date('2017/4/21'),
 					dateQuery: 'Abril 2017',
 					title: 'Aero Expo Panama Pacifico',
-					city: 'Panama',
-					country: 'Panama',
+					city: 'Panamá',
+					country: 'Panamá',
 					contactName: 'Madelene Lopez',
 					email: 'mlopez@proyecciones.com.pa',
 					url: 'http://aeroexpo-panama.com',
@@ -409,8 +201,8 @@
 					dateQuery: 'Abril 2017',
 					title: 'ACI LATIN AMERICA - CARIBEAN/ WORLD ANNUAL GENERAL ASSAMBLY, CONFERENCE & EXHIBITON',
 					contactName: 'LILIAN GALEANO',
-					city: 'Panama',
-					country: 'Panama',
+					city: 'Panamá',
+					country: 'Panamá',
 					email: 'asociacionshalompy@gmail.com',
 					promoCode: 'C7169'
 				},
@@ -460,6 +252,166 @@
 					email: 'sociedadendocrino@gmail.com',
 					promoCode: 'C7326'
 				},
+				{
+					startDate: new Date('2017/5/1'),
+					endDate: new Date('2017/5/6'),
+					dateQuery: 'Mayo 2017',
+					title: 'Convención de Ventas Laboratorios Sophia Internacional',
+					contactName: 'Juan José Anguiano',
+					city: 'Cancun',
+					country: 'Mexico',
+					email: 'juan.anguiano@sophiaint.com',
+					promoCode: 'B7177'
+				},
+				{
+					startDate: new Date('2017/5/1'),
+					endDate: new Date('2017/5/15'),
+					dateQuery: 'Mayo 2017',
+					title: 'Quinto Foro de la Red Global de Religiones por la Niñez (GNRC)',
+					contactName: 'Lizia Lu',
+					email: 'gnrcfifthforum@arigatouinternational.org',
+					url: 'www.gnrc.net',
+					promoCode: 'C7132'
+				},
+				{
+					startDate: new Date('2017/5/4'),
+					endDate: new Date('2017/5/6'),
+					dateQuery: 'Mayo 2017',
+					city: 'Panamá',
+					country: 'Panamá',
+					title: 'Latin American Consumer Electronics Expo',
+					contactName: 'Adrianna Nicolas',
+					email: 'alexandra@latinexpogroup.com',
+					promoCode: 'D7060'
+				},
+				{
+					startDate: new Date('2017/5/8'),
+					endDate: new Date('2017/5/12'),
+					dateQuery: 'Mayo 2017',
+					title: 'Vacaciones Latinolvidables Herbalife -Punta Cana 2017',
+					city: 'Punta Cana',
+					country: 'República Dominicana',
+					contactName: 'Luis Desali Perez',
+					email: 'luisp@herbalife.com',
+					promoCode: 'D6842'
+				},
+				{
+					startDate: new Date('2017/5/10'),
+					endDate: new Date('2017/5/11'),
+					dateQuery: 'Mayo 2017',
+					title: 'SAGSE Central America & Caribbean @ Panama',
+					city: 'Panamá',
+					country: 'Panamá',
+					contactName: 'Giorgio Gennari Litta',
+					email: 'Info@monografie.com',
+					web: 'http://sagsecc.com/',
+					promoCode: 'D7276'
+				},
+				{
+					startDate: new Date('2017/5/14'),
+					endDate: new Date('2017/5/18'),
+					dateQuery: 'Mayo 2017',
+					title: 'IV Convención de Clientes SmartSoft 2017',
+					contactName: 'Camila Sibaja',
+					email: 'csibaja@smartsoftint.com',
+					web: 'www.smartsoftint.com',
+					promoCode: 'C7283'
+				},
+				{
+					startDate: new Date('2017/5/14'),
+					endDate: new Date('2017/5/21'),
+					dateQuery: 'Mayo 2017',
+					title: 'Convención Iberoamericana de Cooperativismo',
+					city: 'Santo Domingo',
+					country: 'República Dominicana',
+					contactName: 'Dr. Claudio Alberto Rivera',
+					email: 'riverarodriguezalberto@gmail.com',
+					promoCode: 'C7322'
+				},
+				{
+					startDate: new Date('2017/5/15'),
+					endDate: new Date('2017/5/16'),
+					dateQuery: 'Mayo 2017',
+					title: 'SAHIC Cuba 2017',
+					city: 'La Habana',
+					country: 'Cuba',
+					contactName: 'Cecilia Corti',
+					email: 'ccorti@sahic.com',
+					url: 'www.sahiccuba.com',
+					promoCode: 'D7281'
+				},
+				{
+					startDate: new Date('2017/5/16'),
+					endDate: new Date('2017/5/20'),
+					dateQuery: 'Mayo 2017',
+					title: 'XVIII CONGRESO ASOCIACIÓN PANAMERICANA DE INFECTOLOGÍA API',
+					city: 'Panamá',
+					country: 'Panamá',
+					contactName: 'Silvio Vega',
+					email: 'isqueira@yahoo.es',
+					promoCode: 'D7240'
+				},
+				{
+					startDate: new Date('2017/5/17'),
+					endDate: new Date('2017/5/19'),
+					dateQuery: 'Mayo 2017',
+					title: 'ICCEA2017',
+					city: 'Panamá',
+					country: 'Panamá',
+					contactName: 'Laila Espinoza',
+					email: 'laila@pagricola.com',
+					url: 'www.icceapanama.org',
+					promoCode: 'C7151'
+				},
+				{
+					startDate: new Date('2017/5/17'),
+					endDate: new Date('2017/5/20'),
+					dateQuery: 'Mayo 2017',
+					title: 'XXXIII Congreso de la Alianza Panamericana de Mujeres Médicas y el II Congreso de la Asociación de Médicas de Panamá',
+					city: 'Panamá',
+					country: 'Panamá',
+					contactName: 'Marta Sandoya',
+					email: 'martasandoya@hotmail.com',
+					promoCode: 'D7342'
+				},
+				{
+					startDate: new Date('2017/5/28'),
+					endDate: new Date('2017/5/28'),
+					dateQuery: 'Mayo 2017',
+					title: 'Media maratón de Cali 2017',
+					city: 'Cali',
+					country: 'Colombia',
+					contactName: 'Angélica Arbeláez',
+					email: 'aarbelaez@copaair.com',
+					url: 'https://www.copaair.com/runners-descuentos',
+					promoCode: 'C7140'
+				},
+				{
+					startDate: new Date('2017/5/28'),
+					endDate: new Date('2017/5/30'),
+					dateQuery: 'Mayo 2017',
+					title: '33° CONGRESO LATINOAMERICANO DE COMERCIO EXTERIOR CLACE 2017',
+					city: 'Santa Cruz',
+					country: 'Bolivia',
+					contactName: 'Gustavo Bazoberry Otero',
+					email: 'eventus@enterlnet.bo',
+					url: 'www.iladtbolivia2016.com',
+					promoCode: 'C7257'
+				},
+				{
+					startDate: new Date('2017/5/29'),
+					endDate: new Date('2017/6/2'),
+					dateQuery: 'Mayo 2017',
+					title: 'III Jornada Iberoamericana en saludo al Día Mundial del Medio Ambiente –Ecuador 2017',
+					city: 'Quito',
+					country: 'Ecuador',
+					contactName: 'Sara Ulloa Bonilla',
+					email: 'sara@reima-ac.org',
+					url: 'https://www.reima-ec.org/doctorados',
+					promoCode: 'B7339'
+				}
+
+
 
 			];
 
