@@ -1,0 +1,489 @@
+<div class="banner_contactenos back-gray">
+
+	<img alt="Copa Vacations" src="/documents/20182/2137628/main-bg.jpg" title="Copa Vacations" />
+
+	<div class="content_area" style="bbackground-color: #006cb3">
+		<h1><img alt="image" src="/documents/20182/2137628/palmera.png">  Copa Vacations</h1>
+
+		<p>Le ofrecemos una gran variedad de paquetes vacacionales a los principales destinos de Norte, Centro, Suramérica y el Caribe.</p>
+
+		<p>Escoja uno de los paquetes que ofrecemos a continuación o llame a su agencia de viajes favorita y pregunte por los paquetes de Copa Vacations disponibles.</p>
+	</div>
+</div>
+
+
+<div ng-controller="copaVacationsCtrl">
+
+		<div class="content_centered">
+			<div class="row">
+				<div class="country_links">
+					<p class="note">Salidas desde:</p>
+					<select ng-model="selectedCountry">
+						<option selected value="">Todos los países</option>
+						<option ng-repeat="country in countrys | orderBy: country">{{country}}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="columns-1 gray_background">
+			<div class="content_centered">
+				<div class="row">
+					<div class="filter_vacations list-style">
+						<ul>
+							<li>
+								<img src="/documents/20182/2137628/conv_aereos.png"> 
+								<div>Vuelos</div> 
+							</li> 
+							<li>
+								<img src="/documents/20182/2137628/conv_hotel.png">
+								<div>Hotel</div> 
+							</li> 
+							<li>
+								<img src="/documents/20182/2137628/conv_transalados.png"> 
+								<div>Transporte</div> 
+							</li> 
+							<li>
+								<img src="/documents/20182/2137628/conv_inclusive.png"> 
+								<div>Todo incluido</div> 
+							</li> 
+						</ul> 
+					</div>
+				</div>
+
+				<div class="row" ng-repeat="country in world | orderBy: 'origin' | filter: {origin: selectedCountry}">
+
+					<div class="web-content-copa common-styles country-title">
+						DESDE <strong ng-cloak>{{country.origin | uppercase}}</strong>
+					</div>
+					<div class="span4" ng-repeat="package in country.packages | orderBy: 'destination.city'" id="{{country.origin}}-{{package.destination.city}}">
+						<div 
+							class="promo-banner" 
+							ng-class="[{col1: $index == 0 || $index == 3, 
+										col2: $index == 1 || $index == 4, 
+										col3: $index == 2 || $index == 5} ]"
+						>
+							<div class="promo-destination"> 
+								<a 
+									href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/{{package.url}}" 
+									class="city" 
+									ng-cloak
+								>
+									{{package.destination.city}}
+								</a>
+								<span 
+									class="country" 
+									ng-cloak
+								>
+									{{package.destination.country}}
+								</span>
+							</div>
+							<div class="promo-details">
+								<span class="promo">DESDE</span>
+								<span class="sign">$</span>
+								<span class="value" ng-cloak>{{package.price}}</span>
+								<span class="stay">
+									<span class="days" ng-cloak>
+										<img src="/documents/20182/2137628/mini-sun.png">
+										{{package.days}}
+									</span>
+									<span class="nights" ng-cloak>
+										<img src="/documents/20182/2137628/mini-moon.png">
+										{{package.nights}}
+									</span>
+								</span> 
+							</div> 
+							<div 
+								class="promo-image" 
+								ng-class="[{col1: $index == 0 || $index == 3, 
+										col2: $index == 1 || $index == 4, 
+										col3: $index == 2 || $index == 5} ]">
+								<img 
+									ng-alt="{{package.img.alt}}" 
+									ng-src="{{package.img.src}}"
+								>
+							</div> 
+							<div class="promo-info">
+								<span class="includes">INCLUYE</span> 
+								<span class="picture flight" ng-if="package.tickets">
+									<img src="/documents/20182/2137628/sw-flight.png" align="top">
+								</span> 
+								<span class="picture hotel" ng-if="package.hotel">
+									<img src="/documents/20182/2137628/sw-hotel.png" align="top">
+								</span> 
+								<span class="picture transport" ng-if="package.transport">
+									<img src="/documents/20182/2137628/sw-transport.png" align="top">
+								</span> 
+								<span class="picture service" ng-if="package.allInclusive">
+									<img src="/documents/20182/2137628/sw-service.png" align="top">
+								</span> 
+								<span class="go">
+									<a href="/es/{{package.url}}" ng-cloak rel="nofollow">VER MÁS
+									</a>
+								</span> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+	 
+		angular.module("copa").controller('copaVacationsCtrl', [ "$scope", "$location", "$anchorScroll", function($scope, $location, $anchorScroll){
+			var url = window.location.href.toString().split(window.location.host)[‌​1];
+			if( url.indexOf('?') != -1 ){
+				var countryUrl = url.split('?')[1].toLowerCase();
+
+				if(countryUrl.length > 2){
+					this.gotoAnchor(countryUrl);
+				}
+			}
+
+			$scope.gotoAnchor = function(newHash) {
+		      
+					console.log('searching... ' + newHash);
+		      if ($location.hash() !== newHash) {
+		        // set the $location.hash to `newHash` and
+		        // $anchorScroll will automatically scroll to it
+		        $location.hash(newHash);
+		      } else {
+		        // call $anchorScroll() explicitly,
+		        // since $location.hash hasn't changed
+		        $anchorScroll();
+		      }
+		    };
+
+			$scope.countrys = [];
+			$scope.selectedCountry = '';
+			$scope.world = [
+				//Argentina
+				{
+					origin: 'Argentina',
+					a2: 'ar',
+					packages: [
+						// Punta Cana
+						{
+							destination: {
+								city: 'Punta Cana',
+								country: 'Rep. Dominicana'
+							},
+							price: 2399,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 9,
+							nights: 8,
+							url: 'argentina-punta-cana',
+							img: {
+								src: '/documents/20182/2137628/puj-small.jpg',
+								alt: 'Punta Cana'
+							}
+						},
+					
+						// St. Marteen
+						{
+							destination: {
+								city: 'St. Marteen',
+								country: 'Cuba'
+							},
+							price: 1663,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 8,
+							nights: 7,
+							url: 'argentina-st-marteen',
+							img: {
+								src: '/documents/20182/2137628/sxm-small.jpg',
+								alt: 'St. Marteen'
+							}
+						},
+						// Playa del Carmen
+						{
+							destination: {
+								city: 'Playa del Carmen',
+								country: 'México'
+							},
+							price: 2389,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 9,
+							nights: 8,
+							url: 'argentina-playa-del-carmen',
+							img: {
+								src: '/documents/20182/2137628/pcm-small.jpg',
+								alt: 'Playa del Carmen'
+							} 
+						}
+						
+					]
+				},
+
+				// Peru
+				{
+					origin: 'Peru',
+					a2: 'pe',
+					packages: [
+
+						{
+							destination: {
+								city: 'New Orleans',
+								country: 'USA'
+							},
+							price: 1329,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 0,
+							days: 5,
+							nights: 4,
+							url: 'peru-nueva-orleans',
+							img: {
+								src: '/documents/20182/2137628/msy-small.jpg',
+								alt: 'New Orleans'
+							} 
+						},
+						{
+							destination: {
+								city: 'Santa Clara',
+								country: 'Cuba'
+							},
+							price: 934,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 5,
+							nights: 4,
+							url: 'peru-santa-clara',
+							img: {
+								src: '/documents/20182/2137628/snu-small.jpg',
+								alt: 'Santa Clara'
+							} 
+						}
+
+					]
+				},
+
+				// Colombia
+				{
+					origin: 'Colombia',
+					a2: 'co',
+					packages: [
+						// Panama
+						{
+							destination: {
+								city: 'Panamá',
+								country: 'Panamá'
+							},
+							price: 399,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 0,
+							days: 4,
+							nights: 3,
+							url: 'colombia-panama',
+							img: {
+								src: '/documents/20182/2137628/pty-small.jpg',
+								alt: 'Panama City'
+							}
+						},
+
+						// Punta Cana
+						{
+							destination: {
+								city: 'Punta Cana',
+								country: 'Rep. Dominicana'
+							},
+							price: 779,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 4,
+							nights: 3,
+							url: 'colombia-punta-cana',
+							img: {
+								src: '/documents/20182/2137628/puj-small.jpg',
+								alt: 'Punta Cana'
+							}
+						},
+
+						//Orlando
+						{
+							destination: {
+								city: 'Orlando',
+								country: 'USA'
+							},
+							price: 589,
+							tickets: 1,
+							hotel: 1,
+							transport: 0,
+							allInclusive: 0,
+							days: 4,
+							nights: 3,
+							url: 'colombia-orlando',
+							img: {
+								src: '/documents/20182/2137628/mco-small.jpg',
+								alt: 'Orlando'
+							}
+						},
+
+						// Cancun
+						{
+							destination: {
+								city: 'Cancun',
+								country: 'México'
+							},
+							price: 719,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 4,
+							nights: 3,
+							url: 'colombia-cancun',
+							img: {
+								src: '/documents/20182/2137628/cun-small.jpg',
+								alt: 'Cancun'
+							}
+						},
+					]
+				},
+
+				// Ecuador
+				{
+					origin: 'Ecuador',
+					e2: 'ec',
+					packages: [
+						// Panama
+						{
+							destination: {
+								city: 'Panamá',
+								country: 'Panamá'
+							},
+							price: 698,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 0,
+							days: 4,
+							nights: 3,
+							url: 'ecuador-panama',
+							img: {
+								src: '/documents/20182/2137628/pty-small.jpg',
+								alt: 'Panamá'
+							}
+						},	
+
+						// Curacao
+						{
+							destination: {
+								city: 'Willemstad',
+								country: 'Curacao'
+							},
+							price: 1050,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 4,
+							nights: 3,
+							url: 'ecuador-curacao',
+							img: {
+								src: '/documents/20182/2137628/cur-small.jpg',
+								alt: 'Willemstad'
+							}
+						},
+
+
+						// Punta Cana
+						{
+							destination: {
+								city: 'Punta Cana',
+								country: 'Rep. Dominicana'
+							},
+							price: 1131,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 4,
+							nights: 3,
+							url: 'ecuador-punta-cana',
+							img: {
+								src: '/documents/20182/2137628/puj-small.jpg',
+								alt: 'Punta Cana'
+							}
+						},
+					]
+				},
+
+				// Chile
+				{
+					origin: 'Chile',
+					a2: 'cl',
+					packages: [
+
+						// Panama
+						{
+							destination: {
+								city: 'Panamá',
+								country: 'Panamá'
+							},
+							price: 1198,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 8,
+							nights: 7,
+							url: 'chile-panama',
+							img: {
+								src: '/documents/20182/2137628/pty-small.jpg',
+								alt: 'Panamá'
+							}
+						},
+
+						// St. Marteen
+						{
+							destination: {
+								city: 'St. Marteen',
+								country: 'Antillas Holandesas'
+							},
+							price: 1829,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 8,
+							nights: 7,
+							url: 'chile-st-marteen',
+							img: {
+								src: '/documents/20182/2137628/sxm-small.jpg',
+								alt: 'St. Marteen'
+							}
+						}
+
+					]
+				}
+			];
+
+			for( var i in $scope.world){
+		        if( $scope.countrys.indexOf( $scope.world[i].origin ) == -1 ){
+		            $scope.countrys.push( $scope.world[i].origin );
+		        }
+
+		        if( countryUrl && $scope.world[i].a2 == countryUrl ){
+		        	$scope.selectedCountry = $scope.world[i].origin;
+		        }
+    		}
+
+		}]);
+	</script>
