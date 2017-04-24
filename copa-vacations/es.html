@@ -117,8 +117,8 @@
 									<img src="/documents/20182/2137628/sw-service.png" align="top">
 								</span> 
 								<span class="go">
-									<a href="/es/{{package.url}}" ng-cloak rel="nofollow">VER MÁS
-									</a>
+									<a ng-href="{{package.url}}" ng-cloak ng-if="! package.externalUrl">VER MÁS</a>
+									<a ng-href="{{package.url}}" rel="nofollow" target="_blank" ng-cloak ng-if="package.externalUrl">VER MÁS</a>
 								</span> 
 							</div>
 						</div>
@@ -143,114 +143,72 @@
 					origin: 'Argentina',
 					a2: 'ar',
 					packages: [
-						// Punta Cana
+						// Aruba
 						{
 							destination: {
-								city: 'Punta Cana',
-								country: 'Rep. Dominicana'
+								city: 'Aruba',
+								country: 'Aruba'
 							},
-							price: 2399,
-							tickets: 1,
-							hotel: 1,
-							transport: 1,
-							allInclusive: 1,
-							days: 9,
-							nights: 8,
-							url: 'argentina-punta-cana',
-							img: {
-								src: '/documents/20182/2137628/puj-small.jpg',
-								alt: 'Punta Cana'
-							}
-						},
-					
-						// St. Marteen
-						{
-							destination: {
-								city: 'St. Marteen',
-								country: 'Cuba'
-							},
-							price: 1663,
+							price: 2475,
 							tickets: 1,
 							hotel: 1,
 							transport: 1,
 							allInclusive: 1,
 							days: 8,
 							nights: 7,
-							url: 'argentina-st-marteen',
+							url: '/es/argentina-aruba',
+							externalUrl: false,
 							img: {
-								src: '/documents/20182/2137628/sxm-small.jpg',
-								alt: 'St. Marteen'
+								src: '/documents/20182/2137628/aua-small.jpg',
+								alt: 'Aruba'
 							}
 						},
-						// Playa del Carmen
+					
+						// Guanacaste
 						{
 							destination: {
-								city: 'Playa del Carmen',
-								country: 'México'
+								city: 'Guanacaste',
+								country: 'Costa Rica'
 							},
-							price: 2389,
+							price: 2735,
 							tickets: 1,
 							hotel: 1,
 							transport: 1,
 							allInclusive: 1,
-							days: 9,
-							nights: 8,
-							url: 'argentina-playa-del-carmen',
+							days: 8,
+							nights: 7,
+							url: '/es/argentina-guanacaste',
+							externalUrl: false,
 							img: {
-								src: '/documents/20182/2137628/pcm-small.jpg',
-								alt: 'Playa del Carmen'
+								//src: '/documents/20182/2137628/nct-small.jpg',
+								alt: 'Guanacaste'
+							}
+						},
+						// Cayo Santa Maria
+						{
+							destination: {
+								city: 'Cayo Santa Maria',
+								country: 'Cuba'
+							},
+							price: 1160,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 8,
+							nights: 7,
+							url: '/es/argentina-cayo-santa-maria',
+							externalUrl: false,
+							img: {
+								//src: '/documents/20182/2137628/pcm-small.jpg',
+								alt: 'Cayo Santa Maria'
 							} 
 						}
 						
 					]
 				},
 
-				// Peru
-				{
-					origin: 'Peru',
-					a2: 'pe',
-					packages: [
-
-						{
-							destination: {
-								city: 'New Orleans',
-								country: 'USA'
-							},
-							price: 1329,
-							tickets: 1,
-							hotel: 1,
-							transport: 1,
-							allInclusive: 0,
-							days: 5,
-							nights: 4,
-							url: 'peru-nueva-orleans',
-							img: {
-								src: '/documents/20182/2137628/msy-small.jpg',
-								alt: 'New Orleans'
-							} 
-						},
-						{
-							destination: {
-								city: 'Santa Clara',
-								country: 'Cuba'
-							},
-							price: 934,
-							tickets: 1,
-							hotel: 1,
-							transport: 1,
-							allInclusive: 1,
-							days: 5,
-							nights: 4,
-							url: 'peru-santa-clara',
-							img: {
-								src: '/documents/20182/2137628/snu-small.jpg',
-								alt: 'Santa Clara'
-							} 
-						}
-
-					]
-				},
-
+				
 				// Colombia
 				{
 					origin: 'Colombia',
@@ -262,14 +220,15 @@
 								city: 'Panamá',
 								country: 'Panamá'
 							},
-							price: 399,
+							price: 469,
 							tickets: 1,
 							hotel: 1,
 							transport: 1,
-							allInclusive: 0,
+							allInclusive: 1,
 							days: 4,
 							nights: 3,
-							url: 'colombia-panama',
+							url: 'http://www.copavacations.com.co/quoteFromWidget?Package.Route.Origin.PlaceId=BOG&Package.Route.Destination.PlaceType=2&Package.Route.Destination.PlaceId=453&Package.Route.Origin.Date=26/06/2017&Package.Route.Destination.Date=29/06/2017&Package.Rooms=1&Package.Pax[0].Adults=2&Package.Pax[0].Kids=0&Package.Pax[0].KidAges[0]=-1&Package.Pax[0].KidAges[1]=-1&Package.Pax[0].KidAges[2]=-1&Package.Pax[0].KidAges[3]=-1&Package.Pax[0].KidAges[4]=-1&Package.Pax[0].KidAges[5]=-1&Type=PACKAGE&PackageType=0&airportCode=PTY',
+							externalUrl: true,
 							img: {
 								src: '/documents/20182/2137628/pty-small.jpg',
 								alt: 'Panama City'
@@ -282,37 +241,39 @@
 								city: 'Punta Cana',
 								country: 'Rep. Dominicana'
 							},
-							price: 779,
+							price: 890,
 							tickets: 1,
 							hotel: 1,
 							transport: 1,
 							allInclusive: 1,
 							days: 4,
 							nights: 3,
-							url: 'colombia-punta-cana',
+							url: 'http://www.copavacations.com.co/quoteFromWidget?Package.Route.Origin.PlaceId=BOG&Package.Route.Destination.PlaceType=2&Package.Route.Destination.PlaceId=7&Package.Route.Origin.Date=26/06/2017&Package.Route.Destination.Date=29/06/2017&Package.Rooms=1&Package.Pax[0].Adults=2&Package.Pax[0].Kids=0&Package.Pax[0].KidAges[0]=-1&Package.Pax[0].KidAges[1]=-1&Package.Pax[0].KidAges[2]=-1&Package.Pax[0].KidAges[3]=-1&Package.Pax[0].KidAges[4]=-1&Package.Pax[0].KidAges[5]=-1&Type=PACKAGE&PackageType=0&airportCode=PUJ',
+							externalUrl: true,
 							img: {
 								src: '/documents/20182/2137628/puj-small.jpg',
 								alt: 'Punta Cana'
 							}
 						},
 
-						//Orlando
+						//Havana
 						{
 							destination: {
-								city: 'Orlando',
-								country: 'USA'
+								city: 'Havana',
+								country: 'Cuba'
 							},
-							price: 589,
+							price: 819,
 							tickets: 1,
 							hotel: 1,
-							transport: 0,
+							transport: 1,
 							allInclusive: 0,
 							days: 4,
 							nights: 3,
-							url: 'colombia-orlando',
+							url: 'http://www.copavacations.com.co/quoteFromWidget?Package.Route.Origin.PlaceId=BOG&Package.Route.Destination.PlaceType=2&Package.Route.Destination.PlaceId=378&Package.Route.Origin.Date=26/06/2017&Package.Route.Destination.Date=29/06/2017&Package.Rooms=1&Package.Pax[0].Adults=2&Package.Pax[0].Kids=0&Package.Pax[0].KidAges[0]=-1&Package.Pax[0].KidAges[1]=-1&Package.Pax[0].KidAges[2]=-1&Package.Pax[0].KidAges[3]=-1&Package.Pax[0].KidAges[4]=-1&Package.Pax[0].KidAges[5]=-1&Type=PACKAGE&PackageType=0&airportCode=HAV',
+							externalUrl: true,
 							img: {
-								src: '/documents/20182/2137628/mco-small.jpg',
-								alt: 'Orlando'
+								src: '/documents/20182/2137628/hav-small.jpg',
+								alt: 'Havana'
 							}
 						},
 
@@ -329,7 +290,8 @@
 							allInclusive: 1,
 							days: 4,
 							nights: 3,
-							url: 'colombia-cancun',
+							url: 'http://www.copavacations.com.co/quoteFromWidget?Package.Route.Origin.PlaceId=BOG&Package.Route.Destination.PlaceType=2&Package.Route.Destination.PlaceId=26&Package.Route.Origin.Date=26/06/2017&Package.Route.Destination.Date=29/06/2017&Package.Rooms=1&Package.Pax[0].Adults=2&Package.Pax[0].Kids=0&Package.Pax[0].KidAges[0]=-1&Package.Pax[0].KidAges[1]=-1&Package.Pax[0].KidAges[2]=-1&Package.Pax[0].KidAges[3]=-1&Package.Pax[0].KidAges[4]=-1&Package.Pax[0].KidAges[5]=-1&Type=PACKAGE&PackageType=0&airportCode=CUN',
+							externalUrl: true,
 							img: {
 								src: '/documents/20182/2137628/cun-small.jpg',
 								alt: 'Cancun'
@@ -338,10 +300,10 @@
 					]
 				},
 
-				// Ecuador
+				// México
 				{
-					origin: 'Ecuador',
-					e2: 'ec',
+					origin: 'México',
+					a2: 'mx',
 					packages: [
 						// Panama
 						{
@@ -349,111 +311,94 @@
 								city: 'Panamá',
 								country: 'Panamá'
 							},
-							price: 698,
+							price: 1519,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 0,
+							days: 5,
+							nights: 4,
+							url: '/es/mexico-panama',
+							externalUrl: false,
+							img: {
+								src: '/documents/20182/2137628/pty-small.jpg',
+								alt: 'Panama City'
+							}
+						},
+
+						// Panama
+						{
+							destination: {
+								city: 'Panamá',
+								country: 'Panamá'
+							},
+							price: 1138,
 							tickets: 1,
 							hotel: 1,
 							transport: 1,
 							allInclusive: 0,
 							days: 4,
 							nights: 3,
-							url: 'ecuador-panama',
+							url: '/es/mexico-panama-city',
+							externalUrl: false,
 							img: {
 								src: '/documents/20182/2137628/pty-small.jpg',
-								alt: 'Panamá'
+								alt: 'Panama City'
 							}
-						},	
+						},
 
-						// Curacao
+						// Cartagena
 						{
 							destination: {
-								city: 'Willemstad',
-								country: 'Curacao'
+								city: 'Cartagena',
+								country: 'Colombia'
 							},
-							price: 1050,
+							price: 1998,
 							tickets: 1,
 							hotel: 1,
 							transport: 1,
 							allInclusive: 1,
-							days: 4,
-							nights: 3,
-							url: 'ecuador-curacao',
+							days: 11,
+							nights: 10,
+							url: '/es/mexico-cartagena',
+							externalUrl: false,
 							img: {
-								src: '/documents/20182/2137628/cur-small.jpg',
-								alt: 'Willemstad'
+								//src: '/documents/20182/2137628/ctg-small.jpg',
+								alt: 'Cartagena'
 							}
-						},
-
-
-						// Punta Cana
-						{
-							destination: {
-								city: 'Punta Cana',
-								country: 'Rep. Dominicana'
-							},
-							price: 1131,
-							tickets: 1,
-							hotel: 1,
-							transport: 1,
-							allInclusive: 1,
-							days: 4,
-							nights: 3,
-							url: 'ecuador-punta-cana',
-							img: {
-								src: '/documents/20182/2137628/puj-small.jpg',
-								alt: 'Punta Cana'
-							}
-						},
+						}
 					]
 				},
 
-				// Chile
+				// Perú
 				{
-					origin: 'Chile',
-					a2: 'cl',
+					origin: 'Perú',
+					a2: 'pe',
 					packages: [
-
-						// Panama
+						// New Orleans
 						{
 							destination: {
-								city: 'Panamá',
-								country: 'Panamá'
+								city: 'New Orleans',
+								country: 'USA'
 							},
-							price: 1198,
+							price: 1329,
 							tickets: 1,
 							hotel: 1,
 							transport: 1,
-							allInclusive: 1,
-							days: 8,
-							nights: 7,
-							url: 'chile-panama',
+							allInclusive: 0,
+							days: 5,
+							nights: 4,
+							url: '/es/mexico-new-orleans',
+							externalUrl: false,
 							img: {
-								src: '/documents/20182/2137628/pty-small.jpg',
-								alt: 'Panamá'
+								src: '/documents/20182/2137628/msy-small.jpg',
+								alt: 'New Orleans'
 							}
 						},
-
-						// St. Marteen
-						{
-							destination: {
-								city: 'St. Marteen',
-								country: 'Antillas Holandesas'
-							},
-							price: 1829,
-							tickets: 1,
-							hotel: 1,
-							transport: 1,
-							allInclusive: 1,
-							days: 8,
-							nights: 7,
-							url: 'chile-st-marteen',
-							img: {
-								src: '/documents/20182/2137628/sxm-small.jpg',
-								alt: 'St. Marteen'
-							}
-						}
-
 					]
 				}
+			
+			
 			];
 
 			for( var i in $scope.world){
