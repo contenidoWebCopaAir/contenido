@@ -64,9 +64,20 @@
 						>
 							<div class="promo-destination"> 
 								<a 
-									href="/{{cultureFromUrl | lowercase}}/{{storeFrontFromUrl | lowercase}}/{{package.url}}" 
+									ng-href="{{package.url}}" 
 									class="city" 
 									ng-cloak
+									ng-if="! package.externalUrl"
+								>
+									{{package.destination.city}}
+								</a>
+								<a 
+									ng-href="{{package.url}}" 
+									class="city" 
+									ng-cloak
+									rel="nofollow"
+									target="_blank" 
+									ng-if="package.externalUrl"
 								>
 									{{package.destination.city}}
 								</a>
@@ -159,7 +170,7 @@
 							url: '/es/argentina-aruba',
 							externalUrl: false,
 							img: {
-								src: '/documents/20182/2137628/aua-small.jpg',
+								src: '/documents/20182/2137628/aua-muelle-small.jpg',
 								alt: 'Aruba'
 							}
 						},
@@ -180,7 +191,7 @@
 							url: '/es/argentina-guanacaste',
 							externalUrl: false,
 							img: {
-								//src: '/documents/20182/2137628/nct-small.jpg',
+								src: '/documents/20182/2137628/lir-volcan-small.jpg',
 								alt: 'Guanacaste'
 							}
 						},
@@ -200,7 +211,7 @@
 							url: '/es/argentina-cayo-santa-maria',
 							externalUrl: false,
 							img: {
-								//src: '/documents/20182/2137628/pcm-small.jpg',
+								src: '/documents/20182/2137628/snu-palmeras-small.jpg',
 								alt: 'Cayo Santa Maria'
 							} 
 						}
@@ -230,7 +241,7 @@
 							url: 'http://www.copavacations.com.co/quoteFromWidget?Package.Route.Origin.PlaceId=BOG&Package.Route.Destination.PlaceType=2&Package.Route.Destination.PlaceId=453&Package.Route.Origin.Date=26/06/2017&Package.Route.Destination.Date=29/06/2017&Package.Rooms=1&Package.Pax[0].Adults=2&Package.Pax[0].Kids=0&Package.Pax[0].KidAges[0]=-1&Package.Pax[0].KidAges[1]=-1&Package.Pax[0].KidAges[2]=-1&Package.Pax[0].KidAges[3]=-1&Package.Pax[0].KidAges[4]=-1&Package.Pax[0].KidAges[5]=-1&Type=PACKAGE&PackageType=0&airportCode=PTY',
 							externalUrl: true,
 							img: {
-								src: '/documents/20182/2137628/pty-small.jpg',
+								src: '/documents/20182/2137628/pty-casco-small.jpg',
 								alt: 'Panama City'
 							}
 						},
@@ -251,7 +262,7 @@
 							url: 'http://www.copavacations.com.co/quoteFromWidget?Package.Route.Origin.PlaceId=BOG&Package.Route.Destination.PlaceType=2&Package.Route.Destination.PlaceId=7&Package.Route.Origin.Date=26/06/2017&Package.Route.Destination.Date=29/06/2017&Package.Rooms=1&Package.Pax[0].Adults=2&Package.Pax[0].Kids=0&Package.Pax[0].KidAges[0]=-1&Package.Pax[0].KidAges[1]=-1&Package.Pax[0].KidAges[2]=-1&Package.Pax[0].KidAges[3]=-1&Package.Pax[0].KidAges[4]=-1&Package.Pax[0].KidAges[5]=-1&Type=PACKAGE&PackageType=0&airportCode=PUJ',
 							externalUrl: true,
 							img: {
-								src: '/documents/20182/2137628/puj-small.jpg',
+								src: '/documents/20182/2137628/puj-muelle-small.jpg',
 								alt: 'Punta Cana'
 							}
 						},
@@ -293,7 +304,7 @@
 							url: 'http://www.copavacations.com.co/quoteFromWidget?Package.Route.Origin.PlaceId=BOG&Package.Route.Destination.PlaceType=2&Package.Route.Destination.PlaceId=26&Package.Route.Origin.Date=26/06/2017&Package.Route.Destination.Date=29/06/2017&Package.Rooms=1&Package.Pax[0].Adults=2&Package.Pax[0].Kids=0&Package.Pax[0].KidAges[0]=-1&Package.Pax[0].KidAges[1]=-1&Package.Pax[0].KidAges[2]=-1&Package.Pax[0].KidAges[3]=-1&Package.Pax[0].KidAges[4]=-1&Package.Pax[0].KidAges[5]=-1&Type=PACKAGE&PackageType=0&airportCode=CUN',
 							externalUrl: true,
 							img: {
-								src: '/documents/20182/2137628/cun-small.jpg',
+								src: '/documents/20182/2137628/cun-piramide-small.jpg',
 								alt: 'Cancun'
 							}
 						},
@@ -321,7 +332,7 @@
 							url: '/es/mexico-panama',
 							externalUrl: false,
 							img: {
-								src: '/documents/20182/2137628/pty-small.jpg',
+								src: '/documents/20182/2137628/pty-ciudad-nocturna-small.jpg',
 								alt: 'Panama City'
 							}
 						},
@@ -342,7 +353,7 @@
 							url: '/es/mexico-panama-city',
 							externalUrl: false,
 							img: {
-								src: '/documents/20182/2137628/pty-small.jpg',
+								src: '/documents/20182/2137628/pty-ciudad-varcos-small.jpg',
 								alt: 'Panama City'
 							}
 						},
@@ -363,7 +374,7 @@
 							url: '/es/mexico-cartagena',
 							externalUrl: false,
 							img: {
-								//src: '/documents/20182/2137628/ctg-small.jpg',
+								src: '/documents/20182/2137628/ctg-small.jpg',
 								alt: 'Cartagena'
 							}
 						}
@@ -388,13 +399,187 @@
 							allInclusive: 0,
 							days: 5,
 							nights: 4,
-							url: '/es/mexico-new-orleans',
+							url: '/es/peru-new-orleans',
 							externalUrl: false,
 							img: {
 								src: '/documents/20182/2137628/msy-small.jpg',
 								alt: 'New Orleans'
 							}
 						},
+
+						// Cayo santa maria
+						{
+							destination: {
+								city: 'Cayo Santa María',
+								country: 'USA'
+							},
+							price: 1329,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 0,
+							days: 5,
+							nights: 4,
+							url: '/es/peru-cayo-santa-maria',
+							externalUrl: false,
+							img: {
+								src: '/documents/20182/2137628/snu-palmeras-small.jpg',
+								alt: 'Cayo Santa María'
+							}
+						},
+
+						// Montego Bay
+						{
+							destination: {
+								city: 'Montego Bay',
+								country: 'Jamaica'
+							},
+							price: 1199,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 5,
+							nights: 4,
+							url: '/es/peru-montego-bay',
+							externalUrl: false,
+							img: {
+								src: '/documents/20182/2137628/mbj-carretera-small.jpg',
+								alt: 'Montego Bay'
+							}
+						}
+					]
+				},
+
+				{
+					origin: 'Paraguay',
+					a2: 'pa',
+					packages: [
+						// Medellín
+						{
+							destination: {
+								city: 'Medellín',
+								country: 'Colombia'
+							},
+							price: 406,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 0,
+							days: 4,
+							nights: 3,
+							url: '/es/paraguay-medellin',
+							externalUrl: false,
+							img: {
+								src: '/documents/20182/2137628/mde-iglesia-small.jpg',
+								alt: 'Medellín'
+							}
+						},
+
+						// San Andres
+						{
+							destination: {
+								city: 'San Andres',
+								country: 'Colombia'
+							},
+							price: 555,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 3,
+							nights: 2,
+							url: '/es/paraguay-san-andres',
+							externalUrl: false,
+							img: {
+								src: '/documents/20182/2137628/adz-muelle-small.jpg',
+								alt: 'San Andres'
+							}
+						},
+
+						// Lima
+						{
+							destination: {
+								city: 'Lima',
+								country: 'Perú'
+							},
+							price: 843,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 0,
+							days: 4,
+							nights: 3,
+							url: '/es/paraguay-san-andres',
+							externalUrl: false,
+							img: {
+								src: '/documents/20182/2137628/lim-muelle-small.jpg',
+								alt: 'Lima'
+							}
+						},
+
+						// Las vegas
+						{
+							destination: {
+								city: 'Las Vegas',
+								country: 'USA'
+							},
+							price: 720,
+							tickets: 1,
+							hotel: 1,
+							transport: 0,
+							allInclusive: 0,
+							days: 4,
+							nights: 3,
+							url: '/es/paraguay-las-vegas',
+							externalUrl: false,
+							img: {
+								src: '/documents/20182/2137628/las-ciudad-small.jpg',
+								alt: 'Las vegas'
+							}
+						},
+
+						// Cancun
+						{
+							destination: {
+								city: 'Cancun',
+								country: 'México'
+							},
+							price: 876,
+							tickets: 1,
+							hotel: 1,
+							transport: 1,
+							allInclusive: 1,
+							days: 4,
+							nights: 3,
+							url: '/es/paraguay-cancun',
+							externalUrl: false,
+							img: {
+								src: '/documents/20182/2137628/cun-small.jpg',
+								alt: 'Cancun'
+							}
+						},
+
+						// David
+						{
+							destination: {
+								city: 'David',
+								country: 'Panamá'
+							},
+							price: 475,
+							tickets: 1,
+							hotel: 1,
+							transport: 0,
+							allInclusive: 0,
+							days: 4,
+							nights: 3,
+							url: '/es/paraguay-david',
+							externalUrl: false,
+							img: {
+								src: '/documents/20182/2137628/dav-campo-small.jpg',
+								alt: 'David'
+							}
+						}
 					]
 				}
 			
